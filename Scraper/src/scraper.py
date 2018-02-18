@@ -12,7 +12,12 @@ from lxml import html
 
 class GoogleScraperWraper:
     """
-    A Scraper wraper, Current implementation is single thread due to the sqlite features.
+    A Scraper wraper, which can
+
+    1. Scrape links for a list of queries
+    2. Retrieve a html page for a link
+
+    Current implementation is single thread due to the sqlite features.
     """
 
     def __init__(self):
@@ -31,17 +36,18 @@ class GoogleScraperWraper:
         if clear_cache and os.path.isdir(self.default_cache_dir):
             shutil.rmtree(self.default_cache_dir)
 
-    def scrap_links(self, query_list, search_engine=["bing"], page_num=1, method="http", cache="True"):
+    def scrap_links(self, query_str_list, search_engine=["bing"], page_num=1, method="http", cache="True"):
         """
-        Scraper a list of queries and get the links as a result. The query will be the key
-        :param query_list:
-        :param search_engine:
-        :param page_num:
-        :param method:
-        :param cache:
-        :return:
+        Scraper for a list of queries and get the links as a result. Use search engines to scrap the links.
+
+        :param query_str_list:Queries in string format submitted to search engine
+        :param search_engine: See GoogleScraper package for more information
+        :param page_num: The number of page to scrap
+        :param method: Use http for most case
+        :param cache: Use cache
+        :return: A dictionary whose key is the query string, and the value is the links
         """
-        query_set = set(query_list)
+        query_set = set(query_str_list)
         config = {
             'use_own_ip': 'True',
             'keywords': query_set,
@@ -67,7 +73,14 @@ class GoogleScraperWraper:
         text = " ".join(text)
         return text
 
-    def get_content_for_a_link(self, link, html_parse_method=__html_all_text, delay=0.1, timeout=60):
+    def get_html_for_a_link(self, link, delay=0.1, timeout=60):
+        """
+        Retrieve the html page for a link.
+        :param link:
+        :param delay:
+        :param timeout:
+        :return:
+        """
         if delay > 0:
             time.sleep(delay)
         res = ""
@@ -75,7 +88,7 @@ class GoogleScraperWraper:
             request = urllib.request.Request(link, None, self.headers)
             with urllib.request.urlopen(request, timeout=timeout) as url:
                 html_page = url.read()
-                res = html_parse_method(html_page)
+                res = html_page
         except Exception as e:
             print(e)
         return res
@@ -88,5 +101,5 @@ if __name__ == "__main__":
     for k in res_dict:
         for link in res_dict[k]:
             print(link.link)
-            print(gsw.get_content_for_a_link(link.link))
+            print(gsw.get_html_for_a_link(link.link))
             print("------------------")
