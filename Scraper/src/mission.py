@@ -32,7 +32,7 @@ class Mission:
             map_dict[scrap_query.query] = scrap_query.to_db_primary_key_format()
         return map_dict
 
-    def run(self):
+    def run(self, delay=0.1, timeout=10):
         self.sqlite_manager.create_table(self.mission_name)  # mission name as table name
         query_strs = [x.query for x in self.scrap_queries]
         query_link_dict = self.scraper.scrap_links(query_strs)
@@ -40,15 +40,14 @@ class Mission:
             links = query_link_dict[query]
             for link in links:
                 link_url = link.link
-                html_page = self.scraper.get_html_for_a_link(link_url)
-                json = self.html_parser.parse(html_page)
+                html_page = self.scraper.get_html_for_a_link(link_url, delay=delay, timeout=timeout)
+                json = self.html_parser.parse(html_page, query)
                 # Transfer the query string into the db primary key format. Different  mission may ran different types
                 # of queries for same terms, when we retrieve information for a term, we want to get them from all the
                 # missions
                 query_db_format = self.query_scrapQuery[query]
                 # write result to database, the table name is mission_name, and in the table there are 2 column ['query','content']
                 self.sqlite_manager.add_or_update_row(self.mission_name, query_db_format, json)
-
         self.sqlite_manager.conn.close()
 
 
