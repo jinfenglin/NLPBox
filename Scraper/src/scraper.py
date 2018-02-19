@@ -8,6 +8,8 @@ import shutil
 import urllib
 import time
 from lxml import html
+from urllib3 import ProxyManager, make_headers, disable_warnings, exceptions
+import random
 
 
 class GoogleScraperWraper:
@@ -20,11 +22,16 @@ class GoogleScraperWraper:
     Current implementation is single thread due to the sqlite features.
     """
 
-    def __init__(self):
+    def __init__(self, proxy_file=""):
+        disable_warnings(exceptions.InsecureRequestWarning)
         self.default_scraper_db = "google_scraper.db"
         self.default_cache_dir = ".scrapecache"
-        user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
-        self.headers = {'User-Agent': user_agent, }
+        self.proxies = []  # http://spys.one/en/https-ssl-proxy/ Available proxies
+        if proxy_file != "":
+            with open(proxy_file) as fin:
+                for proxy_ip in fin.readlines():
+                    proxy_ip = proxy_ip.strip("\n\t\r ")
+                    self.proxies.append(proxy_ip)
 
     def clear(self, clear_cache=True):
         """
@@ -67,13 +74,21 @@ class GoogleScraperWraper:
             res[query] = serp.links
         return res
 
-    def __html_all_text(html_page):
-        tree = html.fromstring(html_page)
-        text = tree.xpath('//p/text()')
-        text = " ".join(text)
-        return text
+    def __request(self, link, timeout):
+        headers = make_headers()
+        request = urllib.request.Request(link, None, headers)
+        with urllib.request.urlopen(request, timeout=timeout) as url:
+            html_page = url.read()
+            return html_page
 
-    def get_html_for_a_link(self, link, delay=0.1, timeout=60):
+    def __request_with_proxy(self, link, timeout):
+        headers = make_headers()
+        proxy_ip = random.sample(self.proxies, 1)[0]
+        http = ProxyManager(proxy_ip, headers=headers)
+        response = http.request("GET", link, timeout=timeout)
+        return response.data
+
+    def get_html_for_a_link(self, link, delay=0.1, timeout=10, use_proxy=False):
         """
         Retrieve the html page for a link.
         :param link:
@@ -85,21 +100,26 @@ class GoogleScraperWraper:
             time.sleep(delay)
         res = ""
         try:
-            request = urllib.request.Request(link, None, self.headers)
-            with urllib.request.urlopen(request, timeout=timeout) as url:
-                html_page = url.read()
-                res = html_page
+            if len(self.proxies) > 0 and use_proxy:
+                try:
+                    res = self.__request_with_proxy(link, timeout)
+                except Exception as proxy_e:
+                    res = self.__request(link, timeout)
+                    print("Request with proxy exception:", proxy_e)
+            else:
+                res = self.__request(link, timeout)
         except Exception as e:
             print(e)
         return res
 
 
 if __name__ == "__main__":
-    gsw = GoogleScraperWraper()
-    keywords = ["this is query1", "this is query1"]
+    proxies = os.path.join(DATA_DIR, "proxy_list.txt")
+    gsw = GoogleScraperWraper(proxies)
+    keywords = ["apple", "google inc", "maven"]
     res_dict = gsw.scrap_links(keywords)
     for k in res_dict:
         for link in res_dict[k]:
             print(link.link)
-            print(gsw.get_html_for_a_link(link.link))
+            print(gsw.get_html_for_a_link(link.link, use_proxy=True))
             print("------------------")

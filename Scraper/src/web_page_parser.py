@@ -67,7 +67,7 @@ class StackOverflowParser:
         res_book["questions"] = questions
         res_book["answers"] = answers
         res_book["related_questions"] = related
-        return json.dumps(res_book)
+        return res_book
 
 
 class QuoraParser:
@@ -109,7 +109,7 @@ class QuoraParser:
         res_book["questions"] = questions
         res_book["answers"] = answers
         res_book["related_questions"] = related
-        return json.dumps(res_book)
+        return res_book
 
 
 class PcMagParser:
@@ -144,7 +144,7 @@ class PcMagParser:
         if title in query:
             res_book["term"] = title
             res_book["definition"] = definition
-        return json.dumps(res_book)
+        return res_book
 
 
 class RegularParagraphParser:
@@ -164,4 +164,4 @@ class RegularParagraphParser:
     def parse(self, html_page, query):
         res_book = {}
         res_book["content"] = self.get_paragraph(html_page)
-        return json.dumps(res_book)
+        return res_book
