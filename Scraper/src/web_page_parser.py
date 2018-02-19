@@ -1,7 +1,4 @@
-from common import *
 from lxml import html
-import json
-
 
 class StackOverflowParser:
     def __get_text_of_post_block(self, post_element):
@@ -117,7 +114,7 @@ class PcMagParser:
         if html_page == "" or html_page == None:
             return ""
         html_tree = html.fromstring(html_page)
-        def_element = html_tree.xpath("//div[@class ='cde_definition']")
+        def_element = html_tree.xpath("//div[@id ='encyc_entry']")
         definition = ""
         if len(def_element) > 0:
             definition = def_element[0].text_content()
@@ -141,9 +138,8 @@ class PcMagParser:
         res_book["definition"] = ""
         title = self.get_title(html_page)
         definition = self.get_definition(html_page)
-        if title in query:
-            res_book["term"] = title
-            res_book["definition"] = definition
+        res_book["term"] = title
+        res_book["definition"] = definition
         return res_book
 
 

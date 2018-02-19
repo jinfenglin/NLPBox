@@ -10,6 +10,7 @@ import time
 from lxml import html
 from urllib3 import ProxyManager, make_headers, disable_warnings, exceptions
 import random
+import logging
 
 
 class GoogleScraperWraper:
@@ -26,6 +27,7 @@ class GoogleScraperWraper:
         disable_warnings(exceptions.InsecureRequestWarning)
         self.default_scraper_db = "google_scraper.db"
         self.default_cache_dir = ".scrapecache"
+        self.logger = logging.getLogger(__name__)
         self.proxies = []  # http://spys.one/en/https-ssl-proxy/ Available proxies
         if proxy_file != "":
             with open(proxy_file) as fin:
@@ -66,7 +68,7 @@ class GoogleScraperWraper:
         try:
             db_session = scrape_with_config(config)
         except GoogleSearchError as e:
-            print("Scraper Error:", e)
+            self.logger.exception("Scraper Error:", e)
 
         res = {}
         for serp in db_session.serps:
@@ -105,11 +107,11 @@ class GoogleScraperWraper:
                     res = self.__request_with_proxy(link, timeout)
                 except Exception as proxy_e:
                     res = self.__request(link, timeout)
-                    print("Request with proxy exception:", proxy_e)
+                    self.logger.exception("Request with proxy exception:", proxy_e)
             else:
                 res = self.__request(link, timeout)
         except Exception as e:
-            print(e)
+            self.logger.exception(e)
         return res
 
 

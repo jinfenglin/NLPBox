@@ -1,23 +1,39 @@
 import sqlite3
 from Cleaner import corpus_cleaner
+import logging, threading
 
 
 class Sqlite3Manger:
-    def __init__(self, sqlite_file):
+    def __init__(self, sqlite_file, commit_period=50):
         self.conn = sqlite3.connect(sqlite_file)
+        self.logger = logging.getLogger(__name__)
+        self.lock = threading.Lock()
+        self.execute_count = 0
+        self.commit_period = commit_period
 
     def __del__(self):
+        self.conn.commit()  # commit result before quiting
         self.conn.close()
 
     def __execute(self, sql):
+        """
+        Synchronized function
+        :param sql:
+        :return:
+        """
         try:
-            c = self.conn.cursor()
-            res = c.execute(sql)
-            self.conn.commit()
-            return res
+            with self.lock:
+                c = self.conn.cursor()
+                res = c.execute(sql)
+                self.execute_count += 1
+                if self.execute_count > self.commit_period:
+                    self.logger.info("Commit in database")
+                    self.execute_count = 0
+                    self.conn.commit()
+                return res
         except Exception as e:
-            print("Error with executing sql:", sql)
-            print(e)
+            self.logger.info("Error with executing sql:", sql)
+            self.logger.exception(e)
 
     def create_table(self, table_name):
         table_name = corpus_cleaner.esapce_sql_variable_quote(table_name)
@@ -40,7 +56,7 @@ class Sqlite3Manger:
         """
         Find parsed information from all tables for a single query
         :param query:
-        :return:
+        :return: A dictionary contains doc parsed from different source
         """
         type_content = {}
         sql_get_all_tables = "SELECT name FROM sqlite_master WHERE type = 'table'"

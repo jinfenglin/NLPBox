@@ -51,7 +51,7 @@ class Mission:
             for link in links:
                 link_count += 1
                 if link_count > link_limit:
-                    continue
+                    break
                 link_url = link.link
                 html_page = self.scraper.get_html_for_a_link(link_url, delay=delay, timeout=timeout,
                                                              use_proxy=self.use_proxy)
