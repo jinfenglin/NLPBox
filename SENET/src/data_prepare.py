@@ -2,11 +2,12 @@ import random
 from nltk.stem.porter import PorterStemmer
 import pickle
 from data_entry_structures import DataSet, SENETWordPairRaw
-import logging
 from dict_utils import collection_to_index_dict, invert_dict
 from Cleaner.cleaner import clean_phrase
 from sql_db_manager import Sqlite3Manger
 from config import *
+import json
+import logging
 
 
 class Encoder:
@@ -14,20 +15,21 @@ class Encoder:
     Encode the label to a given representation
     """
 
-    def __init__(self, all_date_type):
-        self.all_type = set(all_date_type)
+    def __init__(self, all_types):
+        assert len(set(all_types)) == len(all_types)
+        self.all_types = all_types
         self.obj_to_num = None
         self.num_to_obj = None
 
     def one_hot_encode(self, data_entry):
-        encoded = [0] * len(self.all_type + 1)
+        encoded = [0] * len(self.all_types)
         if self.obj_to_num == None:
-            self.obj_to_num = collection_to_index_dict(self.all_type)
+            self.obj_to_num = collection_to_index_dict(self.all_types)
             self.num_to_obj = invert_dict(self.obj_to_num)
         encoded[self.obj_to_num[data_entry]] = 1
         return encoded
 
-    def one_bot_decode(self, encoded_entry):
+    def one_hot_decode(self, encoded_entry):
         if self.num_to_obj == None:
             raise Exception("No Decoding book availabel")
         hot_spot_index = list(encoded_entry).index(1)
@@ -41,7 +43,7 @@ class SENETRawDataBuilder:
     """
 
     def __init__(self, sql_file, golden_pair_files=["synonym.txt", "contrast.txt", "related.txt"],
-                 golden_list_files=["hyper.txt"]):
+                 golden_list_files=["hyper.txt"], vocab_file_name="vocabulary.txt"):
         """
 
         :param sql_file: The sqlite file store the scapred document
@@ -49,9 +51,10 @@ class SENETRawDataBuilder:
         will be searched in vocab file whose path is defined in config.py
         :param golden_list_files:  The list of file who contains golden pairs. File should have format <root>:<p1>,<p2>....
         """
+        self.logger = logging.getLogger(__name__)
         sql_manger = Sqlite3Manger(sql_file)
         self.raws = []
-        self.keyword_path = VOCAB_DIR + os.sep + "vocabulary.txt"
+        self.keyword_path = os.path.join(VOCAB_DIR, vocab_file_name)
         self.keys = []
         with open(self.keyword_path, 'r', encoding='utf-8') as kwin:
             for line in kwin:
@@ -60,7 +63,7 @@ class SENETRawDataBuilder:
         golden_pairs = self.build_golden(golden_pair_files, golden_list_files)
         neg_pairs = self.build_neg_with_random_pair(golden_pairs)
         labels = ["yes", "no"]  # [0,1] is negative and [1,0] is positive
-        print("Candidate neg pairs:{}, Golden pairs:{}".format(len(neg_pairs), len(golden_pairs)))
+        self.logger.info("Candidate neg pairs:{}, Golden pairs:{}".format(len(neg_pairs), len(golden_pairs)))
         cnt_n = cnt_p = 0
         for i, plist in enumerate([golden_pairs, neg_pairs]):
             label = labels[i]
@@ -68,6 +71,19 @@ class SENETRawDataBuilder:
                 try:
                     w1_docs = sql_manger.get_content_for_query(pair[0])
                     w2_docs = sql_manger.get_content_for_query(pair[1])
+
+                    for key in w1_docs:
+                        if len(w1_docs[key]) > 0:
+                            w1_docs[key] = json.loads(w1_docs[key])
+                        else:
+                            w1_docs[key] = []
+
+                    for key in w2_docs:
+                        if len(w2_docs[key]) > 0:
+                            w2_docs[key] = json.loads(w2_docs[key])
+                        else:
+                            w2_docs[key] = []
+
                     material = SENETWordPairRaw(label, pair, (w1_docs, w2_docs))
                     self.raws.append(material)  # This will be parsed by next_batch() in dataset object
                     if i == 0:
@@ -75,8 +91,8 @@ class SENETRawDataBuilder:
                     else:
                         cnt_p += 1
                 except Exception as e:
-                    print(e)
-        print("Negative pairs:{} Golden Pairs:{}".format(cnt_n, cnt_p))
+                    self.logger.exception(e)
+        self.logger.info("Negative pairs:{} Golden Pairs:{}".format(cnt_n, cnt_p))
         random.shuffle(self.raws)
 
     def build_neg_with_random_pair(self, golden_pairs):
@@ -127,7 +143,7 @@ class SENETRawDataBuilder:
                         if wp_r not in pair_set:
                             pair_set.add(wp)
 
-        print("Golden pair number:{}".format(len(pair_set)))
+        self.logger.info("Golden pair number:{}".format(len(pair_set)))
         return pair_set
 
 
@@ -162,7 +178,7 @@ class DataPrepare:
         :param raw_materials: A list of RawMaterial object
         :return:
         """
-        self.encoder = Encoder([r.label() for r in raw_materials])
+        self.encoder = Encoder(set([r.label() for r in raw_materials]))
         for entry in raw_materials:
             feature_vec = feature_pipe.get_feature(entry)
             label = self.encoder.one_hot_encode(entry.label())
@@ -204,7 +220,7 @@ class DataPrepare:
                 cnt += 1
                 continue
             filtered.append(p)
-        print("Totally {} pairs have been removed".format(cnt))
+        self.logger.info("Totally {} pairs have been removed".format(cnt))
         return filtered
 
     def get_vec_length(self):
@@ -231,18 +247,18 @@ class DataPrepare:
             for fd in folds[i + 1:]:
                 train_entries.extend(fd)
 
-            positive_test_entries = []
-            negative_test_entries = []
-            for test_entry in test_entries:
-                if test_entry[1] == [0., 1.]:
-                    negative_test_entries.append(test_entry)
-                else:
-                    positive_test_entries.append(test_entry)
-            pos_test_entries_num = int(
-                (0.1 * len(negative_test_entries) / len(positive_test_entries) + 0.1) * len(positive_test_entries))
-            positive_test_entries = positive_test_entries[:pos_test_entries_num]
-            positive_test_entries.extend(negative_test_entries)
-            test_entries = positive_test_entries
+            # positive_test_entries = []
+            # negative_test_entries = []
+            # for test_entry in test_entries:
+            #     if test_entry[1] == [0., 1.]:
+            #         negative_test_entries.append(test_entry)
+            #     else:
+            #         positive_test_entries.append(test_entry)
+            # pos_test_entries_num = int(
+            #     (0.1 * len(negative_test_entries) / len(positive_test_entries) + 0.1) * len(positive_test_entries))
+            # positive_test_entries = positive_test_entries[:pos_test_entries_num]
+            # positive_test_entries.extend(negative_test_entries)
+            # test_entries = positive_test_entries
 
             train_set = DataSet(train_entries, self.label_encoder)
             test_set = DataSet(test_entries, self.label_encoder)

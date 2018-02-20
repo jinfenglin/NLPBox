@@ -1,10 +1,12 @@
 import tensorflow as tf
+
+from data_entry_structures import DataSet
 from data_prepare import DataPrepare, Encoder
 from config import *
 
 
 class RNN:
-    def __init__(self, vec_len):
+    def __init__(self, vec_len, model_path):
         self.lr = 0.001  # learning rate
         self.training_iters = 4000  # 100000  # train step upper bound
         self.batch_size = 1
@@ -23,12 +25,14 @@ class RNN:
             'in': tf.Variable(tf.constant(0.1, shape=[self.n_hidden_units, ]), name='b_in'),
             'out': tf.Variable(tf.constant(0.1, shape=[self.n_classes, ]), name='b_out')
         }
-        self.pred = self.__classify(self.x, self.weights, self.biases)
-        self.confidence = tf.nn.softmax(self.pred)
+        #self.pred = self.__classify(self.x, self.weights, self.biases)
+        #self.confidence = tf.nn.softmax(self.pred)
+        self.model_path = model_path
 
-    def train(self, train_set, write_model_path=""):
+    def train(self, train_set: DataSet):
         with tf.Session() as sess:
-            cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=self.pred, labels=self.y))
+            pred = self.__classify(self.x, self.weights, self.biases)
+            cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=pred, labels=self.y))
             train_op = tf.train.AdamOptimizer(self.lr).minimize(cost)
             init = tf.global_variables_initializer()
             saver = tf.train.Saver()
@@ -42,35 +46,39 @@ class RNN:
                     self.y: batch_ys,
                 })
                 step += 1
-            if write_model_path != "":
-                saver.save(sess, write_model_path)
+            saver.save(sess, self.model_path)
 
-    def test(self, test_set):
+    def test(self, test_set: DataSet):
         """
         Evaluate the quality of  trained model
         :return:
         """
         res = []
-        pred_label_index = tf.argmax(self.pred, 1)  # Since we use one-hot represent the predicted label, index = label
+        pred = self.__classify(self.x, self.weights, self.biases)
+        pred_label_index = tf.argmax(pred, 1)  # Since we use one-hot represent the predicted label, index = label
         correct_pred = tf.equal(pred_label_index, tf.argmax(self.y, 1))
+        confidence = tf.nn.softmax(pred)
         with tf.Session() as sess:
-            for i in range(len(test_set)):
+
+            saver = tf.train.Saver()
+            saver.restore(sess, self.model_path)
+            for i in range(len(test_set.data)):
                 batch_xs, batch_ys, test_word_pairs = test_set.next_batch(self.batch_size)
                 batch_xs = batch_xs.reshape([self.batch_size, self.n_steps, self.n_inputs])
                 is_correct = sess.run(correct_pred, feed_dict={self.x: batch_xs, self.y: batch_ys})
-                pred_res = sess.run(self.pred, feed_dict={self.x: batch_xs})
-                confidence_score = sess.run(self.confidence, feed_dict={self.x: batch_xs})
-                res.append((pred_res, is_correct, test_word_pairs, batch_xs, confidence_score))
+                #pred_res = sess.run(self.pred, feed_dict={self.x: batch_xs})
+                confidence_score = sess.run(confidence, feed_dict={self.x: batch_xs})
+                res.append((batch_ys, is_correct, test_word_pairs, batch_xs, confidence_score))
         return res
 
-    def ten_fold_test(self, data_set, result_file):
+    def ten_fold_test(self, data_set: DataPrepare, result_file):
         with open(result_file, "w", encoding="utf8") as fout:
             a_acc = a_recall = a_pre = a_f1 = 0
             for index, (train_set, test_set) in enumerate(data_set.ten_fold()):
                 print("Start fold {}".format(index))
                 self.train(train_set)
                 res = self.test(test_set)
-                re, pre, f1, accuracy = self.write_fold_result(res)
+                re, pre, f1, accuracy = self.write_fold_result(res, fout, data_set.encoder)
                 a_recall += re
                 a_pre += pre
                 a_f1 += f1
@@ -134,8 +142,8 @@ class RNN:
         print("accuracy:{}".format(accuracy))
         return recall, precision, f1, accuracy
 
-    def write_folde_result(self, res, writer, label_encoder):
-        writer.write("label, correctness, w1, w2, features\n")
+    def write_fold_result(self, res, writer, label_encoder: Encoder):
+        writer.write("label,correctness,w1,w2,confidence,features\n")
         for label, correctness, word_pairs, features, confidence in res:
             label = label_encoder.one_hot_decode(label[0])
             if correctness[0] == True:

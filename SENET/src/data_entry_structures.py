@@ -37,15 +37,20 @@ class SENETWordPairRaw(RawMaterial):
     def get_w2_str(self):
         return self.raw_content[1]
 
-    def get_stackoverflow_question(self, word):
+    def get_stackoverflow_questions(self, word):
         """
         Get stackoverflow questions for the given word
         :param word:
         :return: A list of questions related with the word
         """
+        res = []
         doc_dict = self.wd_doc_dict[word]
         page_contents = doc_dict["stackoverflow"]
-        return [x["questions"] for x in page_contents]
+        nested = [x["questions"] for x in page_contents]
+        if len(nested) == 0:
+            return []
+        else:
+            return np.concatenate(nested).ravel().tolist()
 
     def get_stackoverflow_answers(self, word):
         """
@@ -55,7 +60,11 @@ class SENETWordPairRaw(RawMaterial):
         """
         doc_dict = self.wd_doc_dict[word]
         page_content = doc_dict["stackoverflow"]
-        return [x["answers"] for x in page_content]
+        nested = [x["answers"] for x in page_content]
+        if len(nested) == 0:
+            return []
+        else:
+            return np.concatenate(nested).ravel().tolist()
 
     def get_stackoverflow_related_links(self, word):
         """
@@ -65,32 +74,56 @@ class SENETWordPairRaw(RawMaterial):
         """
         doc_dict = self.wd_doc_dict[word]
         page_content = doc_dict["stackoverflow"]
-        return [x["related_questions"][0] for x in page_content]
+        nested = [x["related_questions"] for x in page_content]
+        flat = []
+        for sublist in nested:
+            for item in sublist:
+                flat.append(item[0])
+        return flat
 
-    def get_quora_question(self, word):
+    def get_quora_questions(self, word):
         doc_dict = self.wd_doc_dict[word]
         page_content = doc_dict["quora"]
-        return [x["questions"] for x in page_content]
+        nested = [x["questions"] for x in page_content]
+        if len(nested) == 0:
+            return []
+        else:
+            return np.concatenate(nested).ravel().tolist()
 
-    def get_quora_answer(self, word):
+    def get_quora_answers(self, word):
         doc_dict = self.wd_doc_dict[word]
         page_content = doc_dict["quora"]
-        return [x["answers"] for x in page_content]
+        nested = [x["answers"] for x in page_content]
+        if len(nested) == 0:
+            return []
+        else:
+            return np.concatenate(nested).ravel().tolist()
 
     def get_quora_related_links(self, word):
-        doc_dict = self.wd.doc_dict[word]
+        doc_dict = self.wd_doc_dict[word]
         page_content = doc_dict["quora"]
-        return [x["related_questions"][0] for x in page_content]
+        nested = [x["related_questions"] for x in page_content]
+        flat = []
+        for sublist in nested:
+            for item in sublist:
+                flat.append(item[0])
+        return flat
 
     def get_pcMag_definition(self, word):
-        doc_dict = self.wd.doc_dict[word]
+        doc_dict = self.wd_doc_dict[word]
         page_content = doc_dict["pcMag"]
-        return [x["definition"] for x in page_content]
+        if len(page_content) == 0:
+            return ""
+        return page_content[0]["definition"]# Definition only parse 1 link
 
     def get_regular_doc_content(self, word):
-        doc_dict = self.wd.doc_dict[word]
+        doc_dict = self.wd_doc_dict[word]
         page_content = doc_dict["regular"]
-        return [x["content"] for x in page_content]
+        nested = [x["content"] for x in page_content]
+        if len(nested) == 0:
+            return []
+        else:
+            return np.concatenate(nested).ravel().tolist()
 
 
 class DataSet:

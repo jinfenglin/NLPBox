@@ -4,9 +4,8 @@ def collection_to_index_dict(collection):
     :param collection:
     :return: a diction project object to a number
     """
-    unique_collection = set(collection)
     res = {}
-    for i, entry in enumerate(unique_collection):
+    for i, entry in enumerate(collection):
         res[entry] = i
     return res
 

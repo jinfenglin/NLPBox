@@ -1,6 +1,10 @@
 import re
 
 from nltk import PorterStemmer
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+
+stop_words = set(stopwords.words('english'))
 
 
 def clean_phrase(phrase):
@@ -62,6 +66,16 @@ def stem_string(str, regx_split_chars="[\s]"):
     merge_white_space(str)
     tokens = re.split(regx_split_chars, str)
     return stem_tokens(tokens)
+
+
+def remove_stop_words(doc):
+    words = word_tokenize(doc)
+    words_filtered = []
+
+    for w in words:
+        if w.lower() not in stop_words:
+            words_filtered.append(w)
+    return " ".join(words_filtered)
 
 
 if __name__ == "__main__":
