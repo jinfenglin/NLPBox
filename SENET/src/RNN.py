@@ -1,8 +1,11 @@
 import tensorflow as tf
 
 from data_entry_structures import DataSet
-from data_prepare import DataPrepare, Encoder
+from data_prepare import DataPrepare, Encoder, SENETRawDataBuilder
+import logging
 from config import *
+from feature_extractors import SENETFeaturePipe
+import sys
 
 
 class RNN:
@@ -12,27 +15,30 @@ class RNN:
         self.batch_size = 1
         self.n_inputs = vec_len  # MNIST data input (img shape: 28*28)
         self.n_steps = 1  # time steps
-        self.n_hidden_units = 256  # neurons in hidden layer
+        self.n_hidden_units = 128  # neurons in hidden layer
         self.n_classes = 2  # classes (0/1 digits)
-
-        self.x = tf.placeholder(tf.float32, [None, self.n_steps, self.n_inputs])
-        self.y = tf.placeholder(tf.float32, [None, self.n_classes])
-        self.weights = {
-            'in': tf.Variable(tf.random_normal([self.n_inputs, self.n_hidden_units]), name='w_in'),
-            'out': tf.Variable(tf.random_normal([self.n_hidden_units, self.n_classes]), name='w_out')
-        }
-        self.biases = {
-            'in': tf.Variable(tf.constant(0.1, shape=[self.n_hidden_units, ]), name='b_in'),
-            'out': tf.Variable(tf.constant(0.1, shape=[self.n_classes, ]), name='b_out')
-        }
-        #self.pred = self.__classify(self.x, self.weights, self.biases)
-        #self.confidence = tf.nn.softmax(self.pred)
+        logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+        self.logger = logging.getLogger(__name__)
+        self.logger.info("Start building network...")
+        self.graph = tf.Graph()
+        with self.graph.as_default():
+            self.x = tf.placeholder(tf.float32, [None, self.n_steps, self.n_inputs])
+            self.y = tf.placeholder(tf.float32, [None, self.n_classes])
+            self.weights = {
+                'in': tf.Variable(tf.random_normal([self.n_inputs, self.n_hidden_units]), name='w_in'),
+                'out': tf.Variable(tf.random_normal([self.n_hidden_units, self.n_classes]), name='w_out')
+            }
+            self.biases = {
+                'in': tf.Variable(tf.constant(0.1, shape=[self.n_hidden_units, ]), name='b_in'),
+                'out': tf.Variable(tf.constant(0.1, shape=[self.n_classes, ]), name='b_out')
+            }
+            self.pred = self.__classify(self.x, self.weights, self.biases)
+            self.confidence = tf.nn.softmax(self.pred)
         self.model_path = model_path
 
     def train(self, train_set: DataSet):
-        with tf.Session() as sess:
-            pred = self.__classify(self.x, self.weights, self.biases)
-            cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=pred, labels=self.y))
+        with tf.Session(graph=self.graph) as sess:
+            cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=self.pred, labels=self.y))
             train_op = tf.train.AdamOptimizer(self.lr).minimize(cost)
             init = tf.global_variables_initializer()
             saver = tf.train.Saver()
@@ -54,19 +60,16 @@ class RNN:
         :return:
         """
         res = []
-        pred = self.__classify(self.x, self.weights, self.biases)
-        pred_label_index = tf.argmax(pred, 1)  # Since we use one-hot represent the predicted label, index = label
+        pred_label_index = tf.argmax(self.pred, 1)  # Since we use one-hot represent the predicted label, index = label
         correct_pred = tf.equal(pred_label_index, tf.argmax(self.y, 1))
-        confidence = tf.nn.softmax(pred)
-        with tf.Session() as sess:
-
+        confidence = tf.nn.softmax(self.pred)
+        with tf.Session(graph=self.graph) as sess:
             saver = tf.train.Saver()
             saver.restore(sess, self.model_path)
             for i in range(len(test_set.data)):
                 batch_xs, batch_ys, test_word_pairs = test_set.next_batch(self.batch_size)
                 batch_xs = batch_xs.reshape([self.batch_size, self.n_steps, self.n_inputs])
                 is_correct = sess.run(correct_pred, feed_dict={self.x: batch_xs, self.y: batch_ys})
-                #pred_res = sess.run(self.pred, feed_dict={self.x: batch_xs})
                 confidence_score = sess.run(confidence, feed_dict={self.x: batch_xs})
                 res.append((batch_ys, is_correct, test_word_pairs, batch_xs, confidence_score))
         return res
@@ -75,15 +78,15 @@ class RNN:
         with open(result_file, "w", encoding="utf8") as fout:
             a_acc = a_recall = a_pre = a_f1 = 0
             for index, (train_set, test_set) in enumerate(data_set.ten_fold()):
-                print("Start fold {}".format(index))
+                self.logger.info("Start fold {}".format(index))
                 self.train(train_set)
+                tf.reset_default_graph()
                 res = self.test(test_set)
                 re, pre, f1, accuracy = self.write_fold_result(res, fout, data_set.encoder)
                 a_recall += re
                 a_pre += pre
                 a_f1 += f1
                 a_acc += accuracy
-                tf.reset_default_graph()  # clear the graph for next fold
 
     def __classify(self, X, weights, biases):
         X = tf.reshape(X, [-1, self.n_inputs])
@@ -135,11 +138,12 @@ class RNN:
         f1 = 0
         if precision + recall > 0:
             f1 = 2 * (precision * recall) / (precision + recall)
-        print("True Negative:{}, True Positive:{}, False Negative:{}, False Positive:{}".format(tn, tp, fn, fp))
-        print("recall: {}".format(recall))
-        print("precision: {}".format(precision))
-        print("f1:{}".format(f1))
-        print("accuracy:{}".format(accuracy))
+        self.logger.info(
+            "True Negative:{}, True Positive:{}, False Negative:{}, False Positive:{}".format(tn, tp, fn, fp))
+        self.logger.info("recall: {}".format(recall))
+        self.logger.info("precision: {}".format(precision))
+        self.logger.info("f1:{}".format(f1))
+        self.logger.info("accuracy:{}".format(accuracy))
         return recall, precision, f1, accuracy
 
     def write_fold_result(self, res, writer, label_encoder: Encoder):
@@ -158,3 +162,13 @@ class RNN:
         stat_str = "recall:{}, precision:{}, f1:{}, accuracy:{} \n".format(re, pre, f1, accuracy)
         writer.write(stat_str)
         return re, pre, f1, accuracy
+
+
+if __name__ == "__main__":
+    golden_pairs = ["debug_gold.test"]
+    vocab = "debug_vocab.test"
+    rb = SENETRawDataBuilder("test.db", golden_pair_files=golden_pairs, vocab_file_name=vocab, golden_list_files=[])
+    pipeline = SENETFeaturePipe()
+    data = DataPrepare("test_dataset.pickle", feature_pipe=pipeline, raw_materials=rb.raws, rebuild=False)
+    rnn = RNN(data.get_vec_length(), RNN_MODEL_PATH)
+    rnn.ten_fold_test(data_set=data, result_file="rnn_test.res")
