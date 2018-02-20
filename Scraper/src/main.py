@@ -67,7 +67,7 @@ if __name__ == "__main__":
     else:
         terms = load_terms(vocab_path)
 
-    run_pcMag_mission(sql_db, terms, scraper, use_proxy=True)
-    run_stackoverflow_mission(sql_db, terms, scraper, use_proxy=True)
+    # run_pcMag_mission(sql_db, terms, scraper, use_proxy=True)
+    # run_stackoverflow_mission(sql_db, terms, scraper, use_proxy=True)
     run_quora_mission(sql_db, terms, scraper, use_proxy=True)
-    run_regularParse_mission(sql_db, terms, scraper, use_proxy=True)
+    run_regularParse_mission(sql_db, terms, scraper, use_proxy=False)

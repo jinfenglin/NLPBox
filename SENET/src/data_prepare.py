@@ -1,13 +1,12 @@
 import random
-import re
-from common import *
 from nltk.stem.porter import PorterStemmer
 import pickle
-
-from data_entry_structures import DataSet
-from feature_extractors import FeaturePipe
+from data_entry_structures import DataSet, SENETWordPairRaw
 import logging
-from dict_operations import collection_to_index_dict, invert_dict
+from dict_utils import collection_to_index_dict, invert_dict
+from Cleaner.cleaner import clean_phrase
+from sql_db_manager import Sqlite3Manger
+from config import *
 
 
 class Encoder:
@@ -36,6 +35,102 @@ class Encoder:
         return origin
 
 
+class SENETRawDataBuilder:
+    """
+    Prepare a raw material for feature vector building.
+    """
+
+    def __init__(self, sql_file, golden_pair_files=["synonym.txt", "contrast.txt", "related.txt"],
+                 golden_list_files=["hyper.txt"]):
+        """
+
+        :param sql_file: The sqlite file store the scapred document
+        :param golden_pair_files: The list of file who contains golden pairs. File should have format <p1>,<p2>. File name
+        will be searched in vocab file whose path is defined in config.py
+        :param golden_list_files:  The list of file who contains golden pairs. File should have format <root>:<p1>,<p2>....
+        """
+        sql_manger = Sqlite3Manger(sql_file)
+        self.raws = []
+        self.keyword_path = VOCAB_DIR + os.sep + "vocabulary.txt"
+        self.keys = []
+        with open(self.keyword_path, 'r', encoding='utf-8') as kwin:
+            for line in kwin:
+                self.keys.append(line.strip(" \n\r\t"))
+
+        golden_pairs = self.build_golden(golden_pair_files, golden_list_files)
+        neg_pairs = self.build_neg_with_random_pair(golden_pairs)
+        labels = ["yes", "no"]  # [0,1] is negative and [1,0] is positive
+        print("Candidate neg pairs:{}, Golden pairs:{}".format(len(neg_pairs), len(golden_pairs)))
+        cnt_n = cnt_p = 0
+        for i, plist in enumerate([golden_pairs, neg_pairs]):
+            label = labels[i]
+            for pair in plist:
+                try:
+                    w1_docs = sql_manger.get_content_for_query(pair[0])
+                    w2_docs = sql_manger.get_content_for_query(pair[1])
+                    material = SENETWordPairRaw(label, pair, (w1_docs, w2_docs))
+                    self.raws.append(material)  # This will be parsed by next_batch() in dataset object
+                    if i == 0:
+                        cnt_n += 1
+                    else:
+                        cnt_p += 1
+                except Exception as e:
+                    print(e)
+        print("Negative pairs:{} Golden Pairs:{}".format(cnt_n, cnt_p))
+        random.shuffle(self.raws)
+
+    def build_neg_with_random_pair(self, golden_pairs):
+        def get_random_word(num):
+            res = []
+            cnt = 0
+            key_size = len(self.keys)
+            while cnt < num:
+                neg_pair = (self.keys[random.randint(0, key_size - 1)], self.keys[random.randint(0, key_size - 1)])
+                neg_verse = (neg_pair[1], neg_pair[0])
+                if neg_pair not in golden_pairs and neg_verse not in golden_pairs and neg_pair[0] != neg_pair[1]:
+                    res.append(neg_pair)
+                    cnt += 1
+            return res
+
+        neg_pairs = []
+        for pair in golden_pairs:
+            try:
+                g1_negs = get_random_word(1)
+                neg_pairs.extend(g1_negs)
+            except Exception as e:
+                pass
+        return neg_pairs
+
+    def build_golden(self, golden_pair_files, golden_list_files):
+        pair_set = set()
+        for g_pair_name in golden_pair_files:
+            path = VOCAB_DIR + os.sep + g_pair_name
+            with open(path, encoding='utf8') as fin:
+                for line in fin.readlines():
+                    words1, words2 = line.strip(" \n").split(",")
+                    words1 = clean_phrase(words1)
+                    words2 = clean_phrase(words2)
+                    if (words2, words1) not in pair_set:
+                        pair_set.add((words1, words2))
+
+        for g_list_name in golden_list_files:
+            with open(VOCAB_DIR + os.sep + g_list_name) as fin:
+                for line in fin.readlines():
+                    words1, rest = line.strip(" \n").split(":")
+                    words1 = clean_phrase(words1)
+                    if rest == "":
+                        continue
+                    for word in rest.strip(" ").split(","):
+                        word = clean_phrase(word)
+                        wp = (words1, word)
+                        wp_r = (wp[1], wp[0])
+                        if wp_r not in pair_set:
+                            pair_set.add(wp)
+
+        print("Golden pair number:{}".format(len(pair_set)))
+        return pair_set
+
+
 class DataPrepare:
     """
     Prepare a data set for machine learning tasks. Provide functionality like ten fold validation.
@@ -54,6 +149,7 @@ class DataPrepare:
         self.data_set = []  # follow the format of (feature_vec, label, readable_info)
         self.logger = logging.getLogger(__name__)
         self.pick_path = pickle_path
+        self.label_encoder = None
         if os.path.isfile(pickle_path) and not rebuild:
             self.__load_file()
         else:
@@ -66,43 +162,13 @@ class DataPrepare:
         :param raw_materials: A list of RawMaterial object
         :return:
         """
-        encoder = Encoder([r.label() for r in raw_materials])
+        self.encoder = Encoder([r.label() for r in raw_materials])
         for entry in raw_materials:
-            feature_vec = self.build_feature_vector(feature_pipe, entry)
-            label = encoder.one_hot_encode(entry.label())
+            feature_vec = feature_pipe.get_feature(entry)
+            label = self.encoder.one_hot_encode(entry.label())
             readable_info = entry.info()
             data_entry = (feature_vec, label, readable_info)
             self.data_set.append(data_entry)
-        # self.keyword_path = VOCAB_DIR + os.sep + "vocabulary.txt"
-        # self.keys = []
-        # with open(self.keyword_path, 'r', encoding='utf-8') as kwin:
-        #     for line in kwin:
-        #         self.keys.append(line.strip(" \n\r\t"))
-
-        self.golden_pair_files = ["synonym.txt", "contrast.txt", "related.txt"]
-        golden_pairs = self.build_golden()
-        neg_pairs = self.build_neg_with_random_pair(golden_pairs)
-        labels = [[0., 1.], [1., 0.]]  # [0,1] is negative and [1,0] is positive
-        print("Candidate neg pairs:{}, Golden pairs:{}".format(len(neg_pairs), len(golden_pairs)))
-        cnt_n = cnt_p = 0
-        for i, plist in enumerate([neg_pairs, golden_pairs]):
-            label = labels[i]
-            for pair in plist:
-                try:
-                    words1 = pair[0].strip(" \n")
-                    words2 = pair[1].strip(" \n")
-                    vector = []
-                    vector.extend(self.build_feature_vector(words1, words2))
-                    self.data_set.append(
-                        (vector, label, (words1, words2)))  # This will be parsed by next_batch() in dataset object
-                    if i == 0:
-                        cnt_n += 1
-                    else:
-                        cnt_p += 1
-                except Exception as e:
-                    print(e)
-        print("Negative pairs:{} Golden Pairs:{}".format(cnt_n, cnt_p))
-        random.shuffle(self.data_set)
         self.write_file()
 
     def write_file(self):
@@ -111,61 +177,14 @@ class DataPrepare:
         :return:
         '''
         with open(self.pick_path, 'wb') as fout:
-            pickle.dump(self.data_set, fout)
+            dump_obj = (self.data_set, self.encoder)
+            pickle.dump(dump_obj, fout)
 
     def __load_file(self):
         with open(self.pick_path, 'rb') as fin:
-            self.data_set = pickle.load(fin)
-
-    def build_neg_with_random_pair(self, golden_pairs):
-        def get_random_word(gold, num):
-            res = []
-            cnt = 0
-            key_size = len(self.keys)
-            while cnt < num:
-                neg_pair = (self.keys[random.randint(0, key_size - 1)], self.keys[random.randint(0, key_size - 1)])
-                neg_verse = (neg_pair[1], neg_pair[0])
-                if neg_pair not in golden_pairs and neg_verse not in golden_pairs and neg_pair[0] != neg_pair[1]:
-                    res.append(neg_pair)
-                    cnt += 1
-            return res
-
-        neg_pairs = []
-        for pair in golden_pairs:
-            try:
-                g1_negs = get_random_word(pair[0], 1)
-                # g2_negs = get_random_word(pair[1], 3)
-                neg_pairs.extend(g1_negs)
-                # neg_pairs.extend(g2_negs)
-            except Exception as e:
-                pass
-        return neg_pairs
-
-    def build_golden(self):
-        pair_set = set()
-        for g_pair_name in self.golden_pair_files:
-            path = VOCAB_DIR + os.sep + g_pair_name
-            with open(path, encoding='utf8') as fin:
-                for line in fin.readlines():
-                    words1, words2 = line.strip(" \n").split(",")
-                    if (words2, words1) not in pair_set:
-                        pair_set.add((words1, words2))
-
-        with open(VOCAB_DIR + os.sep + "hyper.txt") as fin:
-            for line in fin.readlines():
-                words1, rest = line.strip(" \n").split(":")
-                if rest == "":
-                    continue
-                for word in rest.strip(" ").split(","):
-                    wp = (words1.strip(" \n"), word.strip("\n"))
-                    wp_r = (wp[1], wp[0])
-                    if wp_r not in pair_set:
-                        pair_set.add(wp)
-
-        print("Golden pair number:{}".format(len(pair_set)))
-        if self.remove_same_pre_post:
-            pair_set = self.remove_pair_with_same_pre_post(pair_set)
-        return pair_set
+            dump_obj = pickle.load(fin)
+            self.data_set = dump_obj[0]
+            self.encoder = dump_obj[1]
 
     def remove_pair_with_same_pre_post(self, pair_set):
         def __stem_Tokens(words):
@@ -187,38 +206,6 @@ class DataPrepare:
             filtered.append(p)
         print("Totally {} pairs have been removed".format(cnt))
         return filtered
-
-    def clean_word(self, word):
-        word = re.sub(r'\([^)]*\)', '', word)
-        tokens = word.split(" ")
-        tokens = [token.lower() for token in tokens if len(token) > 0 and not token.isupper()]
-        return " ".join(tokens)
-
-    def build_feature_vector(self, feature_pipe, raw_material):
-        """
-        :return:
-        """
-        define1 = ""
-        define2 = ""
-        for dir in BING_WORD_DIR:
-            try:
-                with open(dir + os.sep + WordCleaner.to_file_name_format(words1) + ".txt", encoding='utf8') as f1:
-                    define1 += f1.read()
-            except Exception as e:
-                print("word \'{}\' try to access file \'{}\', get error {}".format(words1,
-                                                                                   WordCleaner.to_file_name_format(
-                                                                                       words1) + ".txt", e))
-
-            for dir in BING_WORD_DIR:
-                try:
-                    with open(dir + os.sep + WordCleaner.to_file_name_format(words2) + ".txt", encoding='utf8') as f2:
-                        define2 += f2.read()
-                except Exception as e:
-                    print("word \'{}\' try to access file \'{}\', get error {}".format(words2,
-                                                                                       WordCleaner.to_file_name_format(
-                                                                                           words2) + ".txt", e))
-
-        return FeaturePipe().get_feature(words1, define1, words2, define2)
 
     def get_vec_length(self):
         first = self.data_set[0][0]
@@ -257,7 +244,7 @@ class DataPrepare:
             positive_test_entries.extend(negative_test_entries)
             test_entries = positive_test_entries
 
-            train_set = DataSet(train_entries)
-            test_set = DataSet(test_entries)
+            train_set = DataSet(train_entries, self.label_encoder)
+            test_set = DataSet(test_entries, self.label_encoder)
             train_test_pair.append((train_set, test_set))
         return train_test_pair

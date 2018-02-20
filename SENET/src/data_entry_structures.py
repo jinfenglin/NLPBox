@@ -27,7 +27,8 @@ class SENETWordPairRaw(RawMaterial):
         :param A large, complex json string, include all info scrapped for the terms in the str_pair
         """
         assert type(str_pair) is tuple
-        self.__init__(raw_label, str_pair)
+        assert type(doc_packs) is tuple
+        super().__init__(raw_label, str_pair)
         self.wd_doc_dict = {self.get_w1_str(): doc_packs[0], self.get_w2_str(): doc_packs[1]}
 
     def get_w1_str(self):
@@ -43,7 +44,8 @@ class SENETWordPairRaw(RawMaterial):
         :return: A list of questions related with the word
         """
         doc_dict = self.wd_doc_dict[word]
-        return doc_dict["stackoverflow"]["questions"]
+        page_contents = doc_dict["stackoverflow"]
+        return [x["questions"] for x in page_contents]
 
     def get_stackoverflow_answers(self, word):
         """
@@ -52,7 +54,8 @@ class SENETWordPairRaw(RawMaterial):
         :return: A list of answers related with the word
         """
         doc_dict = self.wd_doc_dict[word]
-        return doc_dict["stackoverflow"]["answers"]
+        page_content = doc_dict["stackoverflow"]
+        return [x["answers"] for x in page_content]
 
     def get_stackoverflow_related_links(self, word):
         """
@@ -61,31 +64,38 @@ class SENETWordPairRaw(RawMaterial):
         :return: A list of related question links. Each list contains pairs: (questions, link)
         """
         doc_dict = self.wd_doc_dict[word]
-        return doc_dict["stackoverflow"]["related_questions"]
+        page_content = doc_dict["stackoverflow"]
+        return [x["related_questions"][0] for x in page_content]
 
     def get_quora_question(self, word):
         doc_dict = self.wd_doc_dict[word]
-        return doc_dict["quora"]["questions"]
+        page_content = doc_dict["quora"]
+        return [x["questions"] for x in page_content]
 
     def get_quora_answer(self, word):
         doc_dict = self.wd_doc_dict[word]
-        return doc_dict["quora"]["answers"]
+        page_content = doc_dict["quora"]
+        return [x["answers"] for x in page_content]
 
     def get_quora_related_links(self, word):
         doc_dict = self.wd.doc_dict[word]
-        return doc_dict["quora"]["related_questions"]
+        page_content = doc_dict["quora"]
+        return [x["related_questions"][0] for x in page_content]
 
     def get_pcMag_definition(self, word):
         doc_dict = self.wd.doc_dict[word]
-        return doc_dict["pcMag"]["definition"]
+        page_content = doc_dict["pcMag"]
+        return [x["definition"] for x in page_content]
 
     def get_regular_doc_content(self, word):
         doc_dict = self.wd.doc_dict[word]
-        return doc_dict["regular"]["content"]
+        page_content = doc_dict["regular"]
+        return [x["content"] for x in page_content]
 
 
 class DataSet:
-    def __init__(self, entry_list):
+    def __init__(self, entry_list, label_encoder):
+        self.label_encoder = label_encoder
         self.cur_batch_start = 0
         self.data = entry_list
 

@@ -1,0 +1,446 @@
+accuracy,precision
+adaptation,prediction
+antifragile,fragile
+antifragile,robust
+assumption,validated learning
+burndown chart,burnup chart
+burnup chart,burndown chart
+capital expenditure,operational expense
+chaotic domain,complex domain
+chaotic domain,complicated domain
+chaotic domain,disorder domain
+chaotic domain,simple domain
+chickens,pigs
+commitment,forecast
+complex domain,chaotic domain
+complex domain,complicated domain
+complex domain,disorder domain
+complex domain,simple domain
+complicated domain,chaotic domain
+complicated domain,complex domain
+complicated domain,disorder domain
+complicated domain,simple domain
+component team,feature team
+customer uncertainty,end uncertainty
+customer uncertainty,means uncertainty
+defined process,empirical process control
+definition of done,definition of ready
+definition of ready,definition of done
+disorder domain,chaotic domain
+disorder domain,complex domain
+disorder domain,complicated domain
+disorder domain,simple domain
+distributed team,co-located team
+economic filter,strategic filter
+empirical process control,defined process
+end uncertainty,customer uncertainty
+end uncertainty,means uncertainty
+exploitation,exploration
+exploration,exploitation
+external stakeholders,internal stakeholders
+feature team,component team
+fixed-date release,fixed-scope release
+fixed-scope release,fixed-date release
+forecast,commitment
+fragile,antifragile
+fragile,robust
+group,team
+happened-upon technical debt,known technical debt
+happened-upon technical debt,targeted technical debt
+holding cost,transaction cost
+ideal day,story point
+idle work,idle workers
+idle workers,idle work
+internal stakeholders,external stakeholders
+known technical debt,happened-upon technical debt
+known technical debt,targeted technical debt
+means uncertainty,customer uncertainty
+means uncertainty,end uncertainty
+minimum marketable features,minimum releasable features
+must-have features,nice-to-have features
+must-have features,won't-have features
+naive technical debt,strategic technical debt
+naive technical debt,unavoidable technical debt
+nice-to-have features,must-have features
+nice-to-have features,won't-have features
+operational expense,capital expenditure
+outcome measure,output measure
+output measure,outcome measure
+pigs,chickens
+precision,accuracy
+prediction,adaptation
+product,project
+product development effort,project
+project,product
+robust,antifragile
+robust,fragile
+simple domain,chaotic domain
+simple domain,complex domain
+simple domain,complicated domain
+simple domain,disorder domain
+strategic filter,economic filter
+strategic technical debt,naive technical debt
+strategic technical debt,unavoidable technical debt
+targeted technical debt,happened-upon technical debt
+targeted technical debt,known technical debt
+team,group
+transaction cost,holding cost
+unavoidable technical debt,naive technical debt
+unavoidable technical debt,strategic technical debt
+validated learning,assumption
+CRC cards,must-have features
+CRC cards,nice-to-have features
+absolute address,relative address
+absolute address,relocatable address
+absolute address,symbolic address
+absolute assembler,relocating assembler
+absolute code,relocatable code
+absolute loader,relocating loader
+Ada,corrective maintenance
+Ada,perfective maintenance
+address field,operation field
+afferent,efferent
+allocated baseline,developmental configuration
+allocated baseline,configuration identification
+allocated configuration identification,identification
+application software,support software
+application software,system software
+argument,formal parameter
+assemble,compile
+assemble,disassemble
+assemble,interpret
+assembled origin,loaded origin
+assembler,compiler
+assembler,interpreter
+assembler language,compiler code
+assembler language,interpretive code
+assembler language,machine code
+assembly language,fifth generation language
+assembly language,fourth generation language
+assembly language,high order language
+assembly language,machine language
+assignment statement,control statement
+assignment statement,declaration
+atomic type,composite type
+background,foreground
+backward recovery,forward recovery
+batch,conversational
+batch,interactive
+batch,on-line
+batch,real time
+bit steering,residual control
+bottom-up,top-down
+branch,path testing
+branch,statement testing
+call by name,call by reference
+call by name,call by value
+call by value,call by name
+call by value,call by reference
+character type,enumeration type
+character type,integer type
+character type,logical type
+character type,real type
+code breakpoint,data breakpoint
+code review,design review
+code review,formal qualification review
+code review,requirements review
+code review,test readiness review
+cohesion,coupling
+coincidental cohesion,communicational cohesion
+coincidental cohesion,functional cohesion
+coincidental cohesion,logical cohesion
+coincidental cohesion,procedural cohesion
+coincidental cohesion,sequential cohesion
+coincidental cohesion,temporal cohesion
+communicational cohesion,coincidental cohesion
+communicational cohesion,functional cohesion
+communicational cohesion,logical cohesion
+communicational cohesion,procedural cohesion
+communicational cohesion,sequential cohesion
+communicational cohesion,temporal cohesion
+compile,assemble
+compile,decompile
+compile,interpret
+compile-and-go,assembler
+compile-and-go,incremental compiler
+compile-and-go,root compiler
+compiler code,assembly code
+compiler code,interpretive code
+compiler code,machine code
+concurrent,simultaneous
+configuration control,configuration identification
+configuration control,configuration status accounting
+constant,variable
+constant-failure period,early-failure period
+constant-failure period,wearout-failure period
+content coupling,paging
+control coupling,common-environment coupling
+control coupling,content coupling
+control coupling,data coupling
+control coupling,hybrid coupling
+control coupling,pathological coupling
+control flow,data flow
+control flow diagram,data flow diagram
+control statement,assignment statement
+control statement,declaration
+corrective maintenance,adaptive maintenance
+corrective maintenance,perfective maintenance
+coupling,cohesion
+data breakpoint,code breakpoint
+data flow,control flow
+data flow diagram,control flow diagram
+data flow diagram,data structure diagram
+data-sensitive fault,program-sensitive fault
+data structure diagram,data flow diagram
+deblock,block
+design description,requirements specification
+design requirement,functional requirement
+design requirement,interface requirement
+design requirement,performance requirement
+design requirement,physical requirement
+design review,code review
+design review,formal qualification review
+design review,requirements review
+design review,test readiness review
+destination address,source address
+deviation,engineering change
+deviation,waiver
+diagonal microinstruction,horizontal microinstruction
+diagonal microinstruction,vertical microinstruction
+direct address,immediate data
+direct address,indirect address
+direct address,n-level address
+direct instruction,immediate effective instruction
+directed graph,undirected graph
+down time,up time
+downward compression,lateral compression
+downward compression,upward compression
+dyadic selective construct,monadic selective construct
+dynamic analysis,static analysis
+dynamic binding,static binding
+dynamic breakpoint,static breakpoint
+dynamic dump,static dump
+early-failure period,constant-failure period
+early-failure period,wearout-failure period
+efferent,afferent
+engineering change,deviation
+engineering change,waiver
+entry point,exit
+enumeration type,character type
+enumeration type,integer type
+enumeration type,logical type
+enumeration type,real type
+epilog breakpoint,prolog breakpoint
+execution trace,fail soft
+fault masking,assembly language
+fault masking,fourth generation language
+fault masking,high order language
+fault masking,machine language
+foreground,background
+foreground processing,background processing
+formal qualification review,code review
+formal qualification review,design review
+formal qualification review,requirements review
+formal qualification review,test readiness review
+four-address instruction,one-address instruction
+four-address instruction,two-address instruction
+four-address instruction,three-address instruction
+four-address instruction,zero-address instruction
+fourth generation language,machine language
+fourth generation language,assembly language
+fourth generation language,high order language
+fourth generation language,fifth generation language
+functional baseline,allocated baseline
+functional baseline,developmental configuration
+functional baseline,product baseline
+functional cohesion,coincidental communicational cohesion
+functional cohesion,logical cohesion
+functional cohesion,procedural cohesion
+functional cohesion,sequential cohesion
+functional cohesion,temporal cohesion
+functional requirement,design requirement
+functional requirement,interface requirement
+functional requirement,performance requirement
+functional requirement,physical requirement
+functional testing,structural testing
+glass box,black box
+global compaction,local compaction
+hard failure,soft failure
+hardware,software
+high order language,assembly language
+high order language,fourth generation language
+high order language,machine language
+host machine,target machine
+hybrid coupling,common-environment coupling
+hybrid coupling,content coupling
+hybrid coupling,control coupling
+hybrid coupling,data coupling
+hybrid coupling,pathological coupling
+implementation requirement,design requirement
+implementation requirement,interface requirement
+implementation requirement,performance requirement
+implementation requirement,physical requirement
+incremental development,waterfall model
+the operand,direct address
+the operand,immediate data
+indirect instruction,direct instruction
+indirect instruction,immediate instruction
+input,output
+input assertion,loop assertion
+input assertion,output assertion
+integer type,character type
+integer type,enumeration type
+integer type,logical type
+integer type,real type
+interactive,batch
+interface requirement,design requirement
+interface requirement,requirement
+interface requirement,functional performance requirement
+interface requirement,physical requirement
+interpret,assemble
+interpret,compile
+interpreter,assembler
+interpreter,compiler
+interpretive code,assembly code
+interpretive code,compiler code
+interpretive code,machine code
+lateral compression,downward compression
+lateral compression,upward compression
+load,store
+load module,assembled origin
+local compaction,global compaction
+local data,global data
+local variable,global variable
+logical cohesion,coincidental cohesion
+logical cohesion,communicational cohesion
+logical cohesion,functional cohesion
+logical cohesion,procedural cohesion
+logical cohesion,sequential cohesion
+logical cohesion,temporal cohesion
+logical type,character type
+logical type,enumeration type
+logical type,integer type
+logical type,real type
+loop assertion,input assertion
+loop assertion,output assertion
+loop body,loop control
+machine code,assembly code
+machine code,compiler code
+machine code,interpretive code
+menu-driven,command-driven
+monadic selective construct,dyadic selective construct
+monitor,copy
+multiaddress instruction,one-address instruction
+multiprocessing,multiprogramming
+n-level address,direct address
+n-level address,immediate data
+n-plus-one address instruction,n-address instruction
+nondestructive read,destructive read
+object program,source program
+occupational title standard,on-line
+on-line,batch
+one-address instruction,multiaddress four-two-address address instruction
+one-address instruction,zero-address instruction
+one-ahead addressing,repetitive addressing
+open subroutine,closed subroutine
+operation field,address field
+operational testing,development testing
+origin,starting address
+output,input
+partial correctness,total correctness
+path testing,branch testing
+path testing,statement testing
+pathological coupling,common-environment content coupling
+pathological coupling,control coupling
+pathological coupling,data coupling
+pathological coupling,hybrid coupling
+pause,stop
+perfective maintenance,adaptive maintenance
+perfective maintenance,corrective maintenance
+performance requirement,design requirement
+performance requirement,requirement
+performance requirement,interface requirement
+performance requirement,physical requirement
+precision,postprocessor
+problem state,supervisor state
+procedural cohesion,coincidental cohesion
+product baseline,allocated baseline
+product baseline,developmental configuration
+product baseline,functional baseline
+program-sensitive fault,data-sensitive fault
+programmer manual,query language
+programmer manual,specification language
+quality assurance,quality control
+query language,programming language
+query language,specification language
+read,write
+real storage,virtual storage
+real time,batch
+real type,character type
+real type,enumeration type
+real type,integer type
+real type,logical type
+relative address,absolute address
+relocating assembler,absolute assembler
+relocating loader,absolute loader
+requirements review,code review
+requirements review,design review
+requirements review,formal qualification review
+requirements review,test readiness review
+requirements specification,design description
+residual control,bit steering
+roll out,roll in
+semantic error,syntactic error
+semantics,syntax
+simple buffering,dynamic buffering
+simplicity,complexity
+simultaneous,concurrent
+soft failure,hard failure
+software development library,master library
+software development library,production library
+software development library,software repository
+software development library,system library
+software life cycle,software development cycle
+spiral model,waterfall model
+starting address,origin
+static analysis,dynamic analysis
+static binding,dynamic binding
+static breakpoint,dynamic breakpoint
+static dump,dynamic dump
+stop,pause
+store,load
+stratified language,unstratified language
+structural testing,functional testing
+supervisor state,problem state
+support software,application software
+syntactic error,semantic error
+system development cycle,system life cycle
+system software,application software
+target language,source language
+temporal cohesion,coincidental cohesion
+temporal cohesion,communicational cohesion
+temporal cohesion,functional cohesion
+temporal cohesion,logical cohesion
+temporal cohesion,procedural cohesion
+temporal cohesion,sequential cohesion
+test readiness review,code review
+test readiness review,formal qualification review
+test readiness review,design review
+test readiness review,requirements review
+three-address instruction,one-address instruction
+three-address instruction,two-address instruction
+three-address instruction,four-address instruction
+three-address instruction,zero-address instruction
+three-plus-one address instruction,one-plus-one address address instruction
+timing,sizing
+total correctness,partial correctness
+turnkey,single-level encoding
+unwind,down
+virtual storage,real storage
+waiver,deviation
+waiver,engineering change
+waterfall model,incremental development
+waterfall model,rapid prototyping
+waterfall model,spiral model
+wearout-failure period,constant-failure period
+wearout-failure period,early-failure period

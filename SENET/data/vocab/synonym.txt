@@ -1,0 +1,581 @@
+acceptance-test-driven development,specification by example
+daily scrum,daily stand-up
+envisioning,product planning
+implementable story,sprintable story
+minimum releasable features,must-have features
+must-have features,minimum releasable features
+plan-driven process,anticipatory process
+plan-driven process,predictive process
+plan-driven process,prescriptive process
+plan-driven process,sequential process
+plan-driven process,traditional development process
+plan-driven process,waterfall process
+product backlog grooming,product backlog refinement
+product backlog refinement,product backlog grooming
+project chartering,project inception
+project chartering,project initiation
+sprint mapping,PBI slotting
+waterscrum,Scrummerfall
+absolute address,explicit address
+absolute address,specific address
+absolute code,specific code
+address field,address part
+argument,actual parameter
+assembler language,assembler code
+assembly language,assembler language
+assembly language,low level language
+assembly language,second generation language
+atomic type,primitive type
+bit steering,immediate control
+black box,configuration diagram
+black box,system resources chart
+blocking factor,initial program load
+box diagram,Chapin chart
+box diagram,Nassi-Shneiderman chart
+box diagram,program structure diagram
+branch,branchpoint
+call by reference,call by address
+call by reference,call by location
+call graph,call tree
+call graph,tier chart
+case,multiple exclusive selective construct
+change dump,differential dump
+code breakpoint,control breakpoint
+code generator,source code generator
+cohesion,module strength
+common-environment coupling,common coupling
+common storage,common area
+common storage,common block
+compiler generator,compiler compiler
+compiler generator,metacompiler
+component testing,module testing
+concurrent,parallel
+configuration control,change control
+control flow,flow of control
+data breakpoint,storage breakpoint
+data coupling,input-output coupling
+data flow diagram,data flowchart
+data flow diagram,data flow graph
+data-sensitive fault,pattern-sensitive fault
+design description,design document
+design description,design specification
+direct address,one-level address
+directed graph,digraph
+disassembler,deassembler
+early-failure period,burn-in period
+entity-relationship relationships among them,entity-relationship map
+entry point,entrance
+entry point,entry
+epilog breakpoint,postamble breakpoint
+error model,error prediction model
+error seeding,bug seeding
+error seeding,fault seeding
+execution time,run time
+execution time,running time
+execution trace,code trace
+execution trace,control-flow trace
+fault masking,adaptability
+functional testing,black-box testing
+generality,synthetic address
+glass box,white box
+global data,common data
+high order language,high level language
+high order language,higher order language
+high order language,third generation language
+housekeeping operation,overhead operation
+idle time,standby time
+incremental compiler,conversational compiler
+incremental compiler,interactive compiler
+incremental compiler,on-line compiler
+the operand,multilevel address
+installation manual,program counter
+interrupt,interruption
+job stream,run stream
+jump,transfer
+kernel,nucleus
+kernel,resident control program
+link,linkage
+linkage editor,linker
+loop,iterative construct
+loop assertion,loop invariant
+machine code,first generation fifth generation language
+machine code,fourth generation language
+machine code,high order language
+machine code,symbolic language
+macrogenerator,macro generating program
+maintenance,software maintenance
+memory compaction,garbage collection
+mixed mode,mixed type
+modular decomposition,modularization
+monitor,execution monitor
+multiaddress instruction,multiple-address instruction
+no-operation,do-nothing operation
+object program,target program
+offset,relocation factor
+one-address instruction,single-address instruction
+one-address instruction,single-operand instruction
+open subroutine,direct insert subroutine
+operation code,op code
+operation field,function field
+operation field,operation part
+paging,block allocation
+pause,halt
+portability,transportability
+problem state,slave state
+problem state,user state
+procedural language,procedure-oriented language
+program status word,status word
+programmer manual,project notebook
+pseudo instruction,pragma
+pseudo instruction,pseudo-op
+pseudo instruction,pseudo operation
+quality attribute,quality factor
+reentrant,reenterable
+relocating loader,relative loader
+remote job entry,remote batch entry
+restart,rescue point
+reversible execution,backward execution
+reversible execution,playback
+reversible execution,replay
+reversible execution,reverse execution
+sequential,serial
+sequential cohesion,sequential construct
+single-step operation,single-step execution
+single-step operation,step-by-step operation
+software development file,software development folder
+software development file,software development notebook
+software development file,unit development folder
+software development library,project library
+software development library,program support library
+software item,program library
+status code,condition code
+stop,halt
+structural testing,glass-box testing
+subroutine trace,call trace
+supervisor state,executive state
+supervisor state,master state
+supervisor state,privileged state
+supervisory program,control program
+supervisory program,executive
+supervisory program,executive program
+supervisory program,supervisor
+support manual,maintenance manual
+syntactic error,syntax error
+target language,object language
+test case generator,test data generator
+test case generator,test generator
+test case specification,test description
+test case specification,test specification
+test driver,test harness
+test report,test summary report
+text editor,editor
+transaction analysis,transaction-centered design
+transform analysis,transformation analysis
+transform analysis,transform-centered design
+turnkey,double-operand instruction
+user manual,user guide
+word,computer word
+absolute address,explicit address
+absolute address,specific address
+absolute code,specific code
+acceptance testing,validation testing
+acceptance testing,acceptance test
+acquirer,buyer
+acquirer,customer
+acquirer,owner
+acquirer,purchaser
+acquisition,outsourcing
+actual cost,actual cost of work performed
+address field,address part
+alternate flow,alternate path
+aperiodic task,asynchronous task
+application,application system
+application,information system
+architecture,architectural structure
+argument sort,input sort
+artificial language,formal language
+assembly code,assembler code
+assembly language,assembler language
+assembly language,low-level language
+assembly language,second-generation language
+assignment,binding
+asynchronous message communication,loosely coupled message communication
+atomic type,primitive type
+backup,back-up
+base functional component,functional service
+basic flow,basic path
+basic flow,happy day scenario
+bit steering,immediate control
+block diagram,configuration diagram
+block diagram,system resources chart
+box diagram,Chapin chart
+box diagram,Nassi-Shneiderman chart
+call by reference,call by address
+call by reference,call by location
+call graph,call tree
+call graph,tier chart
+case,multiple exclusive selective construct
+category entity,subclass
+category entity,subtype
+change,enhancement
+change dump,differential dump
+class,type
+closed term,ground term
+code breakpoint,control breakpoint
+cohesion,module strength
+collection-valued property,collection property
+command-driven,command driven
+common cause,random cause
+common storage,common area
+common storage,common block
+common-environment coupling,common coupling
+common-environment coupling,common environment coupling
+compiler generator,compiler compiler
+compiler generator,metacompiler
+computer center,data processing center
+computer-aided software engineering,computer aided software engineering
+concept of operations document,operational concept description
+concurrent,parallel
+configuration control,change control
+configuration control board,change control board
+control flow,flow of control
+control loopback,feedback
+control point,project control point
+cost-plus-fee,cost plus fee
+cross-reference generator,cross-referencer
+customer,acquirer
+customer,buyer
+customer,beneficiary
+customer,purchaser
+data breakpoint,storage breakpoint
+data coupling,input-output coupling
+data date,as-of date
+data date,time-now date
+data element,data item
+data flow diagram,data flowchart
+data flow diagram,data flow graph
+data processing,automatic data processing
+data processing system,computer system
+data processing system,computing system
+database,data base
+data-sensitive fault,pattern-sensitive fault
+dependent entity,identifier-dependent entity
+derived property,derived attribute
+derived property,derived participant party
+design constraint,software design requirement
+design description,design document
+design description,design specification
+design-to cost,design to cost
+design-to-cost,cost as an independent variable
+design-to-cost,design to cost
+detailed design description,detailed design specification
+digit numeric character,numeric character
+direct address,one-level address
+directed graph,digraph
+discriminator,category discriminator
+dumb terminal,nonprogrammable terminal
+early-failure period,burn-in period
+earned value,budgeted cost of work performed
+electronic mail,e-mail
+end user,end-user
+endeavor,endeavour
+entity-relationship diagram,entity-relationship map
+entry point,entrance
+entry point,entry
+epilog breakpoint,postamble breakpoint
+error model,error prediction model
+error seeding,bug seeding
+error seeding,fault seeding
+evaluation technology,technology used for evaluation
+execution time,run time
+execution time,running time
+execution trace,code trace
+execution trace,control flow trace
+extendability,expandability
+extendability,extensibility
+extensional set,current extent
+fail safe,fail-safe
+fail safe,failsafe
+failure rate,failure ratio
+fault,bug
+fault-tolerant,fault tolerant
+flexibility,adaptability
+float,slack
+flowchart,flow chart
+flowchart,flow diagram
+foreign key,migrated key
+formal requirements language,verifiable requirements language
+functional manager,line manager
+functional process,transactional process
+functional testing,black-box testing
+generalization,categorization
+generalization taxonomy,generalization hierarchy
+generalization taxonomy,generalization network
+generated address,synthetic address
+generic entity,superclass
+generic entity,supertype
+glass box,white box
+global data,common data
+Government-off-the-Shelf,Government-Off-The-Shelf
+Government-off-the-Shelf,Government off the Shelf
+Government-off-the-Shelf,Government Off The Shelf
+high-order language,high-level language
+high-order language,high order language
+high-order language,higher order language
+high-order language,third-generation language
+housekeeping operation,overhead operation
+human behavior,human behaviour
+ICOM code,arrow reference
+idle time,standby time
+implementer,developer
+incremental compiler,conversational compiler
+incremental compiler,interactive compiler
+incremental compiler,online compiler
+independent entity,identifier-independent entity
+indirect address,multilevel address
+information technology,Information Technology
+instruction counter,program counter
+instruction set,instruction repertoire
+integrated circuit,microchip
+integrated circuit,chip
+integration test,integration testing
+interrupt,interruption
+job stream,run stream
+jump,transfer
+kernel,nucleus
+kernel,resident control program
+language binding,language mapping
+life cycle cost,life-cycle cost
+life cycle model,life-cycle model
+life cycle processes,life-cycle processes
+linkage editor,linker
+log off,log out
+log on,log in
+logical relationship,dependency
+loop,iterative construct
+loop assertion,loop invariant
+low-level design,detailed design
+machine language,first-generation language
+machine language,machine-oriented language
+machine-readable,machine readable
+macro,macro definition
+macrogenerator,macro-generating program
+magic number,magic string
+maintenance,software maintenance
+maintenance program,maintenance infrastructure
+material,materiel
+memory compaction,garbage collection
+metamodel,meta-model
+microcode,micro code
+mixed mode,mixed type
+modification request,change request
+modular decomposition,modularization
+module data,instance data
+module data,class data
+monitor,execution monitor
+multiaddress instruction,multiple-address instruction
+multiset cardinality,cardinality of a multiset
+non-deliverable item,nondeliverable item
+nondelivered source statement,non-delivered source statement
+nondestructive read,non-destructive read
+nondeveloped source statement,non-developed source statement
+nonfunctional requirement,design constraints
+nonfunctional requirement,non-functional requirement
+nonidentifying relationship,non-identifying relationship
+nonintrinsic relationship,non-intrinsic relationship
+nonkey attribute,non-key attribute
+nonprocedural programming language,non-procedural programming language
+no-operation,do-nothing operation
+notebook computer,laptop computer
+object identifier,oid
+object program,target program
+objective,purpose
+offset,relocation factor
+one-address instruction,single-address instruction
+one-address instruction,single-operand instruction
+open subroutine,direct insert subroutine
+operation code,op code
+operation field,function field
+operation field,operation part
+operator manual,operator's manual
+operator manual,operations manual
+output sort,range sort
+paging,block allocation
+partial cluster,incomplete cluster
+pass-fail criteria,pass-fail criteria
+pause,halt
+planned value,budgeted cost of work scheduled
+portability,transportability
+postcondition,post-condition
+postmortem dump,post-mortem dump
+postprocessor,post-processor
+precedence diagramming method,activity-on-node
+precondition,pre-condition
+problem definition,problem description
+problem state,slave state
+problem state,user state
+procedural language,procedure-oriented language
+product,material
+product,goods
+programmable terminal,intelligent terminal
+project file,project notebook
+project schedule network diagram,logic diagram
+prolog breakpoint,preamble breakpoint
+pseudo instruction,pragma
+pseudo instruction,pseudo-op
+pseudo instruction,pseudo operation
+real-time,realtime
+real-time,real time
+reentrant,reenterable
+reentrant,re-entrant
+reentry point,re-entry point
+reflexive,recursive
+relocating loader,relative loader
+remote job entry,remote batch entry
+repair,defect removal
+request for proposal,request for tender
+request for proposal,solicitation package
+requirements partitioning,decomposition
+reserve,buffer
+reserve,contingency allowanceH
+restart point,rescue point
+reversible execution,backward execution
+reversible execution,playback
+reversible execution,replay
+reversible execution,reverse execution
+risk acceptance,risk assumption
+root arrow segment,root
+root arrow segment,root segment
+root cause analysis,root-cause analysis
+root-cause analysis,root cause analysis
+scalar-valued property,scalar property
+scenario,script
+scenario,set
+scenario,suite
+schedule model,project schedule
+schedule network analysis,schedule analysis
+scheduled finish date,planned finish date
+scheduled start date,planned start date
+scope creep,scope gallop
+sequential,serial
+serial construct,sequential construct
+single-level encoding,single level encoding
+single-step operation,single-step execution
+single-step operation,step-by-step operation
+software design notation,software design representation
+software development file,software development folder
+software development file,software development notebook
+software development file,unit development folder
+software development library,project library
+software development library,program support library
+software library,program library
+software project life cycle model,software project life cycle
+software project life cycle process,software project life cycle
+special cause,assignable cause
+status code,condition code
+stop,halt
+storage,storage device
+structural testing,glass-box testing
+structural testing,white-box testing
+structure chart,hierarchy chart
+structure chart,program structure chart
+subclass,subtype
+subclass cluster,category cluster
+subroutine trace,call trace
+summary activity,hammock activity
+superclass,supertype
+supervisor state,executive state
+supervisor state,master state
+supervisor state,privileged state
+supervisory program,control program
+supervisory program,executive
+supervisory program,executive program
+supervisory program,supervisor
+supplier,contractor
+supplier,producer
+supplier,seller
+supplier,vendor
+support manual,maintenance manual
+synchronous message communication,tightly coupled message communication
+synchronous message communication with reply,tightly coupled message communication with reply
+synchronous message communication without reply,tightly coupled message communication without reply
+syntactic error,syntax error
+system analysis,systems analysis
+system follow-up,post-implementation review
+system follow-up,post-development review
+system-of-interest,system of interest
+target language,object language
+technical contact,subject-matter expert
+technical contact,subject matter expert
+test case generator,test data generator
+test case generator,test generator
+test driver,test harness
+test report,test summary report
+text editor,editor
+text processing,word processing
+top-down design,top-down decomposition
+total cluster,complete cluster
+transaction analysis,transaction-centered design
+transform analysis,transformation analysis
+transform analysis,transform-centered design
+transition occurrence,transition rule
+two-address instruction,double-operand instruction
+two-level encoding,two level encoding
+usability test,fitness-for-use test
+user manual,user guide
+user manual,user's manual
+user manual,users' manual
+variable trace,data-flow trace
+variable trace,data trace
+variable trace,value trace
+video display terminal,visual display terminal
+video display terminal,visual display unit
+virtual storage,multilevel storage
+virtual storage,virtual memory
+working space,working area
+working space,working storage
+agile software management,agile software development
+agile software management,agile methods
+agile software management,agile project management
+acceptance test,functional test
+acceptance test,customer test
+acceptance test,story test
+backlog,product backlog 
+backlog grooming,backlog refinement
+big visible charts,information radiator
+burndown chart,release burndown chart
+burndown chart,iteration burndown chart
+continuous improvement,kaizen
+continuous integration,continuous delivery
+continuous integration,continuous deployment
+daily scrum,daily standup
+daily scrum,daily meeting
+daily scrum,daily huddle
+daily standup,daily scrum
+daily standup,standup meeting
+daily standup,daily meeting
+daily standup,daily huddle
+definition of done,single done
+definition of done,done
+definition of done,done-done-done
+definition of done,done list
+definition of done,done checklist
+definition of done,product sashimi
+definition of done,task complete definition
+definition of done,punch list
+feature creep,requirements creep
+feature creep,scope creep
+iteration,sprint
+iteration,timebox
+iterative development,incremental development
+pair programming,pairing
+pair programming,paired programming
+pair programming,programming in pairs
+product backlog,backlog
+relative estimation,silent grouping
+relative estimation,affinity testing 
+sprint backlog,iteration backlog 
+standup-daily meeting,daily scrum
+standup-daily meeting,daily standup
+standup-daily meeting,daily huddle
+stand up,daily meeting

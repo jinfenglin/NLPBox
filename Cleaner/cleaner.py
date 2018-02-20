@@ -1,5 +1,14 @@
 import re
 
+from nltk import PorterStemmer
+
+
+def clean_phrase(phrase):
+    phrase = phrase.strip("\n\t\r ")
+    phrase = keep_only_given_chars(phrase, re_char_white_list="\w\-&\'\s")
+    phrase = merge_white_space(phrase)
+    return phrase
+
 
 def merge_white_space(text):
     text = re.sub("[^\S\r\n]+", " ", text)
@@ -18,7 +27,7 @@ def remove_space_around_char(char="-", text=""):
     return text
 
 
-def keep_only_given_chars(re_char_white_list="\w\-&\s\.\,\'\"", text=""):
+def keep_only_given_chars(text="", re_char_white_list="\w\-&\s\.\,\'\""):
     """
     Remove all characters not in the white list.
     :param chars_re: Regulra expression indicating the legal chars
@@ -36,6 +45,23 @@ def esapce_sql_variable_quote(sql_variable):
     :return:
     """
     return re.sub("\'", "\'\'", sql_variable)
+
+
+def stem_tokens(tokens):
+    """
+    Stem tokens
+    :param self:
+    :param words:
+    :return:
+    """
+    porter_stemmer = PorterStemmer()
+    return [porter_stemmer.stem(x) for x in tokens]
+
+
+def stem_string(str, regx_split_chars="[\s]"):
+    merge_white_space(str)
+    tokens = re.split(regx_split_chars, str)
+    return stem_tokens(tokens)
 
 
 if __name__ == "__main__":

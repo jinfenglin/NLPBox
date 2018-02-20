@@ -1,8 +1,9 @@
-from nltk.stem.porter import PorterStemmer
 import nltk, string
 from sklearn.feature_extraction.text import TfidfVectorizer
 import common
-import re
+import spacy
+from Cleaner.cleaner import *
+from nltk.tokenize import sent_tokenize
 
 
 class FeaturePipe:
@@ -29,7 +30,6 @@ class SENETFeaturePipe:
     def __init__(self):
         self.func_pip = [
             self.common_token_len,
-            self.common_token_len_with_slash,
 
             self.same_postfix,
             self.same_prefix,
@@ -49,74 +49,33 @@ class SENETFeaturePipe:
 
             self.wordnet_last_token_h_similarity,
             self.one_side_single_token,
-            self.token_is_substr
         ]
-
-    def __stem_Tokens(self, words):
-        porter_stemmer = PorterStemmer()
-        return [porter_stemmer.stem(x) for x in words.split(" ")]
-
-    def token_is_substr(self, wp_raw_material):
-        w1_tk = re.split("[\s-]", w1)
-        w2_tk = re.split("[\s-]", w2)
-        count = 0
-        for tk1 in w1_tk:
-            for tk2 in w2_tk:
-                if tk1 in tk2 or tk2 in tk1:
-                    count += 1
-        return count
 
     def common_token_len(self, wp_raw_material):
         """
         Number of common tokens. Split on white space then stem each token
         :return:
         """
-        w1_tk = set(self.__stem_Tokens(w1))
-        w2_tk = set(self.__stem_Tokens(w2))
-        common_len = len(w1_tk.intersection(w2_tk))
-        return common_len
-
-    def common_token_len_with_slash(self, wp_raw_material):
-        """
-        If a token in the phrases have '-', split on '-' as well then calculate the interaction
-        :param w1:
-        :param d1:
-        :param w2:
-        :param d2:
-        :return:
-        """
-        w1_tk = set(re.split("[\s-]", w1))
-        w2_tk = set(re.split("[\s-]", w2))
+        w1_tk = set(self.w1_stem_tokens)
+        w2_tk = set(self.w2_stem_tokens)
         common_len = len(w1_tk.intersection(w2_tk))
         return common_len
 
     def same_prefix(self, wp_raw_material):
-        w1_tk = self.__stem_Tokens(w1)
-        w2_tk = self.__stem_Tokens(w2)
-        if w1_tk[0] == w2_tk[0]:
+        if self.w1_stem_tokens[0] == self.w2_stem_tokens[0]:
             return 1
         else:
             return 0
 
     def same_postfix(self, wp_raw_material):
-        w1_tk = self.__stem_Tokens(w1)
-        w2_tk = self.__stem_Tokens(w2)
-        if w1_tk[-1] == w2_tk[-1]:
+        if self.w1_stem_tokens[-1] == self.w2_stem_tokens[-1]:
             return 1
         else:
             return 0
 
-    def get_feature(self, wp_raw_material):
-        feature_vec = []
-        for func in self.func_pip:
-            feature_vec.append(func(wp_raw_material))
-        return feature_vec
-
     def token_num_same(self, wp_raw_material):
         # Check if two words have same length
-        d1_tk = self.__stem_Tokens(w1)
-        d2_tk = self.__stem_Tokens(w2)
-        return len(d1_tk) == len(d2_tk)
+        return len(self.w1_stem_tokens) == len(self.w2_stem_tokens)
 
     def include_each_other(self, wp_raw_material):
         # Count how many time each word appear on each other's definition
@@ -327,3 +286,48 @@ class SENETFeaturePipe:
         if (l_tk2 == 1):
             cnt += 1
         return cnt
+
+    def get_feature(self, wp_raw_material):
+        # Prepare shared nlp resources before running pipeline for one raw_material
+        nlp = spacy.load("en")
+        feature_vec = []
+        self.w1 = wp_raw_material.get_w1_str()
+        self.w2 = wp_raw_material.get_w2_str()
+        self.w1_stem_tokens = stem_string("[\s-]", self.w1)
+        self.w2_stem_tokens = stem_string("[\s-]", self.w2)
+
+        ## Stackoverflow ##
+        self.w1_stk_clean_questoins = nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_question(self.w1)))
+        self.w2_stk_clean_questions = nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_question(self.w2)))
+        self.w1_stk_clean_answers = nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_answer(self.w1)))
+        self.w2_stk_clean_answers = nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_answer(self.w2)))
+        self.w1_stk_related_questions = nlp(wp_raw_material.get_stackoverflow_related_links(self.w1))
+        self.w2_stk_related_questions = nlp(wp_raw_material.get_stackoverflow_related_links(self.w2))
+
+        ## Quora ##
+        self.w1_quora_clean_questions = nlp(self.__clean_docs(wp_raw_material.get_quora_question(self.w1)))
+        self.w2_quora_clean_questions = nlp(self.__clean_docs(wp_raw_material.get_quora_question(self.w2)))
+        self.w1_quora_clean_answers = nlp(self.__clean_docs(wp_raw_material.get_quora_answer(self.w1)))
+        self.w2_quora_clean_answers = nlp(self.__clean_docs(wp_raw_material.get_quora_answer(self.w2)))
+        self.w1_quora_related_questions = nlp(self.__clean_docs(wp_raw_material.get_quora_related_links(self.w1)))
+        self.w2_quora_related_questions = nlp(self.__clean_docs(wp_raw_material.get_quora_related_links(self.w2)))
+
+        ## Regular ##
+        self.w1_regular_clean_doc = nlp(self.__clean_docs(wp_raw_material.get_regular_doc_content(self.w1)))
+        self.w2_regular_clean_doc = nlp(self.__clean_docs(wp_raw_material.get_regular_doc_content(self.w2)))
+
+        ## PcMag ##
+        self.w1_pcMag_clean_doc = nlp(self.__clean_docs(wp_raw_material.get_pcMag_definition(self.w1)))
+        self.w2_pcMag_clean_doc = nlp(self.__clean_docs(wp_raw_material.get_pcMag_definition(self.w2)))
+
+        for func in self.func_pip:
+            feature_vec.append(func(wp_raw_material))
+        return feature_vec
+
+    def __clean_docs(self, docs):
+        clean_doc = []
+        for doc in docs:
+            doc = keep_only_given_chars(doc)
+            doc = merge_white_space(doc)
+            clean_doc.append(doc)
+        return "\n".join(clean_doc)

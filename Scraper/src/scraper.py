@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import os
 from GoogleScraper import scrape_with_config, GoogleSearchError
 from common import *
 import shutil
 import urllib
 import time
-from lxml import html
 from urllib3 import ProxyManager, make_headers, disable_warnings, exceptions
 import random
 import logging
@@ -79,9 +77,12 @@ class GoogleScraperWraper:
     def __request(self, link, timeout):
         headers = make_headers()
         request = urllib.request.Request(link, None, headers)
-        with urllib.request.urlopen(request, timeout=timeout) as url:
-            html_page = url.read()
-            return html_page
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as url:
+                html_page = url.read()
+                return html_page
+        except Exception as e:
+            return ""
 
     def __request_with_proxy(self, link, timeout):
         headers = make_headers()
