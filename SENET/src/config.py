@@ -6,3 +6,4 @@ SENET_DATA = os.path.join(PROJECT_ROOT, "data")
 VOCAB_DIR = os.path.join(SENET_DATA, "vocab")
 
 RNN_MODEL_PATH = os.path.join(SENET_DATA, "rnn.ckpt")
+RNN_ENCODER_PATH = "encoder.pickle"

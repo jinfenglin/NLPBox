@@ -1,7 +1,6 @@
 import random
 import numpy as np
 
-
 class RawMaterial:
     def __init__(self, raw_label, raw_content):
         self.raw_label = raw_label

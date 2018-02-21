@@ -12,8 +12,11 @@ class Sqlite3Manger:
         self.commit_period = commit_period
 
     def __del__(self):
-        self.conn.commit()  # commit result before quiting
-        self.conn.close()
+        try:
+            self.conn.commit()  # commit result before quiting
+            self.conn.close()
+        except Exception as e:
+            self.logger.exception("Close Db Exception:{}".format(e))
 
     def __execute(self, sql):
         """

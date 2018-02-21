@@ -1,0 +1,161 @@
+Label encoding:no=[1, 0]
+yes=[0, 1]
+label,correctness,w1,w2,confidence,features
+yes	Correct	inverse engineering		reverse engineering	[[  2.00769037e-08   1.00000000e+00]]	[[[ 1.  1.  0.  1.  2.  1.  0.]]]
+no	Incorrect	supervisor state		operation code	[[ 0.48955739  0.51044261]]	[[[  0.           0.           0.           1.          10.           0.44444444
+     0.        ]]]
+no	Incorrect	u-curve optimization		verb phrase	[[ 0.48925275  0.51074725]]	[[[  0.           0.           0.           0.          16.           0.52631579
+     0.        ]]]
+yes	Correct	flag		indicator	[[ 0.49043381  0.50956619]]	[[[ 0.          0.          0.          1.          8.          0.72727273
+    2.        ]]]
+no	Incorrect	application-oriented language		essential scrum	[[ 0.48925033  0.51074964]]	[[[  0.           0.           0.           0.          25.           0.35294118
+     0.        ]]]
+yes	Correct	model		workload model	[[ 0.06310774  0.93689221]]	[[[ 1.  1.  0.  0.  9.  1.  1.]]]
+yes	Correct	prolog breakpoint		preamble breakpoint	[[ 0.05854384  0.9414562 ]]	[[[1 1 0 1 6 0 0]]]
+yes	Correct	variant		variation point	[[ 0.4885762   0.51142377]]	[[[ 0.   0.   0.   0.   8.   0.7  1. ]]]
+no	Incorrect	grooming		design-to cost	[[ 0.48926559  0.51073438]]	[[[  0.           0.           0.           0.          12.           0.28571429
+     1.        ]]]
+no	Incorrect	composite type		implementation phase	[[ 0.48925266  0.51074731]]	[[[  0.           0.           0.           1.          16.           0.36363636
+     0.        ]]]
+recall:1, precision:0.0, f1:0.0, accuracy:0.5 
+no	Correct	contractual requirement		standup	[[ 0.82334495  0.17665501]]	[[[ 0  0  0  0 20  0  1]]]
+yes	Correct	storage capacity		memory capacity	[[ 0.012637    0.98736298]]	[[[ 1.  1.  0.  1.  6.  1.  0.]]]
+no	Correct	program construct		integrity level scheme	[[ 0.8222447   0.17775533]]	[[[  0.    0.    0.    0.   18.    0.8   0. ]]]
+yes	Correct	software development		software development notebook	[[ 0.04492253  0.95507747]]	[[[ 2.     0.     1.     0.     9.     0.375  0.   ]]]
+yes	Correct	subroutine trace		variable trace	[[ 0.02235542  0.97764456]]	[[[ 1.  1.  0.  1.  8.  1.  0.]]]
+yes	Correct	request for proposal		request for tender	[[ 0.01564352  0.98435646]]	[[[ 2.          0.          1.          1.          8.          0.83333333
+    0.        ]]]
+yes	Incorrect	hierarchical decomposition		stepwise refinement	[[ 0.8233164   0.17668353]]	[[[  0.           0.           0.           1.          21.           0.57142857
+     0.        ]]]
+yes	Correct	relationship		nonidentifying relationship	[[ 0.05098906  0.94901097]]	[[[  1.   1.   0.   0.  15.   1.   1.]]]
+no	Correct	segment		synthetic address	[[ 0.81664431  0.18335567]]	[[[  0.    0.    0.    0.   14.    0.5   1. ]]]
+yes	Correct	nonidentifying relationship		optional nonidentifying relationship	[[ 0.01560026  0.9843998 ]]	[[[ 2.  1.  0.  0.  9.  1.  0.]]]
+recall:0.75, precision:1.0, f1:0.8571428571428571, accuracy:0.9 
+no	Correct	preparation time		entity type	[[ 0.65140963  0.34859043]]	[[[  0.           0.           0.           1.          10.           0.54545455
+     0.        ]]]
+yes	Correct	design		data-structure-oriented design	[[ 0.28099534  0.71900475]]	[[[  1.   1.   0.   0.  24.   1.   1.]]]
+yes	Correct	compiler generator		compiler compiler	[[ 0.06809092  0.93190914]]	[[[ 1.   0.   1.   1.   8.   0.6  0. ]]]
+no	Incorrect	upstream		commit	[[ 0.16652904  0.83347088]]	[[[0 0 0 1 8 0 2]]]
+no	Correct	temporal cohesion		software design representation	[[ 0.65431869  0.34568131]]	[[[  0.           0.           0.           0.          22.           0.66666667
+     0.        ]]]
+no	Correct	process capability determination sponsor		tag slide	[[ 0.65431869  0.34568131]]	[[[  0.    0.    0.    0.   35.    0.5   0. ]]]
+no	Correct	chickens and pigs		delimiter	[[ 0.65430498  0.34569502]]	[[[ 0  0  0  0 16  0  1]]]
+yes	Correct	requirements specification		system requirements specification	[[ 0.05811127  0.94188875]]	[[[ 2.  1.  0.  0.  7.  1.  0.]]]
+no	Incorrect	timeboxing		upload	[[ 0.22965685  0.77034318]]	[[[0 0 0 1 9 0 2]]]
+no	Correct	multi-valued property		natural language	[[ 0.6543175   0.34568256]]	[[[  0.           0.           0.           0.          17.           0.53333333
+     0.        ]]]
+recall:1.0, precision:0.7142857142857143, f1:0.8333333333333333, accuracy:0.8 
+no	Incorrect	system stakeholder		indirect measure	[[ 0.48956993  0.5104301 ]]	[[[  0.           0.           0.           1.          15.           0.47058824
+     0.        ]]]
+no	Incorrect	program mutation		program construct	[[ 0.05678733  0.94321269]]	[[[ 1.          0.          1.          1.          8.          0.42857143
+    0.        ]]]
+yes	Correct	loader		linkage editor	[[ 0.47341129  0.52658868]]	[[[  0.           0.           0.           0.          10.           0.57142857
+     1.        ]]]
+yes	Correct	peer review		inspection	[[ 0.39460719  0.60539287]]	[[[  0.   0.   0.   0.  10.   1.   1.]]]
+no	Incorrect	functional cohesion		refactoring	[[ 0.48964569  0.51035428]]	[[[ 0  0  0  0 16  0  1]]]
+no	Incorrect	dimension mapping category		end user	[[ 0.48966715  0.51033288]]	[[[  0.    0.    0.    0.   21.    0.2   0. ]]]
+no	Incorrect	sizing		sprint backlog	[[ 0.47807041  0.5219295 ]]	[[[  0.    0.    0.    0.   10.    0.5   1. ]]]
+yes	Correct	compile-and-go		incremental compiler	[[ 0.38584173  0.61415833]]	[[[ 1  0  0  0 17  0  0]]]
+no	Incorrect	performing organization		For Exposition Only page	[[ 0.48966503  0.51033497]]	[[[  0.           0.           0.           0.          21.           0.26666667
+     0.        ]]]
+yes	Correct	effective address		indirect address	[[ 0.05594032  0.94405961]]	[[[ 1.  1.  0.  1.  8.  1.  0.]]]
+recall:1, precision:0.0, f1:0.0, accuracy:0.4 
+yes	Incorrect	Groschs law		computer performance evaluation	[[ 0.76348382  0.23651621]]	[[[  0.           0.           0.           0.          26.           0.58823529
+     0.        ]]]
+yes	Correct	external stakeholders		stakeholders	[[ 0.02633538  0.97366458]]	[[[ 1.  1.  0.  0.  9.  1.  1.]]]
+yes	Correct	base address		self-relative address	[[ 0.02732464  0.97267532]]	[[[  1.   1.   0.   0.  11.   1.   0.]]]
+no	Correct	audit		role name	[[ 0.74106908  0.25893086]]	[[[ 0.          0.          0.          0.          9.          0.47619048
+    1.        ]]]
+no	Correct	process description		parser	[[ 0.76347882  0.23652118]]	[[[  0.      0.      0.      0.     15.      0.375   1.   ]]]
+yes	Incorrect	interactive		real time	[[ 0.76195282  0.23804726]]	[[[0 0 0 0 7 0 1]]]
+no	Correct	quality subfactor		turnkey	[[ 0.76348436  0.23651563]]	[[[ 0  0  0  0 15  0  1]]]
+yes	Correct	precondition		pre-condition	[[  2.77673689e-06   9.99997258e-01]]	[[[0 0 0 0 1 0 1]]]
+no	Correct	machine-independent		point inflation	[[ 0.7634868   0.23651317]]	[[[ 0  0  0  1 14  0  0]]]
+yes	Correct	formal qualification review		test readiness review	[[ 0.27105069  0.72894931]]	[[[  1.   1.   0.   1.  17.   1.   0.]]]
+recall:0.6666666666666666, precision:1.0, f1:0.8, accuracy:0.8 
+no	Correct	place type		local variable	[[ 0.62356603  0.37643394]]	[[[  0.           0.           0.           1.          11.           0.83333333
+     0.        ]]]
+no	Correct	assumptions		product requirement	[[ 0.62796557  0.3720344 ]]	[[[  0.           0.           0.           0.          16.           0.66666667
+     1.        ]]]
+no	Correct	taskboard		control point	[[ 0.62874776  0.37125227]]	[[[ 0  0  0  0 11  0  1]]]
+no	Correct	suspect		measure of performance	[[ 0.63146746  0.36853254]]	[[[  0.           0.           0.           0.          17.           0.44444444
+     1.        ]]]
+no	Correct	conditional information		relationship name	[[ 0.63262802  0.36737201]]	[[[  0.           0.           0.           1.          17.           0.61538462
+     0.        ]]]
+no	Correct	post-condition		task complete definition	[[ 0.63239527  0.36760479]]	[[[ 0  0  0  0 15  0  0]]]
+no	Correct	points		existence dependency	[[ 0.62975079  0.37024918]]	[[[  0.    0.    0.    0.   18.    0.8   1. ]]]
+no	Correct	statement testing		project deliverable	[[ 0.6327194   0.36728057]]	[[[  0.    0.    0.    1.   17.    0.4   0. ]]]
+no	Incorrect	efferent		log in	[[ 0.45108458  0.54891545]]	[[[ 0.          0.          0.          0.          7.          0.22222222
+    1.        ]]]
+no	Correct	input sort		subproject	[[ 0.62251681  0.37748319]]	[[[0 0 0 0 9 0 1]]]
+recall:1.0, precision:0.9, f1:0.9473684210526316, accuracy:0.9 
+no	Incorrect	violation		input sort	[[ 0.30950868  0.69049132]]	[[[ 0.          0.          0.          0.          8.          0.35294118
+    1.        ]]]
+no	Correct	web page		preliminary design review	[[ 0.76996517  0.23003481]]	[[[  0.           0.           0.           0.          21.           0.38095238
+     0.        ]]]
+no	Incorrect	discrimination		work item	[[ 0.29990891  0.70009106]]	[[[  0.           0.           0.           0.          11.           0.57142857
+     1.        ]]]
+yes	Correct	address		specific address	[[ 0.02404121  0.97595882]]	[[[ 1.  1.  0.  0.  9.  1.  1.]]]
+no	Correct	budgets		process capability determination	[[ 0.7696715   0.23032853]]	[[[  0.           0.           0.           0.          28.           0.58823529
+     1.        ]]]
+no	Correct	must-have features		upload	[[ 0.73917449  0.26082554]]	[[[  0.           0.           0.           0.          16.           0.33333333
+     1.        ]]]
+yes	Correct	test		test procedure	[[ 0.25094491  0.74905509]]	[[[  1.    0.    1.    0.   10.    0.8   1. ]]]
+yes	Correct	local variable		global variable	[[  1.11990603e-08   1.00000000e+00]]	[[[ 1.  1.  0.  1.  2.  1.  0.]]]
+no	Correct	diversity		minimap	[[ 0.68296278  0.31703719]]	[[[0 0 0 1 8 0 2]]]
+yes	Correct	absolute address		relocatable address	[[ 0.02811341  0.97188663]]	[[[ 1.  1.  0.  1.  8.  1.  0.]]]
+recall:1.0, precision:0.6666666666666666, f1:0.8, accuracy:0.8 
+no	Correct	straight-line code		software development process	[[ 0.69852889  0.30147114]]	[[[  0.           0.           0.           1.          20.           0.57142857
+     0.        ]]]
+yes	Incorrect	information processing requirements		software	[[ 0.69852912  0.30147091]]	[[[  0.     0.     0.     0.    31.     0.25   1.  ]]]
+no	Correct	functional test		correctness proof	[[ 0.69852054  0.30147946]]	[[[  0.           0.           0.           1.          15.           0.66666667
+     0.        ]]]
+no	Correct	passive white space		migration	[[ 0.69848162  0.30151841]]	[[[  0.           0.           0.           0.          17.           0.44444444
+     1.        ]]]
+yes	Incorrect	data abstraction		information hiding	[[ 0.69852763  0.30147237]]	[[[  0.           0.           0.           1.          16.           0.55555556
+     0.        ]]]
+no	Correct	discrete type		opportunity	[[ 0.68937761  0.31062242]]	[[[  0.           0.           0.           0.          10.           0.30769231
+     1.        ]]]
+yes	Incorrect	turnkey		single-level encoding	[[ 0.69852883  0.30147123]]	[[[  0.           0.           0.           0.          20.           0.11764706
+     1.        ]]]
+yes	Correct	system-of-interest		system of interest	[[  1.52710001e-07   9.99999881e-01]]	[[[3 1 1 1 2 0 0]]]
+no	Correct	order clash		sensitivity analysis	[[ 0.69852853  0.3014715 ]]	[[[  0.           0.           0.           1.          17.           0.55555556
+     0.        ]]]
+yes	Correct	configuration		local configuration	[[ 0.03634779  0.96365219]]	[[[ 1.  1.  0.  0.  6.  1.  1.]]]
+recall:0.625, precision:1.0, f1:0.7692307692307693, accuracy:0.7 
+no	Correct	partitioning		architectural runway	[[ 0.78308415  0.21691588]]	[[[  0.           0.           0.           0.          16.           0.15384615
+     1.        ]]]
+yes	Incorrect	rule		Scrum framework	[[ 0.71799183  0.28200817]]	[[[  0.           0.           0.           0.          12.           0.82352941
+     1.        ]]]
+yes	Incorrect	conversational		real time	[[ 0.78312796  0.21687208]]	[[[ 0  0  0  0 11  0  1]]]
+yes	Correct	logical trace		retrospective trace	[[ 0.38810056  0.61189944]]	[[[  1.   1.   0.   1.  11.   1.   0.]]]
+yes	Incorrect	microprogramming		micro code	[[ 0.78312814  0.21687187]]	[[[ 0  0  0  0 10  0  1]]]
+no	Correct	functional size measurement		high order language	[[ 0.78308278  0.2169172 ]]	[[[  0.           0.           0.           1.          22.           0.42857143
+     0.        ]]]
+yes	Correct	storage		storage device	[[ 0.09426559  0.90573442]]	[[[ 1.     0.     1.     0.     7.     0.875  1.   ]]]
+yes	Correct	diagram		entity-relationship diagram	[[ 0.41527748  0.58472252]]	[[[  1.   1.   0.   0.  20.   1.   1.]]]
+yes	Incorrect	multiprogramming		time sharing	[[ 0.78252363  0.21747638]]	[[[  0.           0.           0.           0.          10.           0.18181818
+     1.        ]]]
+yes	Incorrect	imperative statement		instruction	[[ 0.77873397  0.221266  ]]	[[[  0.   0.   0.   0.  16.   1.   1.]]]
+recall:0.2857142857142857, precision:1.0, f1:0.4444444444444445, accuracy:0.5 
+yes	Correct	definition of done		single done	[[ 0.01345166  0.98654836]]	[[[  1.   1.   0.   0.  11.   1.   0.]]]
+yes	Incorrect	modular decomposition		packaging	[[ 0.82367837  0.17632167]]	[[[  0.           0.           0.           0.          18.           0.30769231
+     1.        ]]]
+yes	Correct	software project life cycle process		software project life cycle	[[  2.98856903e-04   9.99701083e-01]]	[[[ 4.          0.          1.          0.          8.          0.57142857
+    0.        ]]]
+no	Correct	control flow		direct address	[[ 0.82357103  0.176429  ]]	[[[  0.      0.      0.      1.     13.      0.625   0.   ]]]
+yes	Incorrect	configuration status accounting		development record	[[ 0.82370806  0.17629202]]	[[[  0.           0.           0.           0.          26.           0.83333333
+     0.        ]]]
+yes	Correct	downstream		upstream	[[ 0.05245142  0.94754863]]	[[[0 0 0 1 4 0 2]]]
+yes	Correct	diagnostic manual		user manual	[[ 0.00356999  0.99642998]]	[[[ 1.  1.  0.  1.  9.  1.  0.]]]
+no	Correct	product scope		action entry	[[ 0.82347596  0.17652403]]	[[[  0.           0.           0.           1.          12.           0.58823529
+     0.        ]]]
+yes	Correct	mapping		instance	[[ 0.10016278  0.8998372 ]]	[[[ 0.          0.          0.          1.          7.          0.57142857
+    2.        ]]]
+no	Correct	transition net		risk category	[[ 0.82360631  0.17639373]]	[[[  0.           0.           0.           1.          13.           0.26666667
+     0.        ]]]
+recall:0.6, precision:1.0, f1:0.7499999999999999, accuracy:0.8 
+Average Recall=0.7927380952380952
+Average Precision=0.7280952380952381
+Average F1=0.6201519825204036
+Average Accuracy=0.7100000000000001

@@ -1,4 +1,6 @@
 import random
+
+import sys
 from nltk.stem.porter import PorterStemmer
 import pickle
 from data_entry_structures import DataSet, SENETWordPairRaw
@@ -10,10 +12,60 @@ import json
 import logging
 
 
+class PairBuilder:
+    def __read_words(self, file_path):
+        res = set()
+        with open(file_path, encoding='utf8') as fin:
+            for line in fin.readlines():
+                phrase = line.strip("\n\t\r ")
+                res.add(phrase)
+        return list(res)
+
+    def __get_all_relationships(self):
+        constras = os.path.join(VOCAB_DIR, "contrast.txt")
+        hyper = os.path.join(VOCAB_DIR, "hyper.txt")
+        related = os.path.join(VOCAB_DIR, "related.txt")
+        synonym = os.path.join(VOCAB_DIR, "synonym.txt")
+        one_pair_in_line = [constras, related, synonym]
+        multi_pair_in_line = [hyper]
+        rel = set()
+        for f in one_pair_in_line:
+            with open(f) as fin:
+                for line in fin.readlines():
+                    line = line.strip("\n\t\r ")
+                    word_pair = line.split(",")
+                    relation = (word_pair[0], word_pair[1])
+                    rel.add(relation)
+        for f in multi_pair_in_line:
+            with open(f) as fin:
+                for line in fin.readlines():
+                    line = line.strip("\n\t\r ")
+                    hyper, rest = line.split(":")
+                    for w_r in rest.split(","):
+                        rel.add((hyper[0], w_r))
+        return rel
+
+    def __init__(self, expension_list_txt):
+        self.exp_list = self.__read_words(expension_list_txt)
+        self.relations = self.__get_all_relationships()
+
+    def get_pairs(self):
+        pairs = []
+        vocab = self.__read_words(os.path.join(VOCAB_DIR, "small_vocabulary.txt"))
+        for w_v in vocab:
+            for w_e in self.exp_list:
+                if (w_v, w_e) not in self.relations and (w_e, w_v) not in self.relations:
+                    pairs.append((w_v, w_e))
+        return pairs
+
+
 class Encoder:
     """
     Encode the label to a given representation
     """
+
+    def __str__(self):
+        return str(self.obj_to_num)
 
     def __init__(self, all_types):
         assert len(set(all_types)) == len(all_types)
@@ -42,10 +94,34 @@ class SENETRawDataBuilder:
     Prepare a raw material for feature vector building.
     """
 
-    def __init__(self, sql_file, golden_pair_files=["synonym.txt", "contrast.txt", "related.txt"],
+    @staticmethod
+    def attach_docs(label, w1, w2, sql_manger):
+        try:
+            w1_docs = sql_manger.get_content_for_query(w1)
+            w2_docs = sql_manger.get_content_for_query(w2)
+
+            for key in w1_docs:
+                if len(w1_docs[key]) > 0:
+                    w1_docs[key] = json.loads(w1_docs[key])
+                else:
+                    w1_docs[key] = []
+
+            for key in w2_docs:
+                if len(w2_docs[key]) > 0:
+                    w2_docs[key] = json.loads(w2_docs[key])
+                else:
+                    w2_docs[key] = []
+
+            material = SENETWordPairRaw(label, (w1, w2), (w1_docs, w2_docs))
+            return material
+        except Exception as e:
+            print(e)
+
+    def __init__(self, sql_file, pair_builder: PairBuilder = None,
+                 golden_pair_files=["synonym.txt", "contrast.txt", "related.txt"],
                  golden_list_files=["hyper.txt"], vocab_file_name="vocabulary.txt"):
         """
-
+        :param pair_builder: Build pairs, if this is not None other pararmeters will be ignored
         :param sql_file: The sqlite file store the scapred document
         :param golden_pair_files: The list of file who contains golden pairs. File should have format <p1>,<p2>. File name
         will be searched in vocab file whose path is defined in config.py
@@ -54,45 +130,27 @@ class SENETRawDataBuilder:
         self.logger = logging.getLogger(__name__)
         sql_manger = Sqlite3Manger(sql_file)
         self.raws = []
-        self.keyword_path = os.path.join(VOCAB_DIR, vocab_file_name)
-        self.keys = []
-        with open(self.keyword_path, 'r', encoding='utf-8') as kwin:
-            for line in kwin:
-                self.keys.append(line.strip(" \n\r\t"))
+        if pair_builder is None:
+            self.keyword_path = os.path.join(VOCAB_DIR, vocab_file_name)
+            self.keys = []
+            with open(self.keyword_path, 'r', encoding='utf-8') as kwin:
+                for line in kwin:
+                    self.keys.append(line.strip(" \n\r\t"))
 
-        golden_pairs = self.build_golden(golden_pair_files, golden_list_files)
-        neg_pairs = self.build_neg_with_random_pair(golden_pairs)
-        labels = ["yes", "no"]  # [0,1] is negative and [1,0] is positive
-        self.logger.info("Candidate neg pairs:{}, Golden pairs:{}".format(len(neg_pairs), len(golden_pairs)))
-        cnt_n = cnt_p = 0
-        for i, plist in enumerate([golden_pairs, neg_pairs]):
+            golden_pairs = self.build_golden(golden_pair_files, golden_list_files)
+            neg_pairs = self.build_neg_with_random_pair(golden_pairs)
+            labels = ["yes", "no"]  # [0,1] is negative and [1,0] is positive
+            pair_groups = [golden_pairs, neg_pairs]
+            self.logger.info("Candidate neg pairs:{}, Golden pairs:{}".format(len(neg_pairs), len(golden_pairs)))
+        else:
+            pairs = pair_builder.get_pairs()
+            pair_groups = [pairs]
+            labels = [""]
+
+        for i, plist in enumerate(pair_groups):
             label = labels[i]
             for pair in plist:
-                try:
-                    w1_docs = sql_manger.get_content_for_query(pair[0])
-                    w2_docs = sql_manger.get_content_for_query(pair[1])
-
-                    for key in w1_docs:
-                        if len(w1_docs[key]) > 0:
-                            w1_docs[key] = json.loads(w1_docs[key])
-                        else:
-                            w1_docs[key] = []
-
-                    for key in w2_docs:
-                        if len(w2_docs[key]) > 0:
-                            w2_docs[key] = json.loads(w2_docs[key])
-                        else:
-                            w2_docs[key] = []
-
-                    material = SENETWordPairRaw(label, pair, (w1_docs, w2_docs))
-                    self.raws.append(material)  # This will be parsed by next_batch() in dataset object
-                    if i == 0:
-                        cnt_n += 1
-                    else:
-                        cnt_p += 1
-                except Exception as e:
-                    self.logger.exception(e)
-        self.logger.info("Negative pairs:{} Golden Pairs:{}".format(cnt_n, cnt_p))
+                self.raws.append(SENETRawDataBuilder.attach_docs(label, pair[0], pair[1], sql_manger))
         random.shuffle(self.raws)
 
     def build_neg_with_random_pair(self, golden_pairs):
@@ -155,7 +213,6 @@ class DataPrepare:
 
     def __init__(self, pickle_path, feature_pipe, raw_materials, rebuild=True):
         """
-
         :param pickle_path: The path to store or load data
         :param feature_pipe: A list containing methods to consume raw_material
         :param raw_materials: The data applied to feature pipe. This object should be iterable.
@@ -163,9 +220,10 @@ class DataPrepare:
         rebuild and override existing one
         """
         self.data_set = []  # follow the format of (feature_vec, label, readable_info)
+        logging.basicConfig(stream=sys.stdout)
         self.logger = logging.getLogger(__name__)
         self.pick_path = pickle_path
-        self.label_encoder = None
+        self.encoder = None
         if os.path.isfile(pickle_path) and not rebuild:
             self.__load_file()
         else:
@@ -178,8 +236,11 @@ class DataPrepare:
         :param raw_materials: A list of RawMaterial object
         :return:
         """
-        self.encoder = Encoder(set([r.label() for r in raw_materials]))
-        for entry in raw_materials:
+        labels = list(set([r.label() for r in raw_materials]))
+        labels.sort()
+        self.encoder = Encoder(labels)
+        for i, entry in enumerate(raw_materials):
+            self.logger.info("Data Prepare: {}/{}".format(i, len(raw_materials)))
             feature_vec = feature_pipe.get_feature(entry)
             label = self.encoder.one_hot_encode(entry.label())
             readable_info = entry.info()
@@ -195,6 +256,7 @@ class DataPrepare:
         with open(self.pick_path, 'wb') as fout:
             dump_obj = (self.data_set, self.encoder)
             pickle.dump(dump_obj, fout)
+        self.logger.info("Feature Vectors are pickled")
 
     def __load_file(self):
         with open(self.pick_path, 'rb') as fin:
@@ -226,6 +288,9 @@ class DataPrepare:
     def get_vec_length(self):
         first = self.data_set[0][0]
         return len(first)
+
+    def all(self):
+        return DataSet(self.data_set, self.encoder)
 
     def ten_fold(self):
         train_test_pair = []
@@ -260,7 +325,58 @@ class DataPrepare:
             # positive_test_entries.extend(negative_test_entries)
             # test_entries = positive_test_entries
 
-            train_set = DataSet(train_entries, self.label_encoder)
-            test_set = DataSet(test_entries, self.label_encoder)
+            train_set = DataSet(train_entries, self.encoder)
+            test_set = DataSet(test_entries, self.encoder)
             train_test_pair.append((train_set, test_set))
         return train_test_pair
+
+
+class PairBuilder:
+    def __read_words(self, file_path):
+        res = set()
+        with open(file_path, encoding='utf8') as fin:
+            for line in fin.readlines():
+                phrase = line.strip("\n\t\r ")
+                res.add(phrase)
+        return list(res)
+
+    def __get_all_relationships(self):
+        constras = os.path.join(VOCAB_DIR, "contrast.txt")
+        hyper = os.path.join(VOCAB_DIR, "hyper.txt")
+        related = os.path.join(VOCAB_DIR, "related.txt")
+        synonym = os.path.join(VOCAB_DIR, "synonym.txt")
+        one_pair_in_line = [constras, related, synonym]
+        multi_pair_in_line = [hyper]
+        rel = set()
+        for f in one_pair_in_line:
+            with open(f) as fin:
+                for line in fin.readlines():
+                    line = line.strip("\n\t\r ")
+                    word_pair = line.split(",")
+                    relation = (word_pair[0], word_pair[1])
+                    rel.add(relation)
+        for f in multi_pair_in_line:
+            with open(f) as fin:
+                for line in fin.readlines():
+                    line = line.strip("\n\t\r ")
+                    hyper, rest = line.split(":")
+                    for w_r in rest.split(","):
+                        rel.add((hyper[0], w_r))
+        return rel
+
+    def __init__(self, expension_list_txt):
+        """
+
+        :param expension_list_txt: A list of file path which will be used to match with all vocabulary to construct pairs
+        """
+        self.exp_list = self.__read_words(expension_list_txt)
+        self.relations = self.__get_all_relationships()
+
+    def get_pairs(self):
+        pairs = []
+        vocab = self.__read_words(os.path.join(VOCAB_DIR, "small_vocabulary.txt"))
+        for w_v in vocab:
+            for w_e in self.exp_list:
+                if (w_v, w_e) not in self.relations and (w_e, w_v) not in self.relations:
+                    pairs.append((w_v, w_e))
+        return pairs

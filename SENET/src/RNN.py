@@ -5,11 +5,11 @@ from data_prepare import DataPrepare, Encoder, SENETRawDataBuilder
 import logging
 from config import *
 from feature_extractors import SENETFeaturePipe
-import sys
+import sys, pickle
 
 
 class RNN:
-    def __init__(self, vec_len, model_path):
+    def __init__(self, vec_len, model_path, label_encoder_pickle):
         self.lr = 0.001  # learning rate
         self.training_iters = 4000  # 100000  # train step upper bound
         self.batch_size = 1
@@ -35,6 +35,7 @@ class RNN:
             self.pred = self.__classify(self.x, self.weights, self.biases)
             self.confidence = tf.nn.softmax(self.pred)
         self.model_path = model_path
+        self.label_encoder_pickle = label_encoder_pickle
 
     def train(self, train_set: DataSet):
         with tf.Session(graph=self.graph) as sess:
@@ -53,16 +54,18 @@ class RNN:
                 })
                 step += 1
             saver.save(sess, self.model_path)
+            with open(self.label_encoder_pickle, "wb") as encoder_fout:
+                pickle.dump(train_set.label_encoder, encoder_fout)
 
     def test(self, test_set: DataSet):
         """
-        Evaluate the quality of  trained model
+        Evaluate the quality of  trained model. The label in test are all encoded thus don't need a label encoder. If
+        the trian/test set have different encoding format or order, then the result is not valid.
         :return:
         """
         res = []
         pred_label_index = tf.argmax(self.pred, 1)  # Since we use one-hot represent the predicted label, index = label
         correct_pred = tf.equal(pred_label_index, tf.argmax(self.y, 1))
-        confidence = tf.nn.softmax(self.pred)
         with tf.Session(graph=self.graph) as sess:
             saver = tf.train.Saver()
             saver.restore(sess, self.model_path)
@@ -70,12 +73,16 @@ class RNN:
                 batch_xs, batch_ys, test_word_pairs = test_set.next_batch(self.batch_size)
                 batch_xs = batch_xs.reshape([self.batch_size, self.n_steps, self.n_inputs])
                 is_correct = sess.run(correct_pred, feed_dict={self.x: batch_xs, self.y: batch_ys})
-                confidence_score = sess.run(confidence, feed_dict={self.x: batch_xs})
+                confidence_score = sess.run(self.confidence, feed_dict={self.x: batch_xs})
                 res.append((batch_ys, is_correct, test_word_pairs, batch_xs, confidence_score))
         return res
 
     def ten_fold_test(self, data_set: DataPrepare, result_file):
         with open(result_file, "w", encoding="utf8") as fout:
+            fout.write("Label encoding:")
+            for l_type in data_set.encoder.all_types:
+                fout.write("{}={}\n".format(l_type, data_set.encoder.one_hot_encode(l_type)))
+            fout.write("label,correctness,w1,w2,confidence,features\n")
             a_acc = a_recall = a_pre = a_f1 = 0
             for index, (train_set, test_set) in enumerate(data_set.ten_fold()):
                 self.logger.info("Start fold {}".format(index))
@@ -87,6 +94,8 @@ class RNN:
                 a_pre += pre
                 a_f1 += f1
                 a_acc += accuracy
+            fout.write("Average Recall={}\nAverage Precision={}\nAverage F1={}\nAverage Accuracy={}\n".
+                       format(a_recall / 10, a_pre / 10, a_f1 / 10, a_acc / 10))
 
     def __classify(self, X, weights, biases):
         X = tf.reshape(X, [-1, self.n_inputs])
@@ -99,13 +108,25 @@ class RNN:
         results = tf.matmul(outputs[-1], weights['out']) + biases['out']
         return results
 
-    def classify(self, feature_vecs):
+    def classify(self, feature_vecs: DataSet):
         """
         Classify a given entry
         :param feature_vec:
+        :param classify_res_file The file to store classification result
         :return: One type of classes
         """
-        pass
+        res = []
+        with tf.Session(graph=self.graph) as sess:
+            saver = tf.train.Saver()
+            saver.restore(sess, self.model_path)
+            for i in range(len(feature_vecs.data)):
+                batch_xs, batch_ys, test_word_pairs = feature_vecs.next_batch(self.batch_size)
+                batch_xs = batch_xs.reshape([self.batch_size, self.n_steps, self.n_inputs])
+                confidence_score = sess.run(self.confidence, feed_dict={self.x: batch_xs})
+                res.append((test_word_pairs, confidence_score))
+        with open(self.label_encoder_pickle, 'rb') as pickle_in:
+            label_encoder = pickle.load(pickle_in)
+        return res, label_encoder
 
     def eval(self, results):
         tn = 0
@@ -147,7 +168,6 @@ class RNN:
         return recall, precision, f1, accuracy
 
     def write_fold_result(self, res, writer, label_encoder: Encoder):
-        writer.write("label,correctness,w1,w2,confidence,features\n")
         for label, correctness, word_pairs, features, confidence in res:
             label = label_encoder.one_hot_decode(label[0])
             if correctness[0] == True:
@@ -162,6 +182,15 @@ class RNN:
         stat_str = "recall:{}, precision:{}, f1:{}, accuracy:{} \n".format(re, pre, f1, accuracy)
         writer.write(stat_str)
         return re, pre, f1, accuracy
+
+    def write_classify_res(self, file_path, res, label_encoder: Encoder):
+        # TODO inlcude encoder information in result
+        with open(file_path, "w", encoding="utf8") as fout:
+            fout.write("Label Encoding:\n")
+            for l_type in label_encoder.all_types:
+                fout.write("{}={}\n".format(l_type, label_encoder.one_hot_encode(l_type)))
+            for (test_word_pairs, confidence_score) in res:
+                fout.write("{},{}\n".format(str(test_word_pairs), str(confidence_score)))
 
 
 if __name__ == "__main__":

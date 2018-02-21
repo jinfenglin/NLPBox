@@ -22,6 +22,7 @@ class GoogleScraperWraper:
     """
 
     def __init__(self, proxy_file=""):
+        self.user_agent_header = "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7"
         disable_warnings(exceptions.InsecureRequestWarning)
         self.default_scraper_db = "google_scraper.db"
         self.default_cache_dir = ".scrapecache"
@@ -75,17 +76,14 @@ class GoogleScraperWraper:
         return res
 
     def __request(self, link, timeout):
-        headers = make_headers()
+        headers = make_headers(user_agent=self.user_agent_header)
         request = urllib.request.Request(link, None, headers)
-        try:
-            with urllib.request.urlopen(request, timeout=timeout) as url:
-                html_page = url.read()
-                return html_page
-        except Exception as e:
-            return ""
+        with urllib.request.urlopen(request, timeout=timeout) as url:
+            html_page = url.read()
+            return html_page
 
     def __request_with_proxy(self, link, timeout):
-        headers = make_headers()
+        headers = make_headers(user_agent=self.user_agent_header)
         proxy_ip = random.sample(self.proxies, 1)[0]
         http = ProxyManager(proxy_ip, headers=headers)
         response = http.request("GET", link, timeout=timeout)
@@ -112,7 +110,9 @@ class GoogleScraperWraper:
             else:
                 res = self.__request(link, timeout)
         except Exception as e:
-            self.logger.exception(e)
+            self.logger.exception("Exceptions in Scraping link {} :{}".format(link, e))
+        if not res:
+            res = ""
         return res
 
 

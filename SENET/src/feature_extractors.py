@@ -14,10 +14,10 @@ class SENETFeaturePipe:
     A feature pipe line process WordPairRawMaterial and serve features for SENET work tasks.
     """
 
-    def __init__(self):
-        self.nlp = spacy.load("en_core_web_lg")
+    def __init__(self, model = "en_core_web_lg"):
+        self.nlp = spacy.load(model)
         self.func_pip = [
-            self.stackoverflow_questions_noun_phrase_similarity,
+            #self.stackoverflow_questions_noun_phrase_similarity,
             self.common_token_len,
             self.same_postfix,
             self.same_prefix,
@@ -183,30 +183,30 @@ class SENETFeaturePipe:
         self.w2_stem_tokens = stem_string(self.w2, regx_split_chars="[\s-]")
 
         ## Stackoverflow ##
-        self.w1_stk_clean_questoins = self.nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_questions(self.w1)))
-        self.w2_stk_clean_questions = self.nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_questions(self.w2)))
-        self.w1_stk_clean_answers = self.nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_answers(self.w1)))
-        self.w2_stk_clean_answers = self.nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_answers(self.w2)))
-        self.w1_stk_related_questions = self.nlp(
-            self.__clean_docs(wp_raw_material.get_stackoverflow_related_links(self.w1)))
-        self.w2_stk_related_questions = self.nlp(
-            self.__clean_docs(wp_raw_material.get_stackoverflow_related_links(self.w2)))
+        # self.w1_stk_clean_questoins = self.nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_questions(self.w1)))
+        # self.w2_stk_clean_questions = self.nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_questions(self.w2)))
+        # self.w1_stk_clean_answers = self.nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_answers(self.w1)))
+        # self.w2_stk_clean_answers = self.nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_answers(self.w2)))
+        # self.w1_stk_related_questions = self.nlp(
+        #     self.__clean_docs(wp_raw_material.get_stackoverflow_related_links(self.w1)))
+        # self.w2_stk_related_questions = self.nlp(
+        #     self.__clean_docs(wp_raw_material.get_stackoverflow_related_links(self.w2)))
 
         ## Quora ##
-        self.w1_quora_clean_questions = self.nlp(self.__clean_docs(wp_raw_material.get_quora_questions(self.w1)))
-        self.w2_quora_clean_questions = self.nlp(self.__clean_docs(wp_raw_material.get_quora_questions(self.w2)))
-        self.w1_quora_clean_answers = self.nlp(self.__clean_docs(wp_raw_material.get_quora_answers(self.w1)))
-        self.w2_quora_clean_answers = self.nlp(self.__clean_docs(wp_raw_material.get_quora_answers(self.w2)))
-        self.w1_quora_related_questions = self.nlp(self.__clean_docs(wp_raw_material.get_quora_related_links(self.w1)))
-        self.w2_quora_related_questions = self.nlp(self.__clean_docs(wp_raw_material.get_quora_related_links(self.w2)))
+        # self.w1_quora_clean_questions = self.nlp(self.__clean_docs(wp_raw_material.get_quora_questions(self.w1)))
+        # self.w2_quora_clean_questions = self.nlp(self.__clean_docs(wp_raw_material.get_quora_questions(self.w2)))
+        # self.w1_quora_clean_answers = self.nlp(self.__clean_docs(wp_raw_material.get_quora_answers(self.w1)))
+        # self.w2_quora_clean_answers = self.nlp(self.__clean_docs(wp_raw_material.get_quora_answers(self.w2)))
+        # self.w1_quora_related_questions = self.nlp(self.__clean_docs(wp_raw_material.get_quora_related_links(self.w1)))
+        # self.w2_quora_related_questions = self.nlp(self.__clean_docs(wp_raw_material.get_quora_related_links(self.w2)))
 
         ## Regular ##
-        self.w1_regular_clean_doc = self.nlp(self.__clean_docs(wp_raw_material.get_regular_doc_content(self.w1)))
-        self.w2_regular_clean_doc = self.nlp(self.__clean_docs(wp_raw_material.get_regular_doc_content(self.w2)))
+        # self.w1_regular_clean_doc = self.nlp(self.__clean_docs(wp_raw_material.get_regular_doc_content(self.w1)))
+        # self.w2_regular_clean_doc = self.nlp(self.__clean_docs(wp_raw_material.get_regular_doc_content(self.w2)))
 
         ## PcMag ##
-        self.w1_pcMag_clean_doc = self.nlp(self.__clean_docs(wp_raw_material.get_pcMag_definition(self.w1)))
-        self.w2_pcMag_clean_doc = self.nlp(self.__clean_docs(wp_raw_material.get_pcMag_definition(self.w2)))
+        # self.w1_pcMag_clean_doc = self.nlp(self.__clean_docs(wp_raw_material.get_pcMag_definition(self.w1)))
+        # self.w2_pcMag_clean_doc = self.nlp(self.__clean_docs(wp_raw_material.get_pcMag_definition(self.w2)))
 
         for func in self.func_pip:
             feature_vec.append(func(wp_raw_material))

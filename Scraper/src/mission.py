@@ -63,7 +63,7 @@ class Mission:
             db_dump[query_db_format] = json.dumps(page_info_jsons)
             proced_num += 1
         self.db_dumps[thread_id] = db_dump
-        self.logger.info("Thread {} have finished work, {} entries are processed.".format(thread_id, len(db_dump)))
+        self.logger.info("Thread-{} have finished work, {} entries are processed.".format(thread_id, len(db_dump)))
 
     def run(self, delay=0.1, timeout=10, thread_num=1, link_limit=10):
         self.sqlite_manager.create_table(self.mission_name)  # mission name as table name
@@ -81,12 +81,18 @@ class Mission:
         for t in all_threads:
             t.join()
 
+        self.logger.info("Start Writing database ... ")
+        backup_json = json.dumps(self.db_dumps)
+        with open(SCRAP_TMP, 'w', encoding="utf8") as fin:
+            fin.write(backup_json)
+        self.logger.info("backup data into tmp file ...")
+
         for thread_id in self.db_dumps:
             db_dump = self.db_dumps[thread_id]
             for term in db_dump:
                 self.sqlite_manager.add_or_update_row(self.mission_name, term, db_dump[term])
-        self.sqlite_manager.conn.close()
-
+                self.logger.info("Writing {}".format(term))
+        self.sqlite_manager.conn.commit()
 
 if __name__ == "__main__":
     sql_db = os.path.join(DATA_DIR, "example.db")
