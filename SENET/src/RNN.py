@@ -2,10 +2,9 @@ import tensorflow as tf
 
 from data_entry_structures import DataSet
 from data_prepare import DataPrepare, Encoder, SENETRawDataBuilder
-import logging
 from config import *
 from feature_extractors import SENETFeaturePipe
-import sys, pickle
+import pickle
 
 
 class RNN:
@@ -17,7 +16,6 @@ class RNN:
         self.n_steps = 1  # time steps
         self.n_hidden_units = 128  # neurons in hidden layer
         self.n_classes = 2  # classes (0/1 digits)
-        logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
         self.logger = logging.getLogger(__name__)
         self.logger.info("Start building network...")
         self.graph = tf.Graph()
@@ -128,13 +126,14 @@ class RNN:
             label_encoder = pickle.load(pickle_in)
         return res, label_encoder
 
-    def eval(self, results):
+    def eval(self, results, encoder: Encoder):
         tn = 0
         tp = 0
         fn = 0
         fp = 0
         for label, correctness, word_pairs, feature, confidence in results:
-            if label[0][0] == 1:  # positive
+            label = encoder.one_hot_decode(label[0])
+            if label == "yes":  # positive
                 if correctness[0]:
                     tp += 1
                 else:
@@ -178,7 +177,7 @@ class RNN:
             res_str = "{}\t{}\t{}\t\t{}\t{}\t{}\n".format(label, correct_output, word_pairs[0][0], word_pairs[0][1],
                                                           confidence, features)
             writer.write(res_str)
-        re, pre, f1, accuracy = self.eval(res)
+        re, pre, f1, accuracy = self.eval(res, label_encoder)
         stat_str = "recall:{}, precision:{}, f1:{}, accuracy:{} \n".format(re, pre, f1, accuracy)
         writer.write(stat_str)
         return re, pre, f1, accuracy
@@ -199,5 +198,5 @@ if __name__ == "__main__":
     rb = SENETRawDataBuilder("test.db", golden_pair_files=golden_pairs, vocab_file_name=vocab, golden_list_files=[])
     pipeline = SENETFeaturePipe()
     data = DataPrepare("test_dataset.pickle", feature_pipe=pipeline, raw_materials=rb.raws, rebuild=False)
-    rnn = RNN(data.get_vec_length(), RNN_MODEL_PATH)
+    rnn = RNN(data.get_vec_length(), RNN_MODEL_DIR)
     rnn.ten_fold_test(data_set=data, result_file="rnn_test.res")

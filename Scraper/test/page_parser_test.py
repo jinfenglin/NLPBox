@@ -1,6 +1,6 @@
 import unittest
 from common import *
-from web_page_parser import StackOverflowParser, QuoraParser, PcMagParser, RegularParagraphParser
+from web_page_parser import StackOverflowParser, QuoraParser, PcMagParser, RegularParagraphParser, InnolutionParser
 
 
 class TestPagerParser(unittest.TestCase):
@@ -28,6 +28,12 @@ class TestPagerParser(unittest.TestCase):
             pcMagP = PcMagParser()
             query = "definition of 'ambient lighting' site:pcmag.com/encyclopedia/"
             print(pcMagP.parse(html_page, query))
+
+    def test_innolution(self):
+        with open(os.path.join(DATA_DIR, "innolution.html"), encoding="utf8") as fin:
+            html_page = fin.read()
+            pcMagP = InnolutionParser()
+            print(pcMagP.parse(html_page, ""))
 
     def test_paragraphParser(self):
         with open(os.path.join(DATA_DIR, "pc_mag.html"), encoding="utf8") as fin:

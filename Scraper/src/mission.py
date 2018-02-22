@@ -83,7 +83,8 @@ class Mission:
 
         self.logger.info("Start Writing database ... ")
         backup_json = json.dumps(self.db_dumps)
-        with open(SCRAP_TMP, 'w', encoding="utf8") as fin:
+        backup_file = SCRAP_TMP + "_" + self.mission_name
+        with open(backup_file, 'w', encoding="utf8") as fin:
             fin.write(backup_json)
         self.logger.info("backup data into tmp file ...")
 
@@ -91,8 +92,9 @@ class Mission:
             db_dump = self.db_dumps[thread_id]
             for term in db_dump:
                 self.sqlite_manager.add_or_update_row(self.mission_name, term, db_dump[term])
-                self.logger.info("Writing {}".format(term))
+                self.logger.debug("Writing {}".format(term))
         self.sqlite_manager.conn.commit()
+
 
 if __name__ == "__main__":
     sql_db = os.path.join(DATA_DIR, "example.db")

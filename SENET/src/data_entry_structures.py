@@ -1,5 +1,7 @@
 import random
 import numpy as np
+import logging
+
 
 class RawMaterial:
     def __init__(self, raw_label, raw_content):
@@ -113,16 +115,20 @@ class SENETWordPairRaw(RawMaterial):
         page_content = doc_dict["pcMag"]
         if len(page_content) == 0:
             return ""
-        return page_content[0]["definition"]# Definition only parse 1 link
+        return page_content[0]["definition"]  # Definition only parse 1 link
 
     def get_regular_doc_content(self, word):
-        doc_dict = self.wd_doc_dict[word]
-        page_content = doc_dict["regular"]
-        nested = [x["content"] for x in page_content]
-        if len(nested) == 0:
-            return []
-        else:
-            return np.concatenate(nested).ravel().tolist()
+        try:
+            doc_dict = self.wd_doc_dict[word]
+            page_content = doc_dict["regular"]
+            nested = [x["content"] for x in page_content]
+            if len(nested) == 0:
+                return []
+            else:
+                return np.concatenate(nested).ravel().tolist()
+        except Exception as e:
+            err = "Exception when parse regular doc for {}. Exception:{}".format(word, e)
+            logging.getLogger(__name__).exception(err)
 
 
 class DataSet:

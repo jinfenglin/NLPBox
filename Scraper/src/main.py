@@ -2,7 +2,7 @@ from mission import Mission
 from scrap_query import ScrapQuery
 from scraper import GoogleScraperWraper
 from common import *
-from web_page_parser import StackOverflowParser, QuoraParser, PcMagParser, RegularParagraphParser
+from web_page_parser import StackOverflowParser, QuoraParser, PcMagParser, RegularParagraphParser, InnolutionParser
 
 
 def load_terms(vocab_path):
@@ -46,6 +46,16 @@ def run_pcMag_mission(sql_db, terms, scraper, use_proxy):
     mission.run(delay=0, thread_num=4, link_limit=1)
 
 
+def run_innolution_mission(sql_db, terms, scraper, use_proxy):
+    innolution_queires = []
+    for term in terms:
+        scrap_query = ScrapQuery([term], template="\"{}\"", domain="innolution.com/resources/glossary")
+        innolution_queires.append(scrap_query)
+    innolution_parser = InnolutionParser()
+    mission = Mission(sql_db, "pcMag", innolution_queires, innolution_parser, scraper, use_proxy)
+    mission.run(delay=0.2, thread_num=4, link_limit=1)
+
+
 def run_regularParse_mission(sql_db, terms, scraper, use_proxy):
     regular_terms = []
     for term in terms:
@@ -66,8 +76,9 @@ if __name__ == "__main__":
         terms = ["Objective-C", "Scala", "Swift", "Shell", "TypeScript", "go", "C#", "CSS"]
     else:
         terms = load_terms(vocab_path)
-    # run_pcMag_mission(sql_db, terms, scraper, use_proxy=True)
+    run_pcMag_mission(sql_db, terms, scraper, use_proxy=True)
     # run_stackoverflow_mission(sql_db, terms, scraper, use_proxy=True)
-    #run_quora_mission(sql_db, terms, scraper, use_proxy=True)
-    run_regularParse_mission(sql_db, terms, scraper, use_proxy=False)
+    # run_quora_mission(sql_db, terms, scraper, use_proxy=True)
+    run_innolution_mission(sql_db, terms, scraper, use_proxy=True)
+    run_regularParse_mission(sql_db, terms, scraper, use_proxy=True)
     print("Finished...")

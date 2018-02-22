@@ -1,8 +1,7 @@
 import nltk
-from spacy.tokens import Span
-
-import common
 import spacy
+from spacy.tokens import Doc
+
 from Cleaner.cleaner import *
 from nltk.corpus import wordnet
 
@@ -14,38 +13,110 @@ class SENETFeaturePipe:
     A feature pipe line process WordPairRawMaterial and serve features for SENET work tasks.
     """
 
-    def __init__(self, model = "en_core_web_lg"):
+    def __init__(self, model="en_core_web_lg"):
         self.nlp = spacy.load(model)
         self.func_pip = [
-            #self.stackoverflow_questions_noun_phrase_similarity,
+            self.stackoverflow_questions_noun_phrase_similarity,
+            self.stackoverflow_answer_noun_phrase_similarity,
+            self.stackoverflow_related_link_similarity,
+            self.quora_answer_noun_phrase_similarity,
+            self.quora_questions_noun_phrase_similarity,
+            self.quora_related_question_similarity,
+            self.definition_similarity,
+            self.w1_to_w2Definition_count,
+            self.w2_to_w1Definition_count,
+            self.w1_to_w2_definition_noun_similarity,
+            self.w2_to_w1_definition_noun_similarity,
+            self.w1_to_w2_see_also,
+            self.w2_to_w1_see_also,
             self.common_token_len,
-            self.same_postfix,
-            self.same_prefix,
+            self.same_last_token,
+            self.same_first_token,
             self.token_num_same,
             self.iterative_levenshtein,
-            self.wordnet_last_token_h_similarity,
+            # self.wordnet_last_token_h_similarity,
             self.one_side_single_token,
         ]
 
-    def stackoverflow_questions_noun_phrase_similarity(self, wp_raw_material):
-        w1_chunks = set([remove_stop_words(x.text.lower()) for x in set(self.w1_stk_clean_questoins.noun_chunks)])
-        w2_chunks = set([remove_stop_words(x.text.lower()) for x in set(self.w2_stk_clean_questions.noun_chunks)])
+    def __noun_phrase_similarity(self, doc1: Doc, doc2: Doc):
+        w1_chunks = set([remove_stop_words(x.text.lower()) for x in set(doc1.noun_chunks)])
+        w2_chunks = set([remove_stop_words(x.text.lower()) for x in set(doc2.noun_chunks)])
         w1_noun_str = "\n".join(w1_chunks)
         w2_noun_str = "\n".join(w2_chunks)
         return self.nlp(w1_noun_str).similarity(self.nlp(w2_noun_str))
 
+    def stackoverflow_questions_noun_phrase_similarity(self, wp_raw_material):
+        return self.__noun_phrase_similarity(self.w1_stk_clean_questoins, self.w2_stk_clean_questions)
+
     def stackoverflow_answer_noun_phrase_similarity(self, wp_raw_material):
-        pass
+        return self.__noun_phrase_similarity(self.w1_stk_clean_answers, self.w2_stk_clean_answers)
+
+    def stackoverflow_related_link_similarity(self, wp_raw):
+        return self.__noun_phrase_similarity(self.w1_stk_related_questions, self.w2_stk_related_questions)
+
+    def quora_questions_noun_phrase_similarity(self, wp_raw_material):
+        return self.__noun_phrase_similarity(self.w1_quora_clean_questions, self.w2_quora_clean_questions)
+
+    def quora_answer_noun_phrase_similarity(self, wp_raw_material):
+        return self.__noun_phrase_similarity(self.w1_quora_clean_answers, self.w2_quora_clean_answers)
+
+    def quora_related_question_similarity(self, wp_raw):
+        return self.__noun_phrase_similarity(self.w1_quora_related_questions, self.w2_quora_related_questions)
 
     def definition_similarity(self, raw_m):
-        pass
+        return self.__noun_phrase_similarity(self.w1_pcMag_clean_doc, self.w2_pcMag_clean_doc)
 
-    def same_subject_of_definition(self, raw_m):
+    def w1_to_w2Definition_count(self, raw_m):
         """
-        The subject of the two phrases' definition is same or not
+        Cal the similarity between w1 and w2 definition
         :return:
         """
-        pass
+        matches = re.findall("\s+{}\s".format(self.w1), self.w2_pcMag_clean_doc.text, re.IGNORECASE)
+        return len(matches)
+
+    def w2_to_w1Definition_count(self, raw_m):
+        """
+        Cal the similarity between w2 and w1 defnition
+        :return:
+        """
+        matches = re.findall("\s+{}\s".format(self.w2), self.w1_pcMag_clean_doc.text, re.IGNORECASE)
+        return len(matches)
+
+    def w1_to_w2_see_also(self, raw_m):
+        sent = self.extract_sent_with_see_also(self.w2_pcMag_clean_doc.text)
+        phrase = re.split(",|and", sent)
+        return self.w1 in phrase
+
+    def w2_to_w1_see_also(self, raw_m):
+        sent = self.extract_sent_with_see_also(self.w1_pcMag_clean_doc.text)
+        phrase = re.split(",|and", sent)
+        return self.w2 in phrase
+
+    def w1_to_w2_definition_noun_similarity(self, raw_m):
+        return self.__noun_phrase_similarity(self.nlp(self.w1), self.w2_pcMag_clean_doc)
+
+    def w2_to_w1_definition_noun_similarity(self, raw_m):
+        return self.__noun_phrase_similarity(self.nlp(self.w2), self.w1_pcMag_clean_doc)
+
+    # def subject_similarity_of_definition(self, raw_m):
+    #     """
+    #     The subject of the two phrases' definition is same or not
+    #     :return:
+    #     """
+    #     w1_doc = self.w1_pcMag_clean_doc.text
+    #     w2_doc = self.w2_pcMag_clean_doc.text
+    #     w1_subj = ""
+    #     w2_subj = ""
+    #     for line in nltk.sent_tokenize(w1_doc):
+    #         if len(nltk.word_tokenize(line)) > 5 and not str(line).startswith("Definition of"):
+    #             w1_subj = self.__get_subject_of_sentence(line)
+    #     for line in nltk.sent_tokenize(w2_doc):
+    #         if len(nltk.word_tokenize(line)) > 5 and not str(line).startswith("Definition of"):
+    #             w2_subj = self.__get_subject_of_sentence(line)
+    #     if w1_subj is None or w2_subj is None:
+    #         return 0
+    #     else:
+    #         return self.nlp(w1_subj).similarity(w2_subj)
 
     def common_token_len(self, wp_raw_material):
         """
@@ -57,17 +128,27 @@ class SENETFeaturePipe:
         common_len = len(w1_tk.intersection(w2_tk))
         return common_len
 
-    def same_prefix(self, wp_raw_material):
+    def same_first_token(self, wp_raw_material):
         if self.w1_stem_tokens[0] == self.w2_stem_tokens[0]:
             return 1
         else:
             return 0
 
-    def same_postfix(self, wp_raw_material):
+    def same_last_token(self, wp_raw_material):
         if self.w1_stem_tokens[-1] == self.w2_stem_tokens[-1]:
             return 1
         else:
             return 0
+
+    def same_post_fix_len(self):
+        w1_last_token = nltk.word_tokenize(self.w1)[-1]
+        w2_last_token = nltk.word_tokenize(self.w2)[-1]
+        steps = max(5, min(len(w1_last_token), len(w2_last_token)))
+        cnt = 0
+        for i in range(steps):
+            if w1_last_token[-i] == w2_last_token[-i]:
+                cnt += 1
+        return max(0, cnt - 1)
 
     def token_num_same(self, wp_raw_material):
         # Check if two words have same length
@@ -183,36 +264,38 @@ class SENETFeaturePipe:
         self.w2_stem_tokens = stem_string(self.w2, regx_split_chars="[\s-]")
 
         ## Stackoverflow ##
-        # self.w1_stk_clean_questoins = self.nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_questions(self.w1)))
-        # self.w2_stk_clean_questions = self.nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_questions(self.w2)))
-        # self.w1_stk_clean_answers = self.nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_answers(self.w1)))
-        # self.w2_stk_clean_answers = self.nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_answers(self.w2)))
-        # self.w1_stk_related_questions = self.nlp(
-        #     self.__clean_docs(wp_raw_material.get_stackoverflow_related_links(self.w1)))
-        # self.w2_stk_related_questions = self.nlp(
-        #     self.__clean_docs(wp_raw_material.get_stackoverflow_related_links(self.w2)))
+        self.w1_stk_clean_questoins = self.nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_questions(self.w1)))
+        self.w2_stk_clean_questions = self.nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_questions(self.w2)))
+        self.w1_stk_clean_answers = self.nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_answers(self.w1)))
+        self.w2_stk_clean_answers = self.nlp(self.__clean_docs(wp_raw_material.get_stackoverflow_answers(self.w2)))
+        self.w1_stk_related_questions = self.nlp(
+            self.__clean_docs(wp_raw_material.get_stackoverflow_related_links(self.w1)))
+        self.w2_stk_related_questions = self.nlp(
+            self.__clean_docs(wp_raw_material.get_stackoverflow_related_links(self.w2)))
 
         ## Quora ##
-        # self.w1_quora_clean_questions = self.nlp(self.__clean_docs(wp_raw_material.get_quora_questions(self.w1)))
-        # self.w2_quora_clean_questions = self.nlp(self.__clean_docs(wp_raw_material.get_quora_questions(self.w2)))
-        # self.w1_quora_clean_answers = self.nlp(self.__clean_docs(wp_raw_material.get_quora_answers(self.w1)))
-        # self.w2_quora_clean_answers = self.nlp(self.__clean_docs(wp_raw_material.get_quora_answers(self.w2)))
-        # self.w1_quora_related_questions = self.nlp(self.__clean_docs(wp_raw_material.get_quora_related_links(self.w1)))
-        # self.w2_quora_related_questions = self.nlp(self.__clean_docs(wp_raw_material.get_quora_related_links(self.w2)))
+        self.w1_quora_clean_questions = self.nlp(self.__clean_docs(wp_raw_material.get_quora_questions(self.w1)))
+        self.w2_quora_clean_questions = self.nlp(self.__clean_docs(wp_raw_material.get_quora_questions(self.w2)))
+        self.w1_quora_clean_answers = self.nlp(self.__clean_docs(wp_raw_material.get_quora_answers(self.w1)))
+        self.w2_quora_clean_answers = self.nlp(self.__clean_docs(wp_raw_material.get_quora_answers(self.w2)))
+        self.w1_quora_related_questions = self.nlp(self.__clean_docs(wp_raw_material.get_quora_related_links(self.w1)))
+        self.w2_quora_related_questions = self.nlp(self.__clean_docs(wp_raw_material.get_quora_related_links(self.w2)))
 
         ## Regular ##
         # self.w1_regular_clean_doc = self.nlp(self.__clean_docs(wp_raw_material.get_regular_doc_content(self.w1)))
         # self.w2_regular_clean_doc = self.nlp(self.__clean_docs(wp_raw_material.get_regular_doc_content(self.w2)))
 
         ## PcMag ##
-        # self.w1_pcMag_clean_doc = self.nlp(self.__clean_docs(wp_raw_material.get_pcMag_definition(self.w1)))
-        # self.w2_pcMag_clean_doc = self.nlp(self.__clean_docs(wp_raw_material.get_pcMag_definition(self.w2)))
+        self.w1_pcMag_clean_doc = self.nlp(self.__clean_docs(wp_raw_material.get_pcMag_definition(self.w1)))
+        self.w2_pcMag_clean_doc = self.nlp(self.__clean_docs(wp_raw_material.get_pcMag_definition(self.w2)))
 
         for func in self.func_pip:
             feature_vec.append(func(wp_raw_material))
         return feature_vec
 
     def __clean_docs(self, docs):
+        if type(docs) is not list:
+            docs = [docs]
         clean_doc = []
         for doc in docs:
             doc = keep_only_given_chars(doc)
@@ -242,3 +325,25 @@ class SENETFeaturePipe:
             for syn in wordnet.synsets(word_morphy):
                 syn_sets.add(syn)
         return syn_sets
+
+    def __get_subject_of_sentence(self, sent):
+        sent = self.nlp(sent)
+        for word in sent:
+            if word.dep_ == "nsubj":
+                return word.text
+        return None
+
+    def extract_sent_with_see_also(self, doc):
+        pattern = re.compile("^\s*(([sS]ee [also]*)|([Aa]lso know as))+[^\.]+\.")
+        res = pattern.match(doc)
+        if res:
+            sent = res.group(0)
+            head_pattren = re.compile("^\s*(([sS]ee [also]*)|([Aa]lso know as))")
+            start_index = len(head_pattren.match(sent).group(0))
+            return sent[start_index:]
+        else:
+            return ""
+
+
+if __name__ == "__main__":
+    pass

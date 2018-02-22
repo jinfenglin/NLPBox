@@ -1,6 +1,6 @@
 import unittest
 
-from RNN import RNN, RNN_MODEL_PATH
+from RNN import RNN, RNN_MODEL_DIR
 from data_prepare import SENETRawDataBuilder, DataPrepare, Encoder
 from feature_extractors import SENETFeaturePipe
 
@@ -25,5 +25,5 @@ class TestDataPrepare(unittest.TestCase):
         rb = SENETRawDataBuilder("test.db", golden_pair_files=golden_pairs, vocab_file_name=vocab, golden_list_files=[])
         pipeline = SENETFeaturePipe()
         data = DataPrepare("test_dataset.pickle", feature_pipe=pipeline, raw_materials=rb.raws, rebuild=True)
-        rnn = RNN(data.get_vec_length(), RNN_MODEL_PATH)
+        rnn = RNN(data.get_vec_length(), RNN_MODEL_DIR)
         rnn.ten_fold_test(data_set=data, result_file="rnn_test.res")

@@ -220,7 +220,6 @@ class DataPrepare:
         rebuild and override existing one
         """
         self.data_set = []  # follow the format of (feature_vec, label, readable_info)
-        logging.basicConfig(stream=sys.stdout)
         self.logger = logging.getLogger(__name__)
         self.pick_path = pickle_path
         self.encoder = None

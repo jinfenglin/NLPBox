@@ -30,7 +30,7 @@ class Sqlite3Manger:
                 res = c.execute(sql)
                 self.execute_count += 1
                 if self.execute_count > self.commit_period:
-                    self.logger.info("Commit in database")
+                    self.logger.debug("Commit in database")
                     self.execute_count = 0
                     self.conn.commit()
                 return res
