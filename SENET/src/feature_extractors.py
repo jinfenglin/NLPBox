@@ -16,12 +16,14 @@ class SENETFeaturePipe:
     def __init__(self, model="en_core_web_lg"):
         self.nlp = spacy.load(model)
         self.func_pip = [
+
             self.stackoverflow_questions_noun_phrase_similarity,
             self.stackoverflow_answer_noun_phrase_similarity,
             self.stackoverflow_related_link_similarity,
             self.quora_answer_noun_phrase_similarity,
             self.quora_questions_noun_phrase_similarity,
             self.quora_related_question_similarity,
+
             self.definition_similarity,
             self.w1_to_w2Definition_count,
             self.w2_to_w1Definition_count,
@@ -29,12 +31,12 @@ class SENETFeaturePipe:
             self.w2_to_w1_definition_noun_similarity,
             self.w1_to_w2_see_also,
             self.w2_to_w1_see_also,
+
             self.common_token_len,
             self.same_last_token,
             self.same_first_token,
             self.token_num_same,
             self.iterative_levenshtein,
-            # self.wordnet_last_token_h_similarity,
             self.one_side_single_token,
         ]
 
@@ -260,6 +262,7 @@ class SENETFeaturePipe:
         feature_vec = []
         self.w1 = wp_raw_material.get_w1_str()
         self.w2 = wp_raw_material.get_w2_str()
+
         self.w1_stem_tokens = stem_string(self.w1, regx_split_chars="[\s-]")
         self.w2_stem_tokens = stem_string(self.w2, regx_split_chars="[\s-]")
 

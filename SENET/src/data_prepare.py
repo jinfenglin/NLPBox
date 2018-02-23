@@ -1,15 +1,16 @@
 import random
 
-import sys
 from nltk.stem.porter import PorterStemmer
 import pickle
 from data_entry_structures import DataSet, SENETWordPairRaw
 from dict_utils import collection_to_index_dict, invert_dict
 from Cleaner.cleaner import clean_phrase
+from feature_extractors import SENETFeaturePipe
 from sql_db_manager import Sqlite3Manger
 from config import *
 import json
 import logging
+import threading, math
 
 
 class PairBuilder:
@@ -211,7 +212,7 @@ class DataPrepare:
     The dataset can be pickled and imported. The raw_material should match the requirement of feature_pipe
     """
 
-    def __init__(self, pickle_path, feature_pipe, raw_materials, rebuild=True):
+    def __init__(self, pickle_path, raw_materials, rebuild=True, thread_num=4):
         """
         :param pickle_path: The path to store or load data
         :param feature_pipe: A list containing methods to consume raw_material
@@ -224,28 +225,39 @@ class DataPrepare:
         self.pick_path = pickle_path
         self.encoder = None
         if os.path.isfile(pickle_path) and not rebuild:
+            self.logger.info("Loading data from path {}".format(pickle_path))
             self.__load_file()
         else:
-            self.__build_data_set(feature_pipe, raw_materials)
+            self.logger.info("Build dat set with {} threads".format(thread_num))
+            chunk_size = math.ceil(len(raw_materials) / thread_num)
+            labels = list(set([r.label() for r in raw_materials]))
+            labels.sort()
+            self.encoder = Encoder(labels)
+            workers = []
+            for i in range(thread_num):
+                feature_pipe = SENETFeaturePipe()
+                raw_parts = raw_materials[i * chunk_size: (i + 1) * chunk_size]
+                t = threading.Thread(target=self.__build_data_set, args=(feature_pipe, raw_parts, i))
+                workers.append(t)
+                t.start()
+            for t in workers:
+                t.join()
+            self.write_file()
 
-    def __build_data_set(self, feature_pipe, raw_materials):
+    def __build_data_set(self, feature_pipe, raw_materials, thread_id):
         """
         Drive the production of data by applying the raw_material to feature_pipe. The
         :param feature_pipe: A list of function process RawMaterial Object
         :param raw_materials: A list of RawMaterial object
         :return:
         """
-        labels = list(set([r.label() for r in raw_materials]))
-        labels.sort()
-        self.encoder = Encoder(labels)
         for i, entry in enumerate(raw_materials):
-            self.logger.info("Data Prepare: {}/{}".format(i, len(raw_materials)))
+            self.logger.info("Data Prepare - Thread-{}: {}/{}".format(thread_id, i, len(raw_materials)))
             feature_vec = feature_pipe.get_feature(entry)
             label = self.encoder.one_hot_encode(entry.label())
             readable_info = entry.info()
             data_entry = (feature_vec, label, readable_info)
             self.data_set.append(data_entry)
-        self.write_file()
 
     def write_file(self):
         '''
@@ -255,7 +267,7 @@ class DataPrepare:
         with open(self.pick_path, 'wb') as fout:
             dump_obj = (self.data_set, self.encoder)
             pickle.dump(dump_obj, fout)
-        self.logger.info("Feature Vectors are pickled")
+        self.logger.info("Feature Vectors are pickled as {}".format(self.pick_path))
 
     def __load_file(self):
         with open(self.pick_path, 'rb') as fin:
