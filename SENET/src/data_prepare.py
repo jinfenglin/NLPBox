@@ -150,7 +150,8 @@ class SENETRawDataBuilder:
 
         for i, plist in enumerate(pair_groups):
             label = labels[i]
-            for pair in plist:
+            for i, pair in enumerate(plist):
+                self.logger.info("Document Attaching {}/{}".format(i, len(plist)))
                 self.raws.append(SENETRawDataBuilder.attach_docs(label, pair[0], pair[1], sql_manger))
         random.shuffle(self.raws)
 
@@ -168,7 +169,7 @@ class SENETRawDataBuilder:
             return res
 
         neg_pairs = []
-        for pair in golden_pairs:
+        for i in len(golden_pairs):
             try:
                 g1_negs = get_random_word(1)
                 neg_pairs.extend(g1_negs)
@@ -190,7 +191,8 @@ class SENETRawDataBuilder:
 
         for g_list_name in golden_list_files:
             with open(VOCAB_DIR + os.sep + g_list_name) as fin:
-                for line in fin.readlines():
+                lines = fin.readlines()
+                for i, line in enumerate(lines):
                     words1, rest = line.strip(" \n").split(":")
                     words1 = clean_phrase(words1)
                     if rest == "":
@@ -212,7 +214,7 @@ class DataPrepare:
     The dataset can be pickled and imported. The raw_material should match the requirement of feature_pipe
     """
 
-    def __init__(self, pickle_path, raw_materials, rebuild=True, thread_num=4):
+    def __init__(self, pickle_path, feature_pipe, raw_materials, rebuild=True, thread_num=4):
         """
         :param pickle_path: The path to store or load data
         :param feature_pipe: A list containing methods to consume raw_material
@@ -235,7 +237,6 @@ class DataPrepare:
             self.encoder = Encoder(labels)
             workers = []
             for i in range(thread_num):
-                feature_pipe = SENETFeaturePipe()
                 raw_parts = raw_materials[i * chunk_size: (i + 1) * chunk_size]
                 t = threading.Thread(target=self.__build_data_set, args=(feature_pipe, raw_parts, i))
                 workers.append(t)
