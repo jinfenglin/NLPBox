@@ -4,6 +4,9 @@ from data_prepare import DataPrepare, SENETRawDataBuilder, PairBuilder
 from feature_extractors import SENETFeaturePipe
 import logging, sys
 
+sys.path.append("../../Utils")
+sys.path.append("../../Cleaner")
+
 if __name__ == '__main__':
     try:
         mode = sys.argv[1]

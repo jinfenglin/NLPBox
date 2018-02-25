@@ -1,6 +1,4 @@
 import random
-import sys
-sys.path.append("../../Utils")
 from nltk.stem.porter import PorterStemmer
 import pickle
 from data_entry_structures import DataSet, SENETWordPairRaw
