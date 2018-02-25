@@ -1,5 +1,7 @@
+import sys
+sys.path.append("../../Cleaner")
 import sqlite3
-from Cleaner import cleaner
+import cleaner
 import logging, threading
 
 
