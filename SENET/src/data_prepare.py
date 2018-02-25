@@ -96,7 +96,8 @@ class SENETRawDataBuilder:
     """
 
     @staticmethod
-    def attach_docs(label, w1, w2, sql_manger):
+    def find_document(label, w1, w2, sql_manger):
+        documents = {}
         try:
             w1_docs = sql_manger.get_content_for_query(w1)
             w2_docs = sql_manger.get_content_for_query(w2)
@@ -112,9 +113,10 @@ class SENETRawDataBuilder:
                     w2_docs[key] = json.loads(w2_docs[key])
                 else:
                     w2_docs[key] = []
-
-            material = SENETWordPairRaw(label, (w1, w2), (w1_docs, w2_docs))
-            return material
+            material = SENETWordPairRaw(label, (w1, w2))
+            documents[w1] = w1_docs
+            documents[w2] = w2_docs
+            return material, documents
         except Exception as e:
             print(e)
 
@@ -130,6 +132,7 @@ class SENETRawDataBuilder:
         """
         self.logger = logging.getLogger(__name__)
         sql_manger = Sqlite3Manger(sql_file)
+        self.documents = {}
         self.raws = []
         if pair_builder is None:
             self.keyword_path = os.path.join(VOCAB_DIR, vocab_file_name)
@@ -152,7 +155,10 @@ class SENETRawDataBuilder:
             label = labels[i]
             for i, pair in enumerate(plist):
                 self.logger.info("Document Attaching {}/{}".format(i, len(plist)))
-                self.raws.append(SENETRawDataBuilder.attach_docs(label, pair[0], pair[1], sql_manger))
+                material, docs_for_pair = SENETRawDataBuilder.find_document(label, pair[0], pair[1], sql_manger)
+                for doc in docs_for_pair:
+                    self.documents[doc] = docs_for_pair[doc]
+                self.raws.append(material)
         random.shuffle(self.raws)
 
     def build_neg_with_random_pair(self, golden_pairs):
@@ -386,7 +392,7 @@ class PairBuilder:
 
     def get_pairs(self):
         pairs = []
-        vocab = self.__read_words(os.path.join(VOCAB_DIR, "small_vocabulary.txt"))
+        vocab = self.__read_words(os.path.join(VOCAB_DIR, "small_vocabulary_backup.txt"))
         for w_v in vocab:
             for w_e in self.exp_list:
                 if (w_v, w_e) not in self.relations and (w_e, w_v) not in self.relations:

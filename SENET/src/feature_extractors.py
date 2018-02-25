@@ -13,8 +13,9 @@ class SENETFeaturePipe:
     A feature pipe line process WordPairRawMaterial and serve features for SENET work tasks.
     """
 
-    def __init__(self, model="en_core_web_lg"):
+    def __init__(self, documents, model="en_core_web_lg"):
         self.nlp = spacy.load(model)
+        self.documents = documents
         self.func_pip = [
             self.stackoverflow_questions_noun_phrase_similarity,
             self.stackoverflow_answer_noun_phrase_similarity,
@@ -221,33 +222,39 @@ class SENETFeaturePipe:
 
         ## Stackoverflow ##
         w1_info["w1_stk_clean_questoins"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_stackoverflow_questions(w1)))
+            self.__clean_docs(wp_raw_material.get_stackoverflow_questions(w1, self.documents)))
         w2_info["w2_stk_clean_questions"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_stackoverflow_questions(w2)))
+            self.__clean_docs(wp_raw_material.get_stackoverflow_questions(w2, self.documents)))
         w1_info["w1_stk_clean_answers"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_stackoverflow_answers(w1)))
+            self.__clean_docs(wp_raw_material.get_stackoverflow_answers(w1, self.documents)))
         w2_info["w2_stk_clean_answers"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_stackoverflow_answers(w2)))
+            self.__clean_docs(wp_raw_material.get_stackoverflow_answers(w2, self.documents)))
         w1_info["w1_stk_related_questions"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_stackoverflow_related_links(w1)))
+            self.__clean_docs(wp_raw_material.get_stackoverflow_related_links(w1, self.documents)))
         w2_info["w2_stk_related_questions"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_stackoverflow_related_links(w2)))
+            self.__clean_docs(wp_raw_material.get_stackoverflow_related_links(w2, self.documents)))
 
         ## Quora ##
-        w1_info["w1_quora_clean_questions"] = self.nlp(self.__clean_docs(wp_raw_material.get_quora_questions(w1)))
-        w2_info["w2_quora_clean_questions"] = self.nlp(self.__clean_docs(wp_raw_material.get_quora_questions(w2)))
-        w1_info["w1_quora_clean_answers"] = self.nlp(self.__clean_docs(wp_raw_material.get_quora_answers(w1)))
-        w2_info["w2_quora_clean_answers"] = self.nlp(self.__clean_docs(wp_raw_material.get_quora_answers(w2)))
+        w1_info["w1_quora_clean_questions"] = self.nlp(
+            self.__clean_docs(wp_raw_material.get_quora_questions(w1, self.documents)))
+        w2_info["w2_quora_clean_questions"] = self.nlp(
+            self.__clean_docs(wp_raw_material.get_quora_questions(w2, self.documents)))
+        w1_info["w1_quora_clean_answers"] = self.nlp(
+            self.__clean_docs(wp_raw_material.get_quora_answers(w1, self.documents)))
+        w2_info["w2_quora_clean_answers"] = self.nlp(
+            self.__clean_docs(wp_raw_material.get_quora_answers(w2, self.documents)))
         w1_info["w1_quora_related_questions"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_quora_related_links(w1)))
+            self.__clean_docs(wp_raw_material.get_quora_related_links(w1, self.documents)))
         w2_info["w2_quora_related_questions"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_quora_related_links(w2)))
+            self.__clean_docs(wp_raw_material.get_quora_related_links(w2, self.documents)))
 
         ## Regular ##
 
         ## PcMag ##
-        w1_info["w1_pcMag_clean_doc"] = self.nlp(self.__clean_docs(wp_raw_material.get_pcMag_definition(w1)))
-        w2_info["w2_pcMag_clean_doc"] = self.nlp(self.__clean_docs(wp_raw_material.get_pcMag_definition(w2)))
+        w1_info["w1_pcMag_clean_doc"] = self.nlp(
+            self.__clean_docs(wp_raw_material.get_pcMag_definition(w1, self.documents)))
+        w2_info["w2_pcMag_clean_doc"] = self.nlp(
+            self.__clean_docs(wp_raw_material.get_pcMag_definition(w2, self.documents)))
 
         for func in self.func_pip:
             feature_vec.append(func(w1, w2, w1_info, w2_info))

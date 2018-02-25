@@ -21,16 +21,15 @@ class SENETWordPairRaw(RawMaterial):
     """
 
     # TODO A shared text resource file for this 2 class should be created
-    def __init__(self, raw_label, str_pair, doc_packs):
+    def __init__(self, raw_label, str_pair):
         """
         :param raw_label: An obejct stands for label
         :param str_pair: A pair of string
         :param A large, complex json string, include all info scrapped for the terms in the str_pair
         """
         assert type(str_pair) is tuple
-        assert type(doc_packs) is tuple
         super().__init__(raw_label, str_pair)
-        self.wd_doc_dict = {self.get_w1_str(): doc_packs[0], self.get_w2_str(): doc_packs[1]}
+        # self.wd_doc_dict = {self.get_w1_str(): doc_packs[0], self.get_w2_str(): doc_packs[1]}
 
     def get_w1_str(self):
         return self.raw_content[0]
@@ -38,14 +37,14 @@ class SENETWordPairRaw(RawMaterial):
     def get_w2_str(self):
         return self.raw_content[1]
 
-    def get_stackoverflow_questions(self, word):
+    def get_stackoverflow_questions(self, word, wd_doc_dict):
         """
         Get stackoverflow questions for the given word
         :param word:
         :return: A list of questions related with the word
         """
         res = []
-        doc_dict = self.wd_doc_dict[word]
+        doc_dict = wd_doc_dict[word]
         page_contents = doc_dict["stackoverflow"]
         nested = [x["questions"] for x in page_contents]
         if len(nested) == 0:
@@ -53,13 +52,13 @@ class SENETWordPairRaw(RawMaterial):
         else:
             return np.concatenate(nested).ravel().tolist()
 
-    def get_stackoverflow_answers(self, word):
+    def get_stackoverflow_answers(self, word, wd_doc_dict):
         """
         Get stackoverflow answers for the given word
         :param word:
         :return: A list of answers related with the word
         """
-        doc_dict = self.wd_doc_dict[word]
+        doc_dict = wd_doc_dict[word]
         page_content = doc_dict["stackoverflow"]
         nested = [x["answers"] for x in page_content]
         if len(nested) == 0:
@@ -67,13 +66,13 @@ class SENETWordPairRaw(RawMaterial):
         else:
             return np.concatenate(nested).ravel().tolist()
 
-    def get_stackoverflow_related_links(self, word):
+    def get_stackoverflow_related_links(self, word, wd_doc_dict):
         """
         Get stackoverflow answers for the given word
         :param word:
         :return: A list of related question links. Each list contains pairs: (questions, link)
         """
-        doc_dict = self.wd_doc_dict[word]
+        doc_dict = wd_doc_dict[word]
         page_content = doc_dict["stackoverflow"]
         nested = [x["related_questions"] for x in page_content]
         flat = []
@@ -82,8 +81,8 @@ class SENETWordPairRaw(RawMaterial):
                 flat.append(item[0])
         return flat
 
-    def get_quora_questions(self, word):
-        doc_dict = self.wd_doc_dict[word]
+    def get_quora_questions(self, word, wd_doc_dict):
+        doc_dict = wd_doc_dict[word]
         page_content = doc_dict["quora"]
         nested = [x["questions"] for x in page_content]
         if len(nested) == 0:
@@ -91,8 +90,8 @@ class SENETWordPairRaw(RawMaterial):
         else:
             return np.concatenate(nested).ravel().tolist()
 
-    def get_quora_answers(self, word):
-        doc_dict = self.wd_doc_dict[word]
+    def get_quora_answers(self, word, wd_doc_dict):
+        doc_dict = wd_doc_dict[word]
         page_content = doc_dict["quora"]
         nested = [x["answers"] for x in page_content]
         if len(nested) == 0:
@@ -100,8 +99,8 @@ class SENETWordPairRaw(RawMaterial):
         else:
             return np.concatenate(nested).ravel().tolist()
 
-    def get_quora_related_links(self, word):
-        doc_dict = self.wd_doc_dict[word]
+    def get_quora_related_links(self, word, wd_doc_dict):
+        doc_dict = wd_doc_dict[word]
         page_content = doc_dict["quora"]
         nested = [x["related_questions"] for x in page_content]
         flat = []
@@ -110,16 +109,16 @@ class SENETWordPairRaw(RawMaterial):
                 flat.append(item[0])
         return flat
 
-    def get_pcMag_definition(self, word):
-        doc_dict = self.wd_doc_dict[word]
+    def get_pcMag_definition(self, word, wd_doc_dict):
+        doc_dict = wd_doc_dict[word]
         page_content = doc_dict["pcMag"]
         if len(page_content) == 0:
             return ""
         return page_content[0]["definition"]  # Definition only parse 1 link
 
-    def get_regular_doc_content(self, word):
+    def get_regular_doc_content(self, word, wd_doc_dict):
         try:
-            doc_dict = self.wd_doc_dict[word]
+            doc_dict = wd_doc_dict[word]
             page_content = doc_dict["regular"]
             nested = [x["content"] for x in page_content]
             if len(nested) == 0:
