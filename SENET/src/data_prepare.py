@@ -178,7 +178,7 @@ class SENETRawDataBuilder:
             return res
 
         neg_pairs = []
-        for i in len(golden_pairs):
+        for i in range(len(golden_pairs)):
             try:
                 g1_negs = get_random_word(1)
                 neg_pairs.extend(g1_negs)

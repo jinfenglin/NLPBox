@@ -1,5 +1,5 @@
 #!/bin/csh
-
+#$ -l gpu_card=1
 #$ -q gpu     # Specify queue (use ‘debug’ for development)
 #$ -N senet_classify        # Specify job name
 
