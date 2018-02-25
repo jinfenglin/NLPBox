@@ -6,7 +6,7 @@ import nltk
 import spacy
 from spacy.tokens import Doc
 
-from Cleaner.cleaner import *
+from cleaner import *
 from nltk.corpus import wordnet
 
 from data_entry_structures import SENETWordPairRaw

@@ -40,11 +40,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="data_prepare.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="data_prepare.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SENET/src/data_prepare.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -62,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="feature_extractors.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="feature_extractors.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SENET/src/feature_extractors.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="29" />
+            <state relative-caret-position="152">
+              <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -159,7 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>programming</find>
       <find>subject</find>
       <find>&quot;</find>
       <find>no	InCorrect</find>
@@ -185,10 +184,11 @@
       <find>dict_</find>
       <find>dict_u</find>
       <find>dict_uti</find>
+      <find>from Cleaner.cleaner import *</find>
       <find>c</find>
       <find>clean</find>
       <find>cleaner</find>
-      <find>from Cleaner.cleaner import *</find>
+      <find>cleaner.</find>
     </findStrings>
     <replaceStrings>
       <replace>self.nlp</replace>
@@ -1131,18 +1131,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/src/feature_extractors.py">
+    <entry file="file://$PROJECT_DIR$/SENET/src/data_prepare.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="29" />
+        <state relative-caret-position="152">
+          <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/src/data_prepare.py">
+    <entry file="file://$PROJECT_DIR$/SENET/src/feature_extractors.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
           <folding />
         </state>
       </provider>

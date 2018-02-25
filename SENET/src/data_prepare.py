@@ -6,7 +6,7 @@ from nltk.stem.porter import PorterStemmer
 import pickle
 from data_entry_structures import DataSet, SENETWordPairRaw
 from dict_utils import collection_to_index_dict, invert_dict
-from Cleaner.cleaner import clean_phrase
+from cleaner import clean_phrase
 from sql_db_manager import Sqlite3Manger
 from config import *
 import json
