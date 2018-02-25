@@ -5,7 +5,10 @@ from feature_extractors import SENETFeaturePipe
 import logging, sys
 
 if __name__ == '__main__':
-    mode = "classify"
+    try:
+        mode = sys.argv[1]
+    except Exception as e:
+        mode = "classify"
     # sql_file = os.path.join(PROJECT_ROOT, "..", "Scraper", "data", "term_definitions.db")
     sql_file = os.path.join(PROJECT_ROOT, "..", "SENET", "data", "term_definitions.db")
     logging.basicConfig(stream=sys.stdout, level=logging.INFO)
