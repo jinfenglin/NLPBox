@@ -1,3 +1,6 @@
+import sys
+sys.path.append("../../Utils")
+sys.path.append("../../Cleaner")
 import random
 from nltk.stem.porter import PorterStemmer
 import pickle

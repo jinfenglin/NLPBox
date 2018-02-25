@@ -40,21 +40,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="data_prepare.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="data_prepare.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SENET/src/data_prepare.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+            <state relative-caret-position="152">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SENET/src/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+            <state relative-caret-position="76">
+              <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -65,11 +65,9 @@
       <file leaf-file-name="feature_extractors.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SENET/src/feature_extractors.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="133">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -161,14 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>precision</find>
-      <find>precision:0.0</find>
-      <find>precision: 0.0</find>
-      <find>senet_features</find>
-      <find>thread</find>
-      <find>ceil</find>
-      <find>self.encoder</find>
-      <find>info</find>
       <find>programming</find>
       <find>subject</find>
       <find>&quot;</find>
@@ -189,8 +179,16 @@
       <find>SENETWordPairRaw</find>
       <find>u</find>
       <find>uti</find>
-      <find>utils</find>
       <find>feature</find>
+      <find>utils</find>
+      <find>d</find>
+      <find>dict_</find>
+      <find>dict_u</find>
+      <find>dict_uti</find>
+      <find>c</find>
+      <find>clean</find>
+      <find>cleaner</find>
+      <find>from Cleaner.cleaner import *</find>
     </findStrings>
     <replaceStrings>
       <replace>self.nlp</replace>
@@ -249,12 +247,12 @@
         <option value="$PROJECT_DIR$/SENET/data/vocab/expension.txt" />
         <option value="$PROJECT_DIR$/SENET/src/data_entry_structures.py" />
         <option value="$PROJECT_DIR$/SENET/data/vocab/expension_debug.txt" />
-        <option value="$PROJECT_DIR$/SENET/src/feature_extractors.py" />
         <option value="$PROJECT_DIR$/SENET/crc_script/classify.csh" />
         <option value="$PROJECT_DIR$/SENET/requirement.txt" />
         <option value="$PROJECT_DIR$/SENET/crc_script/ten_fold.csh" />
-        <option value="$PROJECT_DIR$/SENET/src/data_prepare.py" />
         <option value="$PROJECT_DIR$/SENET/src/main.py" />
+        <option value="$PROJECT_DIR$/SENET/src/data_prepare.py" />
+        <option value="$PROJECT_DIR$/SENET/src/feature_extractors.py" />
       </list>
     </option>
   </component>
@@ -310,6 +308,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NLPBox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NLPBox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cleaner" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1093,16 +1105,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/src/feature_extractors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SENET/crc_script/classify.csh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -1119,21 +1121,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/src/data_prepare.py">
+    <entry file="file://$PROJECT_DIR$/SENET/src/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+        <state relative-caret-position="76">
+          <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/src/feature_extractors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/src/main.py">
+    <entry file="file://$PROJECT_DIR$/SENET/src/data_prepare.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="152">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

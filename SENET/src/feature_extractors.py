@@ -1,3 +1,7 @@
+import sys
+
+sys.path.append("../../Utils")
+sys.path.append("../../Cleaner")
 import nltk
 import spacy
 from spacy.tokens import Doc
