@@ -2,6 +2,7 @@ import sys
 
 sys.path.append("../../Utils")
 sys.path.append("../../Cleaner")
+sys.path.append("../../Scraper/src")
 import nltk
 import spacy
 from spacy.tokens import Doc
