@@ -6,6 +6,7 @@ from Cleaner.cleaner import *
 from nltk.corpus import wordnet
 
 from data_entry_structures import SENETWordPairRaw
+import logging
 
 
 class SENETFeaturePipe:
@@ -14,8 +15,10 @@ class SENETFeaturePipe:
     """
 
     def __init__(self, documents, model="en_core_web_lg"):
+        logging.getLogger(__name__).info("Loaded language model:{}".format(model))
         self.nlp = spacy.load(model)
         self.documents = documents
+        self.processed_docs = {}  # Serve as a cache, store the processed documents as
         self.func_pip = [
             self.stackoverflow_questions_noun_phrase_similarity,
             self.stackoverflow_answer_noun_phrase_similarity,
@@ -217,45 +220,43 @@ class SENETFeaturePipe:
         w1_info = {}
         w2_info = {}
 
-        w1_info["w1_stem_tokens"] = stem_string(w1, regx_split_chars="[\s-]")
-        w2_info["w2_stem_tokens"] = stem_string(w2, regx_split_chars="[\s-]")
+        if w1 in self.processed_docs:
+            w1_info = self.processed_docs[w1]
+        else:
+            w1_info["w1_stk_clean_questoins"] = self.nlp(
+                self.__clean_docs(wp_raw_material.get_stackoverflow_questions(w1, self.documents)))
+            w1_info["w1_stem_tokens"] = stem_string(w1, regx_split_chars="[\s-]")
+            w1_info["w1_stk_clean_answers"] = self.nlp(
+                self.__clean_docs(wp_raw_material.get_stackoverflow_answers(w1, self.documents)))
+            w1_info["w1_stk_related_questions"] = self.nlp(
+                self.__clean_docs(wp_raw_material.get_stackoverflow_related_links(w1, self.documents)))
+            w1_info["w1_quora_clean_questions"] = self.nlp(
+                self.__clean_docs(wp_raw_material.get_quora_questions(w1, self.documents)))
+            w1_info["w1_quora_clean_answers"] = self.nlp(
+                self.__clean_docs(wp_raw_material.get_quora_answers(w1, self.documents)))
+            w1_info["w1_quora_related_questions"] = self.nlp(
+                self.__clean_docs(wp_raw_material.get_quora_related_links(w1, self.documents)))
+            w1_info["w1_pcMag_clean_doc"] = self.nlp(
+                self.__clean_docs(wp_raw_material.get_pcMag_definition(w1, self.documents)))
 
-        ## Stackoverflow ##
-        w1_info["w1_stk_clean_questoins"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_stackoverflow_questions(w1, self.documents)))
-        w2_info["w2_stk_clean_questions"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_stackoverflow_questions(w2, self.documents)))
-        w1_info["w1_stk_clean_answers"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_stackoverflow_answers(w1, self.documents)))
-        w2_info["w2_stk_clean_answers"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_stackoverflow_answers(w2, self.documents)))
-        w1_info["w1_stk_related_questions"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_stackoverflow_related_links(w1, self.documents)))
-        w2_info["w2_stk_related_questions"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_stackoverflow_related_links(w2, self.documents)))
-
-        ## Quora ##
-        w1_info["w1_quora_clean_questions"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_quora_questions(w1, self.documents)))
-        w2_info["w2_quora_clean_questions"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_quora_questions(w2, self.documents)))
-        w1_info["w1_quora_clean_answers"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_quora_answers(w1, self.documents)))
-        w2_info["w2_quora_clean_answers"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_quora_answers(w2, self.documents)))
-        w1_info["w1_quora_related_questions"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_quora_related_links(w1, self.documents)))
-        w2_info["w2_quora_related_questions"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_quora_related_links(w2, self.documents)))
-
-        ## Regular ##
-
-        ## PcMag ##
-        w1_info["w1_pcMag_clean_doc"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_pcMag_definition(w1, self.documents)))
-        w2_info["w2_pcMag_clean_doc"] = self.nlp(
-            self.__clean_docs(wp_raw_material.get_pcMag_definition(w2, self.documents)))
-
+        if w2 in self.processed_docs:
+            w2_info = self.processed_docs[w2]
+        else:
+            w2_info["w2_stem_tokens"] = stem_string(w2, regx_split_chars="[\s-]")
+            w2_info["w2_stk_clean_questions"] = self.nlp(
+                self.__clean_docs(wp_raw_material.get_stackoverflow_questions(w2, self.documents)))
+            w2_info["w2_stk_clean_answers"] = self.nlp(
+                self.__clean_docs(wp_raw_material.get_stackoverflow_answers(w2, self.documents)))
+            w2_info["w2_stk_related_questions"] = self.nlp(
+                self.__clean_docs(wp_raw_material.get_stackoverflow_related_links(w2, self.documents)))
+            w2_info["w2_quora_clean_questions"] = self.nlp(
+                self.__clean_docs(wp_raw_material.get_quora_questions(w2, self.documents)))
+            w2_info["w2_quora_clean_answers"] = self.nlp(
+                self.__clean_docs(wp_raw_material.get_quora_answers(w2, self.documents)))
+            w2_info["w2_quora_related_questions"] = self.nlp(
+                self.__clean_docs(wp_raw_material.get_quora_related_links(w2, self.documents)))
+            w2_info["w2_pcMag_clean_doc"] = self.nlp(
+                self.__clean_docs(wp_raw_material.get_pcMag_definition(w2, self.documents)))
         for func in self.func_pip:
             feature_vec.append(func(w1, w2, w1_info, w2_info))
         return feature_vec
