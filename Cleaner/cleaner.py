@@ -78,5 +78,11 @@ def remove_stop_words(doc):
     return " ".join(words_filtered)
 
 
+def remove_content_in_bracket(doc):
+    p = re.compile("[\[\(\{][^\]\)\}]*[\]\)\}]")
+    doc = p.sub(" ", doc)
+    return doc
+
+
 if __name__ == "__main__":
-    print(keep_only_given_chars(text="ldjfajfjla $%^&*()213213\"?<\}\{\}"))
+    print(remove_content_in_bracket("a[b]c[d]"))

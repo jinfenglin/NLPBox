@@ -65,7 +65,16 @@ class Mission:
         self.db_dumps[thread_id] = db_dump
         self.logger.info("Thread-{} have finished work, {} entries are processed.".format(thread_id, len(db_dump)))
 
-    def run(self, delay=0.1, timeout=10, thread_num=1, link_limit=10):
+    def run(self, delay=0.1, timeout=10, thread_num=1, link_limit=10, override_existing=True):
+        """
+
+        :param delay: The time interval between 2 requests
+        :param timeout: The maximal time for each request
+        :param thread_num: The number of threads
+        :param link_limit: The maximal links processed for each query
+        :param override_existing: Whether override the existing content in database
+        :return:
+        """
         self.sqlite_manager.create_table(self.mission_name)  # mission name as table name
         query_strs = [x.query for x in self.scrap_queries]
         query_link_dict = self.scraper.scrap_links(query_strs)
@@ -91,7 +100,10 @@ class Mission:
         for thread_id in self.db_dumps:
             db_dump = self.db_dumps[thread_id]
             for term in db_dump:
-                self.sqlite_manager.add_or_update_row(self.mission_name, term, db_dump[term])
+                if override_existing:
+                    self.sqlite_manager.add_or_update_row(self.mission_name, term, db_dump[term])
+                else:
+                    self.sqlite_manager.add_if_not_exist(self.mission_name, term, db_dump[term])
                 self.logger.debug("Writing {}".format(term))
         self.sqlite_manager.conn.commit()
 

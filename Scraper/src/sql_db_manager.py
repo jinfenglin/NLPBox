@@ -1,4 +1,5 @@
 import sys
+
 sys.path.append("../../Cleaner")
 import sqlite3
 import cleaner
@@ -55,6 +56,13 @@ class Sqlite3Manger:
         query = cleaner.esapce_sql_variable_quote(query)
         content = cleaner.esapce_sql_variable_quote(content)
         sql = "INSERT OR REPLACE INTO {} VALUES (\'{}\',\'{}\')".format(table_name, query, content)
+        self.__execute(sql)
+
+    def add_if_not_exist(self, table_name, query, content):
+        table_name = cleaner.esapce_sql_variable_quote(table_name)
+        query = cleaner.esapce_sql_variable_quote(query)
+        content = cleaner.esapce_sql_variable_quote(content)
+        sql = "INSERT OR IGNORE INTO {} VALUES (\'{}\',\'{}\')".format(table_name, query, content)
         self.__execute(sql)
 
     def get_content_for_query(self, query):
