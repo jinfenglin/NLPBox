@@ -13,7 +13,7 @@ if __name__ == '__main__':
     sql_file = os.path.join(PROJECT_ROOT, "..", "SENET", "data", "term_definitions.db")
     logging.basicConfig(stream=sys.stdout, level=logging.INFO)
     logger = logging.getLogger(__name__)
-    version = "v0.02_all"
+    version = "v0.03_all"
     logger.info("RNN Experiemtn in mode:{} Model Version: {}".format(mode, version))
     model_name = "rnn_v{}.ckpt".format(str(version))
     model_path = os.path.join(RNN_MODEL_DIR, model_name)
@@ -30,7 +30,7 @@ if __name__ == '__main__':
         rnn = RNN(data.get_vec_length(), model_path, RNN_ENCODER_PATH)
         rnn.ten_fold_test(data, result_file)
     elif mode == "classify":
-        expension_file_path = os.path.join(SENET_DATA, "vocab", "expension_debug.txt")
+        expension_file_path = os.path.join(SENET_DATA, "vocab", "expension.txt")
         pair_builder = PairBuilder(expension_list_txt=expension_file_path)
         data_builder = SENETRawDataBuilder(sql_file, pair_builder=pair_builder)
         raws = data_builder.raws

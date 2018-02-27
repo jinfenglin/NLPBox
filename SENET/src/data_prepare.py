@@ -14,6 +14,7 @@ from config import *
 import json
 import logging
 import threading, math
+from pair_utils import pair_in_collection
 
 
 class PairBuilder:
@@ -137,22 +138,24 @@ class SENETRawDataBuilder:
         sql_manger = Sqlite3Manger(sql_file)
         self.documents = {}
         self.raws = []
-        if pair_builder is None:
-            self.keyword_path = os.path.join(VOCAB_DIR, vocab_file_name)
-            self.keys = []
-            with open(self.keyword_path, 'r', encoding='utf-8') as kwin:
-                for line in kwin:
-                    self.keys.append(line.strip(" \n\r\t"))
 
-            golden_pairs = self.build_golden(golden_pair_files, golden_list_files)
+        self.keyword_path = os.path.join(VOCAB_DIR, vocab_file_name)
+        self.keys = []
+        with open(self.keyword_path, 'r', encoding='utf-8') as kwin:
+            for line in kwin:
+                self.keys.append(line.strip(" \n\r\t"))
+        golden_pairs = self.build_golden(golden_pair_files, golden_list_files)
+        if pair_builder is None:
             neg_pairs = self.build_neg_with_random_pair(golden_pairs)
             labels = ["yes", "no"]  # [0,1] is negative and [1,0] is positive
             pair_groups = [golden_pairs, neg_pairs]
             self.logger.info("Candidate neg pairs:{}, Golden pairs:{}".format(len(neg_pairs), len(golden_pairs)))
         else:
             pairs = pair_builder.get_pairs()
+            pairs = [x for x in pairs if not pair_in_collection(x, golden_pairs, have_direction=False)]
             pair_groups = [pairs]
             labels = [""]
+            self.logger.info("{} Pairs will be classified.".format(len(pairs)))
 
         for i, plist in enumerate(pair_groups):
             label = labels[i]
@@ -395,7 +398,7 @@ class PairBuilder:
 
     def get_pairs(self):
         pairs = []
-        vocab = self.__read_words(os.path.join(VOCAB_DIR, "small_vocabulary_backup.txt"))
+        vocab = self.__read_words(os.path.join(VOCAB_DIR, "small_vocabulary.txt"))
         for w_v in vocab:
             for w_e in self.exp_list:
                 if (w_v, w_e) not in self.relations and (w_e, w_v) not in self.relations:

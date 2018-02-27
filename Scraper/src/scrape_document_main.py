@@ -186,7 +186,7 @@ if __name__ == "__main__":
             sql_db = "Test.db"
             terms = ["Objective-C", "Scala", "Swift", "Shell", "TypeScript", "go", "C#", "CSS"]
         # Build the database from scratch by give a list of vocabulary
-        run_wikipedia_parse_mission(sql_db, terms, scraper)
+        #run_wikipedia_parse_mission(sql_db, terms, scraper)
         # run_pcMag_mission(sql_db, terms, scraper, use_proxy=True)
         # run_stackoverflow_mission(sql_db, terms, scraper, use_proxy=True)
         # run_quora_mission(sql_db, terms, scraper, use_proxy=True)
