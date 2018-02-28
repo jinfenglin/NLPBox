@@ -10,8 +10,8 @@ if __name__ == '__main__':
     except Exception as e:
         mode = "classify"
     try:
-        total_partition = sys.argv[2]
-        cur_node_partition = sys.argv[3]
+        total_partition = int(sys.argv[2])
+        cur_node_partition = int(sys.argv[3])
     except Exception as e:
         total_partition = 1
         cur_node_partition = 1
