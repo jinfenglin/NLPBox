@@ -388,17 +388,19 @@ class PairBuilder:
                         rel.add((hyper[0], w_r))
         return rel
 
-    def __init__(self, expension_list_txt):
+    def __init__(self, expension_list_txt, cur_node_partition, total_partition):
         """
 
         :param expension_list_txt: A list of file path which will be used to match with all vocabulary to construct pairs
         """
         self.exp_list = self.__read_words(expension_list_txt)
+        chunk_size = math.ceil(len(self.exp_list) / total_partition)
+        self.exp_list = self.exp_list[(cur_node_partition - 1) * chunk_size: cur_node_partition * chunk_size]
         self.relations = self.__get_all_relationships()
 
     def get_pairs(self):
         pairs = []
-        vocab = self.__read_words(os.path.join(VOCAB_DIR, "small_vocabulary.txt"))
+        vocab = self.__read_words(os.path.join(VOCAB_DIR, "debug_vocabulary.txt"))
         for w_v in vocab:
             for w_e in self.exp_list:
                 if (w_v, w_e) not in self.relations and (w_e, w_v) not in self.relations:
