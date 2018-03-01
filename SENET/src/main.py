@@ -36,7 +36,7 @@ if __name__ == '__main__':
         rnn = RNN(data.get_vec_length(), model_path, RNN_ENCODER_PATH)
         rnn.ten_fold_test(data, result_file)
     elif mode == "classify":
-        expension_file_path = os.path.join(SENET_DATA, "vocab", "expension_debug.txt")
+        expension_file_path = os.path.join(SENET_DATA, "vocab", "expension.txt")
         pair_builder = PairBuilder(expension_file_path, cur_node_partition, total_partition)
         data_builder = SENETRawDataBuilder(sql_file, pair_builder=pair_builder)
         raws = data_builder.raws
