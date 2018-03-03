@@ -1,5 +1,4 @@
 #!/bin/csh
-#$ -l gpu_card=1
 #$ -q gpu     # Specify queue (use ‘debug’ for development)
 #$ -N feature_v_classify        # Specify job name
 #$ -t 1-4                     # Specify number of tasks in array
