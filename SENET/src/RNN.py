@@ -123,6 +123,7 @@ class RNN:
                 confidence_score = sess.run(self.confidence, feed_dict={self.x: batch_xs})
                 res.append((test_word_pairs, confidence_score))
         with open(self.label_encoder_pickle, 'rb') as pickle_in:
+            # classifier use its own label encoder and don't trust the one provided by dataset
             label_encoder = pickle.load(pickle_in)
         return res, label_encoder
 

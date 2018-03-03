@@ -11,3 +11,4 @@ RNN_MODEL_DIR = os.path.join(SENET_DATA, "model")
 RNN_ENCODER_PATH = "encoder.pickle"
 
 LOGS = os.path.join(PROJECT_ROOT, "logs")
+FEATURE_VEC_DIR = os.path.join(SENET_DATA, "feature_vectors")
