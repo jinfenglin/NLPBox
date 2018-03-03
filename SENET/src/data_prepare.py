@@ -400,7 +400,7 @@ class PairBuilder:
 
     def get_pairs(self):
         pairs = []
-        vocab = self.__read_words(os.path.join(VOCAB_DIR, "debug_vocab.test"))
+        vocab = self.__read_words(os.path.join(VOCAB_DIR, "small_vocabulary.txt"))
         for w_v in vocab:
             for w_e in self.exp_list:
                 if (w_v, w_e) not in self.relations and (w_e, w_v) not in self.relations:

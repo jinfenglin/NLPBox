@@ -16,7 +16,7 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, handlers=[logging.StreamHandler()])
     logger = logging.getLogger(__name__)
 
-    expension_file_path = os.path.join(SENET_DATA, "vocab", "expension_debug.txt")
+    expension_file_path = os.path.join(SENET_DATA, "vocab", "expension.txt")
     pair_builder = PairBuilder(expension_file_path, cur_node_partition, total_partition)
     data_builder = SENETRawDataBuilder(sql_file, pair_builder=pair_builder)
     raws = data_builder.raws
