@@ -78,11 +78,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="fv_classify.csh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SENET/crc_script/fv_classify.csh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="classify_with_feature_vectors.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SENET/src/classify_with_feature_vectors.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+            <state relative-caret-position="304">
+              <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -196,7 +206,6 @@
         <option value="$PROJECT_DIR$/SENET/src/main.py" />
         <option value="$PROJECT_DIR$/SENET/src/RNN.py" />
         <option value="$PROJECT_DIR$/SENET/crc_script/classify_distributed.csh" />
-        <option value="$PROJECT_DIR$/SENET/crc_script/fv_classify.csh" />
         <option value="$PROJECT_DIR$/SENET/src/generate_feature_vectors.py" />
         <option value="$PROJECT_DIR$/SENET/src/data_prepare.py" />
         <option value="$PROJECT_DIR$/SENET/crc_script/gen_feature_vecs.csh" />
@@ -206,6 +215,7 @@
         <option value="$PROJECT_DIR$/SENET/crc_script/gen_fv_39.csh" />
         <option value="$PROJECT_DIR$/SENET/crc_script/gen_fv_40.csh" />
         <option value="$PROJECT_DIR$/SENET/src/classify_with_feature_vectors.py" />
+        <option value="$PROJECT_DIR$/SENET/crc_script/fv_classify.csh" />
       </list>
     </option>
   </component>
@@ -1193,14 +1203,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/crc_script/fv_classify.csh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="62" lean-forward="false" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SENET/src/classify_result_filter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -1273,10 +1275,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/crc_script/fv_classify.csh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SENET/src/classify_with_feature_vectors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+        <state relative-caret-position="304">
+          <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
