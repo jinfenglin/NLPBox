@@ -20,13 +20,13 @@ if __name__ == '__main__':
         partition_num = int(name_parts[-2])
         data_set_pickle = os.path.join(FEATURE_VEC_DIR, name)
         if partition_num % total_partition == (cur_node_partition - 1):
-            data = DataPrepare(data_set_pickle, feature_pipe=None, raw_materials=None, rebuild=False)
-            if len(data.data_set) == 0:
-                print("skip empty file ...")
-                continue
-            rnn = RNN(data.get_vec_length(), model_path, RNN_ENCODER_PATH)
-            res, encoder = rnn.classify(data.all())
-            result_file_name = name.replace(".pickle", ".res")
-            classify_res_path = os.path.join(RESULT_DIR, result_file_name)
-            rnn.write_classify_res(classify_res_path, res, encoder)
+            try:
+                data = DataPrepare(data_set_pickle, feature_pipe=None, raw_materials=None, rebuild=False)
+                rnn = RNN(data.get_vec_length(), model_path, RNN_ENCODER_PATH)
+                res, encoder = rnn.classify(data.all())
+                result_file_name = name.replace(".pickle", ".res")
+                classify_res_path = os.path.join(RESULT_DIR, result_file_name)
+                rnn.write_classify_res(classify_res_path, res, encoder)
+            except Exception as e:
+                print(e)
     print("finished")
