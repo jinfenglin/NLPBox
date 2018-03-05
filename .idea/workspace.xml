@@ -51,8 +51,8 @@
       <file leaf-file-name="data_prepare.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SENET/src/data_prepare.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="311" column="8" lean-forward="false" selection-start-line="311" selection-start-column="8" selection-end-line="311" selection-end-column="8" />
+            <state relative-caret-position="411">
+              <caret line="380" column="37" lean-forward="true" selection-start-line="380" selection-start-column="37" selection-end-line="380" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -68,41 +68,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="gen_feature_vecs.csh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SENET/crc_script/gen_feature_vecs.csh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="59" lean-forward="true" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="generate_feature_vectors.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SENET/src/generate_feature_vectors.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+              <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gen_feature_vecs.csh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SENET/crc_script/gen_feature_vecs.csh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="39" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fv_classify.csh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SENET/crc_script/fv_classify.csh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="classify_with_feature_vectors.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="classify_with_feature_vectors.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SENET/src/classify_with_feature_vectors.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" column="44" lean-forward="true" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+            <state relative-caret-position="418">
+              <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -217,15 +207,15 @@
         <option value="$PROJECT_DIR$/SENET/src/RNN.py" />
         <option value="$PROJECT_DIR$/SENET/crc_script/classify_distributed.csh" />
         <option value="$PROJECT_DIR$/SENET/src/generate_feature_vectors.py" />
-        <option value="$PROJECT_DIR$/SENET/crc_script/gen_feature_vecs.csh" />
         <option value="$PROJECT_DIR$/SENET/crc_script/gen_fv_23.csh" />
         <option value="$PROJECT_DIR$/SENET/crc_script/gen_fv_24.csh" />
         <option value="$PROJECT_DIR$/SENET/crc_script/gen_fv_35.csh" />
         <option value="$PROJECT_DIR$/SENET/crc_script/gen_fv_39.csh" />
         <option value="$PROJECT_DIR$/SENET/crc_script/gen_fv_40.csh" />
         <option value="$PROJECT_DIR$/SENET/crc_script/fv_classify.csh" />
-        <option value="$PROJECT_DIR$/SENET/src/data_prepare.py" />
         <option value="$PROJECT_DIR$/SENET/src/classify_with_feature_vectors.py" />
+        <option value="$PROJECT_DIR$/SENET/src/data_prepare.py" />
+        <option value="$PROJECT_DIR$/SENET/crc_script/gen_feature_vecs.csh" />
       </list>
     </option>
   </component>
@@ -312,46 +302,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NLPBox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NLPBox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SENET" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NLPBox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NLPBox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SENET" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vocab" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1262,26 +1212,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/crc_script/gen_feature_vecs.csh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="39" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SENET/crc_script/fv_classify.csh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/src/generate_feature_vectors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1296,19 +1230,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SENET/src/data_prepare.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="311" column="8" lean-forward="false" selection-start-line="311" selection-start-column="8" selection-end-line="311" selection-end-column="8" />
+        <state relative-caret-position="411">
+          <caret line="380" column="37" lean-forward="true" selection-start-line="380" selection-start-column="37" selection-end-line="380" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SENET/src/classify_with_feature_vectors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="44" lean-forward="true" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        <state relative-caret-position="418">
+          <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/src/generate_feature_vectors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/crc_script/gen_feature_vecs.csh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="59" lean-forward="true" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
