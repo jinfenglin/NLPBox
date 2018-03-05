@@ -393,9 +393,11 @@ class PairBuilder:
 
         :param expension_list_txt: A list of file path which will be used to match with all vocabulary to construct pairs
         """
-        self.exp_list = self.__read_words(expension_list_txt)
-        chunk_size = math.ceil(len(self.exp_list) / total_partition)
-        self.exp_list = self.exp_list[(cur_node_partition - 1) * chunk_size: cur_node_partition * chunk_size]
+        whole_exp_list = self.__read_words(expension_list_txt)
+        self.exp_list = []
+        for i in range(len(whole_exp_list)):
+            if i % total_partition == cur_node_partition -1:
+                self.exp_list.append(whole_exp_list[i])
         self.relations = self.__get_all_relationships()
 
     def get_pairs(self):
