@@ -362,6 +362,7 @@ class PairBuilder:
             for line in fin.readlines():
                 phrase = line.strip("\n\t\r ")
                 res.add(phrase)
+        print("{} input {} unique terms".format(file_path, len(res)))
         return list(res)
 
     def __get_all_relationships(self):
@@ -396,15 +397,17 @@ class PairBuilder:
         whole_exp_list = self.__read_words(expension_list_txt)
         self.exp_list = []
         for i in range(len(whole_exp_list)):
-            if i % total_partition == cur_node_partition -1:
+            if i % total_partition == cur_node_partition - 1:
                 self.exp_list.append(whole_exp_list[i])
         self.relations = self.__get_all_relationships()
+        print("Existing link#: {}".format(len(self.relations)))
 
     def get_pairs(self):
         pairs = []
         vocab = self.__read_words(os.path.join(VOCAB_DIR, "small_vocabulary.txt"))
         for w_v in vocab:
             for w_e in self.exp_list:
-                if (w_v, w_e) not in self.relations and (w_e, w_v) not in self.relations:
+                if (w_v, w_e) not in self.relations and (w_e, w_v) not in self.relations and w_e != w_v:
                     pairs.append((w_v, w_e))
+        print("Build {} pairs ...".format(len(pairs)))
         return pairs

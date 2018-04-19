@@ -1,0 +1,834 @@
+assumptions,assumption,s
+stakeholders,stakeholder,s
+acceptance-test-driven development,acceptance test driven development,s
+user role,user roles,s
+story point,story points,s
+minimum marketable feature,minimum marketable features,s
+user requirement,user requirements,s
+software requirements specification,software requirements verification,re
+non-functional requirement,functional requirement,re
+nonfunctional requirements,functional requirement,re
+story points,user story points,s
+requirement,raw requirement,hyper
+functional size,functionality,re
+function,functionality,re
+user need,user roles,re
+story point,story test,re
+user story,user roles,re
+requirements traceability,requirements traceability tool,re
+change control board,change control,re
+acceptance test,user acceptance tests,s
+story point,user story points,s
+software quality,software safety,hyper
+technical requirements,nontechnical requirement,re
+functional design,functional domain,re
+feature team,feature creep,re
+technical review,technical stories,re
+function point,function point count,re
+requirements traceability matrix,requirements traceability tool,re
+story mapping,story points,re
+user requirement,raw requirement,s
+business rule,business owners,re
+story points,story test,re
+function field,functionality,unknown
+test,story test,hyper
+story test,story,re
+reusability,reliability,re
+user,user roles,re
+role,user roles,hyper
+software requirements specification,interface requirements specification,hyper
+points,story points,hyper
+variability,reliability,re
+user requirement,requirement,s
+entry,story,re
+system requirement,user requirements,hypon
+system requirement,design requirement,hypon
+user requirement,design requirement,hyper
+user,story,re
+requirement,user requirements,s
+personas,user persona,s
+glossary,model glossary,hyper
+grooming,story grooming,s
+kano model analysis,functional analysis,hypon
+style,story,not
+requirements traceability,requirements traceability matrix,hyper
+word,story,not
+system stakeholder,stakeholder,hypon
+user role,user persona,re
+design element,design requirement,re
+acceptance testing,user acceptance tests,s
+loop control,change control,not
+performance specification,formal specification,re
+requirements phase,requirements review,hyper
+function field,function point,unknown
+story mapping,story grooming,hypon
+story point,story grooming,re
+feature teams,feature creep,re
+function point,functionality,re
+kano analysis,functional analysis,hyper
+term,story,not
+domain modeling,threat modeling,re
+technical practices,technical stories,re
+specification,specification tree,hyper
+item,story,not
+internal stakeholders,identify stakeholders,re
+point,story points,hyper
+nonfunctional requirement,nontechnical requirement,s
+step,story,not
+constraint,design constraint,hyper
+tool,story,re
+stakeholders,stakeholder value,re
+story splitting,story grooming,hypon
+usage scenario,scenario,s
+design language,natural language,re
+functional design,functionality,re
+performance specification,product specification,hypon
+backlog grooming,story grooming,s
+performance specification,project specification,hypon
+function point,functional domain,re
+story point,function point,re
+external interface requirement,interface requirement,hypon
+system stakeholder,external stakeholders,re
+software requirements review,requirements review,s
+software requirements specification,requirements specification,s
+test driven development,acceptance test driven development,hyper
+software design verification,software requirements verification,re
+system stakeholder,identify stakeholders,re
+technical requirements,functional requirement,re
+project initiation,project specification,re
+story point,story,re
+formal testing,story test,re
+software testing,story test,hyper
+testing,story test,hyper
+external stakeholders,identify stakeholders,re
+diagram,context diagram,hyper
+technical requirements,design requirement,re
+functional size,function point,re
+analysis,functional analysis,hyper
+specification,product specification,hyper
+unit testing,story test,re
+test-driven development,acceptance test driven development,hyper
+specification,project specification,hyper
+business value,business owners,not
+requirements specification,interface requirements specification,hyper
+user story,user persona,re
+functional size,functional domain,re
+software design,software safety,re
+function point,story points,re
+interface control,change control,not
+feature,feature creep,re
+user need,user persona,hypon
+chaotic domain,functional domain,re
+user roles,user persona,re
+user stories,user story points,hyper
+story points,story grooming,re
+use case diagram,context diagram,re
+control flow diagram,context diagram,re
+function,function point,re
+scope,scope creep,re
+project management,requirements management,hyper
+requirements phase,requirement,re
+stakeholders,identify stakeholders,re
+programming language,natural language,re
+story splitting,story points,re
+requirements specification,requirements specification language,re
+technical debt,technical stories,re
+process management,requirements management,hyper
+software safety program,software safety,hypon
+schedule analysis,functional analysis,re
+functional size,functional analysis,re
+traceability,traceability matrix,re
+story mapping,story test,not
+functional design,functional analysis,re
+burn down chart,release burndown chart,s
+requirements specification,project specification,hypon
+software,software safety,hyper
+point,function point,hyper
+safety,software safety,s
+technical requirements,user requirements,re
+story points,story,re
+software requirements review,software requirements verification,re
+functionality,functional domain,re
+specification,use case specification,hyper
+impact analysis,functional analysis,re
+complex domain,functional domain,re
+business requirement,user requirements,re
+system requirement,raw requirement,re
+business requirement,design requirement,re
+class diagram,context diagram,re
+high-level language,natural language,hyper
+product owner,business owners,re
+technical requirements,interface requirement,re
+sprint review,requirements review,re
+high order language,natural language,re
+software product,software safety,re
+software testing,software safety,re
+functional requirement,nontechnical requirement,re
+specification,behavior specification,hyper
+simple domain,functional domain,re
+nonfunctional requirements,nontechnical requirement,s
+user interface,user persona,re
+functional analysis,functionality,re
+product vision,product description,re
+technical requirements,raw requirement,re
+requirements allocation,requirements specification,re
+functional requirement,raw requirement,re
+functional analysis,functional domain,re
+product management,requirements management,hyper
+definition,reliability,not
+functional design,function point,re
+specification language,specification tree,re
+navigation,validation,not
+product analysis,functional analysis,hyper
+stakeholder,identify stakeholders,re
+usability,reliability,re
+functional design,functional requirement,re
+owner,business owners,hyper
+complexity matrix,traceability matrix,not
+requirements phase,requirements management,hypon
+risk management,requirements management,re
+story mapping,story,re
+value,story,not
+stage,story,not
+portability,reliability,re
+deliver,story,re
+performance specification,use case specification,re
+change,change control,re
+scope,story,re
+requirement,reliability,re
+user,user persona,re
+functional requirement,user requirements,hypon
+system requirement,system requirements review,re
+requirement,requirements review,re
+user interface,user roles,re
+non-functional requirement,nontechnical requirement,s
+system requirement,requirement,hypon
+assumption,validation,re
+requirements specification,product specification,re
+points,function point,hyper
+effort,story,not
+requirements specification,formal specification,re
+model,threat modeling,hyper
+end user,user roles,hypon
+user stories,user roles,re
+user class,user roles,re
+application,validation,not
+specification language,requirements specification language,hyper
+complicated domain,functional domain,re
+software aging,software safety,re
+note,story,not
+end-user,user roles,re
+name,story,not
+usability testing,story test,hypon
+technical requirements,requirement,hypon
+story splitting,story test,not
+performance specification,functional specification,re
+exploratory testing,story test,re
+use case diagram,use case specification,re
+design pattern,design constraint,not
+context,context diagram,re
+role,story,re
+estimation,validation,re
+design element,design constraint,re
+measurement,requirement,not
+project inception,project specification,re
+probability,reliability,not
+behavior driven development,acceptance test driven development,re
+job,story,s
+user story,story test,re
+peer review,requirements review,re
+field,story,not
+product,story,not
+design fault,design constraint,unknown
+story test,story grooming,re
+test class,story test,re
+design language,design constraint,re
+requirements traceability matrix,traceability matrix,hypon
+root,story,not
+time,story,not
+user story,sprintable story,hyper
+list,prioritized list,hyper
+estimation,assumption,re
+decision tree,specification tree,re
+baseline,requirements,not
+user requirement,interface requirement,re
+statechart diagram,context diagram,re
+activity diagram,context diagram,re
+sequence diagram,context diagram,re
+association,assumption,not
+information management,requirements management,hyper
+portfolio management,requirements management,hyper
+function field,functional domain,unknown
+business value,stakeholder value,re
+goal,story,not
+box,story,not
+performance specification,behavior specification,re
+metric,scenario,not
+team,story,not
+requirements engineering,requirements review,hyper
+facilitation,validation,not
+theme,story,not
+source,story,not
+class,story,not
+technical requirements,technical stories,re
+user requirement,reference user requirements,hypre
+return,story,not
+actor,story,not
+business model,business owners,re
+proof,story,not
+feature,story,re
+traceability,reliability,re
+task,story,s
+function field,functional analysis,unknown
+root cause analysis,functional analysis,hypon
+safety,story,not
+component testing,story test,not
+requirements specification,use case specification,re
+functional size,functional requirement,re
+nonfunctional requirement,design requirement,re
+spike,story,hypon
+function point,user story points,re
+value,stakeholder value,hyper
+automation,validation,re
+done,story,not
+flexibility,reliability,re
+environment,requirement,not
+group,story,not
+power of test,story test,re
+technical review,requirements review,re
+place,story,not
+domain,functional domain,hyper
+use case model,threat modeling,re
+points,user story points,hyper
+nonfunctional requirement,interface requirement,re
+specification by example,specification tree,re
+suite,story,not
+requirements traceability,requirements review,re
+nonfunctional requirement,implementation requirement,re
+requirements allocation,requirements flow-down,re
+agile project management,requirements management,hyper
+plan risk management,requirements management,re
+software maintenance,software safety,re
+software requirements analysis,software requirements verification,re
+user stories,story,s
+design pattern,design requirement,not
+stream,story,not
+startup,story,not
+requirements allocation,requirements review,re
+detailed design specification,requirements specification,re
+specification language,natural language,re
+story,technical stories,hyper
+system requirement,interface requirement,hyper
+business requirement,raw requirement,re
+requirements specification,behavior specification,re
+functionality,functional requirement,s
+kanban board,change control board,s
+report,story,not
+requirements management,requirements review,hyper
+story,sprintable story,hyper
+nonfunctional requirement,requirement,hypon
+software metric,software safety,not
+user roles,user requirements,re
+non-functional requirement,implementation requirement,re
+regression testing,story test,not
+product vision,product specification,re
+data flow diagram,context diagram,hyper
+management,requirements management,hyper
+nonfunctional requirements,user requirements,hypon
+project risk management,requirements management,re
+test-first development,acceptance test driven development,hyper
+nonfunctional requirements,design requirement,re
+request,requirement,s
+project manager,requirements management,re
+test criteria,story test,re
+down,story,not
+detailed design specification,performance specification,re
+functional requirement,functional domain,re
+implementable story,technical stories,re
+nonfunctional requirements,interface requirement,hyper
+system requirement,nontechnical requirement,re
+use case model,use case specification,re
+non-functional requirement,design requirement,re
+nonfunctional requirements,implementation requirement,re
+values,stakeholder value,hyper
+scale,story,not
+use case,use case specification,hypon
+external quality,external stakeholders,not
+nonfunctional requirements,requirement,hypon
+must-have features,minimum marketable features,s
+non-functional requirement,requirement,hypon
+burnup chart,release burndown chart,s
+technical stories,sprintable story,re
+business requirement,functional requirement,re
+back-to-back testing,story test,re
+design fault,design requirement,re
+clear,scenario,not
+detailed design specification,use case specification,re
+disorder domain,functional domain,re
+acceptance testing,story test,s
+non-functional requirement,interface requirement,re
+functional requirement,well-formed requirement,re
+system requirement,well-formed requirement,re
+user requirement,well-formed requirement,re
+nonfunctional requirement,raw requirement,re
+test,story,not
+product family,product specification,not
+nonfunctional requirement,user requirements,hypon
+point,user story points,hyper
+nice-to-have features,minimum marketable features,re
+product line,product description,re
+requirements engineering,requirements traceability,hyper
+product family,product description,re
+requirements engineering,requirements specification,hyper
+assumptions,validation,re
+loop,story,not
+function,functional domain,re
+product backlog,product description,not
+rework,story,not
+requirements allocation,requirements traceability,re
+technical requirements,implementation requirement,re
+implementable story,story,hypon
+product planning,product description,not
+user requirement,nontechnical requirement,hyper
+business requirement,nontechnical requirement,re
+requirements engineering,requirements management,hyper
+usability testing,user acceptance tests,hypon
+business requirement,interface requirement,re
+architecture description,product description,re
+iteration,validation,re
+production,product description,not
+business model,threat modeling,hyper
+code,story,not
+functional analysis,functional requirement,re
+detailed design specification,behavior specification,re
+story,story grooming,re
+user roles,user story points,not
+user story,story points,re
+nonfunctional requirements,raw requirement,re
+business requirement,well-formed requirement,re
+analysis requirements,well-formed requirement,re
+baseline requirements,well-formed requirement,re
+baseline requirements,reference user requirements,re
+tree,story,not
+task board,change control board,hyper
+definition,functionality,not
+colocation,validation,not
+object-oriented language,natural language,re
+technical requirements,well-formed requirement,re
+function field,functional requirement,unknown
+interface control,interface requirement,re
+product planning,product specification,re
+user role,user requirements,re
+function,functional analysis,re
+requirements traceability,requirements specification,re
+functional design,functional specification,re
+software development,software safety,re
+operation,validation,not
+formal testing,formal specification,re
+requirements specification,requirements review,re
+category,story,not
+product owner proxy,product description,not
+project deliverable,project specification,not
+design language,design requirement,not
+non-functional requirement,raw requirement,re
+functional analysis,function point,re
+requirements management,requirements traceability,hyper
+user need,user requirements,s
+definition,validation,not
+business analyst,business owners,re
+user class,user persona,re
+software change,software safety,re
+software entropy,software safety,re
+traceability analysis,traceability matrix,re
+point,story,not
+move,story,not
+log,story,not
+software engineering,software safety,hyper
+allocation,validation,not
+flow chart,release burndown chart,re
+requirements phase,requirements traceability,re
+definition,requirement,not
+functional requirement,reference user requirements,not
+replication,validation,not
+non-functional requirement,user requirements,hypon
+user stories,technical stories,hyper
+product analysis,product description,not
+user requirement,functional requirement,hyper
+technical requirements,reference user requirements,unknow
+nonfunctional requirements,reference user requirements,unknow
+system requirement,functional requirement,re
+vertical traceability,requirements traceability,re
+horizontal traceability,requirements traceability,re
+product roadmap,product description,not
+satisfaction,validation,not
+functional requirement,function point,not
+set,story,not
+detailed design specification,project specification,not
+unit,story,not
+ubiquitous language,natural language,re
+cross-functional team,functionality,re
+platform model,threat modeling,hyper
+requirements allocation,requirements management,hypon
+organization,validation,not
+dependency analysis,functional analysis,re
+elicitation requirements,functional requirement,re
+requirement,well-formed requirement,hyper
+detailed design specification,product specification,re
+validated learning,validation,not
+entity,story,not
+condition,validation,not
+statistical test,story test,re
+list,story,not
+product owner,product description,re
+user role,user story points,re
+business requirement,requirement,hypon
+detailed design specification,formal specification,re
+slack,story,not
+elicitation requirements,well-formed requirement,re
+business requirement,reference user requirements,unknow
+story splitting,story,re
+view,story,not
+product backlog grooming,story grooming,s
+issue,story,hyper
+epic,story,hyper
+declaration,validation,re
+case,story,not
+test environment,story test,re
+requirements engineering,requirements flow-down,hyper
+mura,story,re
+external interface requirement,reference user requirements,unknow
+iterative development,acceptance test driven development,re
+functionality,function point count,re
+functional requirement,functional specification,re
+automation,assumption,not
+story test,user acceptance tests,s
+event,story,not
+authority,story,not
+chief product owner,business owners,re
+load,story,not
+ready,story,not
+requirement,requirements management,re
+picture,story,not
+performance specification,system requirements specification,re
+non-functional requirement,reference user requirements,unknow
+test coverage,story test,re
+complete,functionality,re
+key,story,not
+product line,product specification,re
+agile software development,acceptance test driven development,hyper
+total,story,not
+user story,user requirements,re
+standup,story,re
+solution,validation,not
+glossary,story,not
+function field,function point count,unknown
+replication,regulation,not
+adaptation,assumption,not
+sprint,story test,hyper
+minimum viable product,minimum marketable features,re
+software,story,re
+functionality,reliability,re
+exploration,validation,not
+adaptation,validation,not
+genba,story,not
+chart,story,not
+measurement function,functionality,hypon
+format,story,not
+productivity,product description,not
+method,story,not
+level,story,not
+product backlog,product specification,not
+requirements phase,requirements specification,re
+business agility,business owners,re
+user stories,user persona,re
+requirements analyst,requirements review,re
+product champion,product description,re
+function point,functional specification,re
+nonfunctional requirement,reference user requirements,unknow
+script,story,not
+pattern,story,not
+platform,story,not
+exploitation,validation,re
+functional size,functional specification,not
+priority,story,re
+model,story,not
+up,story,not
+deployment,requirement,re
+system,story,not
+duration,validation,not
+rating,story,not
+waste,story,not
+tutorial,story,not
+end user,user persona,re
+end-user,user persona,re
+lead,story,not
+user interface,user requirements,hypon
+information,validation,re
+detailed design specification,functional specification,hyper
+property,story,not
+exploratory testing,user acceptance tests,re
+menu,story,not
+end-user,story,re
+security,story,re
+strategy,story,not
+data,story,not
+entity-relationship diagram,context diagram,s
+scrum,story,re
+read,story,not
+program,story,not
+purpose,story,not
+rule,story,not
+unit testing,user acceptance tests,re
+product management,product description,re
+exit,story,not
+shell,story,not
+statistical model,threat modeling,re
+integration,validation,not
+customer,story,re
+non-functional requirement,well-formed requirement,re
+software testing,user acceptance tests,hyper
+strategy,story test,not
+backlog,story,re
+label,story,re
+risk,story,not
+acquisition,assumption,not
+management,requirement,not
+requirements phase,requirements flow-down,hyper
+story mapping,user story points,re
+owner,story,re
+net,story,not
+development,requirement,re
+traceability analysis,functional analysis,re
+verify scope,scope creep,re
+requirement,nontechnical requirement,hyper
+requirements analyst,requirements management,re
+requirements analyst,requirements flow-down,re
+cynefin,scenario,not
+user stories,sprintable story,re
+duration,regulation,not
+cookie,story,not
+project team,project specification,re
+fail,scenario,not
+quality,reliability,hyper
+inspection,validation,hyper
+clear,story,not
+software life-cycle,software safety,not
+design,design constraint,hyper
+production,product specification,not
+duration,assumption,not
+pass,story,not
+sprint,story,re
+mandatory,story,not
+asset,story,hyper
+result,regulation,not
+prediction,assumption,re
+problem,story,not
+execution,validation,not
+run,story,not
+pig,story,not
+fail,story,not
+recovery,story,not
+deep,story,not
+adaptability,reliability,re
+cycle,story,not
+variance,validation,re
+allocation,regulation,not
+association,validation,not
+model,model glossary,hyper
+epic,scenario,re
+transaction,validation,not
+segment,story,not
+requirements management,requirements flow-down,hyper
+output,story,not
+nonfunctional requirement,well-formed requirement,re
+acceptance test,acceptance test driven development,hypon
+story splitting,user story points,re
+write,story,not
+agreement,requirement,not
+security,scenario,re
+return,requirement,not
+organization,stakeholder,not
+story test,user story points,not
+specification language,specification change notice,re
+function,assumption,not
+operations,validation,not
+operation,scenario,not
+fault,story,not
+inspection,assumption,not
+product backlog item,product description,not
+statement,requirement,re
+productivity,product specification,not
+rework,scenario,not
+usability,functionality,re
+submit,story,not
+argument,requirement,not
+override,scenario,not
+entry,scenario,not
+function,validation,not
+language binding,natural language,not
+control,scenario,not
+web,story,not
+aggregation,validation,not
+input,story,not
+measure,story,not
+decision,validation,not
+cast,story,not
+functional size,function point count,s
+abstraction,assumption,not
+cause,story,not
+limits,story,not
+requirements specification language,system requirements specification,re
+segment,requirement,not
+policy,story,not
+maintainability,reliability,re
+commitment,requirement,not
+change,story,not
+detailed design specification,system requirements specification,re
+queue,story,not
+submit,scenario,not
+definition,assumption,not
+service,user roles,not
+exception,regulation,not
+product roadmap,product specification,re
+interface,interface requirement,re
+external interface requirement,well-formed requirement,re
+batch,story,not
+efficiency,requirement,re
+context,story,not
+recursion,regulation,not
+requirements management,requirements specification,re
+test automation,story test,re
+prediction,validation,re
+scale,scenario,not
+inventory,story,not
+iteration,scenario,not
+build,story,not
+co-location,validation,not
+user-story-writing workshop,user story points,re
+table,story,not
+graph,story,not
+period,scenario,not
+product analysis,product specification,re
+product management,product specification,re
+sequential,regulation,not
+production,validation,not
+acceptance testing,acceptance test driven development,hypon
+lean,scenario,not
+slack,scenario,not
+extendability,reliability,re
+cardinality,functionality,re
+external interface requirement,implementation requirement,re
+implementation,implementation requirement,re
+resume,requirement,not
+external interface requirement,design requirement,hypon
+sizing,story,not
+process,story,not
+values,story,not
+project management,project specification,hyper
+chain,scenario,not
+context,story test,not
+formal language,formal specification,re
+period,story,not
+chain,story,not
+formal testing,user acceptance tests,re
+user interface,user story points,not
+function,regulation,unknown
+user requirement,user persona,re
+change propagation,change control,re
+software evolution,software safety,re
+design recovery,design requirement,re
+requirements development,requirements review,re
+version,validation,not
+behavior,scenario,not
+iteration,assumption,not
+requirements phase,user requirements,re
+functional analysis,function point count,hyper
+acquisition,validation,not
+swarming,scenario,not
+medium,story,not
+solution,assumption,re
+satisfaction,assumption,not
+information,assumption,re
+quality,story,not
+budget,story,not
+project notebook,project specification,not
+coordination,validation,not
+criteria,story,not
+variable,validation,not
+requirements allocation,requirement,re
+ceremony,story,not
+design,story,not
+read,scenario,not
+CRUD matrix,traceability matrix,re
+system requirement,implementation requirement,hyper
+external interface requirement,raw requirement,re
+activity,story,re
+system,story test,re
+request,story test,not
+mandatory,validation,not
+requirements development,requirements management,re
+product,product description,hyper
+empirical process control,change control,re
+design,design requirement,hyper
+instance,story,not
+external interface requirement,nontechnical requirement,re
+external interface requirement,functional requirement,re
+exception,assumption,not
+component testing,user acceptance tests,re
+bundle,story,not
+acceptance criteria,user acceptance tests,re
+testing,story,re
+performance,performance specification,hypre
+milestone,story,not
+functional analysis,functional specification,re
+functionality,functional specification,re
+lean,story,not
+scrum,scenario,re
+prototype,story,not
+product backlog item,product specification,re
+condition,assumption,not
+functional requirement,function point count,re
+idle,story,not
+resource,story,not
+assessment,requirement,not
+stream,story test,not
+estimate,story,not
+crisis,story,not
+requirements development,requirements flow-down,hyper
+requirement attribute,requirements flow-down,re
+requirements specification,requirements flow-down,re
+cause,scenario,not
+service,story,not
+acceptance,user acceptance tests,re
+inconsistency management,requirements management,re
+exception,scenario,not
+failure,story,not
+data,validation,re
+ready,scenario,not
+user story,story grooming,re
+regression testing,user acceptance tests,re
+project,story,hyper
+layer,story,not
+,,
+address,story,not
+product,prioritized list,not
+statement,story test,not
+capex,story,not
+,,
+Scrum,story,not
+devops,story,not
+quantity,story,not
+object,story,not
+invest,story,not
+meaning,scenario,not
+access,story,not
+accept,story,unknown
+,,
+system requirement,reference user requirements,unknown
+baseline requirements,requirements,hyper
+functional design,function point count,re
+resolve,story,not
+value chain,stakeholder value,re
+incremental development,acceptance test driven development,re
+velocity,reliability,not
+health,story,not

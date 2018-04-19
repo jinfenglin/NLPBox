@@ -8,7 +8,7 @@ if __name__ == '__main__':
     try:
         mode = sys.argv[1]
     except Exception as e:
-        mode = "classify"
+        mode = "ten_fold"
     try:
         cur_node_partition = int(sys.argv[2])
         total_partition = int(sys.argv[3])
@@ -29,7 +29,7 @@ if __name__ == '__main__':
         documents = data_builder.documents
         senet_features = SENETFeaturePipe(documents)
         data = DataPrepare("dataset.pickle", feature_pipe=senet_features, raw_materials=raws,
-                           rebuild=True)
+                           rebuild=False)
         print("Experiment data is ready, size ", len(data.data_set))
         res_file_name = "RNN_result{}.txt".format(len(os.listdir(RESULT_DIR)))
         result_file = os.path.join(RESULT_DIR, res_file_name)
