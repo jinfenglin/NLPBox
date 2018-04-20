@@ -1,0 +1,2161 @@
+label, correctness, w1, w2
+no	Incorrect	[ 0.54168987  0.45831019]	control account		work package
+no	Incorrect	[ 0.70025903  0.299741  ]	pigs		Scrum team
+yes	Correct	[ 0.29776171  0.70223832]	bottom-up		topdown
+no	Incorrect	[ 0.7003116   0.29968843]	box diagram		Nassi-Shneiderman chart
+no	Correct	[ 0.59040159  0.40959838]	failsafe		logical transaction
+yes	Correct	[ 0.31168041  0.68831956]	program mutation		mutation testing
+yes	Correct	[ 0.27618659  0.72381341]	artifact		baseline
+no	Correct	[ 0.66956538  0.33043465]	quality factor sample		associative entity
+no	Incorrect	[ 0.59608525  0.40391478]	branch		statement testing
+no	Incorrect	[ 0.67100215  0.32899782]	block diagram		input-process-output chart
+yes	Correct	[ 0.01325639  0.98674357]	precondition		pre-condition
+no	Correct	[ 0.67153949  0.32846051]	computer instruction		field
+no	Correct	[ 0.65386796  0.3461321 ]	configuration item development record		outgoing change set
+no	Incorrect	[ 0.52458733  0.47541264]	partial cluster		superclass
+no	Correct	[ 0.64272976  0.35727021]	assembly		control Information
+yes	Correct	[ 0.09285501  0.90714496]	hidden		private
+no	Correct	[ 0.56443805  0.43556193]	data exception		process dimension
+no	Correct	[ 0.71613097  0.28386906]	sustainable pace		estimate to complete
+no	Correct	[ 0.64934492  0.35065505]	level		algebraic language
+no	Incorrect	[ 0.63129228  0.36870772]	boundary value		stress testing
+no	Incorrect	[ 0.52879643  0.47120357]	robustness		fault tolerance
+no	Correct	[ 0.64856774  0.35143229]	content assist		functional size measurement
+yes	Correct	[ 0.40373421  0.59626579]	metalanguage		stratified language
+yes	Incorrect	[ 0.41348985  0.58651012]	window		multiprogramming
+no	Incorrect	[ 0.63062698  0.36937293]	preparation time		task mode
+yes	Incorrect	[ 0.34093851  0.65906143]	task type		test design
+no	Correct	[ 0.73389542  0.26610455]	output sort		risk breakdown structure
+no	Correct	[ 0.69054794  0.30945209]	synthetic address		close project or phase
+no	Incorrect	[ 0.67231363  0.32768631]	basic flow		happy day scenario
+no	Incorrect	[ 0.62285191  0.37714815]	selective choice construct		branch
+yes	Correct	[ 0.16277935  0.83722067]	product		variant
+no	Correct	[ 0.64529014  0.35470983]	variable figurative constant		idle time
+yes	Correct	[ 0.49179742  0.50820255]	paging		block allocation
+no	Incorrect	[ 0.54849172  0.45150828]	programmer manual		query language
+yes	Correct	[ 0.18482354  0.81517649]	application		system
+yes	Correct	[ 0.46793661  0.53206336]	capex		capital expenditure
+yes	Correct	[ 0.14668998  0.85331005]	paging		working set
+yes	Incorrect	[ 0.21228746  0.78771257]	principle		compatible
+no	Correct	[ 0.65325713  0.34674284]	enumeration type		tag slide
+no	Correct	[ 0.60049993  0.39950013]	portfolio metrics		notice of revision
+no	Correct	[ 0.66172767  0.3382723 ]	change record		maintenance infrastructure
+no	Correct	[ 0.59274679  0.40725324]	program status word		range sort
+yes	Correct	[ 0.04384233  0.95615762]	control flow		flow of control
+no	Incorrect	[ 0.66045445  0.33954555]	data structure-centered design		modular decomposition
+yes	Incorrect	[ 0.49856502  0.50143492]	implied addressing		tolerance
+no	Incorrect	[ 0.64402193  0.35597804]	user story		progressive refinement
+no	Correct	[ 0.66250974  0.33749029]	text processing		immediate effective instruction
+no	Correct	[ 0.70992708  0.29007289]	analog computer		innovation waste
+no	Correct	[ 0.67253613  0.32746381]	audience research		software-intensive system
+yes	Correct	[ 0.14096451  0.85903549]	release plan		fixed-date release
+no	Correct	[ 0.56319469  0.43680537]	project scope		bathtub curve
+no	Incorrect	[ 0.50519627  0.49480376]	branch		path testing
+yes	Correct	[ 0.29223108  0.70776898]	practice		conventions
+no	Correct	[ 0.66144449  0.33855549]	architectural design phase		iteration plan
+no	Correct	[ 0.70906997  0.29093006]	document set		specification by example
+no	Correct	[ 0.67343521  0.32656476]	late finish date		bottom-up design
+no	Correct	[ 0.68682438  0.31317565]	system integration		migrated attribute
+yes	Incorrect	[ 0.46538833  0.53461164]	secondary window		offline
+yes	Correct	[ 0.39353356  0.60646647]	swarming		T-shaped skills
+yes	Correct	[ 0.05217393  0.94782609]	suspect		valid
+no	Correct	[ 0.52938795  0.47061214]	correctability		root segment
+no	Incorrect	[ 0.63443619  0.36556384]	config spec		configuration specification
+yes	Incorrect	[ 0.29757562  0.70242435]	independent		file
+yes	Correct	[ 0.11658739  0.8834126 ]	jump		transfer
+no	Correct	[ 0.56781304  0.43218696]	figurative constant		synchronous
+no	Correct	[ 0.68156081  0.31843922]	multiple-address instruction		T-shaped skills
+no	Incorrect	[ 0.59400964  0.40599036]	inspection		empirical process control
+no	Incorrect	[ 0.54939324  0.45060682]	dynamic analysis		demonstration
+no	Correct	[ 0.66238093  0.33761904]	physical configuration audit		software quality evaluation
+no	Correct	[ 0.70045245  0.29954758]	development team		second generation language
+no	Correct	[ 0.59609407  0.40390587]	logical cohesion		entrance
+no	Correct	[ 0.61974168  0.38025835]	deliver		critical path method
+no	Incorrect	[ 0.64325386  0.35674617]	starting address		loaded origin
+yes	Correct	[ 0.01095117  0.98904884]	abort		abend
+no	Correct	[ 0.68098748  0.31901252]	requirement standard		category discriminator
+no	Incorrect	[ 0.68501151  0.31498849]	blocking factor		initial program load
+yes	Correct	[ 0.0040056   0.99599433]	offline		online
+no	Incorrect	[ 0.57154632  0.42845371]	common storage		global data
+no	Correct	[ 0.65491968  0.34508038]	estimated function point count		definition
+no	Correct	[ 0.68733507  0.3126649 ]	dynamic invocation		communication management plan
+no	Incorrect	[ 0.57123655  0.42876339]	emotions seismogram		sprint retrospective
+no	Correct	[ 0.64430571  0.35569426]	project management knowledge area		friend
+no	Incorrect	[ 0.56276059  0.43723938]	product line		variation point
+no	Correct	[ 0.63806313  0.36193684]	computer software configuration item		multiple inclusive selective construct
+no	Incorrect	[ 0.7121017   0.28789827]	mrfs		minimum releasable features
+no	Correct	[ 0.67939079  0.32060915]	integrated circuit		product authority
+no	Correct	[ 0.56401831  0.43598166]	quality control		authority
+no	Incorrect	[ 0.56349427  0.43650571]	adaptation		empirical process control
+no	Correct	[ 0.57209325  0.42790675]	digital		ideal hours
+yes	Correct	[ 0.15522817  0.84477186]	acquirer		owner
+yes	Correct	[ 0.40978211  0.59021789]	supervisory program		supervisor state
+yes	Correct	[ 0.48742232  0.51257771]	fail fast		pivot
+no	Correct	[ 0.6642738   0.33572611]	perfective maintenance		resource definition
+no	Incorrect	[ 0.6230309   0.37696913]	case		multiple exclusive selective construct
+no	Incorrect	[ 0.66598707  0.33401296]	product baseline		developmental configuration
+no	Incorrect	[ 0.64779454  0.35220549]	logical cohesion		execution trace
+no	Correct	[ 0.67377478  0.32622519]	office automation		appraisal team leader
+no	Correct	[ 0.56349158  0.43650839]	architecture		dimension table
+no	Correct	[ 0.53560525  0.46439478]	content store		change authority
+no	Correct	[ 0.65220565  0.34779438]	test case		solicitation package
+no	Correct	[ 0.66732758  0.33267245]	process capability determination		cross-assembler
+no	Incorrect	[ 0.62045681  0.37954316]	software repository		system library
+no	Incorrect	[ 0.64253098  0.35746905]	documentation relationships to one another		specification tree
+yes	Correct	[ 0.15861763  0.84138232]	assemble		interpret
+yes	Correct	[ 0.31040686  0.68959314]	waterscrum		Scrummerfall
+no	Incorrect	[ 0.68333405  0.31666595]	box diagram		input-process-output chart
+no	Correct	[ 0.56657016  0.43342987]	tier chart		loop control
+no	Correct	[ 0.64793128  0.35206878]	fixed-price-incentive-fee contract		logical transaction
+no	Incorrect	[ 0.5871163  0.4128837]	self-organization		complex adaptive system
+yes	Correct	[ 0.12248157  0.87751848]	macro		macrogenerator
+yes	Correct	[ 0.2196061  0.7803939]	subprogram		coroutine
+no	Correct	[ 0.59726137  0.40273863]	product configuration identification functional baseline		team
+yes	Correct	[ 0.04997567  0.95002431]	acquirer		buyer
+no	Incorrect	[ 0.67657942  0.32342055]	black box		system resources chart
+no	Incorrect	[ 0.62859201  0.37140802]	initial program load		bootstrap
+no	Correct	[ 0.66438323  0.33561674]	software product developer		procurement management plan
+no	Correct	[ 0.64562756  0.35437247]	license		preventive maintenance
+no	Correct	[ 0.6670149  0.3329851]	task behavior specification		defect arrival rate
+yes	Correct	[ 0.42159143  0.57840854]	evaluation technology		technology used for evaluation
+no	Correct	[ 0.58810419  0.41189575]	control limits		escaped
+no	Incorrect	[ 0.66205835  0.33794159]	kernel		resident control program
+no	Correct	[ 0.6547147   0.34528536]	config spec		optional nonidentifying relationship
+yes	Incorrect	[ 0.23482555  0.76517451]	arrow		run time
+yes	Correct	[ 0.26813275  0.73186725]	supplier		contractor
+yes	Correct	[ 0.14756332  0.85243672]	abort		exception
+no	Correct	[ 0.73686647  0.26313353]	non-terminal symbol		process attribute rating
+no	Incorrect	[ 0.67364138  0.32635862]	detailed design		software development process
+yes	Correct	[  7.50178660e-05   9.99925017e-01]	system-of-interest		system of interest
+no	Incorrect	[ 0.55266666  0.4473334 ]	availability		error tolerance
+yes	Correct	[ 0.49586523  0.50413477]	address format		n-plus-one address instruction
+no	Correct	[ 0.6793651   0.32063487]	story test		computer-aided
+no	Incorrect	[ 0.68324125  0.31675872]	input-process-output		object-oriented design
+no	Correct	[ 0.61990505  0.38009495]	reactivation		extended entry table
+no	Correct	[ 0.66510773  0.33489227]	non-identifying relationship		earned value
+no	Correct	[ 0.61670965  0.38329035]	driver		design inspection
+yes	Correct	[ 0.15408881  0.8459112 ]	testing		benchmark
+no	Correct	[ 0.6874525  0.3125475]	software product developer		the operand
+no	Correct	[ 0.66973567  0.33026439]	portfolio backlog		usability testing
+no	Correct	[ 0.51392937  0.4860706 ]	conflict		T-profile
+no	Correct	[ 0.66545665  0.33454332]	microcode assembler		systematic reuse
+no	Correct	[ 0.67506391  0.32493609]	initial marking of a place		work effort
+yes	Correct	[ 0.06351999  0.93648005]	technical stories		user story
+no	Correct	[ 0.71292317  0.28707689]	information item content		marginal economics
+yes	Correct	[ 0.28163075  0.71836931]	theme		user story
+yes	Correct	[ 0.33755991  0.66244006]	configuration context		global configuration
+no	Correct	[ 0.67203563  0.32796443]	priority inversion		project resource constraint
+no	Correct	[ 0.60437393  0.39562607]	subclass cluster		metadata model
+no	Correct	[ 0.67422265  0.32577741]	interface task		generalization hierarchy
+no	Correct	[ 0.57267076  0.42732921]	report server		proof
+no	Correct	[ 0.64326888  0.35673109]	total float		auto-resolve conflict
+no	Incorrect	[ 0.59120101  0.40879902]	pair programming		technical practices
+no	Correct	[ 0.67738658  0.32261336]	child entity		data processing system
+no	Correct	[ 0.63675278  0.36324722]	early start date		violation
+no	Correct	[ 0.67318439  0.32681563]	developed source statement		view diagram
+no	Incorrect	[ 0.69139445  0.30860555]	bottom-up		critical piece first
+no	Incorrect	[ 0.59232354  0.40767643]	marginal economics		portfolio planning
+no	Correct	[ 0.62409455  0.37590542]	flow chart		iteration plan
+no	Correct	[ 0.6444577   0.35554236]	virtual		software development plan
+no	Incorrect	[ 0.64406973  0.35593027]	inspect and adapt		empirical process control
+yes	Incorrect	[ 0.41577518  0.58422476]	daily meeting		Cynefin
+yes	Incorrect	[ 0.40460792  0.59539205]	presentable		colocation
+no	Correct	[ 0.52466971  0.47533026]	critical information		migration
+no	Correct	[ 0.68354052  0.31645948]	information item type		input arc
+no	Incorrect	[ 0.63242501  0.36757496]	termination submit		invocation deliver
+yes	Correct	[ 0.16729589  0.83270413]	precision		preprocessor
+yes	Correct	[ 0.25013852  0.74986148]	product		material
+no	Correct	[ 0.74745303  0.25254694]	system development		bus number
+no	Correct	[ 0.64420342  0.35579661]	project human resource management		signature
+yes	Correct	[ 0.00754717  0.9924528 ]	exploitation		exploration
+no	Incorrect	[ 0.62599599  0.37400404]	design description		product specification
+yes	Correct	[ 0.4949398   0.50506026]	language processor		interpreter
+no	Correct	[ 0.68090945  0.31909049]	internal attribute		status word
+no	Incorrect	[ 0.52448499  0.47551504]	binary digit		word
+no	Correct	[ 0.67485726  0.32514277]	software characteristic		value list constraint
+no	Incorrect	[ 0.56110716  0.43889287]	origin		starting address
+no	Correct	[ 0.60750896  0.39249107]	Petri net		load module
+no	Correct	[ 0.6424526   0.35754731]	reference user requirements		layout
+yes	Incorrect	[ 0.48694089  0.51305908]	client-side		moscow
+no	Incorrect	[ 0.50658077  0.4934192 ]	block diagram		bubble chart
+no	Correct	[ 0.67313856  0.3268615 ]	meta-scrum		transactional process
+no	Correct	[ 0.70067775  0.29932225]	application generator		imposed date
+no	Correct	[ 0.51915693  0.4808431 ]	transfer file		defect aging
+no	Incorrect	[ 0.60001034  0.39998963]	storage allocation		overlay
+no	Correct	[ 0.53602427  0.4639757 ]	quality assurance		evaluator
+yes	Incorrect	[ 0.3087709   0.69122905]	operations		repository
+no	Correct	[ 0.61342478  0.38657519]	given-when-then		logical record
+yes	Correct	[ 0.0694624   0.93053764]	scrum framework		Scrum
+no	Correct	[ 0.66768193  0.33231807]	request		distributed processing
+no	Correct	[ 0.67230231  0.32769766]	project quality management		risk criteria
+no	Incorrect	[ 0.66154355  0.33845645]	rapid prototyping		data structure-centered design
+yes	Correct	[ 0.33140588  0.66859412]	storage allocation		virtual storage
+no	Incorrect	[ 0.52716428  0.47283575]	cost accounting		captial expenditure
+no	Incorrect	[ 0.58120525  0.41879475]	application		information system
+yes	Incorrect	[ 0.42092711  0.57907283]	table heading		window
+no	Incorrect	[ 0.69189715  0.30810288]	artifact		configuration provider
+no	Incorrect	[ 0.66579932  0.33420068]	Groschs law		computer performance evaluation
+no	Correct	[ 0.64805359  0.35194644]	software quality metric		invitation for bid
+no	Incorrect	[ 0.69155788  0.30844212]	incremental development		transform analysis
+no	Correct	[ 0.67191517  0.32808483]	database design specification		earned value
+yes	Correct	[ 0.09870359  0.90129638]	iteration		instance
+no	Incorrect	[ 0.6455602   0.35443985]	computer performance evaluation		utilization
+yes	Correct	[ 0.12563248  0.87436754]	modifiability		maintainability
+no	Correct	[ 0.57993102  0.42006895]	zFile		context diagram
+yes	Correct	[ 0.0733114   0.92668867]	scenario		set
+no	Incorrect	[ 0.65642846  0.3435716 ]	modular programming		data structure-centered design
+yes	Correct	[ 0.01892161  0.98107845]	postprocessor		preprocessor
+no	Correct	[ 0.54246545  0.45753455]	meaning		risk exposure
+no	Correct	[ 0.7037037  0.2962963]	lightweight process		approval
+no	Incorrect	[ 0.68155199  0.31844798]	stepwise refinement		input-process-output
+yes	Incorrect	[ 0.19184911  0.80815089]	manufacture		architecture
+no	Correct	[ 0.7005505   0.29944953]	macro definition		control flow diagram
+yes	Correct	[ 0.05774102  0.94225901]	reconcile		synchronize
+yes	Correct	[  2.12332699e-04   9.99787629e-01]	fail safe		fail-safe
+no	Incorrect	[ 0.69081092  0.30918911]	occupational title standard		on-line
+yes	Correct	[ 0.37812203  0.62187797]	magic number		literal
+label, correctness, w1, w2
+yes	Incorrect	[ 0.48340064  0.51659936]	meta-attribute		abort
+yes	Correct	[ 0.0777101   0.92228985]	generalization		categorization
+no	Correct	[ 0.60637212  0.39362791]	integrity		global compaction
+yes	Incorrect	[ 0.44863918  0.55136085]	internal measure		inheritance
+yes	Correct	[ 0.22744815  0.77255183]	transform analysis		transform-centered design
+no	Correct	[ 0.62094063  0.37905937]	logical record		high level
+no	Incorrect	[ 0.69535977  0.30464026]	machine-independent		portability
+yes	Correct	[ 0.01400351  0.98599654]	respecialize		unspecialize
+no	Incorrect	[ 0.62734962  0.37265038]	if-then-else		go to
+no	Incorrect	[ 0.56923503  0.43076494]	language processor		translator
+no	Correct	[ 0.68201995  0.31798005]	dyadic selective construct		single-hit decision table
+no	Correct	[ 0.67155498  0.32844505]	source		project management plan
+no	Correct	[ 0.69141686  0.30858314]	portfolio backlog		base practice
+no	Incorrect	[ 0.5580011   0.44199887]	envisioning		product roadmap
+yes	Correct	[ 0.25706893  0.74293101]	multiset cardinality		cardinality of a multiset
+no	Correct	[ 0.57840991  0.42159012]	complicated domain		complete table
+yes	Correct	[ 0.37855303  0.62144697]	branch		if-then-else
+no	Correct	[ 0.63451296  0.36548698]	generally accepted		definition is advanced as a proposed standard
+no	Correct	[ 0.65874118  0.34125876]	interim function point count		strategy
+yes	Correct	[ 0.21955453  0.78044546]	constant		variable
+no	Incorrect	[ 0.65271676  0.34728324]	supervisory program		executive
+no	Correct	[ 0.58630013  0.41369978]	magic number		verso
+no	Correct	[ 0.61341757  0.38658237]	transition net		risk category
+no	Incorrect	[ 0.70633215  0.29366785]	configuration control		notice of revision
+yes	Incorrect	[ 0.43823019  0.56176984]	annotate		call by location
+no	Correct	[ 0.6608445   0.33915552]	schedule network analysis		cost performance baseline
+no	Correct	[ 0.65998799  0.34001204]	version		transaction matrix
+yes	Correct	[ 0.10936844  0.89063162]	resource		artifact
+yes	Correct	[ 0.05835057  0.94164944]	reentrant		reenterable
+no	Incorrect	[ 0.70157284  0.29842719]	incremental development		transaction analysis
+no	Correct	[ 0.54954165  0.45045835]	consecutive		upward compression
+no	Correct	[ 0.67774773  0.32225224]	change set		division of standards
+no	Correct	[ 0.67472404  0.32527593]	simple design		fibonacci sequence
+yes	Incorrect	[ 0.44742069  0.55257928]	server-side		design
+yes	Correct	[ 0.0416798  0.9583202]	antifragile		fragile
+yes	Correct	[ 0.45947853  0.5405215 ]	content coupling		paging
+yes	Correct	[ 0.24669687  0.75330311]	demonstration		testing
+yes	Correct	[ 0.00952028  0.99047965]	principle		practice
+no	Incorrect	[ 0.67986149  0.32013851]	peer review		structured walkthrough
+yes	Correct	[ 0.05703267  0.9429673 ]	invalid		suspect
+no	Correct	[ 0.68400717  0.3159928 ]	software quality		online documentation
+no	Incorrect	[ 0.67707056  0.3229295 ]	input-process-output		rapid prototyping
+no	Incorrect	[ 0.64159542  0.35840458]	private type		information hiding
+yes	Incorrect	[ 0.47176427  0.52823573]	e-mail		desk checking
+yes	Correct	[ 0.13617547  0.86382455]	loader		bootstrap
+no	Correct	[ 0.75158602  0.24841397]	request for information		data flow diagram
+no	Incorrect	[ 0.65881169  0.34118828]	logical cohesion		retrospective trace
+no	Correct	[ 0.70245081  0.29754919]	black box		fibonacci sequence
+no	Incorrect	[ 0.61505395  0.38494608]	control statement		microword
+no	Incorrect	[ 0.68234611  0.31765389]	incremental development		data structure-centered design
+no	Correct	[ 0.75340092  0.24659902]	verso		incremental funding
+yes	Correct	[ 0.37814504  0.62185496]	expensed cost		operational expense
+yes	Correct	[ 0.37438408  0.62561589]	artifact		configuration
+no	Correct	[ 0.72637057  0.27362949]	intellectual property		test automation
+yes	Correct	[ 0.06646229  0.93353778]	implied addressing		relative address
+yes	Incorrect	[ 0.41407359  0.58592641]	life cycle processes		process area
+no	Incorrect	[ 0.65212101  0.34787896]	information processing requirements		software
+no	Correct	[ 0.63352644  0.36647356]	organizational policy		slack
+no	Correct	[ 0.71161038  0.28838968]	collection-valued class		event timeline
+no	Correct	[ 0.64596993  0.35403004]	dynamic dump		software component
+yes	Correct	[ 0.14165017  0.8583498 ]	bubble chart		flowchart
+no	Incorrect	[ 0.5348134   0.46518663]	risk category		source
+yes	Correct	[ 0.08282258  0.91717738]	trailer		header
+no	Correct	[ 0.57634681  0.42365322]	mitigating function		instruction set
+no	Incorrect	[ 0.598526    0.40147397]	test-first development		technical practices
+no	Correct	[ 0.70177388  0.29822606]	breaking the build		product backlog
+no	Correct	[ 0.61490607  0.38509396]	refactoring		progressive elaboration
+yes	Correct	[ 0.29597348  0.70402652]	fault secure		fail-safe
+yes	Correct	[ 0.00325976  0.99674028]	decoupling		coupling
+yes	Correct	[ 0.47119582  0.52880412]	t-shirt sizing		binning
+no	Correct	[ 0.67559993  0.3244001 ]	planned value		dyadic selective construct
+yes	Correct	[ 0.23318326  0.76681674]	estimation		forecast
+yes	Incorrect	[ 0.33301651  0.66698349]	marking		sustainment
+yes	Incorrect	[ 0.40151253  0.5984875 ]	scope		delegation
+yes	Correct	[ 0.16110986  0.83889014]	testing		checkout
+no	Correct	[ 0.7149986   0.28500143]	trade-off analysis		sprint planning
+yes	Incorrect	[ 0.18912062  0.81087941]	escrow		topic
+no	Incorrect	[ 0.70366848  0.29633147]	incremental development		modular decomposition
+no	Incorrect	[ 0.63660514  0.36339489]	data input sheet		user manual
+no	Incorrect	[ 0.60043502  0.39956495]	assembled origin		offset
+no	Correct	[ 0.67014176  0.32985821]	transition occurrence		measurement process
+yes	Correct	[ 0.13420288  0.86579716]	statement		declaration
+no	Correct	[ 0.68753636  0.31246358]	prettyprinting		software development folder
+no	Correct	[ 0.64567584  0.35432419]	substitutability		test item transmittal report
+no	Correct	[ 0.63908195  0.36091805]	release		project schedule network diagram
+no	Correct	[ 0.67173225  0.32826775]	clear text file encoding		subroutine trace
+yes	Incorrect	[ 0.13214418  0.86785579]	capsule		set
+no	Incorrect	[ 0.67975587  0.32024416]	software development plan		waterfall model
+yes	Incorrect	[ 0.43255541  0.56744462]	bioteam		software unit
+no	Incorrect	[ 0.72095275  0.27904731]	essential scrum		approach
+no	Correct	[ 0.53303868  0.46696126]	foldout		version control
+no	Correct	[ 0.65478551  0.34521452]	exception		artificial intelligence
+yes	Correct	[ 0.11603129  0.88396865]	iteration		sprint
+no	Incorrect	[ 0.74753493  0.25246504]	sos		scrum of scrums
+no	Incorrect	[ 0.58587891  0.41412106]	version		configuration control
+yes	Correct	[ 0.2602244   0.73977554]	adaptation		transparency
+yes	Correct	[ 0.25213736  0.74786264]	microinstruction		microprogram
+no	Correct	[ 0.71932429  0.28067571]	capital expenditure		activity list
+yes	Incorrect	[ 0.36980465  0.63019538]	memory map		superclass
+no	Correct	[ 0.61067271  0.38932732]	engineering change		element
+no	Correct	[ 0.68379426  0.31620574]	computer-aided		shell
+no	Incorrect	[ 0.50781155  0.49218842]	kanban		work in process
+no	Correct	[ 0.65802842  0.34197164]	application frameworks		transition
+no	Correct	[ 0.62486005  0.37513995]	design inspection		closed subroutine
+yes	Incorrect	[ 0.35787034  0.6421296 ]	architect		entry point
+no	Correct	[ 0.64794809  0.35205191]	macroassembler		planning processes
+no	Correct	[ 0.52362257  0.47637743]	surrogate key		assemble
+yes	Correct	[ 0.25459328  0.74540669]	maintainability		flexibility
+yes	Incorrect	[ 0.31942019  0.68057978]	scrummaster		compatible
+no	Correct	[ 0.67755908  0.32244092]	problem report		input-output coupling
+no	Correct	[ 0.68374985  0.31625018]	categorization scheme		top box
+no	Correct	[ 0.67897189  0.32102814]	information processing requirements		organization level
+no	Correct	[ 0.69096184  0.3090381 ]	prioritized list		consumer software package
+no	Correct	[ 0.63568771  0.36431229]	software component		and validation
+yes	Correct	[ 0.29221711  0.70778286]	design phase		preliminary design
+yes	Correct	[ 0.38411117  0.61588883]	Ada		flexibility
+no	Incorrect	[ 0.61320782  0.38679224]	sprint		potentially shippable product increment
+no	Incorrect	[ 0.5008083  0.4991917]	extreme programming		agile
+no	Correct	[ 0.63189059  0.36810938]	validity		technology viewpoint
+yes	Correct	[ 0.07798857  0.92201138]	valid		validity summary
+yes	Correct	[ 0.41629103  0.583709  ]	concurrency		step
+no	Correct	[ 0.61852968  0.38147041]	inner cardinality		failure rate
+yes	Incorrect	[ 0.47119522  0.52880478]	risk state		just in time
+no	Correct	[ 0.64736289  0.35263711]	robotics		licensing standard
+no	Correct	[ 0.6664809   0.33351907]	program design language		component
+no	Correct	[ 0.66975158  0.33024842]	colocation		integrity level scheme
+no	Correct	[ 0.65494269  0.34505737]	knowledge		reliability growth
+yes	Correct	[ 0.20613448  0.79386544]	multiprogramming		time sharing
+no	Correct	[ 0.64198053  0.35801944]	verso		loopback testing
+yes	Correct	[ 0.47708938  0.52291065]	package		encapsulation
+no	Correct	[ 0.55770028  0.44229972]	work activity		product vision
+no	Correct	[ 0.67299217  0.32700777]	optional category		lifecycle application
+no	Correct	[ 0.68880403  0.311196  ]	note		risk management plan
+no	Correct	[ 0.65682167  0.3431783 ]	template		dimension build
+no	Incorrect	[ 0.61454147  0.3854585 ]	fault masking		assembly language
+yes	Correct	[ 0.31492639  0.68507355]	module		call list
+no	Correct	[ 0.66197795  0.33802214]	value engineering		attribute indicator
+yes	Incorrect	[ 0.19741832  0.80258173]	vendor		soft error
+no	Correct	[ 0.63803619  0.36196384]	value range constraint		contingency allowanceH
+yes	Incorrect	[ 0.49062589  0.50937408]	decompile		leading decision
+no	Correct	[ 0.6883629  0.3116371]	outgoing synchronization		measure
+yes	Correct	[ 0.19332321  0.80667681]	computer instruction		instruction set
+yes	Correct	[ 0.00323168  0.99676836]	invalid		valid
+no	Correct	[ 0.67210591  0.32789415]	quality evaluation		baseline function point count
+no	Correct	[ 0.68074638  0.31925365]	evaluation group		standup-daily meeting
+yes	Correct	[ 0.03184947  0.9681505 ]	caution		warning
+no	Correct	[ 0.7030797  0.2969203]	Database Connectivity		product sashimi
+no	Correct	[ 0.65731561  0.34268442]	implementation		node
+no	Incorrect	[ 0.66808891  0.33191109]	n-address instruction		etc
+yes	Correct	[ 0.36490172  0.63509828]	computer instruction		instruction format
+no	Correct	[ 0.67857641  0.32142353]	theme		project area configuration
+yes	Incorrect	[ 0.36881843  0.63118148]	picture		loop control
+no	Incorrect	[ 0.63867998  0.36132002]	configuration		and function version
+yes	Correct	[ 0.01077432  0.98922569]	emulation		simulation
+no	Correct	[ 0.64266801  0.35733202]	interrupt priority		term evaluation
+no	Incorrect	[ 0.70436585  0.29563412]	commercial-off-the-shelf		software product
+yes	Correct	[ 0.29478726  0.70521277]	recovery		checkpoint
+no	Correct	[ 0.71133292  0.28866714]	computer software component		ground term
+yes	Correct	[ 0.1042162   0.89578384]	product		activity
+no	Incorrect	[ 0.60147858  0.39852145]	modular decomposition		cohesion
+no	Incorrect	[ 0.67552334  0.32447675]	modular programming		transform analysis
+no	Correct	[ 0.64086056  0.35913944]	nanoinstruction		allocated baseline
+yes	Incorrect	[ 0.4606097   0.53939033]	branching		waterfall model
+no	Incorrect	[ 0.60138363  0.39861631]	extensional set		current extent
+no	Correct	[ 0.56117374  0.43882629]	conformance		blocking factor
+yes	Incorrect	[ 0.43558016  0.56441981]	timeboxing		upload
+no	Correct	[ 0.50155288  0.49844709]	ordered list		framework
+no	Correct	[ 0.62915581  0.37084419]	internal quality		data definition
+yes	Incorrect	[ 0.47722599  0.52277398]	supervisor state		operation code
+no	Correct	[ 0.71161574  0.28838429]	access method		software tag
+yes	Correct	[ 0.03994664  0.96005332]	page breakage		paging
+yes	Correct	[ 0.07744519  0.92255479]	fetch		move
+no	Incorrect	[ 0.64759588  0.35240412]	daily scrum		inspect and adapt
+no	Incorrect	[ 0.73001331  0.26998666]	wsjf		weighted shortest job first
+no	Correct	[ 0.6746884   0.32531163]	incoming link		post-development review
+yes	Correct	[ 0.12192217  0.87807786]	acquirer		purchaser
+no	Correct	[ 0.69709128  0.30290878]	conditional information		relationship name
+no	Correct	[ 0.67582721  0.32417277]	baseline management		program-sensitive fault
+yes	Correct	[ 0.2241659   0.77583408]	control store		nanostore
+yes	Correct	[ 0.05562503  0.94437498]	clear		reset
+yes	Correct	[ 0.18811554  0.81188446]	co-located team		remote team member
+no	Correct	[ 0.63573372  0.36426631]	call reference		authoring system
+no	Correct	[ 0.64371538  0.35628462]	System for Cross-domain Identity Management		catastrophic failure
+no	Incorrect	[ 0.59200609  0.40799388]	the operand		n-level address
+yes	Correct	[ 0.3981345   0.60186553]	invocation		mapping
+yes	Correct	[ 0.00333361  0.99666637]	compile		decompile
+yes	Correct	[ 0.12424477  0.87575525]	agreement		contract
+no	Correct	[ 0.66640681  0.3335931 ]	incremental productivity		mask
+no	Incorrect	[ 0.67202377  0.3279762 ]	input-process-output chart		graph
+no	Incorrect	[ 0.64481682  0.35518309]	logical cohesion		variable trace
+no	Correct	[ 0.6839022   0.31609783]	web		problem definition
+no	Incorrect	[ 0.6743328   0.32566729]	configuration status accounting		development record
+yes	Correct	[ 0.0297684   0.97023159]	copy		move
+no	Correct	[ 0.61678135  0.38321868]	activity attributes		output argument
+yes	Correct	[ 0.32342857  0.67657149]	deliverable		product
+yes	Incorrect	[ 0.2348092   0.76519084]	real time		alignment
+yes	Correct	[ 0.08093775  0.9190622 ]	data type		strong typing
+yes	Correct	[ 0.24196142  0.75803858]	abnormal end		abort
+no	Correct	[ 0.57815236  0.42184764]	big-bang testing		call list
+no	Incorrect	[ 0.62177861  0.37822136]	control loopback		feedback
+yes	Correct	[ 0.13139826  0.86860174]	interface testing		unit test
+no	Correct	[ 0.58866167  0.4113383 ]	import process		tier chart
+yes	Correct	[ 0.47270453  0.52729541]	module		call by value
+no	Correct	[ 0.66108978  0.33891016]	orphan		list processing language
+no	Incorrect	[ 0.6676448   0.33235517]	reversible execution		replay
+yes	Correct	[ 0.18718325  0.8128168 ]	semaphore		flag
+yes	Correct	[ 0.11186858  0.88813138]	correctness proof		proof of correctness
+no	Incorrect	[ 0.5984568   0.40154317]	indexed address		offset
+no	Correct	[ 0.67513436  0.32486564]	test specification		common area
+no	Correct	[ 0.62124592  0.37875405]	order clash		efficiency
+no	Incorrect	[ 0.64181703  0.35818288]	epic		progressive refinement
+no	Correct	[ 0.63335532  0.36664471]	project scope		straightline coding
+no	Incorrect	[ 0.54994613  0.45005384]	offset		relocation factor
+yes	Correct	[ 0.08715595  0.91284406]	queue		inventory
+no	Incorrect	[ 0.59887362  0.40112635]	machine code		portability
+label, correctness, w1, w2
+no	Incorrect	[ 0.63792211  0.36207795]	modular decomposition		packaging
+no	Incorrect	[ 0.54028726  0.45971274]	bubble chart		graph
+no	Correct	[ 0.65113795  0.34886208]	nonprocedural programming language		point design
+no	Correct	[ 0.68659663  0.31340331]	behavior specification		updatable argument
+no	Correct	[ 0.66318315  0.33681682]	measurement method		program library
+no	Correct	[ 0.63623571  0.36376432]	emulation		test readiness review
+no	Correct	[ 0.60289979  0.39710018]	lowclass		design inspection
+no	Correct	[ 0.57452047  0.42547959]	data repository		decision
+yes	Correct	[ 0.23934108  0.76065898]	entry point		entrance
+no	Correct	[ 0.6746797   0.32532027]	information item content		post-mortem dump
+no	Correct	[ 0.6482392   0.35176077]	interpret		nondeveloped source statement
+no	Incorrect	[ 0.65027368  0.34972629]	relative estimation		affinity testing
+no	Correct	[ 0.6764226  0.3235774]	business process sketch		programmable breakpoint
+no	Correct	[ 0.61167639  0.38832363]	reengineering		manage project team
+no	Correct	[ 0.71134752  0.28865248]	modular programming		just in time
+yes	Correct	[ 0.26623908  0.73376089]	scrummaster		servant leader
+yes	Correct	[ 0.23982576  0.76017427]	daily standup		standup meeting
+no	Correct	[ 0.64580041  0.35419956]	simulator		central processing unit
+no	Correct	[ 0.64600098  0.35399908]	stream interface		commit war
+no	Correct	[ 0.61278343  0.38721657]	reflexive		function-oriented design
+yes	Correct	[ 0.46484238  0.53515762]	dynamic analysis		static analysis demonstration
+yes	Correct	[ 0.26664695  0.73335302]	product owner		Scrum team
+no	Correct	[ 0.65264446  0.34735557]	task type		conditional unconditional jump
+no	Correct	[ 0.67971051  0.32028952]	web page		preliminary design review
+yes	Correct	[ 0.05886219  0.94113785]	concurrency		concurrent enabling
+no	Correct	[ 0.69825989  0.30174008]	programming language		privileged instruction
+yes	Correct	[ 0.21910496  0.78089505]	product		goods
+no	Incorrect	[ 0.57261419  0.42738575]	modular programming		rapid prototyping
+yes	Correct	[ 0.08711764  0.91288233]	online		real time
+yes	Incorrect	[ 0.07121438  0.92878562]	interactive		serial
+yes	Correct	[ 0.30838555  0.69161451]	rule		Scrum framework
+no	Correct	[ 0.72237253  0.2776275 ]	glass-box testing		event timeline
+yes	Incorrect	[ 0.38513747  0.61486244]	scope creep		timeboxing
+no	Incorrect	[ 0.58704191  0.41295812]	arrows connecting inputs to processing steps and processing steps to outputs		box diagram
+no	Correct	[ 0.60391301  0.39608699]	computer resource		low-level design
+no	Correct	[ 0.66532439  0.33467567]	project management office		list
+yes	Incorrect	[ 0.4253577   0.57464224]	inspection		diagram page
+no	Correct	[ 0.73446488  0.26553509]	separate documentation		users' manual
+no	Correct	[ 0.58483976  0.41516027]	static model		residual risk
+no	Correct	[ 0.67495888  0.32504109]	theme		performance reports
+yes	Incorrect	[ 0.13647546  0.86352456]	attribute		graph
+no	Incorrect	[ 0.52552497  0.47447506]	event timeline		sprint retrospective
+yes	Correct	[ 0.01624823  0.98375177]	postcondition		precondition
+yes	Correct	[ 0.10093707  0.89906293]	portability		transportability
+no	Correct	[ 0.68058151  0.31941852]	project control point		assumptions analysis
+no	Correct	[ 0.6463837  0.3536163]	criticality		captial expenditure
+no	Incorrect	[ 0.56689626  0.43310377]	intermittent fault		transient error
+yes	Correct	[ 0.37387127  0.62612879]	servant leader		ScrumMaster
+no	Correct	[ 0.64693367  0.35306627]	dumb terminal		initial program load
+yes	Correct	[ 0.30413368  0.69586641]	opportunity		threat
+yes	Correct	[ 0.15247044  0.84752959]	linkage editor		linker
+no	Correct	[ 0.55210215  0.44789785]	source program		marking
+no	Correct	[ 0.62024647  0.37975356]	visibility		partial correctness
+no	Correct	[ 0.70977372  0.29022634]	data structure diagram		sprint mapping
+yes	Incorrect	[ 0.40101501  0.59898502]	scorecard		logical type
+no	Correct	[ 0.63023227  0.36976773]	field		explicit address
+no	Correct	[ 0.62581855  0.37418142]	ground rules		structural testing
+no	Correct	[ 0.67938346  0.32061651]	total degree of influence		outer cardinality
+no	Incorrect	[ 0.66793633  0.33206362]	measurement standard		storage capacity
+yes	Correct	[ 0.43517879  0.56482124]	loop assertion		inductive assertion method
+yes	Correct	[ 0.33197552  0.66802442]	configuration		stream
+no	Correct	[ 0.6505245  0.3494755]	configuration management database		priority inversion
+yes	Correct	[ 0.14787953  0.85212046]	parameter		adaptation
+yes	Correct	[ 0.34472927  0.6552707 ]	concurrent		simultaneous
+no	Correct	[ 0.65508515  0.34491482]	symbolic execution		interface requirements specification
+no	Correct	[ 0.6422835   0.35771647]	authority		numeric character
+no	Incorrect	[ 0.5416103   0.45838964]	transaction cost		U-curve optimization
+no	Correct	[ 0.6751374   0.32486257]	web page		storage efficiency
+yes	Correct	[ 0.44272178  0.55727816]	crash		hard failure
+no	Correct	[ 0.60288554  0.39711446]	interrupt priority		test data
+no	Correct	[ 0.62046385  0.37953618]	continuous risk management		fetch
+no	Correct	[ 0.55050278  0.44949716]	finish-to-start		preprocessor
+yes	Correct	[ 0.12372596  0.87627405]	call		go to
+no	Correct	[ 0.53718305  0.46281695]	the three cs		iteration
+yes	Correct	[ 0.03703365  0.96296638]	partial		total
+no	Incorrect	[ 0.6501773   0.34982273]	stepwise refinement		transform analysis
+yes	Correct	[ 0.36751506  0.63248497]	flowchart		structure chart
+yes	Correct	[ 0.48150998  0.51849002]	development team		ScrumMaster
+no	Incorrect	[ 0.64249533  0.3575047 ]	assignment statement		declaration
+no	Correct	[ 0.56623524  0.43376476]	kernel		all-before-any
+no	Correct	[ 0.66854286  0.33145711]	functional product		entity-relationship map
+yes	Correct	[ 0.41415423  0.58584577]	superclass		total cluster
+yes	Correct	[ 0.14635387  0.8536461 ]	software development file		unit development folder
+no	Correct	[ 0.66216689  0.33783308]	functional complexity		word processing
+yes	Correct	[ 0.31880704  0.68119299]	block diagram		flowchart
+no	Incorrect	[ 0.61738157  0.38261837]	integrated circuit		chip
+no	Correct	[ 0.67904431  0.32095563]	origin		development cycle
+no	Correct	[ 0.57712996  0.42287007]	control arrow		test script
+no	Incorrect	[ 0.65124029  0.34875974]	rapid prototyping		transform analysis
+yes	Correct	[ 0.01368974  0.98631024]	postcondition		post-condition
+no	Correct	[ 0.69827569  0.30172431]	memory compaction		release plan
+no	Correct	[ 0.60148674  0.39851335]	heavyweight process		retirement
+no	Incorrect	[ 0.65756208  0.34243795]	mapping		software life cycle model
+no	Correct	[ 0.59254164  0.40745839]	basis set		statement of work
+no	Correct	[ 0.65870893  0.3412911 ]	program specification		device interface task
+no	Incorrect	[ 0.66213405  0.33786601]	cspo		Certified Scrum Product Owner
+no	Correct	[ 0.64523542  0.35476461]	error processing		quality management plan
+no	Correct	[ 0.67148793  0.32851204]	software test environment		key-style view
+no	Incorrect	[ 0.60378486  0.39621517]	n-level address		immediate data
+no	Correct	[ 0.65636981  0.34363019]	emergence		resource breakdown structure
+no	Correct	[ 0.62995541  0.37004456]	gadget		plan risk responses
+no	Correct	[ 0.66630077  0.33369929]	iteration retrospective		measurement process owner
+no	Correct	[ 0.67494452  0.32505545]	line manager		interface control
+yes	Incorrect	[ 0.42602736  0.57397258]	finish date		playback
+yes	Correct	[ 0.14928885  0.85071123]	commitment		forecast
+no	Correct	[ 0.6742264   0.32577366]	intermediate software product needs		incomplete process
+yes	Correct	[ 0.24211875  0.75788128]	node		graph
+yes	Correct	[ 0.12026139  0.87973857]	deadlock		lockout
+yes	Correct	[  1.82994554e-04   9.99817073e-01]	Government-off-the-Shelf		Government Off The Shelf
+yes	Incorrect	[ 0.05765768  0.94234234]	icon		timebox
+no	Correct	[ 0.66510111  0.33489886]	state		capable process
+yes	Correct	[ 0.3492707  0.6507293]	buffer		anticipatory buffering
+no	Correct	[ 0.52000916  0.47999081]	signal interface		retainage
+yes	Correct	[ 0.22097337  0.77902657]	batch		on-line
+yes	Incorrect	[ 0.49349788  0.50650209]	object		direct metric
+no	Incorrect	[ 0.7378633   0.26213667]	csm		Certified ScrumMaster
+yes	Correct	[ 0.07810563  0.92189437]	buffer		simple buffering
+yes	Incorrect	[ 0.49722013  0.50277984]	complexity matrix		facilitation
+no	Correct	[ 0.56672525  0.43327481]	promotion		appraisal findings
+no	Correct	[ 0.71347421  0.28652582]	Identity Management		burn down chart
+yes	Correct	[ 0.06811125  0.93188876]	feature		theme
+yes	Correct	[ 0.47163925  0.52836078]	Rule and Constraint Language		specification language
+no	Incorrect	[ 0.57073188  0.42926815]	delivery		system life cycle
+yes	Correct	[ 0.47562334  0.52437669]	error tolerance		robustness
+no	Incorrect	[ 0.50402308  0.49597698]	mean time between failures		up time
+yes	Incorrect	[ 0.18989436  0.81010562]	total float		scalar
+yes	Incorrect	[ 0.41763479  0.58236521]	function name		jenkins
+yes	Correct	[ 0.12303722  0.87696272]	jump		go to
+no	Incorrect	[ 0.51288325  0.48711675]	desk checking		inspection
+no	Incorrect	[ 0.7346999  0.2653001]	master library		software repository
+no	Incorrect	[ 0.65910542  0.34089458]	data structure-centered design		stepwise refinement
+no	Correct	[ 0.7081598   0.29184023]	visual agilexicon		meta-relationship
+no	Incorrect	[ 0.6918034  0.3081966]	incremental development		stepwise refinement
+no	Correct	[ 0.62625778  0.37374222]	cold standby		life cycle model
+no	Incorrect	[ 0.6624732   0.33752683]	functional decomposition		stepwise refinement
+yes	Correct	[ 0.01759362  0.98240638]	database		data base
+no	Correct	[ 0.67598975  0.32401025]	design strategy		component integration test
+no	Incorrect	[ 0.64143693  0.35856304]	constraint		software life cycle process
+no	Correct	[ 0.67933875  0.32066125]	iteration burndown chart		data element
+no	Incorrect	[ 0.66941881  0.33058122]	backward pass		schedule network analysis
+no	Incorrect	[ 0.65966833  0.34033161]	factoring		modular decomposition
+no	Correct	[ 0.62250155  0.37749842]	project leader		state
+yes	Incorrect	[ 0.45340386  0.54659617]	attribute		value trace
+no	Incorrect	[ 0.57994777  0.42005223]	language processor		compiler
+no	Correct	[ 0.61406428  0.38593572]	fail-fast		control language
+no	Incorrect	[ 0.64333665  0.35666341]	modular programming		structured design
+no	Correct	[ 0.6632098  0.3367902]	storage capacity		product specification
+no	Correct	[ 0.64286137  0.3571386 ]	data function type		done checklist
+yes	Incorrect	[ 0.39752239  0.60247755]	address		verify scope
+yes	Correct	[ 0.21502049  0.78497952]	redundancy		diversity
+no	Correct	[ 0.64819419  0.35180578]	indicative function point count		plan
+yes	Incorrect	[ 0.04782036  0.95217961]	padding		discard
+no	Incorrect	[ 0.57128751  0.42871249]	category entity		subclass
+no	Correct	[ 0.60151887  0.39848116]	source code data		failure rate
+yes	Correct	[ 0.38697681  0.61302316]	customer		beneficiary
+yes	Incorrect	[ 0.19966157  0.80033845]	squiggle		producer
+no	Correct	[ 0.63761747  0.36238253]	fourth generation language		development project function point count
+no	Correct	[ 0.62216294  0.37783703]	software support		test phase
+yes	Correct	[ 0.12839308  0.87160689]	iteration		timebox
+no	Incorrect	[ 0.63449472  0.36550525]	machine code		symbolic language
+yes	Correct	[ 0.46708953  0.53291041]	envisioning		product planning
+no	Incorrect	[ 0.66520882  0.33479115]	actual cost		earned value technique
+yes	Incorrect	[ 0.11115483  0.88884521]	Intranet		jump
+no	Correct	[ 0.66714388  0.33285612]	background processing		self-relative address
+yes	Correct	[ 0.05331666  0.94668329]	role		principle
+no	Correct	[ 0.60366052  0.39633948]	task inversion		contingency plan
+yes	Correct	[ 0.45280254  0.54719746]	capacity		work in process
+no	Incorrect	[ 0.60591727  0.3940827 ]	program design		pseudo code
+yes	Incorrect	[ 0.32502338  0.67497659]	zFile		data store
+yes	Incorrect	[ 0.47857842  0.52142161]	synchronous		practice
+no	Correct	[ 0.66585755  0.33414245]	triple constraint		language standard
+no	Correct	[ 0.65884602  0.34115398]	change control system		critical range
+yes	Correct	[ 0.19884366  0.80115628]	compile		interpret
+no	Correct	[ 0.69262868  0.30737132]	performance indicator		keyword
+no	Incorrect	[ 0.58696818  0.41303179]	arrows connecting inputs to processing steps and processing steps to outputs		block diagram
+no	Incorrect	[ 0.6460647  0.3539353]	specification relationships to one another		documentation tree
+yes	Correct	[ 0.44391736  0.55608267]	self-organization		emergence
+no	Correct	[ 0.71780586  0.28219417]	must-have features		accuracy of measurement
+no	Correct	[ 0.67837107  0.3216289 ]	deployment plan		bottom-up design
+yes	Correct	[ 0.02003874  0.97996134]	store		move
+yes	Correct	[ 0.43040183  0.56959808]	call graph		state diagram
+no	Correct	[ 0.69441289  0.30558705]	control program		kano model analysis
+no	Incorrect	[ 0.66139454  0.33860543]	proof of correctness		formal specification
+no	Correct	[ 0.65651268  0.34348735]	machine address		compiler directive source statement
+no	Incorrect	[ 0.5476706   0.45232946]	case		if-then-else
+yes	Correct	[ 0.00136358  0.99863642]	machine-dependent		machine-independent
+no	Incorrect	[ 0.68956953  0.31043044]	incremental development		rapid prototyping
+no	Correct	[ 0.65072912  0.34927079]	on-line compiler		adjusted size
+no	Correct	[ 0.62439573  0.37560427]	project charter		control program
+no	Correct	[ 0.68141747  0.31858253]	software development folder		organization chart
+yes	Incorrect	[ 0.48587966  0.51412034]	serial		marking of a place
+yes	Correct	[ 0.10196966  0.89803034]	supplier		vendor
+no	Correct	[ 0.67292148  0.32707855]	object-oriented structured design		release plan
+no	Correct	[ 0.5570606   0.44293946]	blocked		system of interest
+no	Correct	[ 0.68919778  0.31080219]	maintenance plan		macro generating program
+no	Correct	[ 0.62574482  0.37425518]	cluster template		inspection
+no	Correct	[ 0.597987    0.40201297]	functional service		test objective
+no	Correct	[ 0.60642713  0.3935729 ]	resource-limited schedule		dynamic
+no	Correct	[ 0.70308828  0.29691178]	software project		demo demonstration
+no	Incorrect	[ 0.56513286  0.43486717]	conditions of satisfaction		acceptance criteria
+yes	Incorrect	[ 0.2919398  0.7080602]	lowclass		prototype
+yes	Correct	[ 0.00355599  0.99644405]	pack		unpack
+yes	Correct	[ 0.12708171  0.87291831]	artifact		version
+yes	Correct	[ 0.46662343  0.53337651]	configuration		global configuration management
+yes	Correct	[ 0.08035754  0.91964245]	accuracy		precision
+no	Correct	[ 0.67438561  0.32561439]	syntactic error		root cause analysis
+yes	Incorrect	[ 0.37235001  0.62764996]	contribution		effectiveness
+no	Correct	[ 0.66514754  0.33485246]	mechanism loopback		structured programming language
+yes	Incorrect	[ 0.13068627  0.86931372]	top box		compatible
+yes	Correct	[  8.72243312e-04   9.99127805e-01]	page		paging
+no	Correct	[ 0.64369494  0.35630506]	load-and-go		page reference
+no	Incorrect	[ 0.57032228  0.42967772]	contiguous allocation		paging
+yes	Incorrect	[ 0.41002721  0.58997279]	inline code		loopback
+no	Correct	[ 0.5662306   0.43376938]	relation		paired programming
+no	Correct	[ 0.61869353  0.38130647]	multiprogramming		configuration management system
+label, correctness, w1, w2
+yes	Correct	[ 0.13250674  0.86749327]	pair programming		programming in pairs
+no	Correct	[ 0.66777587  0.3322241 ]	symbolic trace		quantitative risk analysis
+yes	Incorrect	[ 0.45436725  0.54563272]	call list		base measure
+no	Incorrect	[ 0.56950933  0.43049061]	task board		information radiator
+yes	Correct	[ 0.41397536  0.5860247 ]	fail safe		fault tolerance
+no	Incorrect	[ 0.70718277  0.29281729]	relative estimation		silent grouping
+no	Incorrect	[ 0.56818563  0.43181437]	call graph		structure chart
+no	Incorrect	[ 0.57267904  0.42732096]	arrows connecting inputs to processing steps and processing steps to outputs		graph
+no	Incorrect	[ 0.59359008  0.40640986]	weighted shortest job first		cost of delay
+no	Correct	[ 0.64463586  0.35536408]	software life cycle		systems engineering
+no	Correct	[ 0.53877324  0.46122673]	intermittent fault		demand paging
+no	Correct	[ 0.7181294  0.2818706]	machine-readable		feature based planning
+yes	Incorrect	[ 0.06792824  0.93207181]	upstream		commit
+no	Incorrect	[ 0.61822987  0.38177013]	data abstraction		information hiding
+no	Incorrect	[ 0.6491307  0.3508693]	estimate at completion		earned value technique
+no	Correct	[ 0.65341657  0.34658337]	nonprocedural language		acquirer
+no	Correct	[ 0.66975641  0.33024359]	high-order language		competent assessor
+no	Correct	[ 0.70732868  0.29267132]	anticipatory process		symbol table
+yes	Incorrect	[ 0.15615688  0.8438431 ]	simulator		unambiguous
+yes	Correct	[ 0.24903092  0.75096911]	mandatory		optional
+yes	Incorrect	[ 0.36301121  0.63698882]	zComponent		deliverable
+no	Correct	[ 0.67811084  0.32188919]	level of abstraction		configuration provider
+yes	Incorrect	[ 0.3897962  0.6102038]	flow diagram		consistent
+no	Correct	[ 0.62261254  0.37738743]	exception handling		test case generator
+yes	Correct	[ 0.45388666  0.54611337]	refactoring		technical debt
+no	Correct	[ 0.64988589  0.35011414]	system maintenance		dynamic analysis
+no	Correct	[ 0.68022943  0.3197706 ]	multiple inheritance		niko-niko calendar
+no	Correct	[ 0.65731323  0.34268674]	report		software life cycle
+yes	Correct	[ 0.42663923  0.5733608 ]	silent grouping		sprint retrospective
+no	Correct	[ 0.68052059  0.31947938]	self-organization		functional unit
+yes	Correct	[ 0.07153571  0.92846429]	bind		dynamic binding
+yes	Incorrect	[ 0.1826475   0.81735247]	knowledge		inventory
+yes	Correct	[ 0.13213405  0.86786592]	convention		standard
+no	Correct	[ 0.67408746  0.32591256]	source address		item transmittal report
+no	Correct	[ 0.64957625  0.35042381]	interface requirements specification		iterative construct
+no	Incorrect	[ 0.64158583  0.3584142 ]	retirement phase		software life cycle
+yes	Incorrect	[ 0.49751896  0.5024811 ]	repair		class data
+no	Correct	[ 0.69871169  0.30128837]	hierarchical decomposition		cargo cult
+no	Incorrect	[ 0.67217076  0.32782921]	fault masking		fourth generation language
+no	Incorrect	[ 0.64572823  0.35427174]	schedule network analysis		critical chain method
+no	Incorrect	[ 0.59057534  0.40942469]	offset		relative address
+no	Correct	[ 0.66292596  0.3370741 ]	development specification		snapshot dump
+yes	Correct	[ 0.34287319  0.65712678]	entry point		exit
+yes	Correct	[ 0.45774126  0.54225874]	queue		work in process
+no	Correct	[ 0.64173961  0.35826042]	working set		application lifecycle management
+no	Incorrect	[ 0.60584223  0.39415777]	case		multiple inclusive selective construct
+yes	Correct	[ 0.06767073  0.93232924]	adaptation		prediction
+no	Correct	[ 0.61460882  0.38539124]	meta-		variation point
+no	Correct	[ 0.62044036  0.37955964]	prioritized list		response time
+no	Correct	[ 0.51107872  0.48892131]	sprint		residual risk
+yes	Correct	[ 0.00968515  0.9903149 ]	page swapping		paging
+no	Correct	[ 0.51190674  0.48809326]	test level		config spec
+yes	Correct	[ 0.39415723  0.60584277]	loader		linkage editor
+yes	Correct	[ 0.38347369  0.61652631]	approach		practice
+yes	Incorrect	[ 0.43227404  0.5677259 ]	mixed entry table		user-identifiable
+yes	Correct	[ 0.26886311  0.73113692]	transaction analysis		transaction-centered design
+no	Incorrect	[ 0.62408614  0.3759138 ]	modular programming		stepwise refinement
+no	Incorrect	[ 0.60279131  0.39720863]	contractual requirement		acquirer
+no	Incorrect	[ 0.65924895  0.34075108]	object-oriented design		stepwise refinement
+yes	Correct	[ 0.00861688  0.99138314]	routine		coroutine
+no	Incorrect	[ 0.70626688  0.29373309]	machine code		high order language
+yes	Correct	[ 0.03318523  0.96681476]	multiprogramming		multitasking
+yes	Correct	[ 0.29227078  0.70772928]	deliverable		acquirer
+no	Correct	[ 0.67269582  0.32730427]	assessment indicator		place
+no	Correct	[ 0.68145299  0.31854698]	on-screen documentation		identify risks
+yes	Incorrect	[ 0.40489575  0.59510428]	symbolic trace		time slicing
+no	Correct	[ 0.72402227  0.27597776]	performing organization		For Exposition Only page
+no	Incorrect	[ 0.56035733  0.43964267]	multi-valued		function
+yes	Correct	[ 0.14717399  0.852826  ]	multitasking		time sharing
+yes	Correct	[ 0.00172184  0.99827814]	antifragility		antifragile
+no	Incorrect	[ 0.7131933  0.2868067]	fault masking		high order language
+no	Correct	[ 0.67208254  0.3279174 ]	hardware design language		static model
+no	Correct	[ 0.63118386  0.36881617]	satisfaction		Certified Scrum Professional
+yes	Correct	[ 0.42545167  0.57454836]	standup-daily meeting		daily scrum
+yes	Correct	[ 0.14312947  0.85687053]	interactive		real time
+no	Incorrect	[ 0.69739896  0.30260107]	call graph		control flow diagram
+no	Correct	[ 0.63372618  0.36627382]	concurrent communication diagram		monitor
+no	Correct	[ 0.60671991  0.39328006]	backward recovery		logical cohesion
+no	Incorrect	[ 0.52081299  0.47918704]	change		specification change notice
+yes	Incorrect	[ 0.08322273  0.91677725]	record		event
+yes	Correct	[ 0.0402224   0.95977759]	down		idle
+yes	Correct	[ 0.21551803  0.784482  ]	class		type
+yes	Correct	[ 0.01276083  0.98723918]	routine		subroutine
+no	Correct	[ 0.68664783  0.31335211]	team demo		quick design session
+no	Correct	[ 0.67324877  0.32675123]	program portfolio management		defect repair
+yes	Correct	[ 0.19458933  0.80541062]	macroinstruction		macro
+no	Incorrect	[ 0.50531673  0.49468327]	essential scrum		rule
+no	Correct	[ 0.58445811  0.41554192]	appraisal team leader		product configuration identification functional baseline
+yes	Incorrect	[ 0.49978399  0.50021601]	earned value		contract
+no	Correct	[ 0.67708892  0.32291111]	language standard		timeliness rating value
+no	Incorrect	[ 0.65095103  0.349049  ]	system follow-up		post-implementation review
+yes	Correct	[ 0.11617181  0.88382822]	microprogramming		microinstruction
+no	Correct	[ 0.62445533  0.3755447 ]	instruction modifier		idle
+no	Correct	[ 0.61338145  0.38661855]	daily stand-up		antifragility
+yes	Correct	[ 0.02621998  0.97377998]	scrum		agile
+yes	Correct	[ 0.09194639  0.90805358]	story mapping		user story
+no	Correct	[ 0.62855232  0.37144762]	global configuration management		threat
+yes	Correct	[ 0.03149417  0.96850586]	exit		return
+no	Incorrect	[ 0.62026531  0.37973472]	hierarchy		hierarchical decomposition
+yes	Correct	[ 0.15357415  0.84642583]	lockout		semaphore
+no	Correct	[ 0.66896027  0.3310397 ]	test design specification		job function
+no	Correct	[ 0.60182047  0.39817947]	design authority		scope change
+yes	Correct	[ 0.135978    0.86402196]	severity		criticality
+yes	Correct	[ 0.4280988  0.5719012]	generic entity		supertype
+no	Incorrect	[ 0.6459285   0.35407153]	load module		assembled origin
+yes	Correct	[ 0.08335427  0.91664571]	epic		feature
+no	Incorrect	[ 0.69975674  0.30024326]	object identifier		oid
+no	Correct	[ 0.60380703  0.39619303]	product roadmap		frequent releases
+no	Correct	[ 0.58546597  0.41453397]	quality subfactor		turnkey
+no	Correct	[ 0.63604152  0.36395851]	submit primitive		project management knowledge area
+yes	Incorrect	[ 0.29651073  0.70348924]	information product		product analysis
+no	Incorrect	[ 0.70391113  0.2960889 ]	logical relationship		dependency
+no	Correct	[ 0.64733386  0.35266617]	support activity group		meta-
+no	Correct	[ 0.54967636  0.45032367]	change control board		terminal
+no	Correct	[ 0.64870155  0.35129848]	define activities		functional complexity
+no	Incorrect	[ 0.67063659  0.32936341]	object-oriented design		rapid prototyping
+yes	Correct	[ 0.38909853  0.61090147]	essential scrum		practice
+yes	Correct	[ 0.38225713  0.6177429 ]	cadence		synchronization
+no	Correct	[ 0.61479044  0.3852095 ]	problem state		run stream
+yes	Incorrect	[ 0.25787023  0.74212974]	invariant		Eclipse
+yes	Correct	[ 0.44237366  0.55762631]	story point		Planning Poker
+yes	Correct	[ 0.09669805  0.90330201]	main program		subprogram
+yes	Correct	[ 0.0143662   0.98563379]	page table		paging
+no	Incorrect	[ 0.52890468  0.47109532]	architecture		subprogram
+yes	Correct	[ 0.4430469   0.55695307]	inventory		work in process
+no	Correct	[ 0.60252953  0.3974705 ]	notebook computer		meta-
+yes	Correct	[ 0.12716822  0.87283176]	customer		stakeholder
+no	Correct	[ 0.53754121  0.46245882]	test		magic string
+no	Correct	[ 0.67414463  0.32585537]	updatable argument		evaluation procedure
+yes	Incorrect	[ 0.48857543  0.51142454]	called diagram		pointer
+yes	Correct	[ 0.34066322  0.65933681]	acquisition		outsourcing
+no	Correct	[ 0.66706127  0.33293873]	task behavior specification		linkage editor
+yes	Correct	[ 0.0774323   0.92256767]	artifact		stream
+no	Correct	[ 0.72978675  0.27021325]	user experience ux		information product
+no	Correct	[ 0.68864977  0.31135023]	collection cardinality		software life cycle
+no	Correct	[ 0.62478042  0.37521958]	input assertion		rule
+no	Correct	[ 0.67768723  0.32231268]	enterprise architect		human behavior
+yes	Correct	[  6.57808487e-05   9.99934196e-01]	Government-off-the-Shelf		Government off the Shelf
+no	Correct	[ 0.65898579  0.34101418]	preparation time		static analysis
+no	Incorrect	[ 0.70650685  0.29349312]	big visible charts		information radiator
+no	Correct	[ 0.60851693  0.3914831 ]	control clustering		key
+yes	Incorrect	[ 0.41198924  0.58801079]	scenario		macroassembler
+yes	Incorrect	[ 0.46680042  0.53319961]	analyst		system table
+yes	Correct	[ 0.04136157  0.95863843]	process		job
+no	Correct	[ 0.63029999  0.36970004]	static dump		relocatable address
+yes	Correct	[ 0.11435416  0.88564587]	fail soft		fault secure
+no	Incorrect	[ 0.67835259  0.32164741]	object-oriented design		transform analysis
+no	Correct	[ 0.66282684  0.3371731 ]	updatable argument		program status word
+no	Correct	[ 0.69932544  0.30067456]	life cycle		numeric character
+no	Incorrect	[ 0.57450795  0.42549208]	direct address		immediate data
+no	Incorrect	[ 0.547427  0.452573]	box diagram		bubble chart
+no	Incorrect	[ 0.53246504  0.46753487]	sprint		definition of done
+yes	Correct	[ 0.30119666  0.69880331]	story mapping		product backlog
+yes	Correct	[ 0.06470121  0.9352988 ]	down		crash
+no	Correct	[ 0.61040348  0.38959655]	first generation fifth generation language		tier chart
+yes	Correct	[ 0.49819484  0.50180513]	u-curve optimization		transaction cost
+no	Incorrect	[ 0.66835469  0.33164525]	transaction analysis		modular decomposition
+no	Correct	[ 0.6813997   0.31860036]	monitor and control risks		path
+yes	Correct	[ 0.34639007  0.65360993]	if-then-else		jump
+yes	Correct	[ 0.44346297  0.55653703]	concept of operations document		operational concept description
+yes	Correct	[ 0.14595728  0.85404271]	acquirer		customer
+no	Incorrect	[ 0.58375239  0.41624764]	design-to-cost		cost as an independent variable
+yes	Correct	[ 0.2806147   0.71938527]	genba		genchi genbutsu
+no	Correct	[ 0.5686385  0.4313615]	baseline document		triggering event
+no	Incorrect	[ 0.67630208  0.32369795]	block diagram		system resources chart
+no	Correct	[ 0.62362528  0.37637478]	software diversity		finish date
+no	Incorrect	[ 0.68139851  0.31860146]	loop control		trailing decision
+no	Correct	[ 0.65726823  0.3427318 ]	influence diagram		interconnection feature
+no	Correct	[ 0.71480936  0.28519061]	level 1 record group		design element
+yes	Correct	[ 0.1204673   0.87953269]	initialize		reset
+no	Incorrect	[ 0.65244502  0.34755501]	hierarchical decomposition		stepwise refinement
+no	Correct	[ 0.6940642   0.30593577]	systems integration testing		existence constraint
+yes	Correct	[ 0.00734136  0.99265867]	downstream		upstream
+no	Incorrect	[ 0.74283129  0.25716871]	software item		program library
+yes	Correct	[ 0.01198546  0.98801452]	metamodel		meta-model
+no	Incorrect	[ 0.66381794  0.33618209]	software development plan		rapid prototyping
+no	Correct	[ 0.65473866  0.34526134]	language processor		architectural design
+no	Correct	[ 0.66308618  0.33691376]	project management process group		program structure diagram
+no	Correct	[ 0.63172501  0.36827499]	process management		one-plus-one address address instruction
+yes	Incorrect	[ 0.44508198  0.55491799]	viewpoint statement		brainstorming
+yes	Incorrect	[ 0.34303543  0.6569646 ]	overhead time		sort
+yes	Correct	[ 0.00972713  0.99027282]	input		output
+yes	Correct	[ 0.23325662  0.76674336]	flowchart		graph
+yes	Correct	[ 0.18378933  0.81621069]	baseline		stream
+no	Correct	[ 0.67586851  0.32413152]	active redundancy		cost management plan
+yes	Correct	[ 0.46078134  0.53921872]	software development plan		incremental development
+no	Correct	[ 0.71996379  0.28003612]	hostile backout		free float
+yes	Correct	[ 0.37588516  0.62411487]	assertion		inductive assertion method
+no	Correct	[ 0.67053103  0.32946897]	assembler code		project team directory
+no	Correct	[ 0.64984876  0.35015124]	five levels of agile planning		system documentation
+yes	Correct	[ 0.00266232  0.99733764]	afferent		efferent
+no	Correct	[ 0.64813113  0.35186893]	device interface task		initial program loader
+no	Correct	[ 0.6771878   0.32281223]	Groschs law		cost management plan
+yes	Correct	[ 0.01000056  0.98999947]	pause		halt
+yes	Correct	[ 0.29098037  0.7090196 ]	variant		variation point
+yes	Incorrect	[ 0.47234181  0.52765816]	budgets		mock object
+no	Correct	[ 0.65055394  0.34944612]	execution time		interconnection group
+no	Correct	[ 0.65344155  0.34655848]	subject-matter expert		budget at completion
+yes	Correct	[ 0.00523594  0.99476409]	unspecialize		specialize
+yes	Correct	[ 0.05132738  0.94867259]	fail fast		fast feedback
+yes	Incorrect	[ 0.45522317  0.5447768 ]	preprocessor		effort
+no	Incorrect	[ 0.7638182   0.23618184]	wip		work in process
+no	Correct	[ 0.67957485  0.32042515]	development project		organizational maturity
+no	Correct	[ 0.65372366  0.34627634]	performing organization		data group
+yes	Correct	[ 0.04000431  0.95999575]	reliability		availability
+no	Correct	[ 0.70021385  0.29978621]	marginal economics		develop project team
+no	Correct	[ 0.50743181  0.49256817]	state data		metrics sample
+no	Correct	[ 0.66997111  0.33002886]	and validation		subject-matter expert
+no	Correct	[ 0.67572159  0.32427838]	instruction repertoire		command
+yes	Incorrect	[ 0.34412253  0.65587741]	committer		place type
+no	Correct	[ 0.63071895  0.36928105]	fact build		interrupt latency
+no	Incorrect	[ 0.59262216  0.40737787]	stepwise refinement		structured design
+yes	Incorrect	[ 0.17129502  0.82870501]	diversity		minimap
+no	Incorrect	[ 0.6183548  0.3816452]	rapid prototyping		stepwise refinement
+no	Correct	[ 0.5349223   0.46507764]	programming		done-done-done
+label, correctness, w1, w2
+no	Incorrect	[ 0.6886726   0.31132737]	modular programming		input-process-output
+no	Correct	[ 0.63958776  0.36041218]	module strength		external measure
+yes	Correct	[ 0.04447062  0.95552939]	bug		error
+no	Incorrect	[ 0.67703176  0.3229683 ]	installation manual		program counter
+no	Incorrect	[ 0.68852931  0.31147069]	summary activity		subnetwork
+no	Correct	[ 0.63103771  0.36896229]	container interface		program counter
+yes	Correct	[ 0.0280138   0.97198617]	assemble		disassemble
+yes	Correct	[ 0.02323088  0.97676909]	kanban		agile
+yes	Correct	[ 0.17482255  0.82517743]	bottom-up		top-down
+no	Incorrect	[ 0.58303517  0.41696483]	module		calling sequence
+no	Incorrect	[ 0.50445074  0.49554929]	incremental funding		validated learning
+no	Incorrect	[ 0.64321774  0.3567822 ]	scaffolding		programming support environment
+no	Incorrect	[ 0.663441    0.33655897]	sprint retrospective		inspect and adapt
+no	Incorrect	[ 0.51098663  0.4890134 ]	modular decomposition		demodularization
+no	Incorrect	[ 0.60085487  0.39914516]	arrows connecting inputs to processing steps and processing steps to outputs		flowchart
+no	Incorrect	[ 0.59233975  0.40766031]	sequential cohesion		serial construct
+no	Incorrect	[ 0.61371559  0.3862845 ]	box diagram		Chapin chart
+no	Correct	[ 0.68257689  0.31742311]	coincidental cohesion		chief programmer
+yes	Incorrect	[ 0.3438226  0.6561774]	feature		active text
+no	Correct	[ 0.67484701  0.32515299]	parallel classes		model note number
+yes	Correct	[ 0.08189875  0.91810119]	timebox		sprint
+no	Incorrect	[ 0.69535363  0.30464634]	configuration control		waiver
+no	Correct	[ 0.70038235  0.29961765]	long-term asset		source code
+no	Correct	[ 0.546772    0.45322803]	execution trace		evaluation checklist
+yes	Correct	[ 0.14451492  0.85548508]	assembler		interpreter
+no	Incorrect	[ 0.74661106  0.25338897]	lrm		last responsible moment
+no	Incorrect	[ 0.65190196  0.34809798]	assembled origin		starting address
+no	Correct	[ 0.64355558  0.35644439]	interface requirements specification		caution
+no	Correct	[ 0.66574997  0.33425003]	batch size		error prediction
+no	Correct	[ 0.66664422  0.33335581]	non-developed source statement		software piracy
+no	Correct	[ 0.66237426  0.33762571]	system definitions		support activity group
+yes	Correct	[ 0.0441997   0.95580029]	idle		up
+no	Correct	[ 0.64534873  0.35465124]	multiple exclusive selective construct		corporate board or equivalent body
+no	Correct	[ 0.60777044  0.39222956]	optional nonidentifying relationship nonidentifying relationship		reference mode
+no	Incorrect	[ 0.53837341  0.46162662]	availability		fault tolerance
+no	Incorrect	[ 0.59470373  0.40529633]	integrated circuit		microchip
+no	Correct	[ 0.64834291  0.35165709]	applicability to a functional domain		computing center
+no	Correct	[ 0.6851688   0.31483117]	entity-relationship diagram		existence dependency
+no	Correct	[ 0.66176182  0.33823818]	punch list		should-cost estimate
+no	Correct	[ 0.62352633  0.37647367]	role-feature-reason		run time
+no	Correct	[ 0.57052726  0.42947277]	logical record		argument
+yes	Incorrect	[ 0.28976688  0.71023309]	mixed mode		reconcile
+no	Correct	[ 0.67827684  0.32172313]	task complete definition		systematic failure
+no	Correct	[ 0.57284719  0.42715281]	configuration item form		modifiable
+no	Correct	[ 0.53418887  0.46581116]	logic diagram		object type set
+no	Correct	[ 0.66205257  0.33794743]	final function point count		many-to-many relationship
+yes	Correct	[ 0.45237958  0.54762042]	block		block-structured language
+no	Correct	[ 0.63992345  0.36007655]	rework		project procurement management
+yes	Correct	[ 0.10921562  0.89078432]	supplier		producer
+yes	Correct	[  7.46149090e-05   9.99925375e-01]	cost-plus-fee		cost plus fee
+yes	Correct	[ 0.03635588  0.96364415]	inspect and adapt		inspection
+no	Incorrect	[ 0.63946021  0.36053973]	relative size measure		ideal day
+no	Incorrect	[ 0.69956487  0.30043516]	engineering change proposal		configuration control
+no	Incorrect	[ 0.67789525  0.32210475]	incremental development		structured design
+no	Correct	[ 0.58991551  0.41008452]	threat modeling		nonkey attribute
+yes	Correct	[  1.86593868e-04   9.99813378e-01]	fault-tolerant		fault tolerant
+no	Incorrect	[ 0.55551606  0.44448394]	stand up		daily meeting
+no	Correct	[ 0.67283648  0.32716346]	business intelligence		order language
+no	Correct	[ 0.54375744  0.45624256]	computer program		whitespace
+no	Correct	[ 0.68243396  0.31756598]	level of performance		estimation
+no	Incorrect	[ 0.58800232  0.41199765]	issue		problem report
+no	Correct	[ 0.66835248  0.33164752]	project cost management		one-ahead addressing
+yes	Correct	[ 0.07287317  0.92712677]	implied addressing		direct address
+no	Incorrect	[ 0.70042288  0.29957715]	input-process-output		transaction analysis
+no	Incorrect	[ 0.70097417  0.29902586]	box diagram		inputprocess-output chart
+no	Incorrect	[ 0.55837792  0.44162208]	u-curve optimization		holding cost
+no	Correct	[ 0.68774408  0.31225589]	targeted technical debt		integrity level
+no	Correct	[ 0.71248627  0.28751379]	incident		test case specification
+no	Correct	[ 0.66771132  0.33228868]	work authorization system		clash
+no	Correct	[ 0.68171763  0.31828231]	process measures		software design concept
+no	Correct	[ 0.64807361  0.35192633]	table heading		added source statements
+no	Incorrect	[ 0.60140854  0.39859146]	demodularization		upward compression
+yes	Correct	[ 0.11789725  0.88210273]	decompiler		coupling
+no	Correct	[ 0.65088195  0.34911811]	signpost		certified scrum professional
+yes	Correct	[ 0.00963021  0.99036974]	fail safe		failsafe
+yes	Incorrect	[ 0.01113248  0.98886758]	up		jump
+no	Correct	[ 0.66734934  0.33265066]	ontology		marketing organization
+no	Correct	[ 0.66525877  0.33474123]	time-critical task		module testing
+no	Correct	[ 0.67841506  0.32158491]	functional language		computer security
+no	Correct	[ 0.67359358  0.32640636]	framework		activity identifier
+yes	Correct	[ 0.47213191  0.52786815]	assumption		validated learning
+no	Correct	[ 0.65730208  0.34269795]	sprint mapping		work breakdown structure component
+no	Incorrect	[ 0.66380018  0.33619985]	integer type		programming support environment
+no	Correct	[ 0.65526026  0.34473976]	project level		hostile backout
+yes	Correct	[ 0.16349359  0.83650637]	macroinstruction		macrogenerator
+no	Incorrect	[ 0.62641716  0.37358281]	sprint review		inspect and adapt
+yes	Incorrect	[ 0.08550701  0.91449302]	origin		marking
+yes	Correct	[ 0.32257065  0.67742938]	up		down busy
+no	Correct	[ 0.64619642  0.3538036 ]	assessment input		logical file
+yes	Correct	[ 0.04001727  0.95998269]	cohesion		coupling
+no	Correct	[ 0.54026926  0.45973071]	skeleton		fail-fast
+yes	Correct	[ 0.01381691  0.98618317]	product		result
+yes	Correct	[ 0.01509171  0.98490834]	multiprocessing		multiprogramming
+no	Correct	[ 0.65357709  0.34642294]	operations manual		process
+no	Incorrect	[ 0.63566971  0.36433032]	acceptance-test-driven development		specification by example
+no	Incorrect	[ 0.60805547  0.3919445 ]	release train		scrum of scrums
+no	Correct	[ 0.60996926  0.39003083]	program librarian		personnel
+yes	Correct	[ 0.06674407  0.93325591]	assembler		compiler
+yes	Correct	[ 0.01382192  0.98617804]	flowchart		flow chart
+no	Correct	[ 0.53633195  0.46366811]	punch list		driver
+no	Incorrect	[ 0.67229664  0.32770336]	constant-failure period		bathtub curve
+no	Correct	[ 0.66450781  0.33549219]	sensitivity analysis		actual parameter
+no	Correct	[ 0.61644298  0.38355705]	spike		software monitor
+yes	Correct	[ 0.0402617   0.95973831]	paging		page zero
+no	Incorrect	[ 0.64599323  0.35400674]	homogeneous redundancy		diversity
+yes	Correct	[ 0.37798342  0.62201649]	control store		microword
+yes	Correct	[ 0.13417548  0.86582446]	snapshot		baseline
+no	Incorrect	[ 0.55881327  0.44118667]	long-term asset		cost accounting
+yes	Incorrect	[ 0.05308954  0.9469105 ]	expandability		traceability
+no	Incorrect	[ 0.67274106  0.32725897]	portability		machine independent
+yes	Correct	[ 0.45349416  0.54650587]	artifact		back link
+no	Correct	[ 0.59609604  0.40390396]	resource histogram		subroutine
+no	Correct	[ 0.54548162  0.45451835]	time sharing		main procedure
+yes	Correct	[ 0.05966147  0.94033855]	scrummaster		Scrum team
+no	Incorrect	[ 0.64297026  0.35702971]	structured design		modular decomposition
+yes	Correct	[ 0.01604067  0.98395926]	busy		up
+no	Incorrect	[ 0.63313472  0.36686528]	configuration		fit
+no	Incorrect	[ 0.50617582  0.49382421]	dot voting		sprint retrospective
+no	Correct	[ 0.68313617  0.31686386]	risk management system		duration
+no	Correct	[ 0.50349903  0.496501  ]	content assist		absolute address
+yes	Correct	[ 0.34914419  0.65085578]	template		construction
+yes	Correct	[ 0.17371416  0.82628578]	maintainability		extendability
+no	Incorrect	[ 0.74989295  0.25010702]	ICOM code		arrow reference
+no	Incorrect	[ 0.72195292  0.27804708]	support		software life cycle
+no	Incorrect	[ 0.62966114  0.37033889]	imperative statement		instruction
+no	Correct	[ 0.62668413  0.37331593]	stabilization phase		transition variables
+no	Correct	[ 0.68366212  0.31633788]	early finish date		performance analysis
+no	Correct	[ 0.72785747  0.27214256]	data flow diagram		kernel
+no	Correct	[ 0.66737574  0.33262426]	operational expense		parameterized high-level net graph
+yes	Correct	[ 0.06512871  0.93487132]	case		jump
+yes	Correct	[ 0.07732709  0.92267293]	assertion		invariant
+no	Correct	[ 0.67734706  0.32265294]	disorder domain		process group
+yes	Correct	[ 0.01823962  0.98176032]	bag		set
+no	Correct	[ 0.6914717  0.3085283]	change control system		artifact type
+yes	Incorrect	[ 0.1366055  0.8633945]	pseudocode		sandbox
+no	Correct	[ 0.62710828  0.37289175]	system software		exit
+no	Correct	[ 0.63332224  0.36667773]	common-environment coupling		predictive metric
+yes	Correct	[ 0.25836706  0.74163294]	restart		rescue point
+yes	Correct	[ 0.21449181  0.78550816]	chief programmer team		backup programmer
+no	Correct	[ 0.5039385  0.4960615]	architect		machine-independent
+yes	Correct	[ 0.00395746  0.99604261]	material		materiel
+yes	Correct	[ 0.11892629  0.88107377]	diverse redundancy		diversity
+yes	Incorrect	[ 0.17291379  0.82708621]	workflow		recovery
+no	Correct	[ 0.64520597  0.354794  ]	bug		software design requirement
+yes	Correct	[ 0.17458409  0.82541591]	video display terminal		visual display unit
+no	Correct	[ 0.59919649  0.40080351]	security policy		structure chart
+no	Correct	[ 0.58680266  0.41319734]	postcondition		design specification
+yes	Correct	[ 0.47231469  0.52768528]	configuration identification		product configuration identification functional baseline
+no	Correct	[ 0.71886289  0.28113708]	meta-object		happened-upon technical debt
+yes	Correct	[ 0.13377815  0.86622179]	objective		purpose
+no	Incorrect	[ 0.65796369  0.34203631]	planned value		budgeted cost of work scheduled
+no	Incorrect	[ 0.67105889  0.32894114]	requirements partitioning		decomposition
+no	Correct	[ 0.60469729  0.39530271]	testing task iteration		disassemble
+yes	Correct	[ 0.00807034  0.99192965]	extendability		expandability
+yes	Correct	[ 0.06614962  0.93385041]	sequential		serial
+yes	Correct	[ 0.01062388  0.98937607]	reflexive		recursive
+yes	Correct	[ 0.37733337  0.6226666 ]	microinstruction		micro code
+no	Incorrect	[ 0.67209959  0.32790038]	program status word		structure chart
+no	Incorrect	[ 0.62443292  0.37556714]	mapping completeness		total
+no	Incorrect	[ 0.67396915  0.32603085]	stepwise refinement		transaction analysis
+no	Correct	[ 0.63188654  0.36811346]	return code		Groschs law
+yes	Correct	[ 0.45858988  0.54141009]	paging		virtual storage
+yes	Incorrect	[ 0.37017873  0.6298213 ]	document		basic path
+no	Incorrect	[ 0.57029694  0.42970303]	argument		formal parameter
+no	Correct	[ 0.74227881  0.25772119]	domain architecture		compile-and-go
+yes	Correct	[ 0.35494772  0.64505225]	organizational process assets		process asset library
+no	Correct	[ 0.68679291  0.31320712]	product sashimi		resource breakdown structure
+yes	Correct	[ 0.43697605  0.56302392]	design constraint		software design requirement
+yes	Incorrect	[ 0.18716554  0.8128345 ]	load rule		upstream
+yes	Incorrect	[ 0.45479003  0.54521   ]	validity		collaboration
+no	Incorrect	[ 0.64469999  0.35530007]	binary digit		byte
+no	Correct	[ 0.58121771  0.41878229]	aggregation		transportability
+no	Incorrect	[ 0.63724214  0.36275789]	continuous improvement		kaizen
+yes	Correct	[ 0.38211688  0.61788315]	fail soft		fault tolerance
+yes	Correct	[ 0.05827976  0.94172031]	validation		verification
+no	Incorrect	[ 0.63796049  0.36203954]	rapid prototyping		structured design
+no	Incorrect	[ 0.72236323  0.27763677]	pseudo instruction		pragma
+no	Correct	[ 0.65381396  0.34618601]	requirement		transform-centered design
+no	Incorrect	[ 0.56337988  0.43662018]	product line		system
+no	Correct	[ 0.62231535  0.37768465]	design phase		nanoinstruction
+no	Correct	[ 0.62921768  0.37078232]	enabling		develop project charter
+no	Incorrect	[ 0.52725697  0.47274303]	the operand		immediate data
+no	Incorrect	[ 0.67795205  0.32204792]	forward pass		schedule network analysis
+yes	Incorrect	[ 0.41606766  0.58393234]	war room		node tree
+no	Incorrect	[ 0.68280929  0.31719071]	input-process-output		modular decomposition
+no	Correct	[ 0.50770408  0.49229592]	imperative construct		conversational
+no	Correct	[ 0.66412747  0.33587253]	formal specification		software user documentation
+no	Correct	[ 0.63035679  0.36964315]	downward compression		multiaddress four-two-address address instruction
+no	Correct	[ 0.68357259  0.31642744]	specific symbol		cost-plus-fee
+no	Correct	[ 0.71332699  0.28667298]	extreme programming		symbol table
+no	Correct	[ 0.681373    0.31862694]	clear text file encoding		Java Database Connectivity
+no	Incorrect	[ 0.61540443  0.38459557]	estimate to complete		earned value technique
+yes	Correct	[ 0.01586089  0.98413914]	page frame		paging
+no	Correct	[ 0.68976355  0.31023648]	agile software development		level of effort
+no	Incorrect	[ 0.60006541  0.39993459]	iteration		all-at-once development
+yes	Incorrect	[ 0.35362896  0.64637107]	viewpoint		story points
+no	Correct	[ 0.65188968  0.34811029]	planning package		detailed design
+yes	Correct	[ 0.02371526  0.9762848 ]	down		up
+no	Incorrect	[ 0.560305  0.439695]	suspect		validity summary
+no	Incorrect	[ 0.7200399   0.27996013]	programmer manual		specification language
+no	Correct	[ 0.72385526  0.27614477]	line manager		multi-valued property
+no	Correct	[ 0.53162146  0.46837851]	offset		cycle stealing
+no	Correct	[ 0.7101016  0.2898984]	stepwise refinement		project inception
+no	Correct	[ 0.6902923   0.30970767]	technical practices		architectural runway
+no	Incorrect	[ 0.68352497  0.31647503]	start-to-finish		logical relationship
+no	Correct	[ 0.53490287  0.46509713]	assertion		target language
+yes	Correct	[ 0.09501859  0.90498143]	modularity		coupling
+yes	Correct	[ 0.01626075  0.9837392 ]	service		product
+no	Correct	[ 0.63367128  0.36632875]	load-and-go		scope baseline
+yes	Incorrect	[ 0.37110776  0.62889224]	logic diagram		traceable
+no	Incorrect	[ 0.67825967  0.32174033]	early-failure period		bathtub curve
+no	Correct	[ 0.66218412  0.33781585]	expected monetary value Analysis		certification
+yes	Correct	[ 0.18337694  0.81662303]	deviation		waiver
+no	Incorrect	[ 0.59052265  0.40947738]	reserve		contingency allowanceH
+no	Incorrect	[ 0.72236323  0.27763674]	pragma		pseudo-instruction
+label, correctness, w1, w2
+yes	Correct	[ 0.01265812  0.98734194]	backup		back-up
+yes	Incorrect	[ 0.39657444  0.60342562]	the three cs		test case
+yes	Correct	[ 0.26191875  0.73808128]	deliverable		result
+no	Incorrect	[ 0.6626454   0.33735463]	the operand		indirect instruction
+no	Correct	[ 0.58085382  0.41914627]	backup		control limits
+yes	Correct	[ 0.02243216  0.97756779]	adaptation		inspection
+no	Correct	[ 0.62919164  0.37080842]	subject area		one-plus-one address address instruction
+no	Incorrect	[ 0.67890918  0.32109085]	context-sensitive help		printed documentation
+no	Incorrect	[ 0.57199186  0.42800811]	input assertion		method
+no	Correct	[ 0.67671925  0.32328069]	intellectual property		junction
+yes	Correct	[ 0.46206272  0.53793728]	memory compaction		garbage collection
+no	Correct	[ 0.59196204  0.40803787]	process outcome		monitoring and controlling processes
+no	Correct	[ 0.67186719  0.32813281]	mob programming		event timeline
+yes	Correct	[ 0.35520339  0.64479661]	sprint backlog		task
+no	Incorrect	[ 0.58138525  0.41861472]	productivity		delivery rate
+no	Correct	[ 0.59619612  0.40380388]	absolute address		transient error
+no	Incorrect	[ 0.56335884  0.43664113]	logical file		data function
+no	Correct	[ 0.66190648  0.33809358]	test repeatability		record type
+yes	Correct	[ 0.028047    0.97195303]	supplier		seller
+no	Incorrect	[ 0.61597896  0.38402101]	declaration		pseudo instruction
+yes	Correct	[ 0.41445845  0.58554149]	disorder domain		Cynefin
+yes	Correct	[ 0.08285076  0.91714919]	service		result
+no	Correct	[ 0.59061015  0.40938988]	functional cohesion		refactoring
+yes	Correct	[ 0.04278384  0.9572162 ]	byte		bit
+no	Incorrect	[ 0.77013528  0.22986464]	pbi		product backlog item
+no	Correct	[ 0.59020585  0.40979415]	minicomputer		external
+no	Correct	[ 0.63685733  0.3631427 ]	principle of least astonishment		workstation
+no	Incorrect	[ 0.55794567  0.4420543 ]	box diagram		graph
+yes	Correct	[ 0.24011914  0.7598809 ]	sequential		consecutive
+yes	Correct	[ 0.03630536  0.96369463]	stakeholder		internal stakeholders
+no	Correct	[ 0.68268228  0.31731772]	application area level		mean time to repair
+yes	Incorrect	[ 0.31568369  0.68431634]	natural key		network
+no	Incorrect	[ 0.65690494  0.34309506]	Ada		corrective maintenance
+no	Correct	[ 0.66529274  0.33470726]	change control system		data set definition
+no	Correct	[ 0.61621475  0.38378522]	added source statements		defect aging
+no	Correct	[ 0.57621473  0.42378524]	process attribute		project calendar
+no	Incorrect	[ 0.69005024  0.30994982]	incremental development		waterfall model
+no	Incorrect	[ 0.63903838  0.36096162]	if-then-else		monadic selective construct
+no	Incorrect	[ 0.64580733  0.35419264]	offset		self-relative address
+no	Correct	[ 0.61854011  0.38145992]	fault isolation		safety
+no	Correct	[ 0.55347055  0.44652939]	sort		computer resources
+yes	Correct	[ 0.43689501  0.56310493]	cohesion		module strength
+no	Correct	[ 0.69127178  0.30872822]	specification limits		digit numeric character
+no	Incorrect	[ 0.61461002  0.38538998]	logical cohesion		symbolic trace
+yes	Incorrect	[ 0.08288747  0.91711253]	mapping		label
+no	Correct	[ 0.70279366  0.29720637]	category cluster		pragma
+no	Correct	[ 0.73689222  0.26310778]	configuration audit		musketeer attitude
+no	Correct	[ 0.70007527  0.29992473]	economically sensible scrum		artifact type
+yes	Incorrect	[ 0.29143605  0.70856398]	estimation		edit
+no	Correct	[ 0.53477162  0.46522844]	rich hover		interoperability
+no	Incorrect	[ 0.66921133  0.3307887 ]	schedule network analysis		resource leveling
+no	Correct	[ 0.63105655  0.36894351]	realization		applicability to a functional domain
+no	Incorrect	[ 0.64977878  0.35022125]	turnkey		double-operand instruction
+no	Correct	[ 0.70758283  0.2924172 ]	location transparency		emergent opportunity
+yes	Correct	[ 0.19362107  0.8063789 ]	subprogram		routine
+no	Correct	[ 0.52299041  0.47700959]	co-located team		solution
+yes	Correct	[ 0.32076108  0.67923892]	linkage editor		linking loader
+yes	Correct	[ 0.06375074  0.93624926]	iteration		recursion
+yes	Correct	[ 0.31068656  0.68931341]	scrummerfall		WaterScrum
+no	Incorrect	[ 0.62439352  0.37560651]	delivery		software life cycle
+yes	Correct	[ 0.0276895   0.97231054]	practice		rule
+no	Correct	[ 0.65092713  0.34907287]	protection exception		project area configuration
+no	Incorrect	[ 0.65562481  0.34437522]	residual control		two-level encoding
+yes	Correct	[ 0.18649822  0.81350178]	batch		online
+yes	Correct	[ 0.25650498  0.74349499]	schedule model		project schedule
+no	Correct	[ 0.68716192  0.31283811]	computer center		product vision
+yes	Incorrect	[ 0.44862047  0.55137956]	substitutability		robustness
+yes	Correct	[ 0.15292838  0.84707165]	done-done		definition of done
+yes	Correct	[ 0.37647656  0.62352335]	macrogenerator		macro-generating program
+no	Correct	[ 0.65656066  0.34343931]	assessment participant		process attribute rating
+yes	Correct	[ 0.46963322  0.53036678]	desk checking		walk-through
+no	Incorrect	[ 0.5000056   0.49999446]	storage allocation		paging
+no	Incorrect	[ 0.71118289  0.28881708]	incremental development		object-oriented design
+no	Correct	[ 0.71800011  0.28199992]	functional analysis		multiple readers and writers
+yes	Correct	[ 0.47836968  0.52163035]	abnormal end		exception
+no	Correct	[ 0.65870571  0.34129432]	calling box		sprint review
+no	Incorrect	[ 0.50440192  0.49559808]	definition of done		task complete definition
+no	Correct	[ 0.5966273   0.40337276]	pass		computer resources
+no	Correct	[ 0.58963722  0.41036278]	influence diagram		retrospective
+no	Correct	[ 0.68895555  0.31104454]	base functional component		basic path
+no	Correct	[ 0.67679417  0.3232058 ]	class-level responsibility		secondary window
+no	Incorrect	[ 0.66755748  0.33244252]	computer performance evaluation		system profile
+no	Correct	[ 0.57667744  0.42332265]	control flow		test approach
+no	Correct	[ 0.68530458  0.31469539]	adaptive maintenance		curriculum standard
+no	Incorrect	[ 0.56140697  0.43859303]	unnecessary formality		waste
+no	Incorrect	[ 0.67757666  0.32242331]	incremental development		spiral model
+yes	Correct	[ 0.47920135  0.52079874]	black box		encapsulation
+yes	Correct	[ 0.01883994  0.98115999]	coroutine		subroutine
+yes	Incorrect	[ 0.48343793  0.51656204]	total		product backlog
+no	Incorrect	[ 0.67076629  0.32923374]	reversible execution		playback
+yes	Correct	[ 0.0257588   0.97424114]	activity		practice
+yes	Correct	[ 0.48123303  0.518767  ]	execution trace		fail soft
+no	Incorrect	[ 0.55426365  0.44573635]	compiler generator		metacompiler
+no	Correct	[ 0.66688913  0.33311084]	synchronization engine		evaluation method
+no	Correct	[ 0.63302177  0.36697826]	diagram boundary		project level
+no	Incorrect	[ 0.67096931  0.32903069]	rapid prototyping		transaction analysis
+no	Correct	[ 0.67118555  0.32881445]	conditional information		special cause
+no	Incorrect	[ 0.59355092  0.40644902]	generality		synthetic address
+no	Correct	[ 0.68635571  0.31364429]	fourth generation language		iteration burndown chart
+yes	Correct	[ 0.34888789  0.65111208]	standup-daily meeting		daily huddle
+yes	Correct	[ 0.16844621  0.83155376]	configuration		version
+no	Incorrect	[ 0.66211343  0.33788654]	measurement standard		channel capacity
+no	Correct	[ 0.64224046  0.35775951]	manual		monitoring and controlling processes
+no	Incorrect	[ 0.65367413  0.3463259 ]	storage allocation		cyclic search
+no	Correct	[ 0.68048042  0.31951958]	dynamic schema		class-level responsibility
+no	Correct	[ 0.72489679  0.27510318]	pass criteria		tunneled arrow
+no	Correct	[ 0.60920686  0.39079311]	shared resources		recovery
+yes	Correct	[ 0.0328781   0.96712184]	store		fetch
+yes	Correct	[ 0.18475445  0.81524557]	hidden		protected
+no	Correct	[ 0.69787681  0.30212316]	first-generation language		random cause
+no	Incorrect	[ 0.60429448  0.39570549]	continuous integration		technical practices
+no	Correct	[ 0.53739697  0.46260306]	hybrid computer		page turning
+yes	Incorrect	[ 0.42608017  0.57391977]	hidden		call tree
+yes	Correct	[ 0.34401461  0.65598541]	complex domain		Cynefin
+yes	Correct	[ 0.39663211  0.60336787]	chaotic domain		Cynefin
+no	Correct	[ 0.59202093  0.40797907]	error processing		derived data
+no	Correct	[ 0.69739902  0.30260107]	external quality		Data Movement Service
+no	Correct	[ 0.53031224  0.46968785]	dumb terminal		validity
+no	Correct	[ 0.64302886  0.35697111]	software development folder		rework
+no	Correct	[ 0.58773875  0.41226128]	test execution		product configuration identification functional baseline
+yes	Correct	[ 0.19055003  0.80944991]	relocatable		relocating loader
+no	Correct	[ 0.60090387  0.3990961 ]	planning package		deviation
+no	Correct	[ 0.69107544  0.30892462]	valid		product roadmap
+no	Incorrect	[ 0.70013237  0.29986763]	self-descriptiveness		maintainability
+no	Incorrect	[ 0.6581164   0.34188363]	earned value		budgeted cost of work performed
+yes	Correct	[ 0.16724904  0.83275098]	microinstruction		microcode
+no	Correct	[ 0.60534936  0.3946507 ]	failsafe		quality requirement
+no	Correct	[ 0.65603316  0.34396681]	marketing organization		instrument
+yes	Correct	[ 0.30830282  0.69169724]	external		mapping
+yes	Correct	[ 0.01586161  0.98413843]	postprocessor		post-processor
+no	Incorrect	[ 0.69000894  0.309991  ]	machine code		fourth generation language
+no	Incorrect	[ 0.63763893  0.36236107]	coding		software development process
+no	Incorrect	[ 0.69956905  0.30043098]	self-descriptiveness		usability
+yes	Correct	[ 0.00886148  0.99113852]	microcode		micro code
+yes	Correct	[ 0.04735414  0.9526459 ]	protected		public
+yes	Correct	[ 0.35881025  0.64118981]	antifragile		robust
+no	Correct	[ 0.5925231   0.40747687]	basic symbol		human behavior
+yes	Correct	[ 0.38960221  0.61039776]	t-shaped skills		swarming
+no	Incorrect	[ 0.65079403  0.349206  ]	Ada		perfective maintenance
+yes	Correct	[ 0.1468225   0.85317755]	inspect and adapt		adaptation
+no	Correct	[ 0.67286968  0.32713029]	automatic data processing		should-cost estimate
+no	Correct	[ 0.50752079  0.49247926]	mechanicals		risk profile
+no	Correct	[ 0.56598204  0.43401796]	algorithm		design level
+yes	Correct	[ 0.32061136  0.67938858]	output assertion		inductive assertion method
+yes	Correct	[ 0.29621565  0.70378435]	simple domain		Cynefin
+no	Correct	[ 0.72131413  0.27868587]	essential Scrum		release burndown chart
+yes	Correct	[ 0.13889213  0.86110789]	repo		repository
+no	Correct	[ 0.65185797  0.34814203]	class hierarchy		no-op
+no	Correct	[ 0.68198502  0.31801495]	essential Scrum		job stream
+no	Incorrect	[ 0.55422992  0.44577014]	random failure		transient error
+no	Correct	[ 0.60503829  0.39496174]	domain definition		modularization
+no	Correct	[ 0.62267685  0.37732318]	trailing decision		test script
+yes	Incorrect	[ 0.4983114   0.50168854]	invocation deliver		enabling
+yes	Incorrect	[ 0.49927297  0.50072706]	segment		assessment input
+no	Correct	[ 0.67276949  0.32723048]	organizational unit		product sashimi
+no	Incorrect	[ 0.69144684  0.30855322]	artifact		configuration specification
+yes	Correct	[ 0.38849074  0.61150926]	architecture		module
+yes	Correct	[ 0.15919532  0.84080464]	roll out		swap
+yes	Correct	[ 0.29501387  0.7049861 ]	development		software development plan
+yes	Correct	[ 0.08856681  0.91143322]	mapping		instance
+no	Correct	[ 0.53095108  0.46904889]	scheduler		syntactic error
+yes	Correct	[ 0.14813073  0.85186929]	error		failure
+no	Correct	[ 0.65145302  0.34854698]	daily meeting		systems analysis
+no	Correct	[ 0.50301629  0.49698362]	computer resource		relocatable
+yes	Correct	[ 0.04212794  0.95787209]	stakeholder		external stakeholders
+no	Incorrect	[ 0.54806721  0.45193276]	encapsulation		information hiding
+no	Correct	[ 0.64443451  0.35556549]	absolute loader		control program
+yes	Correct	[ 0.02973567  0.97026426]	load		loader
+no	Correct	[ 0.57158899  0.42841098]	budget		strong typing
+yes	Incorrect	[ 0.32527143  0.67472857]	unpack		personas
+no	Correct	[ 0.64952344  0.35047662]	data declaration source statement		post-mortem dump
+yes	Correct	[ 0.06341264  0.93658733]	optional		partial
+no	Incorrect	[ 0.68584478  0.31415525]	structured design		input-process-output
+no	Incorrect	[ 0.67821401  0.32178602]	call graph		data structure diagram
+no	Correct	[ 0.66611856  0.33388147]	life cycle processes		monadic selective construct
+no	Correct	[ 0.5325765   0.46742356]	taskboard		control point
+yes	Correct	[ 0.43255687  0.56744313]	address modification		indexed address
+no	Correct	[ 0.55082548  0.44917458]	quality subfactor		computerize
+no	Incorrect	[ 0.75781202  0.24218799]	opex		operational expense
+no	Correct	[ 0.63864118  0.36135888]	common cause		functional product
+no	Correct	[ 0.69205016  0.30794981]	production library		perform quantitative analysis
+yes	Correct	[ 0.07312376  0.92687625]	subprogram		subroutine
+yes	Correct	[ 0.06126543  0.93873453]	microinstruction		microoperation
+yes	Correct	[ 0.04870084  0.95129913]	hardware		software
+no	Correct	[ 0.70905554  0.29094449]	table-driven method		subphase
+no	Incorrect	[ 0.55728203  0.442718  ]	cost accounting		operational expense
+no	Incorrect	[ 0.59916902  0.40083101]	control statement		declaration
+no	Incorrect	[ 0.67306459  0.32693538]	box diagram		structure chart
+no	Correct	[ 0.67252982  0.32747021]	bubble chart		mean time to repair
+yes	Correct	[ 0.08335508  0.91664493]	bag		list
+yes	Correct	[ 0.48408079  0.51591921]	invalid		validity summary
+no	Correct	[ 0.62692297  0.37307698]	selective construct		function
+yes	Incorrect	[ 0.23319902  0.766801  ]	visibility		storage
+yes	Correct	[ 0.03972976  0.96027029]	busy		down
+no	Incorrect	[ 0.67310953  0.32689047]	go to		if-then-else branch
+yes	Correct	[ 0.48217636  0.5178237 ]	supervisory program		supervisor
+yes	Correct	[ 0.03242777  0.96757221]	muda		mura
+no	Correct	[ 0.64859807  0.35140198]	control-flow trace		execution time
+yes	Correct	[ 0.46621478  0.53378522]	offset		base address
+no	Correct	[ 0.52635783  0.47364214]	multiprogramming		change management
+no	Correct	[ 0.56327409  0.43672594]	data flowchart		pass
+no	Correct	[ 0.68461144  0.3153885 ]	program construct		level 1 initiation routine
+yes	Correct	[ 0.06417795  0.93582207]	fault		bug
+no	Correct	[ 0.59005338  0.40994671]	formal programming languages and mathematical languages		backward execution
+no	Correct	[ 0.67227429  0.32772577]	soft error		early-failure period
+no	Correct	[ 0.56130892  0.43869108]	text processing		object code
+no	Correct	[ 0.60842645  0.39157355]	assessment purpose		interpreter
+no	Incorrect	[ 0.61424035  0.38575965]	rapid prototyping		spiral model
+no	Correct	[ 0.71191746  0.28808257]	life-cycle processes		definitive master version
+no	Correct	[ 0.68391335  0.31608671]	communication management plan		magic number
+no	Incorrect	[ 0.51427299  0.48572701]	product line		variant
+no	Correct	[ 0.67761207  0.32238799]	device		continuous deployment
+no	Incorrect	[ 0.67075098  0.32924905]	configuration specification		version
+yes	Correct	[ 0.00979655  0.9902035 ]	pager		paging
+yes	Correct	[  9.93418158e-04   9.99006569e-01]	timebox		timeboxing
+label, correctness, w1, w2
+yes	Correct	[ 0.02402045  0.97597957]	simplicity		complexity
+yes	Correct	[ 0.01098627  0.98901373]	real-time		realtime
+no	Incorrect	[ 0.58428931  0.41571072]	holding cost		U-curve optimization
+no	Correct	[ 0.66284984  0.33715016]	program-sensitive fault		log
+no	Correct	[ 0.66115278  0.33884722]	system safety		immediate instruction
+no	Correct	[ 0.63239831  0.36760166]	unit test framework		checkout
+no	Correct	[ 0.61275917  0.38724089]	finish-to-finish		define activities
+yes	Correct	[ 0.11344808  0.88655198]	roll in		swap
+no	Correct	[ 0.57758182  0.42241818]	lessons learned		array
+no	Correct	[ 0.53672719  0.46327281]	given-when-then		acceptability
+no	Incorrect	[ 0.5340789   0.46592119]	acceptance criteria		requirement
+no	Incorrect	[ 0.52395129  0.47604871]	argument		actual parameter
+no	Correct	[ 0.66291767  0.33708236]	software requirements review		minimum delay programming
+yes	Correct	[ 0.08850792  0.91149217]	user		developer
+no	Correct	[ 0.61706424  0.38293579]	planning board		merge from current
+no	Incorrect	[ 0.71770316  0.28229684]	definition of done		product sashimi
+no	Correct	[ 0.67096853  0.3290315 ]	assessment team		product analysis
+no	Correct	[ 0.70600659  0.29399344]	product baseline		output sort
+yes	Incorrect	[ 0.495812  0.504188]	x interceptor		severity
+yes	Correct	[ 0.10620599  0.893794  ]	assemble		compile
+no	Incorrect	[ 0.64776146  0.35223854]	structured design		transaction analysis
+no	Incorrect	[ 0.61431253  0.38568744]	assignment statement		clear
+yes	Correct	[ 0.05925545  0.94074458]	implied addressing		indirect address
+no	Correct	[ 0.65489322  0.34510675]	source program		modular decomposition
+yes	Correct	[ 0.47369444  0.52630556]	throughput		turnaround time
+no	Incorrect	[ 0.5076347   0.49236521]	complicated domain		Cynefin
+no	Incorrect	[ 0.65838397  0.341616  ]	rapid prototyping		modular decomposition
+no	Correct	[ 0.64840186  0.3515982 ]	patch		existence constraint
+no	Correct	[ 0.65223974  0.34776026]	project life cycle		domain engineer
+no	Correct	[ 0.66818947  0.33181053]	black-box testing		release burndown chart
+no	Correct	[ 0.50895572  0.49104422]	recursion		order clash
+no	Correct	[ 0.6661579   0.33384207]	dynamic binding		backlog grooming
+no	Incorrect	[ 0.53438026  0.46561971]	specialize		respecialize unspecialize
+no	Correct	[ 0.68450427  0.3154957 ]	line of code		external output
+no	Correct	[ 0.58791471  0.41208526]	arrows connecting inputs to processing steps and processing steps to outputs		testability
+no	Incorrect	[ 0.65881789  0.34118214]	notice of revision		engineering change
+yes	Correct	[ 0.07569553  0.92430443]	invocation		iteration
+no	Incorrect	[ 0.55232096  0.44767907]	refactoring		technical practices
+no	Correct	[ 0.67527276  0.32472733]	quality subfactor		data element type
+no	Correct	[ 0.53356582  0.46643418]	categorization		dynamic binding
+no	Correct	[ 0.68632513  0.3136749 ]	affinity testing		Eclipse
+no	Correct	[ 0.64698088  0.35301912]	early-failure period		user-identifiable
+yes	Incorrect	[ 0.46673694  0.53326309]	reader note		bundle
+no	Correct	[ 0.63844079  0.36155924]	first generation fifth generation language		entity attribute
+no	Correct	[ 0.58335692  0.41664308]	explicit address		violation
+no	Correct	[ 0.62272912  0.37727097]	table heading		event sequence diagram
+yes	Correct	[ 0.4278743   0.57212573]	functional configuration identification		product configuration identification functional baseline
+no	Incorrect	[ 0.50730646  0.49269345]	ceremony		unnecessary formality
+no	Incorrect	[ 0.66328567  0.3367143 ]	order clash		data structure-centered design
+no	Incorrect	[ 0.58889151  0.41110852]	arrows connecting inputs to processing steps and processing steps to outputs		structure chart
+no	Correct	[ 0.62740511  0.37259486]	process capability determination sponsor		tag slide
+no	Incorrect	[ 0.67968243  0.32031754]	Grosch's law		computer performance evaluation
+yes	Correct	[ 0.14252628  0.85747373]	no-operation		do-nothing operation
+no	Incorrect	[ 0.6308412   0.36915886]	flowchart		input-process-output chart
+yes	Correct	[  4.56662703e-04   9.99543309e-01]	information technology		Information Technology
+no	Incorrect	[ 0.55631256  0.44368738]	the operand		direct address
+no	Incorrect	[ 0.64301598  0.35698399]	waterfall model		rapid prototyping
+no	Correct	[ 0.62661564  0.37338436]	done		derived requirement
+no	Incorrect	[ 0.66568786  0.33431214]	technical contact		subject-matter expert
+no	Correct	[ 0.6253916  0.3746084]	disk		non-procedural programming language
+yes	Correct	[ 0.44907752  0.55092251]	metalanguage		unstratified language
+no	Correct	[ 0.62692094  0.37307903]	synchronization		user-story-writing workshop
+no	Correct	[ 0.63428003  0.36571997]	engineering viewpoint		slack
+yes	Correct	[ 0.2559551  0.7440449]	input assertion		inductive assertion method
+no	Correct	[ 0.66555279  0.33444723]	printed documentation		level
+yes	Incorrect	[ 0.49189138  0.50810868]	decoupling		interface role
+no	Incorrect	[ 0.56279343  0.43720663]	language processor		assembler
+yes	Correct	[ 0.11074553  0.88925451]	conversational		interactive
+no	Incorrect	[ 0.63824177  0.3617582 ]	online documentation		help text
+yes	Incorrect	[ 0.37364474  0.62635523]	stakeholder		metadata
+no	Correct	[ 0.61988896  0.38011101]	block diagram		design review
+yes	Correct	[ 0.21764821  0.78235185]	conventions		standards
+yes	Incorrect	[ 0.36539978  0.63460022]	invariant		identify risks
+no	Incorrect	[ 0.67446846  0.32553148]	finish-to-finish		logical relationship
+no	Incorrect	[ 0.55577201  0.44422793]	dynamic analysis		testing
+no	Correct	[ 0.66870552  0.33129445]	Boolean expression		template
+yes	Correct	[ 0.34027824  0.65972179]	project risk profile		risk state
+yes	Correct	[ 0.30454415  0.69545585]	down time		mean time to repair
+yes	Correct	[ 0.20697497  0.79302508]	flag		indicator
+yes	Correct	[ 0.49359021  0.50640982]	address modification		effective address
+no	Correct	[ 0.70540756  0.29459247]	navigational aids		product backlog grooming
+no	Incorrect	[ 0.62619317  0.3738068 ]	fail fast		inspect and adapt
+no	Correct	[ 0.54390889  0.45609105]	list		simple design
+no	Correct	[ 0.65975016  0.34024981]	database design specification		control statement
+no	Correct	[ 0.67449093  0.32550907]	value list constraint		operation field
+no	Correct	[ 0.5976913   0.40230876]	personal stream		simplicity
+yes	Correct	[ 0.4297148  0.5702852]	product vision		envisioning
+no	Correct	[ 0.67719203  0.32280797]	product engineering		device interface task
+no	Incorrect	[ 0.51583886  0.48416114]	program		source program object module
+yes	Correct	[ 0.1706544   0.82934564]	modularity		cohesion
+no	Incorrect	[ 0.61171079  0.38828921]	static analysis		inspection
+no	Incorrect	[ 0.6387679  0.3612321]	self-descriptiveness		testability
+no	Correct	[ 0.65497369  0.34502634]	pseudocode		support activity group
+no	Incorrect	[ 0.72554302  0.27445692]	tdd		test-driven development
+no	Correct	[ 0.63052112  0.36947894]	config spec		assessment input
+no	Correct	[ 0.52109808  0.47890195]	screen dump		platform
+yes	Correct	[ 0.01971356  0.98028642]	mura		muri
+no	Incorrect	[ 0.55712497  0.44287512]	hierarchy		hierarchical modeling
+yes	Correct	[ 0.0575792   0.94242078]	ceremony		activity
+no	Correct	[ 0.63874769  0.36125231]	submit primitive		condition
+no	Correct	[ 0.52645099  0.47354898]	job function		object set
+no	Incorrect	[ 0.50981975  0.49018022]	data structure-centered design		structure clash
+yes	Correct	[ 0.0088448   0.99115515]	respecialize		specialize
+no	Correct	[ 0.67596793  0.3240321 ]	control flow diagram		actual time estimation
+no	Correct	[ 0.67478108  0.32521889]	software diversity		level 1 initiation routine
+no	Incorrect	[ 0.57818645  0.42181349]	emergence		complex adaptive system
+no	Correct	[ 0.5479722   0.45202777]	configuration		done checklist
+yes	Correct	[ 0.01452605  0.98547399]	assembler		cross-assembler
+no	Correct	[ 0.64547855  0.35452148]	execution efficiency		metrics sample
+no	Incorrect	[ 0.69508463  0.30491534]	support		system life cycle
+no	Incorrect	[ 0.58805621  0.41194382]	arrows connecting inputs to processing steps and processing steps to outputs		bubble chart
+no	Correct	[ 0.6269592   0.37304083]	Open Database Connectivity		crashing
+yes	Correct	[ 0.29054049  0.70945948]	utilization		idle time
+yes	Correct	[ 0.18394662  0.81605333]	translator		assembler
+yes	Correct	[ 0.27574757  0.72425246]	object program		source program object module
+no	Correct	[ 0.6763913   0.32360873]	sprint backlog		business epic kanban
+no	Correct	[ 0.63125235  0.36874768]	grooming		design-to cost
+yes	Correct	[ 0.30277437  0.69722563]	microprogramming		micro code
+no	Incorrect	[ 0.67861915  0.32138085]	control flow diagram		structure chart
+no	Incorrect	[ 0.65867817  0.34132177]	logical cohesion		subroutine trace
+yes	Correct	[ 0.06795478  0.93204516]	semantics		syntax
+no	Correct	[ 0.60770923  0.3922908 ]	comment		request for change
+no	Correct	[ 0.69751501  0.30248493]	flow		rules of simplicity
+no	Correct	[ 0.68638051  0.31361949]	component testing		establish and maintain
+no	Incorrect	[ 0.64026546  0.35973451]	data group		object of interest
+no	Correct	[ 0.51507288  0.48492706]	practice		computer science
+no	Correct	[ 0.66902488  0.33097509]	self-directed work team		integration hell
+yes	Correct	[ 0.31577873  0.68422127]	consistency		traceability
+yes	Correct	[ 0.11345997  0.88654   ]	definition of done		done-done-done
+yes	Correct	[ 0.33724412  0.66275585]	fault masking		fail safe
+no	Incorrect	[ 0.66166776  0.33833227]	assessment scope		process context
+no	Correct	[ 0.66917211  0.33082789]	budget at completion		existing software
+no	Incorrect	[ 0.50340939  0.49659055]	throughput		workload model
+no	Incorrect	[ 0.66018939  0.33981058]	attd		acceptance-test-driven development
+yes	Incorrect	[ 0.15216354  0.84783649]	table		node
+yes	Correct	[ 0.14750667  0.85249335]	principle		values
+yes	Correct	[ 0.00160119  0.99839884]	microprogramming		microprogram
+yes	Incorrect	[ 0.33868572  0.66131431]	idle work		command
+no	Incorrect	[ 0.60002106  0.39997897]	open subroutine		inline code
+yes	Correct	[ 0.006534    0.99346596]	product		project
+no	Correct	[ 0.67332309  0.32667691]	reverse engineering		task priority criteria
+no	Incorrect	[ 0.61947519  0.3805249 ]	assembler language		machine code
+no	Correct	[ 0.69471395  0.30528602]	pseudo operation		process improvement sponsor
+no	Incorrect	[ 0.54548001  0.45452002]	storage allocation		memory compaction
+no	Correct	[ 0.68770224  0.31229776]	primitive type		project initiation
+no	Correct	[ 0.65297478  0.34702519]	absolute assembler		trade study
+no	Correct	[ 0.64168257  0.35831746]	effectiveness		automatic data processing
+no	Incorrect	[ 0.65133584  0.34866416]	wearout-failure period		bathtub curve
+no	Correct	[ 0.62584639  0.3741537 ]	formal testing		condition stub
+yes	Incorrect	[ 0.23842826  0.76157176]	control chart		flowcharter
+yes	Correct	[ 0.4370409   0.56295913]	technique		approach
+yes	Correct	[ 0.04313925  0.95686078]	busy		idle
+no	Correct	[ 0.61470443  0.38529557]	measurement user		task
+no	Correct	[ 0.65989608  0.34010389]	signature		schedule based planning
+no	Correct	[ 0.6634804   0.33651957]	detailed design phase		configuration item
+yes	Incorrect	[ 0.09230697  0.90769309]	license		mode
+yes	Incorrect	[ 0.40146905  0.59853101]	breakpoint		call graph
+yes	Correct	[ 0.26144439  0.73855561]	multiprocessing		time sharing
+no	Incorrect	[ 0.73208195  0.26791808]	mvp		minimum viable product
+yes	Correct	[ 0.00714082  0.99285924]	endeavor		endeavour
+no	Correct	[ 0.54867756  0.45132247]	project plan		lifecycle tool
+yes	Incorrect	[ 0.29585937  0.7041406 ]	generalize		disassembler
+yes	Correct	[ 0.28300157  0.71699846]	internationalization		localization
+no	Correct	[ 0.67210549  0.32789445]	multi-component system		design concept
+no	Correct	[ 0.65974814  0.3402518 ]	hammock activity		address format
+no	Correct	[ 0.67115402  0.32884601]	special cause		service level agreement
+yes	Correct	[ 0.2704972  0.7295028]	programming		construction
+yes	Correct	[ 0.03105778  0.96894228]	agile		Kanban
+no	Correct	[ 0.62667185  0.37332815]	retrospective trace		subsystem
+no	Correct	[ 0.65951914  0.34048086]	job stream		protection exception
+yes	Correct	[ 0.10916539  0.89083457]	deployment		release
+no	Correct	[ 0.69751501  0.30248493]	executing processes		slush
+no	Correct	[ 0.70826721  0.29173276]	initial program loader		pbi slotting
+no	Incorrect	[ 0.65927488  0.34072518]	request for proposal		solicitation package
+no	Correct	[ 0.62265301  0.37734702]	boot		initial program load
+yes	Correct	[ 0.28927958  0.71072048]	distributed team		remote team member
+no	Incorrect	[ 0.66549098  0.3345091 ]	functional baseline		developmental configuration
+no	Correct	[ 0.69166303  0.30833703]	object-oriented language		work in process
+no	Correct	[ 0.5611071   0.43889293]	alpha testing		data flow
+no	Correct	[ 0.67199147  0.32800856]	demodularization		product owner proxy
+no	Correct	[ 0.60278219  0.39721781]	embedded documentation		modular decomposition
+no	Incorrect	[ 0.66462708  0.33537295]	data structure-centered design		transform analysis
+yes	Correct	[ 0.25378862  0.74621135]	implementer		developer
+no	Correct	[ 0.60864371  0.39135632]	risk register		figurative constant
+yes	Correct	[ 0.4515456   0.54845434]	fault masking		adaptability
+no	Correct	[ 0.69408023  0.30591977]	software development file		dependency
+no	Correct	[ 0.65986544  0.34013453]	dynamic skeleton		daily scrum
+no	Correct	[ 0.52595794  0.47404209]	event history		orphan
+no	Incorrect	[ 0.63153207  0.36846784]	intermittent fault		random failure
+no	Correct	[ 0.63370568  0.36629435]	code tuning		measurable concept
+no	Correct	[ 0.67029995  0.32970005]	data processing center		multilevel storage
+yes	Correct	[ 0.11926831  0.88073164]	cross-reference generator		cross-referencer
+no	Incorrect	[ 0.63833708  0.36166292]	bit steering		two-level encoding
+no	Correct	[ 0.67365283  0.32634711]	resident control program		risk register
+no	Correct	[ 0.59500432  0.40499571]	software integrity level		buffering
+no	Correct	[ 0.67406178  0.32593822]	service export		function point table
+no	Incorrect	[ 0.6277619   0.37223816]	static analysis		walk-through
+no	Correct	[ 0.67075521  0.32924482]	generic entity		software development file
+yes	Correct	[ 0.42748585  0.57251418]	program design		hardware design language
+yes	Correct	[ 0.46093515  0.53906494]	definition of done		done checklist
+yes	Correct	[ 0.11481173  0.88518828]	fragile		robust
+no	Correct	[ 0.60988557  0.39011443]	acceptance test		mock objects
+yes	Correct	[ 0.08698864  0.91301137]	scenario		script
+no	Incorrect	[ 0.62837166  0.37162837]	package		data abstraction
+no	Correct	[ 0.58142233  0.41857764]	scrumban		apportioned effort
+no	Correct	[ 0.57322812  0.42677191]	page table		model glossary
+no	Correct	[ 0.61653578  0.38346422]	entity-relationship diagram		pairing
+yes	Correct	[ 0.37254694  0.62745303]	availability		robustness
+no	Correct	[ 0.6698755  0.3301245]	event sequence analysis		path expression
+yes	Incorrect	[ 0.35951883  0.64048123]	antifragility		principle
+no	Correct	[ 0.66767752  0.33232248]	earned value technique		unadjusted function point count
+no	Incorrect	[ 0.57158339  0.42841655]	deep		product backlog
+no	Correct	[ 0.70579547  0.2942045 ]	degree of confidence		curriculum standard
+no	Incorrect	[ 0.50861305  0.49138692]	incremental development		iterative and incremental process
+no	Incorrect	[ 0.60126424  0.39873573]	high-level design		architecture
+label, correctness, w1, w2
+no	Correct	[ 0.58555138  0.41444862]	parent function		process measures
+no	Incorrect	[ 0.60371059  0.39628941]	block diagram		structure chart
+no	Incorrect	[ 0.68520373  0.31479633]	csp		Certified Scrum Professional
+no	Correct	[ 0.67056847  0.32943147]	software design requirement		allocated baseline
+no	Correct	[ 0.65960032  0.34039971]	real type		functional organization
+no	Correct	[ 0.66286254  0.33713746]	language definition		occupational title standard
+no	Correct	[ 0.68238044  0.31761953]	supervisor		single-valued property
+no	Correct	[ 0.66291213  0.33708784]	digital computer		container interface
+no	Incorrect	[ 0.65606797  0.34393206]	allocated baseline		developmental configuration
+no	Incorrect	[ 0.56829935  0.43170062]	block diagram		graph
+no	Correct	[ 0.63600963  0.36399037]	requirements traceability		proposal
+yes	Correct	[ 0.02909069  0.9709093 ]	read		write
+yes	Correct	[ 0.20061761  0.79938233]	scenario		use case
+no	Incorrect	[ 0.63420516  0.36579487]	mapping completeness		partial
+yes	Correct	[ 0.08974169  0.91025829]	feature		user story
+yes	Correct	[ 0.03599565  0.9640044 ]	revision		version
+yes	Correct	[ 0.33651757  0.66348243]	base functional component		functional service
+yes	Incorrect	[ 0.35447353  0.64552653]	severity		satisfaction
+yes	Correct	[ 0.26272848  0.73727149]	precision		postprocessor
+no	Correct	[ 0.65281516  0.34718484]	risk metric		development cycle
+no	Incorrect	[ 0.66691315  0.33308688]	modular programming		transaction analysis
+no	Correct	[ 0.54306632  0.45693368]	engineering		test driver
+yes	Incorrect	[ 0.18785881  0.81214118]	box		channel
+no	Correct	[ 0.70179498  0.29820505]	list		input-output coupling
+yes	Incorrect	[ 0.35169962  0.64830035]	compression		cycle
+no	Correct	[ 0.67547244  0.32452756]	version description document		fitness-for-use test
+no	Correct	[ 0.6001727   0.39982727]	algorithmic list processing language		change
+no	Incorrect	[ 0.65327805  0.34672198]	retirement phase		system life cycle
+no	Correct	[ 0.66302866  0.33697131]	lean software development		system of interest
+yes	Correct	[ 0.14397299  0.85602695]	programmer		chief programmer team
+yes	Incorrect	[ 0.46501008  0.53498989]	cost accounting		cost-plus-fixed-fee contract
+yes	Correct	[ 0.13063267  0.86936736]	user-story-writing workshop		user story
+yes	Correct	[ 0.49593377  0.50406623]	address modification		relocatable address
+no	Correct	[ 0.61428756  0.38571236]	architect		critical path method
+yes	Correct	[ 0.1590434   0.84095663]	change		enhancement
+yes	Correct	[ 0.45611545  0.54388452]	interactive		on-line
+no	Incorrect	[ 0.56001931  0.43998069]	restart		system life cycle
+yes	Correct	[ 0.4251495  0.5748505]	collection cardinality		cardinality constraint
+no	Correct	[ 0.60113597  0.398864  ]	export process		output
+no	Incorrect	[ 0.5970524   0.40294763]	conversational		on-line
+no	Incorrect	[ 0.59498465  0.40501532]	reserved word in a computer language		byte
+no	Incorrect	[ 0.60755569  0.39244431]	control statement		nanostore
+no	Correct	[ 0.69276392  0.30723602]	repo master		risk breakdown structure
+no	Correct	[ 0.64034641  0.35965356]	actual cost		office automation
+yes	Incorrect	[ 0.17276657  0.82723343]	bag		ontology
+yes	Correct	[ 0.016905    0.98309499]	private		protected
+no	Correct	[ 0.60637921  0.39362082]	developed source statement		verifiable
+no	Correct	[ 0.60289472  0.39710525]	feasibility		integration testing
+yes	Correct	[ 0.22456406  0.77543598]	conventions		practices
+no	Correct	[ 0.64399868  0.35600135]	error processing		inductive assertion method
+no	Correct	[ 0.58846569  0.41153434]	design-to cost		outgoing change set
+no	Correct	[ 0.63269782  0.36730221]	call by value		task structuring
+no	Correct	[ 0.62210584  0.3778941 ]	metalanguage		passive white space
+yes	Correct	[ 0.18695934  0.81304067]	compile-and-go		root compiler
+yes	Correct	[ 0.0401275   0.95987248]	epic		theme
+no	Incorrect	[ 0.59402049  0.40597942]	inspect and adapt		learning loop
+yes	Correct	[ 0.01032275  0.98967719]	stop		halt
+yes	Correct	[ 0.17916666  0.82083333]	variability		waste
+yes	Correct	[ 0.49852139  0.50147861]	development team		product owner
+no	Incorrect	[ 0.67689425  0.32310581]	the operand		multilevel address
+no	Correct	[ 0.66583383  0.33416617]	program structure diagram		test effort
+no	Correct	[ 0.6722331   0.32776687]	destructive read		rule-based language
+yes	Correct	[ 0.32605875  0.67394125]	defined process		empirical process control
+yes	Correct	[ 0.04712691  0.95287311]	risk		uncertainty
+yes	Correct	[ 0.43151242  0.56848752]	link		linkage editor
+no	Correct	[ 0.7090643   0.29093564]	third normal form		test environment
+no	Correct	[ 0.64960128  0.35039872]	mechanicals		certification criteria
+yes	Correct	[ 0.48451668  0.51548332]	waterfall		plan-driven process
+no	Correct	[ 0.68186575  0.31813419]	software test incident		Government Off The Shelf
+yes	Incorrect	[ 0.41094464  0.58905536]	not printable		child entity
+no	Correct	[ 0.6267038   0.37329617]	meta-relationship		discrete type
+no	Incorrect	[ 0.72258264  0.27741739]	incremental development		input-process-output
+yes	Correct	[ 0.07124199  0.92875797]	budget		estimate
+yes	Correct	[ 0.10946664  0.89053339]	customer		purchaser
+yes	Correct	[ 0.07201125  0.92798871]	customer		buyer
+yes	Incorrect	[ 0.45839313  0.54160684]	continuous forms		endeavour
+no	Correct	[ 0.65481448  0.34518549]	project management system		four-address instruction
+yes	Correct	[ 0.06466062  0.93533939]	safety		transparency
+no	Correct	[ 0.75239402  0.24760595]	software tag		service level agreement
+yes	Correct	[ 0.10759391  0.89240605]	inspection		transparency
+no	Correct	[ 0.635472    0.36452797]	software tool		problem description
+no	Correct	[ 0.61764348  0.38235644]	seller		testing description
+no	Incorrect	[ 0.61390781  0.38609219]	demodularization		downward compression
+no	Incorrect	[ 0.66885602  0.33114389]	black box		configuration diagram
+no	Correct	[ 0.54517841  0.45482165]	layout chart		condition entry
+no	Correct	[ 0.69038463  0.30961543]	schedule analysis		iteration backlog
+yes	Correct	[ 0.49964505  0.50035495]	collection-valued		scalar
+no	Correct	[ 0.65478206  0.34521791]	test harness		software design representation
+no	Correct	[ 0.61038738  0.38961264]	statistical process control		presentable
+yes	Correct	[ 0.15076822  0.84923178]	block		delimiter
+yes	Correct	[ 0.2498854   0.75011462]	real time		interrupt
+no	Correct	[ 0.68604821  0.31395179]	derived type		contract management plan
+no	Correct	[ 0.76306635  0.23693366]	operator's manual		entity type
+yes	Correct	[ 0.45560038  0.54439962]	generic entity		superclass
+no	Correct	[ 0.63480633  0.36519358]	static analysis		structured walkthrough
+yes	Incorrect	[ 0.14374636  0.85625362]	metric		limits
+yes	Incorrect	[ 0.30480102  0.69519895]	recoverability		device
+yes	Correct	[ 0.47904345  0.52095646]	open subroutine		macro
+no	Incorrect	[ 0.67256218  0.32743779]	object-oriented design		modular decomposition
+no	Correct	[ 0.75239402  0.24760595]	software package		For Exposition Only page
+no	Correct	[ 0.67709488  0.32290512]	complicated domain		semaphore
+no	Incorrect	[ 0.63720167  0.36279836]	bit steering		residual control
+yes	Correct	[ 0.19126026  0.80873978]	utilization		up time
+no	Correct	[ 0.66517574  0.33482435]	waste		triggering event
+yes	Incorrect	[ 0.31452656  0.6854735 ]	data movement		commit
+yes	Correct	[ 0.01306343  0.98693663]	disassembler		deassembler
+no	Correct	[ 0.71015233  0.28984773]	level 1 termination routine		node number
+yes	Correct	[ 0.01462676  0.98537332]	gadget		widget
+no	Incorrect	[ 0.68695396  0.31304601]	object-oriented design		transaction analysis
+no	Correct	[ 0.54290915  0.45709077]	instrumentation		meta-relationship
+no	Correct	[ 0.65858775  0.34141225]	interface type		resource management
+yes	Incorrect	[ 0.24630922  0.75369072]	inheritance		meaning
+yes	Correct	[ 0.22539227  0.77460772]	address		implied addressing
+no	Incorrect	[ 0.62362301  0.37637702]	low level language		assembly
+no	Incorrect	[ 0.64555591  0.35444412]	demodularization		lateral compression
+no	Correct	[ 0.66730362  0.33269632]	basic interworking facility		data movement
+yes	Incorrect	[ 0.49229836  0.50770164]	program library		re-entrant
+no	Correct	[ 0.67954928  0.32045072]	story mapping		traceability matrix
+yes	Correct	[ 0.13064854  0.86935151]	artifact		component
+no	Incorrect	[ 0.67241853  0.3275815 ]	loop		iterative construct
+no	Correct	[ 0.66052842  0.33947158]	code of accounts		life-cycle model
+yes	Correct	[ 0.08742798  0.91257197]	cast		coerce
+yes	Correct	[ 0.31342658  0.68657339]	sustainment		maintenance
+no	Incorrect	[ 0.678204  0.321796]	configuration control		engineering change
+yes	Correct	[ 0.1238762   0.87612373]	iteration		loop
+no	Correct	[ 0.67750794  0.32249206]	bug seeding		critical path
+yes	Correct	[ 0.08604409  0.91395587]	reserve		buffer
+no	Incorrect	[ 0.57796562  0.42203438]	assembler language		compiler code
+no	Correct	[ 0.72027993  0.27972007]	software tool		u-curve optimization
+no	Incorrect	[ 0.71377635  0.28622368]	configuration control		specification change notice
+no	Correct	[ 0.54905081  0.45094922]	engineering interface reference management policy		tag slide
+no	Correct	[ 0.70104331  0.29895669]	economic filter		extranet
+no	Correct	[ 0.61470807  0.38529193]	adaptation parameter		potentially shippable product increment
+no	Correct	[ 0.66008204  0.33991793]	parametric estimating		integration test
+yes	Incorrect	[ 0.46500954  0.53499043]	vanity metric		namespace
+no	Incorrect	[ 0.64949745  0.35050252]	transform analysis		modular decomposition
+no	Correct	[ 0.6212306  0.3787694]	configuration management system		test approach
+yes	Correct	[ 0.06457279  0.93542719]	generality		reusability
+no	Correct	[ 0.65049922  0.34950072]	supporting process		transactional function
+yes	Correct	[ 0.0563869   0.94361305]	menu-driven		menu by-pass
+no	Correct	[ 0.68202794  0.31797209]	query language		intrinsic relationship
+no	Correct	[ 0.72048455  0.27951548]	security domain		musketeer attitude
+yes	Incorrect	[ 0.42807141  0.57192856]	range sort		program epics
+no	Incorrect	[ 0.63302374  0.36697623]	computer performance evaluation		workload model
+yes	Incorrect	[ 0.08192443  0.91807556]	reconcile		block
+no	Correct	[ 0.72535145  0.27464858]	pragma		bootstrap loader
+no	Incorrect	[ 0.57427752  0.42572254]	loaded origin		offset
+no	Correct	[ 0.66240692  0.33759308]	underlying license		project management process group
+no	Correct	[ 0.6033532   0.39664677]	change control procedure		tightly coupled message communication
+yes	Incorrect	[ 0.37116793  0.6288321 ]	compile		fault masking
+no	Correct	[ 0.67766267  0.3223373 ]	release management		system definitions node
+no	Correct	[ 0.67067027  0.32932973]	load map		third-generation language
+yes	Incorrect	[ 0.13818426  0.86181575]	re-entrant		numeric
+no	Correct	[ 0.63346058  0.36653942]	serial		design element
+yes	Incorrect	[ 0.1737535  0.8262465]	decompile		set-up time
+no	Incorrect	[ 0.58042955  0.41957048]	definition is advanced as a proposed standard		closed subroutine
+no	Correct	[ 0.65287197  0.34712803]	attribute for quality measure		low level language
+no	Correct	[ 0.51334822  0.48665178]	mock objects		rework
+yes	Correct	[ 0.02056695  0.97943306]	pause		stop
+no	Incorrect	[ 0.60070986  0.39929014]	decision		leading decision UNTIL
+yes	Correct	[ 0.34696597  0.65303403]	trailing decision		leading decision UNTIL
+no	Correct	[ 0.67419565  0.32580435]	functional test		should-cost estimate
+no	Correct	[ 0.67593122  0.32406881]	data processing		systems integration testing
+yes	Incorrect	[ 0.12040965  0.87959033]	activity		rule
+no	Correct	[ 0.67772198  0.32227805]	computer-aided design		program library
+no	Correct	[ 0.68818241  0.31181762]	archival pages		stream interface signature
+no	Incorrect	[ 0.65069753  0.34930244]	design description		requirements specification
+no	Incorrect	[ 0.57787997  0.42212   ]	restart		software life cycle
+no	Correct	[ 0.66518843  0.3348116 ]	effectiveness analysis		replication schema
+no	Incorrect	[ 0.55061978  0.44938013]	external		invocation
+yes	Incorrect	[ 0.12867482  0.87132514]	usability		step
+no	Correct	[ 0.69660717  0.3033928 ]	risk identification		velocity
+no	Correct	[ 0.67051697  0.329483  ]	common storage		online documentation system
+yes	Correct	[  1.19604854e-04   9.99880433e-01]	design-to cost		design-to-cost
+no	Correct	[ 0.65958124  0.34041873]	nondelivered source statement		kernel
+yes	Correct	[ 0.42197868  0.57802135]	approach		activity
+no	Correct	[ 0.67160058  0.32839948]	and validation		system of interest
+no	Correct	[ 0.65398365  0.34601629]	executable requirements specification		agile development practices
+no	Incorrect	[ 0.77397472  0.22602531]	programming language		C 
+yes	Correct	[ 0.3592529   0.64074713]	chickens		pigs
+no	Incorrect	[ 0.58290297  0.41709706]	turnkey		n-level address
+no	Incorrect	[ 0.55390471  0.44609529]	unwind		straightline coding
+no	Incorrect	[ 0.54850739  0.45149261]	time		mean time between failures
+yes	Correct	[ 0.12926139  0.87073863]	buffer		dynamic buffering
+yes	Correct	[ 0.45960879  0.54039121]	address modification		relative address
+yes	Correct	[ 0.16366071  0.83633929]	mandatory		total
+no	Correct	[ 0.782534    0.21746595]	reentry point		mean time to repair
+no	Correct	[ 0.70599562  0.29400438]	coroutine		specification by example
+no	Correct	[ 0.6172955   0.38270444]	dumb terminal		computer aided software engineering
+no	Correct	[ 0.65829724  0.34170279]	operator manual		cross-compiler
+yes	Correct	[ 0.34738418  0.65261579]	external		iteration
+no	Correct	[ 0.60445201  0.39554802]	icon		process capability determination
+no	Correct	[ 0.56385124  0.4361487 ]	time		service provider
+no	Incorrect	[ 0.62060267  0.37939733]	assembler language		interpretive code
+yes	Correct	[ 0.1525172   0.84748274]	practices		standards
+no	Correct	[ 0.69472355  0.30527651]	timeliness function		defect repair
+yes	Incorrect	[ 0.3277919   0.67220819]	bundle		directory
+no	Correct	[ 0.63022667  0.36977336]	backup		Boolean signature
+yes	Correct	[ 0.03373773  0.96626228]	defect		fault
+yes	Correct	[ 0.11170731  0.88829267]	message		request
+no	Correct	[ 0.64789546  0.35210449]	memory compaction		specification tree
+no	Incorrect	[ 0.6317814  0.3682186]	relative size measure		story point
+yes	Correct	[ 0.18803871  0.81196135]	architecture		component
+no	Incorrect	[ 0.56332135  0.43667865]	assignment statement		reset
+no	Incorrect	[ 0.54412067  0.45587933]	transparency		empirical process control
+yes	Incorrect	[ 0.49259797  0.50740206]	icon		logic diagram
+yes	Correct	[ 0.01875367  0.98124629]	timing		sizing
+yes	Correct	[ 0.17857386  0.82142609]	design phase		detailed design
+no	Incorrect	[ 0.53934765  0.46065238]	all-before-any		batch size
+no	Correct	[ 0.54455489  0.45544508]	suspicion profile		proposal
+no	Incorrect	[ 0.5902229   0.40977705]	code generator		application
+no	Correct	[ 0.65680522  0.34319475]	change control		imperative statement
+yes	Correct	[ 0.25884768  0.74115235]	invest		user story
+yes	Correct	[ 0.29912114  0.70087886]	epic		user story
+no	Correct	[ 0.69538009  0.30461994]	co-location		integration testing
+label, correctness, w1, w2
+no	Incorrect	[ 0.54967284  0.45032719]	test-driven development		refactoring
+no	Correct	[ 0.61279106  0.38720897]	build		process improvement
+no	Correct	[ 0.638982    0.36101806]	business epics		customer requirement
+no	Correct	[ 0.51114392  0.48885611]	dump		call reference
+no	Correct	[ 0.67088276  0.32911721]	computer generation		requirements document
+no	Incorrect	[ 0.53969479  0.46030515]	peer review		inspection
+no	Correct	[ 0.65286869  0.34713131]	effective instruction		fail criteria
+yes	Correct	[ 0.02404894  0.97595108]	agile		Scrum
+no	Correct	[ 0.613846    0.38615397]	object		and validation
+yes	Correct	[  7.17009243e-04   9.99283016e-01]	prototype		prototyping
+no	Incorrect	[ 0.68719441  0.31280559]	loop control		leading decision
+no	Correct	[ 0.52411312  0.47588688]	reproducibility		owned attribute
+no	Correct	[ 0.6949386   0.30506137]	tag		self-directed work team
+no	Correct	[ 0.64842641  0.35157365]	competent assessor		class
+no	Correct	[ 0.69080943  0.30919054]	location reference		continuous risk management
+yes	Correct	[  5.44840150e-05   9.99945521e-01]	Government-off-the-Shelf		Government-Off-The-Shelf
+no	Correct	[ 0.58382177  0.41617829]	software quality		computer-based software system
+yes	Correct	[ 0.23867217  0.76132786]	acceptance test		validation testing
+yes	Correct	[ 0.03057674  0.96942329]	branch		branchpoint
+no	Correct	[ 0.56026798  0.43973202]	source language		sync
+yes	Correct	[ 0.01701663  0.98298335]	compiler		cross-compiler
+no	Correct	[ 0.68284601  0.31715399]	user terminal		system development cycle
+no	Correct	[ 0.71123672  0.28876331]	action of interest		domain architecture
+no	Correct	[ 0.71256661  0.28743339]	program structure diagram		value chain
+yes	Correct	[ 0.09907585  0.90092409]	scrum team		ScrumMaster
+no	Correct	[ 0.62471455  0.37528548]	identify risks		medium
+no	Correct	[ 0.7152217   0.28477833]	detailed function point count		capital expenditure
+no	Correct	[ 0.51264435  0.48735562]	arrow segment		generator
+yes	Correct	[ 0.22431554  0.77568448]	trace		consistency
+yes	Correct	[ 0.16467534  0.83532465]	conversational		online
+no	Correct	[ 0.63034022  0.36965975]	design-to-cost		code churn
+no	Correct	[ 0.64069545  0.35930455]	budgeted cost of work performed		running time
+no	Correct	[ 0.67885298  0.32114702]	scrum sprint		risk threshold
+no	Correct	[ 0.61680454  0.38319543]	trace link		rapid prototyping
+no	Incorrect	[ 0.58191204  0.41808793]	summary activity		subproject
+no	Correct	[ 0.69288558  0.30711433]	schedule analysis		task mode
+yes	Incorrect	[ 0.44472757  0.55527246]	feasibility		microprogramming
+no	Incorrect	[ 0.50540322  0.49459675]	attributive entity type		entity
+no	Correct	[ 0.61727393  0.38272607]	director		initiating processes
+yes	Incorrect	[ 0.12538864  0.87461132]	done		capsule
+yes	Correct	[ 0.31720203  0.68279797]	literal		immediate data
+no	Correct	[ 0.63179499  0.36820501]	risk management plan		documentation relationships to one another
+no	Correct	[ 0.63328433  0.3667157 ]	direct instruction		quality factor
+yes	Correct	[ 0.3942146   0.60578537]	architecture		routine
+no	Incorrect	[ 0.65657896  0.34342101]	configuration control		deviation
+no	Correct	[ 0.68243754  0.31756246]	program definition language		software monitor
+yes	Incorrect	[ 0.0495537   0.95044631]	ready		abend
+no	Correct	[ 0.56470507  0.43529493]	base artifact		software header
+no	Incorrect	[ 0.53867584  0.46132413]	analysis		static analysis demonstration
+yes	Incorrect	[ 0.37707129  0.62292874]	multitasking		condition
+yes	Correct	[ 0.23656245  0.76343751]	practice		standards
+yes	Correct	[ 0.21526895  0.78473109]	artifact		revision
+no	Incorrect	[ 0.76452023  0.23547982]	xp		Extreme Programming
+no	Correct	[ 0.636042    0.36395803]	application problem		instance
+no	Correct	[ 0.66794956  0.33205047]	configuration context		community
+yes	Correct	[ 0.38730583  0.6126942 ]	utilization		busy time
+yes	Correct	[ 0.26661488  0.73338515]	convention		practice
+no	Correct	[ 0.67415708  0.32584292]	common coupling		application function point count
+no	Incorrect	[ 0.66212338  0.33787662]	component skew		global configuration
+no	Incorrect	[ 0.59667766  0.40332231]	storage allocation		buffer
+no	Incorrect	[ 0.82704854  0.17295142]	CRC cards		must-have features
+no	Correct	[ 0.62290972  0.37709031]	procedure		lean programming
+no	Correct	[ 0.63587648  0.36412349]	data		high-level net
+no	Incorrect	[ 0.56717652  0.43282348]	fault masking		machine language
+no	Correct	[ 0.54237837  0.45762163]	cost constraint		authority
+no	Incorrect	[ 0.59509492  0.40490505]	product development effort		project
+yes	Correct	[ 0.33280519  0.66719484]	prioritized list		product backlog
+no	Incorrect	[ 0.66330183  0.33669814]	context-sensitive help		embedded documentation
+yes	Correct	[ 0.21108736  0.78891259]	byte		word
+no	Correct	[ 0.64660138  0.35339859]	electronic mail		commit privileges
+yes	Correct	[ 0.17224704  0.82775301]	pseudo instruction		pseudo-op
+no	Correct	[ 0.65373415  0.34626582]	capability dimension		item of documentation
+yes	Correct	[ 0.00761087  0.99238914]	menu-driven		command-driven
+no	Correct	[ 0.60117805  0.39882192]	tightly coupled message communication without reply		block-structured language
+no	Correct	[ 0.58306801  0.41693202]	absolute code		of accounts
+yes	Correct	[  1.12833193e-04   9.99887109e-01]	end user		end-user
+no	Incorrect	[ 0.66935265  0.33064735]	software development plan		spiral model
+no	Correct	[ 0.69127578  0.30872419]	independent state class		computing system
+yes	Correct	[ 0.10665771  0.89334226]	scrum		Scrum framework
+no	Incorrect	[ 0.65970981  0.34029019]	allocated baseline		configuration identification
+yes	Correct	[ 0.05882857  0.94117141]	branch		jump
+no	Correct	[ 0.63043821  0.36956182]	statement testing		map program
+yes	Correct	[ 0.43122244  0.5687775 ]	definition of done		done list
+no	Incorrect	[ 0.80980724  0.19019277]	CRC cards		nice-to-have features
+yes	Correct	[ 0.2329855   0.76701456]	risk identification		identify risks
+no	Correct	[ 0.7045266   0.29547346]	tinderbox		test-driven development
+yes	Correct	[ 0.13225371  0.86774623]	flowchart		flow diagram
+no	Incorrect	[ 0.59381741  0.40618262]	engineering change		waiver
+no	Correct	[ 0.66063619  0.33936381]	Communication Technology		project specification
+no	Correct	[ 0.61851048  0.38148955]	documentation development staff		relocatable
+no	Incorrect	[ 0.62662739  0.37337264]	assertion		proof of correctness
+yes	Incorrect	[ 0.37185833  0.62814176]	logical record		offline
+yes	Correct	[ 0.3108882   0.68911183]	encapsulation		data abstraction
+no	Correct	[ 0.66809219  0.33190778]	value engineering		finite state machine
+no	Correct	[ 0.57557189  0.42442811]	emulation		generated address
+no	Correct	[ 0.65376621  0.34623379]	actor		identifier-independent entity
+no	Incorrect	[ 0.5715186   0.42848137]	instruction format		operation field
+no	Correct	[ 0.52137536  0.4786247 ]	machine		enumeration type
+yes	Correct	[ 0.3746956   0.62530434]	macrogenerator		macro generating program
+yes	Correct	[ 0.00467743  0.99532264]	reentrant		re-entrant
+yes	Correct	[ 0.3236852   0.67631477]	batch		real time
+yes	Correct	[ 0.48993242  0.51006764]	design		hardware design language
+no	Incorrect	[ 0.57333851  0.42666149]	boy scout rule		technical debt
+no	Correct	[ 0.61241084  0.38758913]	relocatable code		epic owner
+yes	Incorrect	[ 0.40217793  0.59782207]	sandbox		simple token
+no	Correct	[ 0.68245053  0.3175495 ]	unit test		conformity evaluation report
+no	Correct	[ 0.67960429  0.32039571]	product management		system testing
+no	Incorrect	[ 0.62945378  0.37054628]	nonfunctional requirement		definition of done
+no	Correct	[ 0.6544016   0.34559843]	functional product		top-down design
+no	Incorrect	[ 0.65165079  0.34834921]	fast tracking		schedule compression
+yes	Correct	[ 0.09237435  0.90762562]	segment		page
+yes	Correct	[ 0.44910207  0.5508979 ]	literal		figurative constant
+no	Correct	[ 0.63743764  0.36256236]	computer security		selective dump
+no	Correct	[ 0.73430073  0.2656993 ]	sprintable story		timer event
+yes	Correct	[ 0.23666045  0.76333958]	directed graph		digraph
+no	Correct	[ 0.58499169  0.41500831]	system support		playback
+no	Correct	[ 0.62437832  0.37562168]	exit routine		command language
+no	Incorrect	[ 0.68376434  0.31623572]	top-down		critical piece first
+no	Correct	[ 0.67455995  0.32544008]	configuration management		system-of-interest
+no	Correct	[ 0.69430816  0.30569187]	slush		decision table
+no	Incorrect	[ 0.67055273  0.32944727]	proof of correctness		inductive assertion method
+no	Correct	[ 0.74358064  0.25641945]	query language		marginal economics
+no	Incorrect	[ 0.64728045  0.35271952]	professional standard		computer program
+no	Correct	[ 0.60384017  0.39615986]	story splitting		complexity points
+no	Correct	[ 0.67807025  0.32192969]	measurement librarian		instruction modifier
+no	Incorrect	[ 0.61217654  0.38782346]	start-to-start		logical relationship
+no	Correct	[ 0.62263793  0.37736201]	timebox		call by reference
+no	Correct	[ 0.64781231  0.35218778]	backup		assessment constraints
+yes	Correct	[ 0.1957849   0.80421513]	constant		literal
+yes	Correct	[ 0.21886851  0.78113151]	invocation		instance
+no	Correct	[ 0.65327597  0.34672403]	standards		project notebook
+no	Correct	[ 0.68677962  0.31322035]	relationship name		hardware monitor
+yes	Correct	[ 0.48737615  0.51262385]	repair		defect removal
+yes	Correct	[ 0.22901137  0.77098864]	foldout		throwclear
+no	Correct	[ 0.68812811  0.31187189]	operation code		monitor and control risks
+no	Incorrect	[ 0.62697095  0.37302908]	structured design		transform analysis
+yes	Incorrect	[ 0.4460513   0.55394876]	computer word		patch
+no	Correct	[ 0.62010837  0.37989166]	illustrative product		seller
+no	Correct	[ 0.63395858  0.36604145]	validity summary		use case
+yes	Correct	[ 0.01107771  0.98892236]	deblock		block
+no	Correct	[ 0.7461707  0.2538293]	u-curve optimization		verb phrase
+yes	Correct	[ 0.0422153   0.95778471]	unwind		down
+no	Incorrect	[ 0.70408857  0.2959114 ]	definition of done		punch list
+yes	Correct	[ 0.06918551  0.93081445]	load		store
+yes	Correct	[ 0.13567993  0.86432004]	assignment		binding
+yes	Correct	[ 0.15010299  0.84989703]	interpreter		compiler
+no	Correct	[ 0.62165529  0.37834474]	poker planning		suspend
+yes	Correct	[ 0.0183342   0.98166579]	usability		reusability
+no	Correct	[ 0.64975697  0.350243  ]	destructive read		software requirement
+yes	Correct	[ 0.23278289  0.76721716]	compatibility		interoperability
+no	Incorrect	[ 0.65374291  0.34625715]	precedence diagramming method		activity-on-node
+no	Incorrect	[ 0.74974567  0.25025436]	call graph		data flow diagram
+no	Correct	[ 0.61409456  0.3859055 ]	object		static analysis
+no	Correct	[ 0.51773369  0.48226625]	service export		memory dump
+yes	Incorrect	[ 0.03265633  0.96734369]	bit		mode
+yes	Correct	[ 0.34595954  0.65404046]	scrum team		product owner
+no	Incorrect	[ 0.60027146  0.39972857]	in-process product		portfolio planning
+no	Incorrect	[ 0.54190952  0.45809048]	quality in use		usability
+no	Correct	[ 0.54876733  0.45123264]	magic string		quality
+yes	Correct	[ 0.44847095  0.55152905]	pbi slotting		sprint mapping
+no	Correct	[ 0.67935103  0.320649  ]	reflexive ancestor		maintenance branch
+no	Correct	[ 0.61936361  0.38063639]	audience research		chain type
+yes	Correct	[ 0.48536006  0.51463991]	module		call by name
+no	Incorrect	[ 0.62229377  0.3777062 ]	definition is advanced as a proposed standard		open subroutine
+yes	Correct	[ 0.25319272  0.74680728]	fault masking		fail soft
+no	Correct	[ 0.59179533  0.40820459]	macrogenerator		quality attribute
+no	Incorrect	[ 0.56034195  0.43965802]	persona		user story
+yes	Correct	[ 0.4675031   0.53249693]	sprint backlog		ideal hour
+yes	Correct	[ 0.06575845  0.93424153]	monitor		copy
+no	Correct	[ 0.53833824  0.46166173]	absolute address		causal analysis
+no	Incorrect	[ 0.53125185  0.46874818]	notice of revision		specification change notice
+no	Incorrect	[ 0.64404422  0.35595572]	baseline		developmental configuration
+no	Correct	[ 0.66674519  0.33325475]	object		optional subgroup
+no	Correct	[ 0.58334106  0.416659  ]	integrate		straight-line code
+no	Correct	[ 0.65161169  0.34838828]	computer program		programmable terminal
+no	Incorrect	[ 0.6490941   0.35090584]	if-then-else		dyadic selective construct
+no	Correct	[ 0.61838418  0.38161576]	testing description		immediate control
+no	Correct	[ 0.62065202  0.37934798]	project management process group		acquisition
+no	Correct	[ 0.66632289  0.33367714]	lean programming		bidirectional traceability
+no	Incorrect	[ 0.65888071  0.34111929]	software release management		version
+yes	Correct	[ 0.08087818  0.9191218 ]	artifact		practice
+no	Correct	[ 0.59237093  0.40762907]	robust		self-organization
+no	Incorrect	[ 0.62567002  0.37432995]	machine code		first generation fifth generation language
+yes	Correct	[ 0.3901251   0.60987484]	time		mean time to repair
+yes	Correct	[ 0.18045798  0.81954205]	architecture		architectural structure
+yes	Correct	[ 0.04768851  0.95231146]	group		team
+no	Correct	[ 0.66044116  0.33955884]	structured programming		interface specification
+yes	Correct	[ 0.4399471   0.56005293]	compile-and-go		assembler
+no	Correct	[ 0.52922046  0.4707796 ]	acquirer		machine readable
+no	Correct	[ 0.68232173  0.31767824]	hardware design language		sensitivity analysis
+no	Incorrect	[ 0.67884606  0.32115397]	data structure-centered design		transaction analysis
+no	Correct	[ 0.68813616  0.3118639 ]	system stakeholder		design phase
+yes	Correct	[ 0.16543171  0.83456826]	effort		duration
+yes	Incorrect	[ 0.4877471   0.51225293]	specification		flowchart
+yes	Correct	[ 0.04799974  0.9520002 ]	process		task
+no	Incorrect	[ 0.50155419  0.49844587]	specification change notice		engineering change
+no	Correct	[ 0.67934066  0.32065931]	network open end		measuring instrument
+yes	Incorrect	[ 0.48789099  0.51210898]	slack		periodic task
+no	Correct	[ 0.6698032   0.33019677]	measure		problem-oriented language
+no	Incorrect	[ 0.57110918  0.42889082]	microprogrammed computer		microarchitecture
+no	Correct	[ 0.68527305  0.31472698]	pbi slotting		import process
+no	Correct	[ 0.6225121   0.37748796]	required inputs		software
+yes	Correct	[ 0.24200147  0.75799859]	release plan		fixed-scope release
+no	Correct	[ 0.73691201  0.26308793]	complex adaptive system		goods
+yes	Correct	[ 0.06856523  0.93143481]	command language		command-driven
+no	Correct	[ 0.6735847   0.32641533]	process action team		indicator
+no	Incorrect	[ 0.57159925  0.42840078]	immediate data		indirect address
+yes	Correct	[ 0.01255699  0.98744303]	dynamic		static
+no	Incorrect	[ 0.66136986  0.33863017]	stepwise refinement		object-oriented structured design
+no	Incorrect	[ 0.67622429  0.3237758 ]	technical contact		subject matter expert
+no	Correct	[ 0.68352538  0.31647465]	view		generic program unit
+yes	Correct	[ 0.27900583  0.72099417]	clear		initialize
+yes	Correct	[ 0.01783277  0.98216724]	set		list
+no	Correct	[ 0.69033307  0.30966693]	external inquiry		project scope statement
+no	Correct	[ 0.74163574  0.2583642 ]	scrum framework		design-to cost
+label, correctness, w1, w2
+no	Correct	[ 0.67216522  0.32783476]	aperiodic task		risk management plan
+yes	Correct	[ 0.0767252   0.92327482]	electronic mail		e-mail
+no	Incorrect	[ 0.61932123  0.3806788 ]	instruction format		address field
+no	Incorrect	[ 0.54548055  0.45451951]	batch		conversational
+no	Correct	[ 0.65414608  0.34585401]	predictive metric value		symbolic trace
+yes	Incorrect	[ 0.37843552  0.62156445]	timing		product line
+no	Correct	[ 0.63329595  0.36670402]	system requirements specification		Communication Technology
+yes	Correct	[ 0.10880015  0.89119983]	pair programming		pairing
+no	Incorrect	[ 0.66571832  0.33428168]	program design language		pseudo code
+no	Incorrect	[ 0.60490078  0.39509922]	reserved word in a computer language		bit
+no	Incorrect	[ 0.63749182  0.36250815]	relocation dictionary		offset
+no	Correct	[ 0.70331556  0.29668441]	project snapshot		unnecessary formality
+no	Incorrect	[ 0.59693563  0.40306437]	module		call by reference
+yes	Correct	[ 0.42926854  0.57073146]	call graph		tier chart
+no	Correct	[ 0.61066592  0.38933402]	microcode		software requirements phase
+yes	Correct	[ 0.10823267  0.89176732]	concurrent		parallel
+no	Incorrect	[ 0.70028174  0.2997182 ]	mmfs		minimum marketable features
+no	Correct	[ 0.66912788  0.33087212]	program design language		busy time
+yes	Correct	[ 0.09789969  0.90210027]	extendability		flexibility
+no	Correct	[ 0.64726925  0.35273078]	virtual reference		correctness proof
+no	Correct	[ 0.57618302  0.42381695]	unit test		storage device
+no	Correct	[ 0.62392676  0.37607324]	dynamic allocation		extranet
+no	Incorrect	[ 0.51904774  0.48095223]	process architect		software life cycle process
+yes	Incorrect	[ 0.49294242  0.50705761]	arrow label		refactoring
+yes	Correct	[ 0.01157528  0.98842466]	extendability		extensibility
+no	Correct	[ 0.56544304  0.4345569 ]	initialize		manufacturing phase
+no	Correct	[ 0.6612277   0.33877227]	degree of influence		category
+yes	Correct	[ 0.08076846  0.91923153]	modular decomposition		modularization
+no	Correct	[ 0.62694198  0.37305799]	risk management process		transportability
+no	Correct	[ 0.5123226  0.4876774]	logical layout		accessibility
+no	Incorrect	[ 0.57187134  0.42812866]	deviation		engineering change
+yes	Correct	[ 0.09672198  0.90327799]	error		defect
+no	Incorrect	[ 0.64300841  0.35699156]	system follow-up		post-development review
+no	Correct	[ 0.64989179  0.35010824]	software product evaluation		track build item
+yes	Correct	[ 0.00985498  0.99014509]	page turning		paging
+no	Incorrect	[ 0.65587723  0.34412274]	production library		software repository
+yes	Correct	[ 0.14035952  0.85964048]	kernel		nucleus
+yes	Correct	[ 0.49965793  0.50034207]	assignment statement		initialize
+no	Correct	[ 0.66919667  0.33080328]	development team		simple token
+yes	Correct	[ 0.17523503  0.82476497]	note		warning
+no	Incorrect	[ 0.80915278  0.19084722]	sprint mapping		PBI slotting
+yes	Incorrect	[ 0.42167583  0.57832426]	accept		feature teams
+no	Incorrect	[ 0.71249127  0.2875087 ]	peer review		work product
+no	Incorrect	[ 0.64397377  0.35602632]	data structure-centered design		input-process-output
+no	Correct	[ 0.63987696  0.36012301]	software configuration management		common environment coupling
+no	Correct	[ 0.65673631  0.34326366]	block allocation		task board
+yes	Incorrect	[ 0.11128105  0.88871902]	version		arrow
+no	Incorrect	[ 0.60596919  0.39403078]	test-driven development		technical practices
+no	Correct	[ 0.57485467  0.42514527]	change record		production
+no	Incorrect	[ 0.50397593  0.49602401]	rule		essential Scrum
+no	Correct	[ 0.64740193  0.3525981 ]	language binding		economic filter
+no	Incorrect	[ 0.59108669  0.40891334]	hardware		configuration item
+no	Correct	[ 0.60850775  0.39149222]	encoding		software development library
+no	Incorrect	[ 0.6065619   0.39343804]	incremental funding		confidence threshold
+yes	Correct	[ 0.23478904  0.76521093]	scenario		suite
+yes	Correct	[ 0.2370832  0.7629168]	crashing		fast tracking
+no	Correct	[ 0.5607146   0.43928546]	role		complete table
+no	Correct	[ 0.63896477  0.3610352 ]	virtual reference		job
+no	Correct	[ 0.61032397  0.38967603]	transition mode		required inputs
+no	Correct	[ 0.67270076  0.32729924]	configuration diagram		risk exposure
+no	Incorrect	[ 0.62487221  0.37512785]	planning package		control account
+no	Correct	[ 0.63855565  0.36144432]	multilevel storage		walk-through
+yes	Correct	[ 0.15251613  0.84748387]	caution		note
+yes	Incorrect	[ 0.46350139  0.53649861]	bathtub curve		namespace
+no	Correct	[ 0.65834272  0.34165725]	interruption		schedule development
+yes	Correct	[ 0.19303316  0.8069669 ]	translator		compiler
+yes	Correct	[ 0.13153481  0.86846524]	code		microcode
+no	Incorrect	[ 0.65799618  0.34200379]	actual cost		earned value management
+no	Incorrect	[ 0.69460046  0.30539948]	cst		Certified Scrum Trainer
+no	Incorrect	[ 0.63187963  0.3681204 ]	turnkey		single-level encoding
+no	Correct	[ 0.66868258  0.33131745]	symbolic language		input arc
+no	Correct	[ 0.53412491  0.46587512]	terminal symbol		datum
+no	Correct	[ 0.65889651  0.34110346]	interrupt priority		agile methods
+no	Correct	[ 0.50411487  0.49588516]	plan quality		store
+yes	Incorrect	[ 0.04174197  0.95825803]	load		graph
+yes	Correct	[ 0.42723233  0.57276767]	implementation		coding
+no	Correct	[ 0.62804711  0.37195283]	initial program load		control board
+no	Correct	[ 0.69550812  0.30449191]	business epics		stub
+no	Incorrect	[ 0.55986971  0.44013038]	batch size		work in process
+no	Correct	[ 0.66308838  0.33691159]	straight-line code		software development process
+no	Incorrect	[ 0.65696734  0.34303263]	package		information hiding
+yes	Correct	[ 0.19435772  0.80564225]	semaphore		indicator
+no	Correct	[ 0.64510268  0.35489735]	cardinality		computer instruction
+yes	Incorrect	[ 0.31098428  0.68901575]	input arc		collapse
+yes	Correct	[ 0.03588586  0.96411419]	background		foreground
+yes	Incorrect	[ 0.43723342  0.56276655]	intermediate software product		custom software
+no	Correct	[ 0.67724478  0.32275519]	resource allocation		compiler compiler
+yes	Correct	[ 0.45135909  0.54864091]	capital expenditure		operational expense
+no	Incorrect	[ 0.70312595  0.29687408]	programmer manual		project notebook
+no	Incorrect	[ 0.56227767  0.43772233]	computer program		software
+no	Incorrect	[ 0.64917338  0.35082662]	stepwise refinement		modular decomposition
+no	Incorrect	[ 0.60804182  0.39195812]	entity-relationship relationships among them		data structure diagram
+yes	Correct	[ 0.10484283  0.89515716]	iterative development		iteration
+yes	Incorrect	[ 0.4166331   0.58336693]	interface design document		architectural design phase
+no	Correct	[ 0.67292809  0.32707191]	relocatable		test-first development
+no	Incorrect	[ 0.67742586  0.32257414]	nonfunctional requirement		design constraints
+no	Correct	[ 0.54017192  0.45982808]	characteristic		functional test
+no	Correct	[ 0.65933836  0.34066167]	strategic filter		system development
+yes	Incorrect	[ 0.4537392   0.54626077]	two-level address		n-address instruction
+no	Correct	[ 0.59915495  0.40084502]	design-to cost		actual duration
+no	Correct	[ 0.64450008  0.35549989]	roll in		project management office
+yes	Correct	[ 0.25760546  0.74239451]	error seeding		indigenous error
+no	Correct	[ 0.67081261  0.32918739]	software repository		capability indicator
+no	Correct	[ 0.62742954  0.37257048]	mapping		external stakeholders
+no	Correct	[ 0.59373736  0.40626255]	configuration audit		deliver primitive
+yes	Correct	[ 0.18558787  0.81441218]	branch		go to
+no	Correct	[ 0.70748746  0.2925126 ]	program librarian		unknown unknowns
+yes	Correct	[ 0.39831543  0.60168457]	batch		interactive
+yes	Incorrect	[ 0.49283153  0.50716847]	log		asynchronous
+no	Correct	[ 0.62101871  0.37898129]	return on investment		metadata
+no	Correct	[ 0.5722307  0.4277693]	consecutive		value list constraint
+yes	Incorrect	[ 0.33981973  0.66018027]	input sort		subproject
+no	Incorrect	[ 0.60273647  0.3972635 ]	generic program unit		instantiation
+yes	Correct	[ 0.09173553  0.90826446]	product		system
+no	Correct	[ 0.63950896  0.36049098]	functional size		subject system
+no	Incorrect	[ 0.56985211  0.43014786]	straight-line coding		unwind
+yes	Correct	[ 0.06904219  0.93095785]	sync		synchronize
+no	Correct	[ 0.62243015  0.37756991]	commit privileges		object program
+yes	Correct	[ 0.01434724  0.9856528 ]	emulator		simulator
+no	Incorrect	[ 0.66109914  0.33890089]	input-process-output		transform analysis
+no	Incorrect	[ 0.65196168  0.34803829]	finish-to-start		logical relationship
+yes	Correct	[ 0.04208853  0.95791149]	parallel		serial
+no	Incorrect	[ 0.57454371  0.42545629]	modular decomposition		coupling
+no	Correct	[ 0.54076272  0.45923725]	hierarchy		path convergence
+no	Incorrect	[ 0.63419539  0.36580458]	n-plus-one address instruction		etc
+no	Correct	[ 0.55657852  0.44342145]	design-to cost		time-critical task
+yes	Incorrect	[ 0.4162035  0.5837965]	text processing		reset
+yes	Correct	[ 0.00428103  0.99571902]	muda		muri
+no	Correct	[ 0.69430035  0.30569959]	new source statements		exit criteria
+no	Correct	[ 0.68937856  0.31062147]	operations manual		output measure
+yes	Incorrect	[ 0.41616488  0.58383512]	reconcile		kanban board
+no	Correct	[ 0.62715554  0.37284449]	failure mode		data characteristic
+no	Incorrect	[ 0.60409689  0.39590308]	fibonacci sequence		Planning Poker
+yes	Incorrect	[ 0.37150443  0.62849557]	alphanumeric		back linking
+no	Correct	[ 0.68489617  0.31510386]	work breakdown structure		portfolio backlog
+no	Correct	[ 0.62742358  0.37257645]	estimate activity durations		triggers
+no	Correct	[ 0.56876057  0.43123934]	colocation		counting rule
+no	Correct	[ 0.53289092  0.46710911]	algorithm		stub
+yes	Correct	[ 0.37876269  0.62123734]	conversational		real time
+no	Correct	[ 0.58080101  0.41919896]	stop		resource management
+yes	Correct	[ 0.13063751  0.86936247]	essential scrum		Scrum framework
+no	Correct	[ 0.59453458  0.40546536]	tutorial		software engineering
+no	Correct	[ 0.62552804  0.37447196]	user terminal		potentially shippable product increment
+yes	Correct	[ 0.15451023  0.8454898 ]	iteration		mapping
+yes	Correct	[ 0.07473087  0.92526907]	subclass		subtype
+no	Correct	[ 0.65418261  0.34581736]	mapping completeness		real storage
+yes	Incorrect	[ 0.4516125   0.54838741]	whitespace		finish-to-start
+no	Correct	[ 0.69499779  0.30500218]	system definitions		agile project management
+no	Incorrect	[ 0.65080112  0.34919888]	modular programming		object-oriented design
+yes	Correct	[ 0.45251015  0.54748982]	functional configuration audit		configuration management
+no	Correct	[ 0.61360389  0.38639611]	failure		Project Management Body of Knowledge
+no	Incorrect	[ 0.53860182  0.46139815]	agile		Extreme Programming
+yes	Correct	[ 0.10600166  0.89399832]	branch		case
+no	Correct	[ 0.65465963  0.3453404 ]	action of interest		system design
+no	Correct	[ 0.64543205  0.35456792]	information technology		art metrics
+yes	Correct	[ 0.11760407  0.88239592]	hidden		public
+yes	Correct	[ 0.32296979  0.67703021]	derived type		subtype
+no	Correct	[ 0.57230604  0.42769396]	release management		lock
+yes	Correct	[ 0.40961811  0.59038186]	box diagram		flowchart
+no	Correct	[ 0.52495337  0.47504663]	coroutine		risk assumption
+yes	Correct	[ 0.17139868  0.8286013 ]	service		deliverable
+no	Correct	[ 0.58133501  0.41866502]	conceptual data model		computerization
+yes	Incorrect	[ 0.28689906  0.71310091]	proposal		startup
+no	Incorrect	[ 0.62476546  0.37523454]	computer performance evaluation		throughput
+no	Correct	[ 0.62123221  0.37876773]	Requirements Management Rich Text Format		action of interest
+yes	Correct	[ 0.05285416  0.94714582]	float		slack
+yes	Correct	[ 0.07532602  0.92467397]	technique		activity
+no	Correct	[ 0.70789665  0.29210332]	N-ary relationship		technical review
+no	Correct	[ 0.69003296  0.30996701]	memory		project initiation
+yes	Correct	[ 0.05645261  0.94354737]	practice		role
+yes	Incorrect	[ 0.49610296  0.50389707]	artifact type		overhead time
+no	Correct	[ 0.64894027  0.35105971]	developed source statement		perform qualitative analysis
+yes	Correct	[  3.64166597e-04   9.99635816e-01]	command-driven		command driven
+no	Correct	[ 0.55631709  0.44368291]	indirect instruction		compaction
+yes	Correct	[ 0.04357754  0.95642245]	lead		lag
+yes	Correct	[ 0.28740847  0.71259159]	fail safe		fault secure
+yes	Correct	[ 0.48236692  0.51763314]	baseline		configuration
+no	Incorrect	[ 0.57270032  0.42729968]	chief programmer team		egoless programming
+no	Correct	[ 0.66416693  0.3358331 ]	assembly language		test item transmittal report
+no	Correct	[ 0.69783598  0.30216408]	head		post-tested iteration
+yes	Correct	[ 0.02912754  0.97087246]	private		public
+no	Correct	[ 0.60699564  0.39300439]	instruction repertoire		triggers
+no	Correct	[ 0.63325167  0.36674836]	big visible charts		timely throughput
+yes	Correct	[ 0.32049683  0.67950314]	compile-and-go		incremental compiler
+no	Correct	[ 0.65377682  0.34622315]	well-engineered web site		retirement phase
+no	Correct	[ 0.64126331  0.35873666]	interface testing		plan communications
+yes	Correct	[ 0.1265322   0.87346774]	case		go to
+yes	Correct	[  3.69352405e-04   9.99630690e-01]	machine-readable		machine readable
+yes	Correct	[ 0.00132671  0.99867332]	interrupt		interruption
+no	Correct	[ 0.66002172  0.33997828]	solution		traceability matrix
+no	Correct	[ 0.69503212  0.30496785]	continuous integration		rescue point
+yes	Correct	[  2.12591593e-04   9.99787390e-01]	design-to-cost		design to cost
+yes	Incorrect	[ 0.46460006  0.53539997]	logical trace		defect aging
+yes	Correct	[ 0.03938894  0.96061105]	bind		static binding
+no	Incorrect	[ 0.55347377  0.44652629]	crashing		schedule compression
+yes	Correct	[ 0.31944931  0.68055069]	on-line		real time
+no	Correct	[ 0.65044588  0.34955412]	budgeted cost of work performed		test approach
+no	Correct	[ 0.73631442  0.26368561]	emergent opportunity		subphase
+yes	Correct	[ 0.39510411  0.60489589]	main program		routine
+yes	Correct	[ 0.09441174  0.90558827]	flexibility		adaptability
+no	Incorrect	[ 0.59885138  0.40114862]	insight backlog		sprint retrospective
+no	Correct	[ 0.63373524  0.36626467]	incoming change set		tier chart
+yes	Correct	[ 0.35626483  0.64373517]	influencer		stakeholder
+no	Incorrect	[ 0.64356732  0.35643271]	schedule network analysis		critical path method
+yes	Correct	[ 0.03192298  0.968077  ]	link		linkage
+no	Correct	[ 0.66465664  0.33534339]	fast tracking		global configuration
+no	Incorrect	[ 0.62999469  0.37000531]	configuration management		baseline
+yes	Correct	[ 0.18426555  0.81573439]	address format		n-address instruction
+no	Correct	[ 0.63820642  0.36179364]	daily meeting		marking of a place
+yes	Correct	[ 0.03204101  0.96795905]	multiprocessing		multitasking
+no	Correct	[ 0.61710387  0.38289613]	incremental development		endeavor
+no	Correct	[ 0.69065243  0.3093476 ]	management process		reverse execution
+no	Incorrect	[ 0.63409108  0.36590898]	bit steering		immediate control
+no	Correct	[ 0.65196764  0.34803241]	case		function-oriented design
+no	Correct	[ 0.6511023   0.34889767]	installed function point count		status code
+Average recall:0.5501715854878374, precision:0.782402497126147, f1:0.6434249504948475, accuracy:0.6972093023255814

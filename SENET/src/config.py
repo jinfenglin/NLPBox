@@ -12,3 +12,8 @@ RNN_ENCODER_PATH = "encoder.pickle"
 
 LOGS = os.path.join(PROJECT_ROOT, "logs")
 FEATURE_VEC_DIR = os.path.join(SENET_DATA, "feature_vectors")
+
+def write_csv(res, writer):
+    res = [str(x) for x in res]
+    content = ",".join(res)
+    writer.write(content + "\n")

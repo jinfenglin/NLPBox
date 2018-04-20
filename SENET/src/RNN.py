@@ -72,7 +72,8 @@ class RNN:
                 batch_xs = batch_xs.reshape([self.batch_size, self.n_steps, self.n_inputs])
                 is_correct = sess.run(correct_pred, feed_dict={self.x: batch_xs, self.y: batch_ys})
                 confidence_score = sess.run(self.confidence, feed_dict={self.x: batch_xs})
-                res.append((batch_ys, is_correct, test_word_pairs, batch_xs, confidence_score))
+                label = test_set.label_encoder.one_hot_confidence_decode(confidence_score[0])
+                res.append((label, is_correct, test_word_pairs, batch_xs, confidence_score))
         return res
 
     def ten_fold_test(self, data_set: DataPrepare, result_file):
@@ -87,7 +88,7 @@ class RNN:
                 self.train(train_set)
                 tf.reset_default_graph()
                 res = self.test(test_set)
-                re, pre, f1, accuracy = self.write_fold_result(res, fout, data_set.encoder)
+                re, pre, f1, accuracy = self.write_fold_result(res, fout)
                 a_recall += re
                 a_pre += pre
                 a_f1 += f1
@@ -127,13 +128,12 @@ class RNN:
             label_encoder = pickle.load(pickle_in)
         return res, label_encoder
 
-    def eval(self, results, encoder: Encoder):
+    def eval(self, results):
         tn = 0
         tp = 0
         fn = 0
         fp = 0
         for label, correctness, word_pairs, feature, confidence in results:
-            label = encoder.one_hot_decode(label[0])
             if label == "yes":  # positive
                 if correctness[0]:
                     tp += 1
@@ -167,9 +167,8 @@ class RNN:
         self.logger.info("accuracy:{}".format(accuracy))
         return recall, precision, f1, accuracy
 
-    def write_fold_result(self, res, writer, label_encoder: Encoder):
+    def write_fold_result(self, res, writer):
         for label, correctness, word_pairs, features, confidence in res:
-            label = label_encoder.one_hot_decode(label[0])
             if correctness[0] == True:
                 correct_output = 'Correct'
             else:
@@ -178,7 +177,7 @@ class RNN:
             res_str = "{}\t{}\t{}\t\t{}\t{}\t{}\n".format(label, correct_output, word_pairs[0][0], word_pairs[0][1],
                                                           confidence, features)
             writer.write(res_str)
-        re, pre, f1, accuracy = self.eval(res, label_encoder)
+        re, pre, f1, accuracy = self.eval(res)
         stat_str = "recall:{}, precision:{}, f1:{}, accuracy:{} \n".format(re, pre, f1, accuracy)
         writer.write(stat_str)
         return re, pre, f1, accuracy

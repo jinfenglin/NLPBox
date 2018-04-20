@@ -93,6 +93,13 @@ class Encoder:
         origin = self.num_to_obj[hot_spot_index]
         return origin
 
+    def one_hot_confidence_decode(self, confidence_vec:list):
+        label_vec = [0] * len(confidence_vec)
+        label_index = list(confidence_vec).index(max(confidence_vec))
+        label_vec[label_index] = 1
+        label = self.one_hot_decode(label_vec)
+        return label
+
 
 class SENETRawDataBuilder:
     """
@@ -124,15 +131,36 @@ class SENETRawDataBuilder:
         except Exception as e:
             print(e)
 
+    def __is_same_pre_post_fix(self, w1_tokens, w2_tokens):
+        if w1_tokens[0] == w2_tokens[0] or w1_tokens[-1] == w2_tokens[-1]:
+            return True
+        return False
+
+    def filter_pairs(self, pairs, filter_flag):
+        if not filter_flag:
+            return pairs
+        filtered = []
+        for pair in pairs:
+            w1 = pair[0]
+            w2 = pair[1]
+            w1_tokens = w1.split()
+            w2_tokens = w2.split()
+            if self.__is_same_pre_post_fix(w1_tokens, w2_tokens):
+                continue
+            filtered.append((w1, w2))
+        return filtered
+
     def __init__(self, sql_file, pair_builder: PairBuilder = None,
                  golden_pair_files=["synonym.txt", "contrast.txt", "related.txt"],
-                 golden_list_files=["hyper.txt"], vocab_file_name="vocabulary.txt"):
+                 golden_list_files=["hyper.txt"], vocab_file_name="vocabulary.txt",
+                 experiment_filter_same_prefix=False):
         """
         :param pair_builder: Build pairs, if this is not None other pararmeters will be ignored
         :param sql_file: The sqlite file store the scapred document
         :param golden_pair_files: The list of file who contains golden pairs. File should have format <p1>,<p2>. File name
         will be searched in vocab file whose path is defined in config.py
         :param golden_list_files:  The list of file who contains golden pairs. File should have format <root>:<p1>,<p2>....
+        :param experiment_filter_same_prefix: remove the pairs with same prefix and postfix when pair_builder is given
         """
         self.logger = logging.getLogger(__name__)
         sql_manger = Sqlite3Manger(sql_file)
@@ -146,7 +174,8 @@ class SENETRawDataBuilder:
                 self.keys.append(line.strip(" \n\r\t"))
         golden_pairs = self.build_golden(golden_pair_files, golden_list_files)
         if pair_builder is None:
-            neg_pairs = self.build_neg_with_random_pair(golden_pairs)
+            golden_pairs = self.filter_pairs(golden_pairs, experiment_filter_same_prefix)
+            neg_pairs = self.build_neg_with_random_pair(golden_pairs, experiment_filter_same_prefix)
             labels = ["yes", "no"]  # [0,1] is negative and [1,0] is positive
             pair_groups = [golden_pairs, neg_pairs]
             self.logger.info("Candidate neg pairs:{}, Golden pairs:{}".format(len(neg_pairs), len(golden_pairs)))
@@ -167,7 +196,7 @@ class SENETRawDataBuilder:
                 self.raws.append(material)
         random.shuffle(self.raws)
 
-    def build_neg_with_random_pair(self, golden_pairs):
+    def build_neg_with_random_pair(self, golden_pairs, filter_flag):
         def get_random_word(num):
             res = []
             cnt = 0
@@ -176,8 +205,9 @@ class SENETRawDataBuilder:
                 neg_pair = (self.keys[random.randint(0, key_size - 1)], self.keys[random.randint(0, key_size - 1)])
                 neg_verse = (neg_pair[1], neg_pair[0])
                 if neg_pair not in golden_pairs and neg_verse not in golden_pairs and neg_pair[0] != neg_pair[1]:
-                    res.append(neg_pair)
-                    cnt += 1
+                    if not filter_flag or not self.__is_same_pre_post_fix(neg_pair[0].split(), neg_pair[1].split()):
+                        res.append(neg_pair)
+                        cnt += 1
             return res
 
         neg_pairs = []
@@ -226,7 +256,7 @@ class DataPrepare:
     The dataset can be pickled and imported. The raw_material should match the requirement of feature_pipe
     """
 
-    def __init__(self, pickle_path, feature_pipe, raw_materials, rebuild=True, thread_num=4):
+    def __init__(self, pickle_path, feature_pipe, raw_materials, rebuild=True, thread_num=1):
         """
         :param pickle_path: The path to store or load data
         :param feature_pipe: A list containing methods to consume raw_material
@@ -241,6 +271,7 @@ class DataPrepare:
         if os.path.isfile(pickle_path) and not rebuild:
             self.logger.info("Loading data from path {}".format(pickle_path))
             self.__load_file()
+            random.shuffle(self.data_set)
         else:
             self.logger.info("Build dat set with {} threads".format(thread_num))
             chunk_size = math.ceil(len(raw_materials) / thread_num)
