@@ -17,12 +17,12 @@
     <SUITE FILE_PATH="coverage/NLPBox$web_page_parser.coverage" NAME="web_page_parser Coverage Results" MODIFIED="1519016753215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scraper/src" />
     <SUITE FILE_PATH="coverage/NLPBox$software_engineering_glossary_extract.coverage" NAME="software_engineering_glossary_extract Coverage Results" MODIFIED="1519618019529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GlossaryProcess/src" />
     <SUITE FILE_PATH="coverage/NLPBox$classify_with_feature_vectors.coverage" NAME="classify_with_feature_vectors Coverage Results" MODIFIED="1520037501812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SENET/src" />
-    <SUITE FILE_PATH="coverage/NLPBox$Maxent.coverage" NAME="Maxent Coverage Results" MODIFIED="1524198205366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SENET/src" />
+    <SUITE FILE_PATH="coverage/NLPBox$Maxent.coverage" NAME="Maxent Coverage Results" MODIFIED="1524240345864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SENET/src" />
     <SUITE FILE_PATH="coverage/NLPBox$Unittests_for_page_parser_test_TestPagerParser_test_paragraphParser.coverage" NAME="Unittests for page_parser_test.TestPagerParser.test_paragraphParser Coverage Results" MODIFIED="1518999438719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scraper/test" />
     <SUITE FILE_PATH="coverage/NLPBox$Unittests_for_RNN_RNN_test.coverage" NAME="Unittests for RNN.RNN.test Coverage Results" MODIFIED="1524177665208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SENET/src" />
     <SUITE FILE_PATH="coverage/NLPBox$filter_result.coverage" NAME="filter_result Coverage Results" MODIFIED="1524192764342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SENET/result/not_filter_result" />
     <SUITE FILE_PATH="coverage/NLPBox$Unittests_for_page_parser_test_TestPagerParser_test_stackoverflow_parser.coverage" NAME="Unittests for page_parser_test.TestPagerParser.test_stackoverflow_parser Coverage Results" MODIFIED="1518983669869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scraper/test" />
-    <SUITE FILE_PATH="coverage/NLPBox$recall_precision.coverage" NAME="recall_precision Coverage Results" MODIFIED="1523125214575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SENET/result/analysis" />
+    <SUITE FILE_PATH="coverage/NLPBox$recall_precision.coverage" NAME="recall_precision Coverage Results" MODIFIED="1524204499850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SENET/result/analysis" />
     <SUITE FILE_PATH="coverage/NLPBox$paly_scraper.coverage" NAME="paly_scraper Coverage Results" MODIFIED="1518860059121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scraper/src" />
     <SUITE FILE_PATH="coverage/NLPBox$Unittests_for_page_parser_test_TestPagerParser_test_innolution.coverage" NAME="Unittests for page_parser_test.TestPagerParser.test_innolution Coverage Results" MODIFIED="1519190306680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scraper/test" />
     <SUITE FILE_PATH="coverage/NLPBox$Unittests_for_page_parser_test_TestPagerParser.coverage" NAME="Unittests for page_parser_test.TestPagerParser Coverage Results" MODIFIED="1519198471370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scraper/test" />
@@ -61,11 +61,67 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="recall_precision.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SENET/result/analysis/recall_precision.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RNN.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SENET/src/RNN.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SENET/src/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="48" column="19" lean-forward="false" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Maxent.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SENET/src/Maxent.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="547">
+              <caret line="124" column="24" lean-forward="false" selection-start-line="124" selection-start-column="24" selection-end-line="124" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Maxent_result5.csv" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/csv/Maxent_result5.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="FeedForwardNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SENET/src/FeedForwardNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
+            <state relative-caret-position="237">
+              <caret line="55" column="46" lean-forward="false" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
               <folding>
                 <element signature="e#349#372#0" expanded="true" />
               </folding>
@@ -73,81 +129,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Maxent_result14.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SENET/result/filtered/csv/Maxent_result14.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="gen_rnn_csv.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SENET/result/filtered/gen_rnn_csv.py">
+        <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/gen_rnn_csv.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RNN_result6.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SENET/result/filtered/csv/RNN_result6.csv">
+      <file leaf-file-name="filter_result.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/filter_result.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RNN_result7.csv" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SENET/result/filtered/csv/RNN_result7.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="15" lean-forward="false" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Maxent_result6.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SENET/result/filtered/csv/Maxent_result6.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Maxent_result11.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SENET/result/filtered/csv/Maxent_result11.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Maxent_result12.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SENET/result/filtered/csv/Maxent_result12.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Maxent_result13.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SENET/result/filtered/csv/Maxent_result13.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="437">
+              <caret line="62" column="22" lean-forward="false" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -165,8 +161,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>result_dir</find>
-      <find>result_file</find>
       <find>ten_fold_test</find>
       <find>self</find>
       <find>write</find>
@@ -189,12 +183,14 @@
       <find>filter</find>
       <find>PorterStemmer</find>
       <find>recall</find>
-      <find>label</find>
       <find>translator</find>
-      <find>Yes	InCorrect</find>
       <find>Yes	Correct</find>
       <find>}.</find>
       <find>write(&quot;{}.</find>
+      <find>label</find>
+      <find>predict_score</find>
+      <find>label, correctness, w1, w2</find>
+      <find>Yes	InCorrect</find>
     </findStrings>
     <replaceStrings>
       <replace>self.nlp</replace>
@@ -208,8 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Cleaner/cleaner.py" />
-        <option value="$PROJECT_DIR$/GlossaryProcess/data/FFSE_glossary.txt" />
         <option value="$PROJECT_DIR$/GlossaryProcess/data/requirement_engineering/processimpact.txt" />
         <option value="$PROJECT_DIR$/GlossaryProcess/src/software_engineering_glossary_extract.py" />
         <option value="$PROJECT_DIR$/Scraper/data/proxy_list.txt" />
@@ -231,7 +225,6 @@
         <option value="$PROJECT_DIR$/SENET/src/result_filter.py" />
         <option value="$PROJECT_DIR$/SENET/src/_extract_word.py" />
         <option value="$PROJECT_DIR$/SENET/result/analysis/manual_res_process.py" />
-        <option value="$PROJECT_DIR$/SENET/result/analysis/recall_precision.py" />
         <option value="$PROJECT_DIR$/SENET/result/analysis/expansion_word_duplicate_clean.py" />
         <option value="$PROJECT_DIR$/SENET/result/analysis/number_check/count_duplcate.py" />
         <option value="$PROJECT_DIR$/SENET/src/config.py" />
@@ -255,10 +248,13 @@
         <option value="$PROJECT_DIR$/SENET/result/filter_result/Maxent_result9.txt" />
         <option value="$PROJECT_DIR$/SENET/result/filter_result/Maxent_result12.txt" />
         <option value="$PROJECT_DIR$/SENET/result/not_filter_result/filter_result.py" />
-        <option value="$PROJECT_DIR$/SENET/src/main.py" />
-        <option value="$PROJECT_DIR$/SENET/src/Maxent.py" />
         <option value="$PROJECT_DIR$/SENET/src/FeedForwardNN.py" />
         <option value="$PROJECT_DIR$/SENET/result/filtered/gen_rnn_csv.py" />
+        <option value="$PROJECT_DIR$/SENET/src/main.py" />
+        <option value="$PROJECT_DIR$/SENET/result/analysis/FeedForward_Result14.txt" />
+        <option value="$PROJECT_DIR$/SENET/result/analysis/recall_precision.csv" />
+        <option value="$PROJECT_DIR$/SENET/result/analysis/recall_precision.py" />
+        <option value="$PROJECT_DIR$/SENET/src/Maxent.py" />
       </list>
     </option>
   </component>
@@ -269,9 +265,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1047" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -366,102 +363,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NLPBox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NLPBox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SENET" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="result" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NLPBox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NLPBox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SENET" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="result" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="not_filter_result" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NLPBox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NLPBox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SENET" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="result" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="filtered" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NLPBox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NLPBox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SENET" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="result" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="filtered" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="csv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -474,18 +375,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\Projects\NLPBox\SENET\result\mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)\not_filter_result\csv" />
+      <recent name="G:\Projects\NLPBox\SENET\result\analysis" />
       <recent name="G:\Projects\NLPBox\SENET\result\filtered" />
       <recent name="G:\Projects\NLPBox\SENET\result\not_filter_result\csv" />
       <recent name="G:\Projects\NLPBox\SENET\result\not_filter_result" />
-      <recent name="G:\Projects\NLPBox\SENET\result\filter_result\csv" />
-      <recent name="G:\Projects\NLPBox\SENET\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\Projects\NLPBox\SENET\result\mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)\not_filter_result" />
       <recent name="G:\Projects\NLPBox\SENET\result\filtered\csv" />
       <recent name="G:\Projects\NLPBox\SENET\result\filtered" />
       <recent name="G:\Projects\NLPBox\SENET\result\mergeRQ1.1ANDRQ1.2" />
       <recent name="G:\Projects\NLPBox\SENET\result\filter_result\csv" />
-      <recent name="G:\Projects\NLPBox\SENET\result\not_filter_result" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -500,7 +401,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.gen_rnn_csv (1)">
+  <component name="RunManager" selected="Python.Maxent">
     <configuration default="false" name="FeedForwardNN" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -539,25 +440,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="filter_result" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SENET/result/not_filter_result" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="NLPBox" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SENET/result/not_filter_result/filter_result.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="Maxent" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -591,6 +473,25 @@
       <module name="NLPBox" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SENET/result/filtered/gen_rnn_csv.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="recall_precision" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SENET/result/analysis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="NLPBox" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SENET/result/analysis/recall_precision.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -765,17 +666,17 @@
       <item index="0" class="java.lang.String" itemvalue="Python tests.page_parser_test" />
       <item index="1" class="java.lang.String" itemvalue="Python.FeedForwardNN" />
       <item index="2" class="java.lang.String" itemvalue="Python.main" />
-      <item index="3" class="java.lang.String" itemvalue="Python.filter_result" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Maxent" />
-      <item index="5" class="java.lang.String" itemvalue="Python.gen_rnn_csv (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Maxent" />
+      <item index="4" class="java.lang.String" itemvalue="Python.gen_rnn_csv (1)" />
+      <item index="5" class="java.lang.String" itemvalue="Python.recall_precision" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.gen_rnn_csv (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Maxent" />
-        <item index="2" class="java.lang.String" itemvalue="Python.FeedForwardNN" />
-        <item index="3" class="java.lang.String" itemvalue="Python.main" />
-        <item index="4" class="java.lang.String" itemvalue="Python.filter_result" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Maxent" />
+        <item index="1" class="java.lang.String" itemvalue="Python.recall_precision" />
+        <item index="2" class="java.lang.String" itemvalue="Python.gen_rnn_csv (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.FeedForwardNN" />
+        <item index="4" class="java.lang.String" itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -834,16 +735,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1047" height="1047" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32822758" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20910075" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52279633" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2750533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17334779" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -911,6 +811,16 @@
           <line>23</line>
           <option name="timeStamp" value="168" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SENET/result/analysis/recall_precision.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="220" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SENET/result/analysis/recall_precision.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="221" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -919,7 +829,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="213" />
+      <option name="time" value="222" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="tests">
@@ -939,149 +849,20 @@
         <watch expression="confidence_score" language="Python" />
       </configuration>
       <configuration name="PythonConfigurationType">
-        <watch expression="tp" language="Python" />
-        <watch expression="fp" language="Python" />
-        <watch expression="fn" language="Python" />
-        <watch expression="tn" language="Python" />
+        <watch expression="score_parts" language="Python" />
+        <watch expression="predict_score" language="Python" />
+        <watch expression="parts" language="Python" />
         <watch expression="correctness" language="Python" />
-        <watch expression="pre_label" language="Python" />
-        <watch expression="share_tokens(w1, w2)" language="Python" />
-        <watch expression="same_pre_post(w1, w2)" language="Python" />
-        <watch expression="single_token_same_pre_post_fix(w1, w2)" language="Python" />
-        <watch expression="tokens1[0] == tokens2[0]" language="Python" />
-        <watch expression="tokens1[-1] == tokens2[-1]" language="Python" />
+        <watch expression="line" language="Python" />
+        <watch expression="line.startswith(&quot;yes&quot;)" language="Python" />
+        <watch expression="line" language="Python" />
+        <watch expression="tp" language="Python" />
+        <watch expression="tn" language="Python" />
+        <watch expression="fp" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SENET/result/filter_result/csv/Maxent_result8.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/result/filter_result/csv/Maxent_result9.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/filter_result/csv/RNN_Result12.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/filter_result/RNN_Result5.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="37" column="11" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/csv/FeedForward_result5.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/filter_result/Maxent_result13.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15507">
-          <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/Maxent_result5.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108540">
-          <caret line="5" column="53" lean-forward="false" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/filter_result/Maxent_result5.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/result/filter_result/csv/Maxent_result6.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/result/filter_result/csv/Maxent_result7.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/filter_result/csv/FeedForward_Result13.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/filter_result/Maxent_result9.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="516" column="13" lean-forward="false" selection-start-line="516" selection-start-column="0" selection-end-line="516" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/csv/RNN_result8.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/filter_result/csv/Maxent_result5.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/filter_result/csv/Maxent_result6.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/csv/FeedForward_result10.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/filter_result/csv/FeedForward_Result6.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -1202,14 +983,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/filter_result.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="34" column="40" lean-forward="false" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/filter_result/csv/RNN_Result8.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -1250,51 +1023,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/src/RNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="197" column="35" lean-forward="false" selection-start-line="197" selection-start-column="35" selection-end-line="197" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/src/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="43" column="46" lean-forward="false" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/src/Maxent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="121" column="42" lean-forward="false" selection-start-line="121" selection-start-column="42" selection-end-line="121" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SENET/result/filtered/RNN_result8.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
           <caret line="8005" column="23" lean-forward="false" selection-start-line="8005" selection-start-column="23" selection-end-line="8005" selection-end-column="23" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SENET/src/FeedForwardNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
-          <folding>
-            <element signature="e#349#372#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1366,6 +1099,182 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="15" lean-forward="false" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/FeedForward_Result14.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/FeedForward_Result13.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Python36/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/result/analysis/recall_precision.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-202">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/csv/FeedForward_result13.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/result/analysis/recall_precision.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/src/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="48" column="19" lean-forward="false" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/result/analysis/recall_precision_rnn.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/result/analysis/FeedForward_Result14.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="6" lean-forward="true" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/Maxent_result10.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="5740" column="115" lean-forward="true" selection-start-line="5740" selection-start-column="115" selection-end-line="5740" selection-end-column="115" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/Maxent_result5.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/src/RNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/RNN_result5.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/src/FeedForwardNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="55" column="46" lean-forward="false" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
+          <folding>
+            <element signature="e#349#372#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/Maxent_result7.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="575" column="58" lean-forward="true" selection-start-line="575" selection-start-column="58" selection-end-line="575" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/gen_rnn_csv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/filter_result.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="62" column="22" lean-forward="false" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/Maxent_result8.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="2108" column="28" lean-forward="false" selection-start-line="2108" selection-start-column="28" selection-end-line="2108" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/csv/Maxent_result14.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/src/Maxent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="124" column="24" lean-forward="false" selection-start-line="124" selection-start-column="24" selection-end-line="124" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SENET/result/mergeRQ1.1ANDRQ1.2BySelectNonHeuristic(OriginVerisionIncluded)/not_filter_result/csv/Maxent_result5.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -45,7 +45,7 @@ if __name__ == '__main__':
             senet_features = SENETFeaturePipe(documents)
             data_set_pickle = "classify_dataset" + version + "_" + str(cur_node_partition) + ".pickle"
             data = DataPrepare(data_set_pickle, feature_pipe=senet_features,
-                               raw_materials=raws, rebuild=True)
+                               raw_materials=raws, rebuild=False)
             rnn = RNN(data.get_vec_length(), model_path, RNN_ENCODER_PATH)
             res, encoder = rnn.classify(data.all())
             result_file_name = "classify" + "_" + version + "_" + str(cur_node_partition) + ".txt"

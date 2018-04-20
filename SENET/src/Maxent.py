@@ -119,7 +119,7 @@ class Maxent:
 if __name__ == "__main__":
     for i in range(10):
         maxent = Maxent()
-        data = DataPrepare("dataset_filter.pickle", feature_pipe=None, raw_materials=None,
+        data = DataPrepare("dataset_origin.pickle", feature_pipe=None, raw_materials=None,
                            rebuild=False)
         print("Experiment data is ready, size ", len(data.data_set))
         maxent.run(data)
