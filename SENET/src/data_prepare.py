@@ -93,7 +93,7 @@ class Encoder:
         origin = self.num_to_obj[hot_spot_index]
         return origin
 
-    def one_hot_confidence_decode(self, confidence_vec:list):
+    def one_hot_confidence_decode(self, confidence_vec: list):
         label_vec = [0] * len(confidence_vec)
         label_index = list(confidence_vec).index(max(confidence_vec))
         label_vec[label_index] = 1

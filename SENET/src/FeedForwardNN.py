@@ -5,7 +5,7 @@
 # where x' = [x | 1] and W_1' is the matrix W_1 appended with a new row with elements b_1's.
 # Similarly, for h * W_2 + b_2
 import pickle
-
+from config import *
 import tensorflow as tf
 
 from data_entry_structures import DataSet
@@ -27,9 +27,9 @@ class FNN:
             w_1 = self.init_weights((self.x_size, self.h_size))
             w_2 = self.init_weights((self.h_size, self.y_size))
             self.yhat = self.forwardprop(self.X, w_1, w_2)
-            self.predict = self.tf.argmax(self.yhat, axis=1)
+            self.predict = tf.argmax(self.yhat, axis=1)
             self.correct_pred = tf.equal(self.predict, tf.argmax(self.y, 1))
-            self.confidence = tf.nn.softmax(self.predict)
+            self.confidence = tf.nn.softmax(self.forwardprop(self.X, w_1, w_2))
 
     def train(self, train_set: DataSet):
         with tf.Session(graph=self.graph) as sess:
@@ -48,15 +48,34 @@ class FNN:
             with open(self.label_encoder_pickle, "wb") as encoder_fout:
                 pickle.dump(train_set.label_encoder, encoder_fout)
 
+    def classify(self, feature_vecs: DataSet):
+        """
+        Classify a given entry
+        :param feature_vec:
+        :param classify_res_file The file to store classification result
+        :return: One type of classes
+        """
+        res = []
+        with tf.Session(graph=self.graph) as sess:
+            saver = tf.train.Saver()
+            saver.restore(sess, self.model_path)
+            classify_X, classify_y, classify__word_pair = feature_vecs.all()
+            confidence_score = sess.run(self.confidence, feed_dict={self.X: classify_X})
+            res.append(classify__word_pair)
+            res.append(confidence_score)
+
+        with open(self.label_encoder_pickle, 'rb') as pickle_in:
+            # classifier use its own label encoder and don't trust the one provided by dataset
+            label_encoder = pickle.load(pickle_in)
+        return res, label_encoder
+
     def test(self, test_set: DataSet):
-        pred_label_index = tf.argmax(self.predict, 1)
-        correct_pred = tf.equal(pred_label_index, tf.argmax(self.y, 1))
         with tf.Session(graph=self.graph) as sess:
             saver = tf.train.Saver()
             saver.restore(sess, self.model_path)
             test_X, test_y, test_word_pair = test_set.all()
-            is_correct = sess.run(correct_pred, feed_dict={self.X: test_X, self.y: test_y})
-            confidence_score = sess.run(self.confidence, feed_dict={self.x: test_X})
+            is_correct = sess.run(self.correct_pred, feed_dict={self.X: test_X, self.y: test_y})
+            confidence_score = sess.run(self.confidence, feed_dict={self.X: test_X})
             res = (is_correct, test_word_pair, confidence_score)
         return res
 
@@ -124,6 +143,31 @@ class FNN:
         h = tf.nn.sigmoid(tf.matmul(X, w_1))  # The \sigma function
         yhat = tf.matmul(h, w_2)  # The \varphi function
         return yhat
+
+    def ten_fold_test(self, data_set: DataPrepare):
+        result_file = RESULT_DIR + os.sep + "FeedForward_Result{}.txt".format(len(os.listdir(RESULT_DIR)))
+        result_csv = RESULT_DIR + os.sep + "csv" + os.sep + "FeedForward_result{}.csv".format(
+            len(os.listdir(RESULT_DIR)))
+        with open(result_file, "w", encoding='utf8') as fout, open(result_csv, "w", encoding='utf8') as csv_fout:
+            fout.write("Label encoding:")
+            for l_type in data_set.encoder.all_types:
+                fout.write("{}={}\n".format(l_type, data_set.encoder.one_hot_encode(l_type)))
+            fout.write("label,correctness,w1,w2,confidence\n")
+            a_acc = a_recall = a_pre = a_f1 = 0
+            for index, (train_set, test_set) in enumerate(data_set.ten_fold()):
+                print("Start fold {}".format(index))
+                self.train(train_set)
+                tf.reset_default_graph()
+                res = self.test(test_set)
+                re, pre, f1, acc = self.eval(res, data_set.encoder)
+                write_csv([re, pre, f1, acc], csv_fout)
+                self.write_res(res, fout, data_set.encoder)
+                a_recall += re
+                a_pre += pre
+                a_f1 += f1
+                a_acc += acc
+            print("Average Recall={}\nAverage Precision={}\nAverage F1={}\nAverage Accuracy={}\n".
+                  format(a_recall / 10, a_pre / 10, a_f1 / 10, a_acc / 10))
 
     def run(self):
         data_set = DataPrepare()
@@ -193,11 +237,20 @@ class FNN:
                 print(avg_str)
         tf.reset_default_graph()
 
+    def write_classify_res(self, file_path, res, label_encoder: Encoder):
+        # TODO inlcude encoder information in result
+        with open(file_path, "w", encoding="utf8") as fout:
+            fout.write("Label Encoding:\n")
+            for l_type in label_encoder.all_types:
+                fout.write("{}={}\n".format(l_type, label_encoder.one_hot_encode(l_type)))
+            for (test_word_pairs, confidence_score) in zip(res[0], res[1]):
+                fout.write("{},{}\n".format(str(test_word_pairs), str(confidence_score)))
+
 
 if __name__ == '__main__':
     for i in range(10):
-        fnn = FNN()
         data = DataPrepare("dataset_filter.pickle", feature_pipe=None, raw_materials=None,
                            rebuild=False)
+        fnn = FNN(data.get_vec_length(), FNN_MODEL_DIR, FNN_ENCODER_PATH)
         fnn.train_test(data)
         print("Round {} finished".format(i))

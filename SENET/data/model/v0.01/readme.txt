@@ -1,1 +1,0 @@
-model without hyper.txt and trained with 500 data entries
