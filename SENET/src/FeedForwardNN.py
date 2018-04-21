@@ -4,14 +4,61 @@
 # NOTE: In order to make the code simple, we rewrite x * W_1 + b_1 = x' * W_1'
 # where x' = [x | 1] and W_1' is the matrix W_1 appended with a new row with elements b_1's.
 # Similarly, for h * W_2 + b_2
+import pickle
+
 import tensorflow as tf
+
+from data_entry_structures import DataSet
 from data_prepare import DataPrepare, SENETRawDataBuilder, Encoder
 from config import *
 
 
 class FNN:
-    def __init__(self):
-        pass
+    def __init__(self, vec_len, model_path, label_encoder_pickle):
+        self.x_size = vec_len
+        self.h_size = 128
+        self.y_size = 2
+        self.graph = tf.Graph()
+        self.model_path = model_path
+        self.label_encoder_pickle = label_encoder_pickle
+        with self.graph.as_default():
+            self.X = tf.placeholder("float", shape=[None, self.x_size])
+            self.y = tf.placeholder("float", shape=[None, self.y_size])
+            w_1 = self.init_weights((self.x_size, self.h_size))
+            w_2 = self.init_weights((self.h_size, self.y_size))
+            self.yhat = self.forwardprop(self.X, w_1, w_2)
+            self.predict = self.tf.argmax(self.yhat, axis=1)
+            self.correct_pred = tf.equal(self.predict, tf.argmax(self.y, 1))
+            self.confidence = tf.nn.softmax(self.predict)
+
+    def train(self, train_set: DataSet):
+        with tf.Session(graph=self.graph) as sess:
+            cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=self.yhat, labels=self.y))
+            updates = tf.train.GradientDescentOptimizer(0.01).minimize(cost)
+            init = tf.global_variables_initializer()
+            saver = tf.train.Saver()
+            sess.run(init)
+            train_X, train_y, train_word_pair = train_set.all()
+            for epoch in range(20):
+                # Train with each example
+                print("Running epoch {}".format(epoch))
+                for i in range(len(train_X)):
+                    sess.run(updates, feed_dict={self.X: train_X[i: i + 1], self.y: train_y[i: i + 1]})
+            saver.save(sess, self.model_path)
+            with open(self.label_encoder_pickle, "wb") as encoder_fout:
+                pickle.dump(train_set.label_encoder, encoder_fout)
+
+    def test(self, test_set: DataSet):
+        pred_label_index = tf.argmax(self.predict, 1)
+        correct_pred = tf.equal(pred_label_index, tf.argmax(self.y, 1))
+        with tf.Session(graph=self.graph) as sess:
+            saver = tf.train.Saver()
+            saver.restore(sess, self.model_path)
+            test_X, test_y, test_word_pair = test_set.all()
+            is_correct = sess.run(correct_pred, feed_dict={self.X: test_X, self.y: test_y})
+            confidence_score = sess.run(self.confidence, feed_dict={self.x: test_X})
+            res = (is_correct, test_word_pair, confidence_score)
+        return res
 
     def eval(self, results, encoder: Encoder):
         tn = 0
