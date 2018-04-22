@@ -19,7 +19,8 @@ class FNN:
         self.h1_size = 128
         self.h2_size = 64
         self.y_size = 2
-        self.epoch = 20
+        self.epoch = 200
+        self.batch = 100
         self.graph = tf.Graph()
         self.model_path = model_path
         self.label_encoder_pickle = label_encoder_pickle
@@ -27,12 +28,12 @@ class FNN:
             self.X = tf.placeholder("float", shape=[None, self.x_size])
             self.y = tf.placeholder("float", shape=[None, self.y_size])
 
-            weights = {
+            self.weights = {
                 'h1': tf.Variable(tf.random_normal([self.x_size, self.h1_size])),
                 'h2': tf.Variable(tf.random_normal([self.h1_size, self.h2_size])),
                 'out': tf.Variable(tf.random_normal([self.h2_size, self.y_size]))
             }
-            biases = {
+            self.biases = {
                 'b1': tf.Variable(tf.random_normal([self.h1_size])),
                 'b2': tf.Variable(tf.random_normal([self.h2_size])),
                 'out': tf.Variable(tf.random_normal([self.y_size]))
@@ -41,12 +42,12 @@ class FNN:
             self.yhat = self.forwardprop(self.X)
             self.predict = tf.argmax(self.yhat, axis=1)
             self.correct_pred = tf.equal(self.predict, tf.argmax(self.y, 1))
-            self.confidence = tf.nn.softmax(self.forwardprop(self.X))
+            self.confidence = tf.nn.softmax(self.yhat)
 
     def train(self, train_set: DataSet):
         with tf.Session(graph=self.graph) as sess:
             cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=self.yhat, labels=self.y))
-            updates = tf.train.GradientDescentOptimizer(0.01).minimize(cost)
+            updates = tf.train.GradientDescentOptimizer(0.001).minimize(cost)
             init = tf.global_variables_initializer()
             saver = tf.train.Saver()
             sess.run(init)
@@ -54,8 +55,8 @@ class FNN:
             for epoch in range(self.epoch):
                 # Train with each example
                 print("Running epoch {}".format(epoch))
-                for i in range(len(train_X)):
-                    sess.run(updates, feed_dict={self.X: train_X[i: i + 1], self.y: train_y[i: i + 1]})
+                for i in range(int(len(train_X) / self.batch)):
+                    sess.run(updates,feed_dict={self.X: train_X[i * self.batch: i + self.batch],self.y: train_y[i * self.batch: i + self.batch]})
             saver.save(sess, self.model_path)
             with open(self.label_encoder_pickle, "wb") as encoder_fout:
                 pickle.dump(train_set.label_encoder, encoder_fout)
@@ -86,8 +87,8 @@ class FNN:
             saver = tf.train.Saver()
             saver.restore(sess, self.model_path)
             test_X, test_y, test_word_pair = test_set.all()
-            is_correct = sess.run(self.correct_pred, feed_dict={self.X: test_X, self.y: test_y})
             confidence_score = sess.run(self.confidence, feed_dict={self.X: test_X})
+            is_correct = sess.run(self.correct_pred, feed_dict={self.X: test_X, self.y: test_y})
             res = (is_correct, test_word_pair, confidence_score)
         return res
 
