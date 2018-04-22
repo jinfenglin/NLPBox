@@ -160,9 +160,9 @@ def run_add_definition_from_file(sql_db, definition_dict):
 if __name__ == "__main__":
     proxies = os.path.join(DATA_DIR, "proxy_list.txt")
     sql_db = os.path.join(DATA_DIR, "term_definitions.db")
-    vocab_path = os.path.join(DATA_DIR, "vocabulary.txt")
+    vocab_path = os.path.join(DATA_DIR, "expansion_on_fly.txt")
     scraper = GoogleScraperWraper(proxies)
-    mode = "dry_run"
+    mode = "add_words"
     if mode == "add_definition":
         # Add extra vocabulary and definition into the database.
         glossory_data_dir = os.path.join(PROJECT_ROOT, "..", "GlossaryProcess", "data")
@@ -187,9 +187,9 @@ if __name__ == "__main__":
             terms = ["Objective-C", "Scala", "Swift", "Shell", "TypeScript", "go", "C#", "CSS"]
         # Build the database from scratch by give a list of vocabulary
         #run_wikipedia_parse_mission(sql_db, terms, scraper)
-        # run_pcMag_mission(sql_db, terms, scraper, use_proxy=True)
-        # run_stackoverflow_mission(sql_db, terms, scraper, use_proxy=True)
-        # run_quora_mission(sql_db, terms, scraper, use_proxy=True)
-        # run_innolution_mission(sql_db, terms, scraper, use_proxy=True)
+        run_pcMag_mission(sql_db, terms, scraper, use_proxy=True)
+        run_stackoverflow_mission(sql_db, terms, scraper, use_proxy=True)
+        run_quora_mission(sql_db, terms, scraper, use_proxy=True)
+        run_innolution_mission(sql_db, terms, scraper, use_proxy=True)
         # run_regularParse_mission(sql_db, terms, scraper, use_proxy=True)
     print("Finished...")

@@ -112,7 +112,8 @@ class SENETRawDataBuilder:
         try:
             w1_docs = sql_manger.get_content_for_query(w1)
             w2_docs = sql_manger.get_content_for_query(w2)
-
+            if w1 == "build" or w2 == "build":
+                print("-")
             for key in w1_docs:
                 if len(w1_docs[key]) > 0:
                     w1_docs[key] = json.loads(w1_docs[key])

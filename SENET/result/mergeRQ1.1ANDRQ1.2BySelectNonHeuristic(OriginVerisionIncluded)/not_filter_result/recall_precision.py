@@ -2,8 +2,8 @@ import os
 
 thresholds = [x / 100 for x in range(0, 100, 2)]
 type_dict = {}
-for file_name in os.listdir("./"):
-    if not file_name.endswith("csv"):
+for file_name in os.listdir("."):
+    if not file_name.endswith(".txt") or not os.path.isfile(file_name):
         continue
     type = file_name.split("_")[0]
     if type not in type_dict:
@@ -21,7 +21,7 @@ for file_name in os.listdir("./"):
                 type_dict[type].append((label, pos_score, correctness))
 
 for type in type_dict:
-    with open("{}.roc".format(type),"w") as fout:
+    with open("{}_roc.csv".format(type),"w") as fout:
         for threshold in thresholds:
             tp = 0
             fp = 0
@@ -53,3 +53,4 @@ for type in type_dict:
             recall = tp / (tp + fn)
             precision = tp / (tp + fp)
             fout.write("{},{}\n".format(recall, precision))
+print("Done")
