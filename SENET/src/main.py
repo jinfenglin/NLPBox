@@ -9,7 +9,7 @@ if __name__ == '__main__':
     try:
         mode = sys.argv[1]
     except Exception as e:
-        mode = "classify"
+        mode = "ten_fold"
     try:
         cur_node_partition = int(sys.argv[2])
         total_partition = int(sys.argv[3])

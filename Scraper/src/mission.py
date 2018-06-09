@@ -1,3 +1,5 @@
+from multiprocessing import Process
+
 from sql_db_manager import *
 import json
 from web_page_parser import StackOverflowParser
@@ -50,7 +52,7 @@ class Mission:
                 self.logger.info("Thread-{} Progress:{}/{}".format(thread_id, proced_num, total_num))
             for link in links:
                 link_count += 1
-                if link_count > link_limit:
+                if link_count > link_limit and link_limit > 0:
                     break
                 link_url = link.link
                 html_page = self.scraper.get_html_for_a_link(link_url, delay=delay, timeout=timeout,
@@ -65,24 +67,25 @@ class Mission:
         self.db_dumps[thread_id] = db_dump
         self.logger.info("Thread-{} have finished work, {} entries are processed.".format(thread_id, len(db_dump)))
 
-    def run(self, delay=0.1, timeout=10, thread_num=1, link_limit=10, override_existing=True):
+    def run(self, delay=0.1, timeout=10, process_num=1, page_num = 1000, link_limit=10, override_existing=True):
         """
 
         :param delay: The time interval between 2 requests
         :param timeout: The maximal time for each request
-        :param thread_num: The number of threads
+        :param process_num: The number of threads
         :param link_limit: The maximal links processed for each query
         :param override_existing: Whether override the existing content in database
         :return:
         """
         self.sqlite_manager.create_table(self.mission_name)  # mission name as table name
         query_strs = [x.query for x in self.scrap_queries]
-        query_link_dict = self.scraper.scrap_links(query_strs)
-        sub_query_link_dicts = split_dict(query_link_dict, thread_num)
+        query_link_dict = self.scraper.scrap_links(query_strs, page_num = page_num)
+
+        sub_query_link_dicts = split_dict(query_link_dict, process_num)
         all_threads = []
-        for i in range(thread_num):
+        for i in range(process_num):
             sub_query_link_dict = sub_query_link_dicts[i]
-            t = threading.Thread(target=self.__fetch_content_worker,
+            t = Process(target=self.__fetch_content_worker,
                                  args=(i, sub_query_link_dict, delay, timeout, link_limit))
             all_threads.append(t)
             t.start()
@@ -119,7 +122,7 @@ if __name__ == "__main__":
     scraper = GoogleScraperWraper(proxies)
     stk_parser = StackOverflowParser()
     mission = Mission(sql_db, "test_mission", [sp1, sp2, sp3, sp4], stk_parser, scraper, use_proxy=True)
-    mission.run(thread_num=4)
+    mission.run(process_num=4)
 
     sqlM = Sqlite3Manger(sql_db)
     res = sqlM.get_content_for_query(sp1.to_db_primary_key_format())

@@ -1,30 +1,67 @@
+team member	team members
+complete	completed
+resolve	resolved
 deployment	deploy
 acceptance test	user acceptance test
 development	developer
+product backlog item	sprint backlog item
+computer	completed
 team demo	demo
+sprint backlog	sprint backlog item
+commitment	commit
+product backlog grooming	backlog grooming
+backlog item	sprint backlog item
 acceptance testing	user acceptance test
+remote team member	team members
 sprint demo	demo
 result	test result
+continuous deployment	deployment
+prioritized list	prioritized
 testing	test result
 test	test result
+backlog	backlog grooming
+automated build	build
+grooming	backlog grooming
 system demo	demo
+delivery	deployment
 schedule	release schedule
+estimation	estimated cost
 process area	risky areas
+estimate	estimated cost
+process	in progress
+team	team members
+risk	estimated cost
 subject area	risky areas
+team demo	team members
 test	user acceptance test
+ideal hours	estimated hours
 acceptance	user acceptance test
+deployment plan	deployment
 team	task
 testing	user acceptance test
+estimation	estimated hours
 demo demonstration	demo
+holding cost	estimated cost
 test class	test result
+transaction cost	estimated cost
+expensed cost	estimated cost
+estimate	estimated hours
+sprint	sprint backlog item
+scrum	sprint backlog item
 schedule development	developer
+system	completed
 software development	developer
 customer development	developer
 risk	task
+development	deployment
+ideal hour	estimated hours
 test criteria	test result
 development team	developer
+backlog item	backlog grooming
+team room	team members
 test coverage	test result
 release goal	release schedule
+Scrum	sprint backlog item
 sign up for tasks	task
 iterative development	developer
 test	task
@@ -46,52 +83,73 @@ test-driven development	developer
 pass	task
 rating	demo
 continuous deployment	deploy
+item	sprint backlog item
 requirements development	developer
 formal testing	user acceptance test
 power of test	user acceptance test
 law	task
 cast	task
 story test	test result
+menu	deployment
+sprint planning	sprint backlog item
 all-at-once development	developer
 tool	task
 software testing	user acceptance test
 unit testing	user acceptance test
+work in process	in progress
 fact	task
 duration	average story duration
+sprint mapping	sprint backlog item
 deep	demo
 computer	incomplete
+sprint review	sprint backlog item
 unit testing	test result
 data	task
 class	task
 problem	ticket
 user requirement	user acceptance test
 waste	task
+feature	in progress
+feature team	team members
 component testing	user acceptance test
+sprint goal	sprint backlog item
 complete	incomplete
 backlog	task
 term	task
+co-located team	team members
+test	deployment
+feature teams	team members
+sprint execution	sprint backlog item
+sprint demo	sprint backlog item
 time	task
 slack	task
 exploratory testing	user acceptance test
 regression testing	user acceptance test
 list	task
+sprint plan	sprint backlog item
 user interface	user acceptance test
 team	demo
 user class	user acceptance test
+style	build
 agile software development	developer
 data	demo
 back-to-back testing	user acceptance test
+environment	deployment
 web	demo
 deployment plan	deploy
 fail	task
+backlog	sprint backlog item
 view	task
 time	ticket
+sprint planning meeting	sprint backlog item
 test	demo
+unit	build
 stage	task
 devops	demo
 reuse	task
 read	demo
 menu	demo
+sprint retrospective	sprint backlog item
 tree	task
 job	task
 user stories	user acceptance test
@@ -103,6 +161,7 @@ design	demo
 version	demo
 issue	task
 item	demo
+product backlog	sprint backlog item
 step	task
 net	demo
 view	ticket
@@ -112,6 +171,8 @@ user	task
 down	demo
 set	demo
 name	demo
+insight backlog	sprint backlog item
+in-process product	in progress
 acceptance criteria	user acceptance test
 formal testing	test result
 theme	demo
@@ -122,11 +183,16 @@ IEEE	task
 task	ticket
 fact	ticket
 domain	demo
+field	build
+scrum team	team members
 cliche	ticket
+Scrum team	team members
+backlog	build
 lead	task
 view	demo
 behavior driven development	developer
 spike	task
+software	deployment
 done	task
 software	deploy
 role	task
@@ -141,8 +207,10 @@ pilot	ticket
 acceptance test	test result
 table	task
 statistical test	test result
+complexity	completed
 model	demo
 IEEE	demo
+project team	team members
 unit	task
 place	task
 budget	ticket
@@ -150,19 +218,28 @@ fault	task
 task	demo
 key	demo
 exit	task
+devops	deployment
 spike	ticket
+definition	resolved
 user story	user acceptance test
 cause	task
+sprint	build
 user	demo
 item	task
 law	demo
+fault	completed
 scale	task
+fail	build
+suite	build
+bundle	build
 invest	ticket
 devops	developer
 design	task
 fact	demo
 log	task
+test	build
 test-first development	test result
+view	build
 test	ticket
 test driven development	test result
 risk	demo
@@ -175,6 +252,7 @@ actor	demo
 tool	demo
 pilot	demo
 load	task
+capacity	completed
 software testing	test result
 lean	demo
 batch	task
@@ -182,36 +260,52 @@ source	ticket
 menu	task
 epic	task
 net	task
+context	completed
+up	completed
 asset	task
 word	task
 run	task
 accept	ticket
 pilot	deploy
+rule	build
 job	demo
 event	task
 domain	task
 down	task
+product backlog refinement	sprint backlog item
 list	ticket
 loop	task
 item	ticket
 field	demo
+experiment	deployment
+cost of delay	estimated cost
+risk	build
+product backlog grooming	sprint backlog item
 net	ticket
 estimation	task
 accept	user acceptance test
 box	task
+component team	team members
 rule	task
+agile	build
+development team	team members
+domain	commit
 measure	task
 level	demo
 system	task
+customer	deployment
+user	build
 scope	task
 software	ticket
 input	ticket
+template	completed
 chicken	ticket
 defect	demo
 testing	task
 style	task
 note	demo
 epic	demo
+submit	commit
 testing	deploy
 set	ticket
 value	task
@@ -226,6 +320,7 @@ component testing	test result
 layer	task
 story	task
 proof	demo
+data	completed
 genba	demo
 code	demo
 devops	deploy
@@ -234,18 +329,23 @@ test-driven development	test result
 metric	task
 up	task
 pilot	task
+just in time	in flight
 resume	demo
 exit	demo
 model	task
+tool	build
 taskboard	task
 clear	demo
 move	task
 object	ticket
+product	deployment
 root	task
 goal	demo
 build	task
 cycle	ticket
 run	demo
+pilot	build
+just in time	in progress
 invest	task
 idle	ticket
 user	ticket
@@ -254,6 +354,7 @@ level	task
 event	ticket
 deep	task
 acceptance testing	test result
+community	commit
 vision	task
 case	demo
 client	ticket
@@ -262,6 +363,9 @@ role	demo
 database	task
 theme	task
 log	demo
+distributed team	team members
+lead	build
+refinement	deployment
 access	task
 release	task
 loop	demo
@@ -274,6 +378,7 @@ vision	ticket
 load	demo
 program	demo
 tool	ticket
+time	build
 graph	task
 fixed-date release	release schedule
 box	demo
@@ -286,6 +391,9 @@ unit	demo
 backlog	developer
 scope	ticket
 method	deploy
+component	completed
+cost accounting	estimated cost
+spike	build
 stream	task
 period	demo
 health	task
@@ -301,23 +409,32 @@ limits	ticket
 key	ticket
 rule	demo
 effort	ticket
+economy	completed
 project	ticket
+epic	build
+scale	build
 change	task
 entry	task
 actor	task
 report	deploy
+continuous delivery	deployment
 epic	deploy
+budget	build
 Kanban	task
 usability testing	test result
 method	task
+effort estimation	estimated cost
 cast	ticket
 actor	ticket
 team	ticket
 capex	task
 health	deploy
+portfolio backlog	sprint backlog item
 waste	ticket
 software	demo
 field	ticket
+goal	build
+overload	build
 entry	deploy
 scrum	task
 effort	demo
@@ -330,171 +447,54 @@ reuse	ticket
 field	task
 scope	demo
 model	ticket
+exit	build
+fault	build
 system	demo
+operation	deployment
 issue	ticket
 safety	ticket
+box	build
 software	task
+point	build
+operations	deployment
 domain	deploy
 note	ticket
 root	demo
 log	deploy
+result	completed
 step	ticket
 reuse	deploy
 analysis	task
 resume	task
 driver	demo
+include	deployment
+design	build
 table	ticket
 driver	ticket
+role	build
 ready	demo
 startup	task
+monitoring	deployment
 clear	task
 fault	ticket
 event	deploy
 return	task
 place	ticket
+write	build
+load	build
 level	developer
 point	task
 idle	demo
 write	task
 effort	task
+read	build
 chart	task
 law	deploy
+component	deployment
 pig	task
+event	build
 exit	ticket
 input	task
+backlog refinement	sprint backlog item
 invest	demo
 group	task
-client	demo
-vision	demo
-definition	demo
-tree	demo
-economy	deploy
-term	ticket
-defect	ticket
-word	deploy
-resource	resolved
-artefact	task
-entity	deploy
-clear	ticket
-context	ticket
-done	ticket
-survey	ticket
-rework	task
-sample	task
-backlog	ticket
-package	task
-metric	demo
-proof	task
-mura	task
-frequent releases	release schedule
-cast	demo
-model	deploy
-case	ticket
-period	deploy
-script	ticket
-input	incomplete
-request	ticket
-scale	ticket
-access	demo
-slack	ticket
-timebox	ticket
-web	ticket
-move	demo
-complexity	incomplete
-effort	deploy
-owner	task
-spike	demo
-format	ticket
-delivery	developer
-ready	task
-result	task
-object	task
-role	ticket
-output	task
-report	ticket
-limits	demo
-write	ticket
-unit	ticket
-point	ticket
-package	ticket
-chickens	ticket
-shell	demo
-queue	demo
-cliche	task
-metric	deploy
-segment	ticket
-result	ticket
-class	demo
-developer	deploy
-pattern	task
-issue	demo
-code	ticket
-genba	task
-format	demo
-template	deploy
-standup	task
-build	demo
-customer	developer
-timebox	demo
-review	ticket
-suite	ticket
-entry	demo
-mixin	task
-ready	deploy
-template	incomplete
-feature	task
-submit	ticket
-estimate	task
-template	task
-vision	deploy
-design	ticket
-deep	deploy
-points	task
-mixin	demo
-asset	demo
-tool	deploy
-key	deploy
-values	task
-cycle	task
-stream	demo
-client	task
-team	deploy
-deployment	developer
-agile	task
-sample	demo
-cookie	task
-coding	demo
-entity	ticket
-suite	task
-management	ticket
-owner	ticket
-data	deploy
-sprint	ticket
-backlog	deploy
-process	ticket
-law	ticket
-stage	ticket
-name	ticket
-job	deploy
-domain	ticket
-purpose	task
-service	ticket
-value	ticket
-timebox	task
-scrum	demo
-fault	demo
-values	ticket
-output	ticket
-health	demo
-sample	deploy
-entropy	deploy
-crisis	task
-velocity	deploy
-mura	demo
-complete	task
-mixin	ticket
-pig	demo
-rule	ticket
-constraint	developer
-step	deploy
-survey	deploy

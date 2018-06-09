@@ -44,7 +44,7 @@ class GoogleScraperWraper:
         if clear_cache and os.path.isdir(self.default_cache_dir):
             shutil.rmtree(self.default_cache_dir)
 
-    def scrap_links(self, query_str_list, search_engine=["bing"], page_num=1, method="http", cache="True"):
+    def scrap_links(self, query_str_list, search_engine=["bing"], page_num=12000, method="http", cache="True"):
         """
         Scraper for a list of queries and get the links as a result. Use search engines to scrap the links.
 
@@ -72,7 +72,9 @@ class GoogleScraperWraper:
         res = {}
         for serp in db_session.serps:
             query = serp.query
-            res[query] = serp.links
+            if query not in res:
+                res[query] = []
+            res[query].extend(serp.links)
         return res
 
     def __request(self, link, timeout):

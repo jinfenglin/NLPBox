@@ -57,12 +57,12 @@ with open(result_file_path) as fin:
 
     for threshold in thresholds:
         with open(os.path.join(analysis_fold, str(threshold) + ".txt"), 'w', encoding="utf8") as fout, open(
-                os.path.join(analysis_fold, str(threshold) + "_no_score.txt"), 'w', encoding="utf8") as f_no_score:
+                os.path.join(analysis_fold, str(threshold) + "_score.txt"), 'w', encoding="utf8") as f_no_score:
             above_threshold = [x for x in data_lines if positive_score(x, index) > threshold]
             for line in above_threshold:
                 fout.write(line + "\n")
-                w1,w2 = get_words(line)
-                f_no_score.write("{},{}\n".format(w1, w2))
+                w1, w2 = get_words(line)
+                f_no_score.write("{},{},{}\n".format(w1, w2, positive_score(line, index)))
             fout.write("{} pairs have probabelity above {}".format(len(above_threshold), threshold))
     with open(os.path.join(analysis_fold, "sorted.txt"), "w", encoding="utf8") as fout:
         for line in data_lines:

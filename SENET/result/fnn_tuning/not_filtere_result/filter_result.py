@@ -46,8 +46,7 @@ for file_name in os.listdir("."):
     tp = 0
     fn = 0
     fp = 0
-    with open(file_name) as fin, open("../filter_result/{}".format(file_name), "w") as fout, open(
-            "../filter_result/csv/{}".format(file_name), "w") as csv_fout:
+    with open(file_name) as fin, open("../filter_result/{}".format(file_name), "w") as fout: #,open("../filter_result/csv/{}".format(file_name), "w") as csv_fout:
         cnt = 0
         for line in fin:
             cnt += 1
@@ -59,7 +58,7 @@ for file_name in os.listdir("."):
                 recall = tp / (tp + fn)
                 f1 = 2 * (precision * recall) / (precision + recall)
                 accuracy = (tp + tn) / (tp + tn + fn + fp)
-                csv_fout.write("{},{},{},{}\n".format(recall, precision, f1, accuracy))
+                #csv_fout.write("{},{},{},{}\n".format(recall, precision, f1, accuracy))
                 tn = 0
                 tp = 0
                 fn = 0
@@ -92,4 +91,4 @@ for file_name in os.listdir("."):
         recall = tp / (tp + fn)
         f1 = 2 * (precision * recall) / (precision + recall)
         accuracy = (tp + tn) / (tp + tn + fn + fp)
-        csv_fout.write("{},{},{},{}\n".format(recall, precision, f1, accuracy))
+        #csv_fout.write("{},{},{},{}\n".format(recall, precision, f1, accuracy))

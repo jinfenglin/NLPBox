@@ -37,7 +37,7 @@ def run_stackoverflow_mission(sql_db, terms, scraper, use_proxy, overriding_exis
 
     stk_parser = StackOverflowParser()
     mission = Mission(sql_db, "stackoverflow", stk_querys, stk_parser, scraper, use_proxy)
-    mission.run(delay=0.2, thread_num=4, override_existing=overriding_existing)
+    mission.run(delay=0.2, process_num=4, override_existing=overriding_existing)
 
 
 def run_quora_mission(sql_db, terms, scraper, use_proxy, overriding_existing=True, topic="software engineering"):
@@ -48,7 +48,7 @@ def run_quora_mission(sql_db, terms, scraper, use_proxy, overriding_existing=Tru
 
     quora_parser = QuoraParser()
     mission = Mission(sql_db, "quora", quora_querys, quora_parser, scraper, use_proxy)
-    mission.run(delay=0.2, thread_num=4, override_existing=overriding_existing)
+    mission.run(delay=0.2, process_num=4, override_existing=overriding_existing)
 
 
 def run_pcMag_mission(sql_db, terms, scraper, use_proxy, overriding_existing=False):
@@ -58,7 +58,7 @@ def run_pcMag_mission(sql_db, terms, scraper, use_proxy, overriding_existing=Fal
         pcMag_queries.append(scrap_query)
     pcMag_parser = PcMagParser()
     mission = Mission(sql_db, "pcMag", pcMag_queries, pcMag_parser, scraper, use_proxy)
-    mission.run(delay=0, thread_num=4, link_limit=1, override_existing=overriding_existing)
+    mission.run(delay=0, process_num=4, link_limit=1, override_existing=overriding_existing)
 
 
 def run_innolution_mission(sql_db, terms, scraper, use_proxy, overriding_existing=False):
@@ -68,7 +68,7 @@ def run_innolution_mission(sql_db, terms, scraper, use_proxy, overriding_existin
         innolution_queires.append(scrap_query)
     innolution_parser = InnolutionParser()
     mission = Mission(sql_db, "pcMag", innolution_queires, innolution_parser, scraper, use_proxy)
-    mission.run(delay=0.2, thread_num=4, link_limit=1, override_existing=overriding_existing)
+    mission.run(delay=0.2, process_num=4, link_limit=1, override_existing=overriding_existing)
 
 
 def run_regularParse_mission(sql_db, terms, scraper, use_proxy, overriding_existing=True, topic="software engineering"):
@@ -78,7 +78,7 @@ def run_regularParse_mission(sql_db, terms, scraper, use_proxy, overriding_exist
         regular_terms.append(scrap_query)
     regular_parser = RegularParagraphParser()
     mission = Mission(sql_db, "regular", regular_terms, regular_parser, scraper, use_proxy)
-    mission.run(thread_num=4, override_existing=overriding_existing)
+    mission.run(process_num=4, override_existing=overriding_existing)
 
 
 def run_wikipedia_parse_mission(sql_db, terms, override_existing=True):

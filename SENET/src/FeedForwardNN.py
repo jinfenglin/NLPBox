@@ -5,6 +5,9 @@
 # where x' = [x | 1] and W_1' is the matrix W_1 appended with a new row with elements b_1's.
 # Similarly, for h * W_2 + b_2
 import pickle
+
+from nltk import PorterStemmer
+
 from config import *
 import tensorflow as tf
 
@@ -16,9 +19,9 @@ from config import *
 class FNN:
     def __init__(self, vec_len, model_path, label_encoder_pickle):
         self.x_size = vec_len
-        self.h_size = 256
+        self.h_size = 15
         self.y_size = 2
-        self.epoch = 40
+        self.epoch = 200
         self.batch = 100
         self.graph = tf.Graph()
         self.model_path = model_path
@@ -43,7 +46,7 @@ class FNN:
             train_X, train_y, train_word_pair = train_set.all()
             for epoch in range(self.epoch):
                 # Train with each example
-                print("Running epoch {}".format(epoch))
+                #print("Running epoch {}".format(epoch))
                 for i in range(int(len(train_X) / self.batch)):
                     sess.run(updates, feed_dict={self.X: train_X[i * self.batch: (i + 1) * self.batch],
                                                  self.y: train_y[i * self.batch: (i + 1) * self.batch]})
@@ -249,11 +252,68 @@ class FNN:
             for (test_word_pairs, confidence_score) in zip(res[0], res[1]):
                 fout.write("{},{}\n".format(str(test_word_pairs), str(confidence_score)))
 
+    def __stem_Tokens(self, words):
+        porter_stemmer = PorterStemmer()
+        return [porter_stemmer.stem(x) for x in words.split(" ")]
+
+    def is_heuristic(self, entry):
+        readable_info = entry[2]
+        w1 = readable_info[0]
+        w2 = readable_info[1]
+        w1_stems = self.__stem_Tokens(w1)
+        w2_stems = self.__stem_Tokens(w2)
+        if w1_stems[0] == w2_stems[0] or w1_stems[-1] == w2_stems[-1]:
+            return True
+        return False
+
+    def reduce_data_set(self, data_set):
+        data_set.data = [x for x in data_set.data if not self.is_heuristic(x)]
+        return data_set
+
+    def special_ten_fold(self, data_set):
+        result_file1 = RESULT_DIR + os.sep + "FNN_train_heu_test_non_heu_Result{}.txt".format(
+            len(os.listdir(RESULT_DIR)))
+        result_csv1 = RESULT_DIR + os.sep + "csv" + os.sep + "FNN_train_heu_test_non_heu_Result{}.csv".format(
+            len(os.listdir(RESULT_DIR)))
+        result_file2 = RESULT_DIR + os.sep + "FNN_train_non_heu_test_non_heu_Result{}.txt".format(
+            len(os.listdir(RESULT_DIR)))
+        result_csv2 = RESULT_DIR + os.sep + "csv" + os.sep + "FNN_train_non_heu_test_non_heu_Result{}.csv".format(
+            len(os.listdir(RESULT_DIR)))
+        with open(result_file1, "w", encoding='utf8') as fout1, open(result_csv1, "w", encoding='utf8') as csv_fout1, \
+                open(result_file2, "w", encoding='utf8') as fout2, open(result_csv2, "w", encoding='utf8') as csv_fout2:
+            fout1.write("label,correctness,w1,w2,confidence\n")
+            fout2.write("label,correctness,w1,w2,confidence\n")
+            for index, (train_set, test_set) in enumerate(data_set.ten_fold()):
+                print("Start fold {}".format(index))
+                # self.train(train_set)
+                # tf.reset_default_graph()
+                reduced_test_set = self.reduce_data_set(test_set)
+                # res = self.test(reduced_test_set)
+                # re, pre, f1, acc = self.eval(res, data_set.encoder)
+                # write_csv([re, pre, f1, acc], csv_fout1)
+                # self.write_res(res, fout1, data_set.encoder)
+
+                reduced_train_set = self.reduce_data_set(train_set)
+                tf.reset_default_graph()
+                self.train(reduced_train_set)
+                res = self.test(reduced_test_set)
+                re, pre, f1, acc = self.eval(res, data_set.encoder)
+                write_csv([re, pre, f1, acc], csv_fout2)
+                self.write_res(res, fout2, data_set.encoder)
+
+
+# if __name__ == '__main__':
+#     for i in range(10):
+#         data = DataPrepare("dataset_origin.pickle", feature_pipe=None, raw_materials=None,
+#                            rebuild=False)
+#         fnn = FNN(data.get_vec_length(), FNN_MODEL_DIR, FNN_ENCODER_PATH)
+#         fnn.train_test(data)
+#         print("Round {} finished".format(i))
 
 if __name__ == '__main__':
     for i in range(10):
         data = DataPrepare("dataset_origin.pickle", feature_pipe=None, raw_materials=None,
                            rebuild=False)
         fnn = FNN(data.get_vec_length(), FNN_MODEL_DIR, FNN_ENCODER_PATH)
-        fnn.train_test(data)
+        fnn.special_ten_fold(data)
         print("Round {} finished".format(i))
