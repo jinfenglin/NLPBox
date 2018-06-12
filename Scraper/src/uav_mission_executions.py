@@ -20,5 +20,5 @@ if __name__ == "__main__":
         scrap_query = ScrapQuery([term], template="{}")
         uav_querys.append(scrap_query)
     parser = RegularParagraphParser()
-    mission = Mission(sql_db, "uav_article", uav_querys, parser, scraper, use_proxy=False)
-    mission.run(delay=1, link_limit=-1, process_num=1, page_num=3000)
+    mission = Mission(sql_db, "uav_article_debug", uav_querys, parser, scraper, use_proxy=True)
+    mission.run(delay=1, thread_num=15, page_num=1500, collect_link=False)

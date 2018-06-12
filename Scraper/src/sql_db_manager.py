@@ -65,6 +65,12 @@ class Sqlite3Manger:
         sql = "INSERT OR IGNORE INTO {} VALUES (\'{}\',\'{}\')".format(table_name, query, content)
         self.__execute(sql)
 
+    def get_rows_for_table(self, table_name, colums):
+        table_name = cleaner.esapce_sql_variable_quote(table_name)
+        columns = ",".join(colums)
+        sql = "SELECT {} FROM {}".format(columns,table_name)
+        return self.__execute(sql)
+
     def get_content_for_query(self, query):
         """
         Find parsed information from all tables for a single query
@@ -88,12 +94,7 @@ class Sqlite3Manger:
 
 
 if __name__ == "__main__":
-    sqlM = Sqlite3Manger("Test.db")
-    sqlM.create_table("test1")
-    sqlM.create_table("test2")
-    sqlM.create_table("test3")
-
-    sqlM.add_or_update_row("test1", "q1", "this is not a json")
-    sqlM.add_or_update_row("test2", "q1", "this is no a json too")
-
-    print(sqlM.get_content_for_query("q1"))
+    sqlM = Sqlite3Manger("google_scraper.db")
+    rows = sqlM.get_rows_for_table("link", ['link', 'serp_id', 'title'])
+    for row in rows:
+        print(row)

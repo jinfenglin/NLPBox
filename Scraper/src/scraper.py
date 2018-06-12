@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from GoogleScraper import scrape_with_config, GoogleSearchError
+
+from ProxyPool import ProxyPool
 from common import *
 import shutil
 import urllib
@@ -9,6 +11,8 @@ import time
 from urllib3 import ProxyManager, make_headers, disable_warnings, exceptions
 import random
 import logging
+
+from sql_db_manager import Sqlite3Manger
 
 
 class GoogleScraperWraper:
@@ -26,13 +30,10 @@ class GoogleScraperWraper:
         disable_warnings(exceptions.InsecureRequestWarning)
         self.default_scraper_db = "google_scraper.db"
         self.default_cache_dir = ".scrapecache"
+
         self.logger = logging.getLogger(__name__)
-        self.proxies = []  # http://spys.one/en/https-ssl-proxy/ Available proxies
-        if proxy_file != "":
-            with open(proxy_file) as fin:
-                for proxy_ip in fin.readlines():
-                    proxy_ip = proxy_ip.strip("\n\t\r ")
-                    self.proxies.append(proxy_ip)
+        self.proxy_manger = ProxyPool(proxy_file)
+        self.proxy_manger.run()
 
     def clear(self, clear_cache=True):
         """
@@ -44,7 +45,8 @@ class GoogleScraperWraper:
         if clear_cache and os.path.isdir(self.default_cache_dir):
             shutil.rmtree(self.default_cache_dir)
 
-    def scrap_links(self, query_str_list, search_engine=["bing"], page_num=12000, method="http", cache="True"):
+    def scrap_links(self, query_str_list, search_engine=["bing"], page_num=12000, method="http", cache="True",
+                    collect_link=True):
         """
         Scraper for a list of queries and get the links as a result. Use search engines to scrap the links.
 
@@ -64,17 +66,36 @@ class GoogleScraperWraper:
             'scrape_method': method,
             'do_caching': cache
         }
-        try:
-            db_session = scrape_with_config(config)
-        except GoogleSearchError as e:
-            self.logger.exception("Scraper Error:", e)
-
         res = {}
-        for serp in db_session.serps:
-            query = serp.query
-            if query not in res:
-                res[query] = []
-            res[query].extend(serp.links)
+        if collect_link:
+            try:
+                db_session = scrape_with_config(config)
+            except GoogleSearchError as e:
+                self.logger.exception("Scraper Error:", e)
+
+            print("{} serps to process...".format(db_session.serps))
+            for serp in db_session.serps:
+                query = serp.query
+                if query not in res:
+                    res[query] = set()
+                for link in serp.links:
+                    res[query].add(link.link)
+        else:
+            sql_db_manger = Sqlite3Manger("google_scraper.db")
+            links = sql_db_manger.get_rows_for_table("link", ['link', 'serp_id', 'title'])
+            serps = sql_db_manger.get_rows_for_table('serp', ['id', 'query'])
+            serp_query_dict = {}
+            for serp in serps:
+                serp_id = serp[0]
+                query = serp[1]
+                serp_query_dict[serp_id] = query
+            for link in links:
+                link_url = link[0]
+                serp_id = link[1]
+                query = serp_query_dict[serp_id]
+                if query not in res:
+                    res[query] = set()
+                res[query].add(link_url)
         return res
 
     def __request(self, link, timeout):
@@ -84,9 +105,9 @@ class GoogleScraperWraper:
             html_page = url.read()
             return html_page
 
-    def __request_with_proxy(self, link, timeout):
+    def __request_with_proxy(self, link, timeout, proxies):
         headers = make_headers(user_agent=self.user_agent_header)
-        proxy_ip = random.sample(self.proxies, 1)[0]
+        proxy_ip = random.sample(proxies, 1)[0]
         http = ProxyManager(proxy_ip, headers=headers)
         response = http.request("GET", link, timeout=timeout)
         return response.data
@@ -103,9 +124,10 @@ class GoogleScraperWraper:
             time.sleep(delay)
         res = ""
         try:
-            if len(self.proxies) > 0 and use_proxy:
+            proxies = self.proxy_manger.available_proxy
+            if len(proxies) > 0 and use_proxy:
                 try:
-                    res = self.__request_with_proxy(link, timeout)
+                    res = self.__request_with_proxy(link, timeout, proxies)
                 except Exception as proxy_e:
                     res = self.__request(link, timeout)
                     self.logger.exception("Request with proxy exception:", proxy_e)

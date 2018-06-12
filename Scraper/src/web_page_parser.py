@@ -1,6 +1,7 @@
 from lxml import html
 import re
 
+
 class StackOverflowParser:
     def __get_text_of_post_block(self, post_element):
         """
@@ -119,7 +120,7 @@ class PcMagParser:
         definition = ""
         if len(def_element) > 0:
             definition = def_element[0].text_content()
-            definition = re.sub("[\n]{4}(.|\n)*$", "",definition)
+            definition = re.sub("[\n]{4}(.|\n)*$", "", definition)
         return definition
 
     def get_title(self, html_page):
@@ -173,6 +174,11 @@ class RegularParagraphParser:
     Parse all text in <p> from any given html page. This is used for pages we don't know the format
     """
 
+    def clean(self, text_list):
+        for text in text_list:
+            text = re.sub("\s\s+", " ", text)
+            text = re.sub("\\n\\n+", "\n", text)
+
     def get_paragraph(self, html_page):
         if html_page == "" or html_page == None:
             return ""
@@ -180,7 +186,8 @@ class RegularParagraphParser:
         text_blocks = html_tree.xpath('//p')
         texts = []
         for element in text_blocks:
-            texts.append(element.text_content())
+            content = element.text_content()
+            texts.append(content)
         return texts
 
     def parse(self, html_page, query):
